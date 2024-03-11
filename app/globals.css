@@ -77,9 +77,7 @@
 
 .button {
   color: black;
-  display: inline-block;
   cursor: pointer;
-  padding: 10px 80px;
   text-decoration: none;
   background-color: rgb(99 102 241);
   position: relative;
@@ -106,6 +104,15 @@
 }
 .button:hover {
   color: rgb(99, 102, 241);
+}
+
+.text-white-outline {
+  color: rgb(0,0,0);
+  text-shadow: 
+    -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+    1px  1px 0 #fff;
 }
 
 .main {

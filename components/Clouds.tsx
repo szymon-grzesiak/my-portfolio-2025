@@ -17,7 +17,7 @@ const Clouds = ({ position, rotate, color }: Position) => {
             }`}
             viewBox="0 24 150 28"
             preserveAspectRatio="none"
-            shape-rendering="auto"
+            shapeRendering="auto"
           >
             <defs>
               <path

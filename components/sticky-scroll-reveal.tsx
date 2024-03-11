@@ -91,7 +91,7 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[30rem] customScrollContainer flex justify-center gap-20 relative space-x-10"
+      className="h-[30rem] customScrollContainer flex justify-center lg:gap-20 relative"
       ref={ref}
     >
       <div className="div relative flex items-start px-4">
@@ -116,7 +116,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg text-slate-300 max-w-sm mt-10"
+                className="text-md text-slate-300 max-w-sm mt-10"
               >
                 {item.description}
               </motion.p>
