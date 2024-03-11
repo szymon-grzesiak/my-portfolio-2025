@@ -3,7 +3,7 @@ import Clouds from "@components/Clouds";
 import Image from "next/image";
 import { StickyScroll } from "@components/sticky-scroll-reveal";
 
-import angler from "../assets/angler.webp";
+import angler from "../assets/angler.svg";
 
 import { HoverEffect } from "@components/ui/card-hover-effect";
 import { projects } from "@lib/data";
@@ -60,7 +60,7 @@ export default function Home() {
       <section className="h-screen w-full flex">
         <Image
           src={angler}
-          className="aspect-square hidden sm:block w-full max-w-[425px] lg:max-w-[600px] xl:max-w-none"
+          className="aspect-square hidden sm:block w-full max-w-[425px] translate-x-[-20px] lg:max-w-[600px] xl:max-w-none"
           width={1000}
           alt={"angler"}
         />
