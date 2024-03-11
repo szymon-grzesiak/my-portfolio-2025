@@ -10,7 +10,7 @@ export const fetchCuriosity = async () => {
   try {
     const res = await axios.get("https://api.api-ninjas.com/v1/facts?limit=1", {
       headers: {
-        "X-Api-Key": "honPLapN3VYajPSyZghzdg==bqUJ04ZT8jzL1iMp",
+        "X-Api-Key": `${process.env.API_KEY}`,
       },
     });
     return res.data[0].fact;
