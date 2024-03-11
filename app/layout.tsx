@@ -12,6 +12,19 @@ export const metadata: Metadata = {
   keywords:
     "Szymon Grzesiak, Full Stack Developer, Website Development, Next.js, Responsive Web Design, User Experience, Software Engineering, Web Development",
   authors: [{ name: "Szymon Grzesiak", url: "https://github.com/itsJasberry" }],
+  openGraph: {
+    title: 'Szymon Grzesiak | Full Stack Developer',
+    description:  "Hi, I'm Szymon. Discover my projects and share your thoughts. I'm trying to create good looking websites and then showcase it on my portfolio. I hope you will like it. 🚀",
+    url: 'https://szymongrzesiak.com',
+    siteName: 'Szymon Grzesiak | Full Stack Developer',
+    images: [
+      {
+        url: "https://ptnotltkpwuwkpqppfbq.supabase.co/storage/v1/object/sign/portfolio/opengraph-image.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwb3J0Zm9saW8vb3BlbmdyYXBoLWltYWdlLnBuZyIsImlhdCI6MTcxMDE3MDQ3NSwiZXhwIjoxNzQxNzA2NDc1fQ.my1Ny0K3_3e3gmi5LNHArbCBTT2pF9stGy0cbiRyhnY&t=2024-03-11T15%3A21%3A18.798Z",
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
   twitter: {
     card: "summary_large_image",
   },
