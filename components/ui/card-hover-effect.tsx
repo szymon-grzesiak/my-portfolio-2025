@@ -1,7 +1,7 @@
+"use client";
 import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 export const HoverEffect = ({
@@ -52,7 +52,6 @@ export const HoverEffect = ({
               src={item.icon}
               width={65}
               height={65}
-              
               className="shrink-0 aspect-square"
               alt={item.title}
             />
@@ -78,7 +77,7 @@ export const Card = ({
         className
       )}
     >
-    {children}
+      {children}
     </div>
   );
 };
