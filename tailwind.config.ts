@@ -1,13 +1,11 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
-const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
 const svgToDataUri = require("mini-svg-data-uri");
-
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
   content: [
@@ -15,8 +13,11 @@ const config: Config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
+    "./content/**/*.mdx", 
+    "./public/**/*.svg"
   ],
   theme: {
+    darkMode: ["class"],
     container: {
       center: true,
       screens: {
@@ -24,10 +25,14 @@ const config: Config = {
       },
     },
     extend: {
-      screens: {
-        "xs": "450px",
+      fontFamily: {
+        sans: ['var(--font-geist-sans)'],
+        mono: ['var(--font-geist-mono)'],
       },
-    }
+      screens: {
+        xs: "450px",
+      },
+    },
   },
   extend: {
     colors: {
@@ -86,6 +91,7 @@ const config: Config = {
     },
   },
   plugins: [
+    typography,
     addVariablesForColors,
     require("tailwindcss-animate"),
     function ({ matchUtilities, theme }: any) {
@@ -111,7 +117,7 @@ const config: Config = {
       );
     },
   ],
-}
+};
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 function addVariablesForColors({ addBase, theme }: any) {
@@ -119,10 +125,10 @@ function addVariablesForColors({ addBase, theme }: any) {
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
- 
+
   addBase({
     ":root": newVars,
   });
 }
 
-export default config
+export default config;

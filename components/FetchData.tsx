@@ -94,10 +94,10 @@ const FetchData = () => {
     }
   };
   return (
-    <h2 className="mx-auto w-full pt-20 flex flex-col justify-start items-center font-bold text-[32px]">
-      Cool facts 🎲
-      <div className="w-48 h-2 bg-indigo-500 rounded-full " />
-      <div className="w-48 h-2 bg-black rounded-full translate-x-2" />
+    <div className="mx-auto w-full pt-20 flex flex-col justify-start items-center font-bold text-[32px]">
+      Cool facts about me 🎲
+      <div className="w-full h-2 bg-indigo-500 rounded-full " />
+      <div className="w-full h-2 bg-black rounded-full translate-x-2" />
       <button
         onClick={handleFetchCuriosity}
         className="button flex h-[50px] justify-center items-center mt-5 w-[200px]"
@@ -129,7 +129,7 @@ const FetchData = () => {
       <div className="mt-5 w-2/3 sm:w-1/2">
         <TextGenerateEffect key={fetchCount} words={fact} />
       </div>
-    </h2>
+    </div>
   );
 };
 

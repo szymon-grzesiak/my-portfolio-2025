@@ -1,4 +1,3 @@
-import "./mainpage.css";
 import Clouds from "@components/Clouds";
 import Image from "next/image";
 import { StickyScroll } from "@components/sticky-scroll-reveal";
@@ -8,6 +7,8 @@ import angler from "../assets/angler.svg";
 import { HoverEffect } from "@components/ui/card-hover-effect";
 import { projects } from "@lib/data";
 import FetchData, { content } from "@components/FetchData";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -28,18 +29,32 @@ export default function Home() {
             I&apos;m a web developer and I will showcase here some of my cool
             projects. I hope you will like it! 🚀
           </p>
-          <a
-            className="inline-block group"
-            href="mailto:szymongrzesiak.pl@gmail.com"
-          >
-            <div>
-              <h1 className="text-3xl font-bold group-hover:text-indigo-500 transition-all">
-                Contact Me 📨
-              </h1>
-              <div className="w-40 h-2 bg-indigo-500 rounded-full " />
-              <div className="w-40 h-2 bg-black rounded-full translate-x-2" />
+          <div className="flex gap-6">
+            <a
+              className="inline-block group"
+              href="mailto:szymongrzesiak.pl@gmail.com"
+            >
+              <div>
+                <h1 className="text-3xl font-bold group-hover:text-indigo-500 transition-all">
+                  Contact Me 📨
+                </h1>
+                <div className="w-40 h-2 bg-indigo-500 rounded-full " />
+                <div className="w-40 h-2 bg-black rounded-full translate-x-2" />
+              </div>
+            </a>
+
+            <div className="flex gap-4 justify-center items-center">
+              <Link href="https://www.linkedin.com/in/szymon-grzesiak-296873200/">
+                <FaLinkedin className="text-3xl hover:text-indigo-600" />
+              </Link>
+              <Link href="https://github.com/itsJasberry">
+                <FaGithub className="text-3xl hover:text-indigo-600" />
+              </Link>
+              <Link href="https://x.com/jasberry_x">
+                <FaTwitter className="text-3xl hover:text-indigo-600" />
+              </Link>
             </div>
-          </a>
+          </div>
         </div>
         <div>
           <div className="flex flex-col items-center justify-center -rotate-6">
@@ -55,7 +70,7 @@ export default function Home() {
         </div>
       </section>
 
-        <StickyScroll content={content} contentClassName="pr-2 xl:pr-0"/>
+      <StickyScroll content={content} contentClassName="pr-2 xl:pr-0" />
 
       <section className="h-screen w-full flex">
         <Image
@@ -65,7 +80,7 @@ export default function Home() {
           alt={"angler"}
         />
         {/* // TODO zrobic pozniej siedzaca postac ktora sie patrzy na tej sekcji z projektami */}
-       <FetchData/>
+        <FetchData />
       </section>
       <Clouds color="white" rotate position="top" />
       <Clouds color="blue" position="bottom" />

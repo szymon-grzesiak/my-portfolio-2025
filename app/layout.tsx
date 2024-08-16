@@ -1,7 +1,10 @@
+import { cn } from "@lib/utils";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Link from "next/link";
+
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,10 +28,26 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   twitter: {
+    title: 'Szymon Grzesiak | Full Stack Developer',
     card: "summary_large_image",
   },
+  verification: {
+    google: 'fJVBRYoJSrpgs402DczTj2RoH37l1WJVB5EWuKR2l1w'
+  }
 };
+const cx = (...classes: any) => classes.filter(Boolean).join(' ');
 
 export default function RootLayout({
   children,
@@ -36,42 +55,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className}`}>
+    <html lang="en"  className={cx(
+      'text-black bg-white dark:text-white dark:bg-[#111010]',
+      GeistSans.variable,
+      GeistMono.variable
+    )}>
+      <body className={cn('min-h-screen font-sans antialiased')}>
         <div className="main bg-grid">
-          <div className="gradient bg-grid" />
+          <div className="bg-grid" />
         </div>
-        <main className="app bg-grid">
-          <div className="fixed left-0 top-0 h-full flex items-center justify-center">
-            <ul className="flex flex-col gap-10 ml-8 font-bold text-lg">
-              <li>
-                <Link
-                  className="[writing-mode:vertical-lr] rotate-180"
-                  href="https://google.com"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <a
-                  className="[writing-mode:vertical-lr] rotate-180"
-                  href="#about"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  className="[writing-mode:vertical-lr] rotate-180"
-                  href="#contact"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
           {children}
-        </main>
       </body>
     </html>
   );

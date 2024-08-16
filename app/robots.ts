@@ -9,5 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: "https://szymongrzesiak.com/sitemap.xml",
+    host: 'https://szymongrzesiak.dev',
   };
 }
