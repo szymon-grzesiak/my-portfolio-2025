@@ -5,6 +5,8 @@ import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Providers } from "@components/providers";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Szymon Grzesiak | Full Stack Developer",
@@ -75,11 +77,13 @@ export default function RootLayout({
       )}
     >
       <body className={cn("min-h-screen font-sans antialiased")}>
-      <Providers>
-        <div className="main bg-grid">
-          <div className="bg-grid" />
-        </div>
-        {children}
+        <Providers>
+          <div className="main bg-grid">
+            <div className="bg-grid" />
+          </div>
+          {children}
+          <Analytics />
+          <SpeedInsights />
         </Providers>
       </body>
     </html>
