@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Szymon Grzesiak | Full Stack Developer",
     description:
       "Hi, I'm Szymon. Discover my projects and share your thoughts. I'm trying to create good looking websites and then showcase it on my portfolio. I hope you will like it. 🚀",
-    url: "https://szymongrzesiak.com",
+    url: "https://szymongrzesiak.dev",
     siteName: "Szymon Grzesiak | Full Stack Developer",
     locale: "en_US",
     type: "website",
