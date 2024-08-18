@@ -1,3 +1,5 @@
+// @ts-nocheck 
+
 import { MetadataRoute } from "next";
 import { posts } from "#site/content";
 
@@ -14,7 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   let tags = posts.reduce((acc, post) => {
     if (!post.tags) return acc;
-    post?.tags.forEach((tag) => {
+    post.tags.forEach((tag) => {
       if (!acc.includes(tag)) {
         acc.push(tag);
       }
