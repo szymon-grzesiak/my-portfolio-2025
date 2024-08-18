@@ -8,6 +8,7 @@ const svgToDataUri = require("mini-svg-data-uri");
 import typography from "@tailwindcss/typography";
 
 const config: Config = {
+  darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -17,7 +18,6 @@ const config: Config = {
     "./public/**/*.svg"
   ],
   theme: {
-    darkMode: ["class"],
     container: {
       center: true,
       screens: {

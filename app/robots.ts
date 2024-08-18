@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://szymongrzesiak.com/sitemap.xml",
+    sitemap: "https://szymongrzesiak.dev/sitemap.xml",
     host: 'https://szymongrzesiak.dev',
   };
 }

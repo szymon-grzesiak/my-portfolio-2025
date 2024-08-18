@@ -72,7 +72,9 @@ export default function Home() {
 
       <StickyScroll content={content} contentClassName="pr-2 xl:pr-0" />
 
-      <section className="h-screen w-full flex">
+      <section className="h-screen w-full flex" style={{
+        zIndex: -1
+      }}>
         <Image
           src={angler}
           className="aspect-square hidden sm:block w-full max-w-[425px] translate-x-[-20px] lg:max-w-[600px] xl:max-w-none"
