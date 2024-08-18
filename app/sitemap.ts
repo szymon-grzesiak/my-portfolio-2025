@@ -7,10 +7,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: post.date,
   }));
 
-  let routes = ['', '/blog'].map((route) => ({
+  let routes = ["", "/blog"].map((route) => ({
     url: `https://szymongrzesiak.dev${route}`,
-    lastModified: new Date().toISOString().split('T')[0],
+    lastModified: new Date().toISOString().split("T")[0],
   }));
 
-  return [...routes, ...blogs];
+  let tags = posts.reduce((acc, post) => {
+    if (!post.tags) return acc;
+    post?.tags.forEach((tag) => {
+      if (!acc.includes(tag)) {
+        acc.push(tag);
+      }
+    });
+    return acc;
+  }, []);
+
+  return [
+    ...routes,
+    ...blogs,
+    ...tags.map((tag) => ({
+      url: `https://szymongrzesiak.dev/tags/${tag}`,
+      lastModified: new Date().toISOString().split("T")[0],
+    })),
+  ];
 }

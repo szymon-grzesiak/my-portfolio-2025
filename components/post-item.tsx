@@ -3,6 +3,10 @@ import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { cn, formatDate } from "@/lib/utils";
 import { Tag } from "./tag";
+import ViewCounter from "@app/blog/view-counter";
+import { cache } from "react";
+import { increment } from "@db/actions";
+import { getViewsCount } from "@db/queries";
 
 interface PostItemProps {
   slug: string;
@@ -31,6 +35,7 @@ export function PostItem({
           <Tag tag={tag} key={tag} />
         ))}
       </div>
+      <Views slug={slug} />
       <div className="max-w-none text-muted-foreground">{description}</div>
       <div className="flex justify-between items-center">
         <dl>
@@ -49,4 +54,13 @@ export function PostItem({
       </div>
     </article>
   );
+}
+
+let incrementViews = cache(increment);
+
+
+async function Views({ slug }: { slug: string }) {
+  let views = await getViewsCount();
+  incrementViews(slug);
+  return <ViewCounter allViews={views} slug={slug} />;
 }
