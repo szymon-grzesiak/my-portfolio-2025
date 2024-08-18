@@ -2,7 +2,6 @@ import { posts } from "#site/content";
 import { MDXContent } from "@/components/mdx-components";
 import { notFound } from "next/navigation";
 
-
 import "@/styles/mdx.css";
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
@@ -12,7 +11,6 @@ interface PostPageProps {
     slug: string[];
   };
 }
-export const runtime = 'edge';
 
 async function getPostFromParams(params: PostPageProps["params"]) {
   const slug = params?.slug?.join("/");

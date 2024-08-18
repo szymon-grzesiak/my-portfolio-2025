@@ -1,5 +1,4 @@
 import { build } from 'velite'
-import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev';
 
 class VeliteWebpackPlugin {
   static started = false
@@ -21,10 +20,6 @@ const nextConfig = {
     config.plugins.push(new VeliteWebpackPlugin())
     return config
   }
-}
-
-if (process.env.NODE_ENV === 'development') {
-  await setupDevPlatform();
 }
 
 export default nextConfig
