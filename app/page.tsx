@@ -17,8 +17,7 @@ export default function Home() {
         <div className="space-y-10 text-center lg:text-left">
           <h1
             id="home"
-            className="text-4xl lg:text-7xl font-bold flex flex-col gap-5"
-          >
+            className="text-4xl lg:text-7xl font-bold flex flex-col gap-5">
             Hey, what&apos;s up! 🤞
             <br />
             <span className="underline underline-offset-8 decoration-indigo-500">
@@ -26,13 +25,15 @@ export default function Home() {
             </span>
           </h1>
           <p className="md:w-[440px] text-lg text-black">
-          Hi, I&apos;m Szymon Grzesiak, a Full Stack Developer with a focus on Web Development and Software Engineering. My expertise lies in building Responsive Web Designs using modern technologies like Next.js. 🚀
+            Hi, I&apos;m Szymon Grzesiak, a Full Stack Developer with a focus on
+            Web Development and Software Engineering. My expertise lies in
+            building Responsive Web Designs using modern technologies like
+            Next.js. 🚀
           </p>
           <div className="flex gap-6">
             <a
               className="inline-block group"
-              href="mailto:szymongrzesiak.pl@gmail.com"
-            >
+              href="mailto:szymongrzesiak.pl@gmail.com">
               <div>
                 <h2 className="text-3xl font-bold group-hover:text-indigo-500 transition-all">
                   Contact Me 📨
@@ -71,12 +72,14 @@ export default function Home() {
       <h2>Projects in Web Development and Software Engineering</h2>
       <StickyScroll content={content} contentClassName="pr-2 xl:pr-0" />
 
-      <section className="h-screen w-full flex" style={{
-        zIndex: -1
-      }}>
+      <section
+        className="h-screen w-full flex"
+        style={{
+          zIndex: -1,
+        }}>
         <Image
           src={angler}
-          className="aspect-square hidden sm:block w-full max-w-[425px] translate-x-[-20px] lg:max-w-[600px] xl:max-w-none"
+          className="aspect-square hidden sm:block w-full max-w-[424px] translate-x-[-20px] lg:max-w-[600px] xl:max-w-none"
           width={1000}
           alt={"angler"}
         />
