@@ -9,7 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
-  title: "Szymon Grzesiak | Full Stack Developer",
+  title: "Szymon Grzesiak | Full Stack Developer | Portfolio",
   description:
     "Hi, I'm Szymon. Discover my projects and share your thoughts. I'm trying to create good looking websites and then showcase it on my portfolio. I hope you will like it. 🚀",
   keywords: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Szymon Grzesiak | Full Stack Developer",
     description:
-      "Hi, I'm Szymon. Discover my projects and share your thoughts. I'm trying to create good looking websites and then showcase it on my portfolio. I hope you will like it. 🚀",
+      "Szymon Grzesiak, Full Stack Developer creating modern, responsive websites and web applications. Explore my portfolio and projects in web development. 🚀",
     url: "https://szymongrzesiak.dev",
     siteName: "Szymon Grzesiak | Full Stack Developer",
     locale: "en_US",

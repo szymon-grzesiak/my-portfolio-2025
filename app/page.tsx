@@ -22,12 +22,11 @@ export default function Home() {
             Hey, what&apos;s up! 🤞
             <br />
             <span className="underline underline-offset-8 decoration-indigo-500">
-              I&apos;m Szymon
+              I&apos;m Szymon Grzesiak
             </span>
           </h1>
           <p className="md:w-[440px] text-lg text-black">
-            I&apos;m a web developer and I will showcase here some of my cool
-            projects. I hope you will like it! 🚀
+          Hi, I&apos;m Szymon Grzesiak, a Full Stack Developer with a focus on Web Development and Software Engineering. My expertise lies in building Responsive Web Designs using modern technologies like Next.js. 🚀
           </p>
           <div className="flex gap-6">
             <a
@@ -35,9 +34,9 @@ export default function Home() {
               href="mailto:szymongrzesiak.pl@gmail.com"
             >
               <div>
-                <h1 className="text-3xl font-bold group-hover:text-indigo-500 transition-all">
+                <h2 className="text-3xl font-bold group-hover:text-indigo-500 transition-all">
                   Contact Me 📨
-                </h1>
+                </h2>
                 <div className="w-40 h-2 bg-indigo-500 rounded-full " />
                 <div className="w-40 h-2 bg-black rounded-full translate-x-2" />
               </div>
@@ -58,18 +57,18 @@ export default function Home() {
         </div>
         <div>
           <div className="flex flex-col items-center justify-center -rotate-6">
-            <h1 className="text-3xl font-bold group-hover:text-green-400 transition-all">
+            <h2 className="text-3xl font-bold group-hover:text-green-400 transition-all">
               Skills
               <div className="w-40 h-2 bg-indigo-500 rounded-full " />
               <div className="w-40 h-2 bg-black rounded-full translate-x-2" />
-            </h1>
+            </h2>
           </div>
           <div className="max-w-5xl mx-auto px-8">
             <HoverEffect items={projects} />
           </div>
         </div>
       </section>
-
+      <h2>Projects in Web Development and Software Engineering</h2>
       <StickyScroll content={content} contentClassName="pr-2 xl:pr-0" />
 
       <section className="h-screen w-full flex" style={{

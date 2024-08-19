@@ -1,10 +1,9 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 import { BackgroundGradient } from "./ui/background-gradient";
-import { ScrollArea } from "./ui/scroll-area";
 
 const DotsIndicator = ({
   count,
@@ -98,7 +97,7 @@ export const StickyScroll = ({
         <div className="max-w-2xl">
           {content.map((item, index) => (
             <div key={item.title + index} className="my-20">
-              <motion.h2
+              <motion.h3
                 initial={{
                   opacity: 0,
                 }}
@@ -108,7 +107,7 @@ export const StickyScroll = ({
                 className="text-2xl font-bold text-slate-100"
               >
                 {item.title}
-              </motion.h2>
+              </motion.h3>
               <motion.p
                 initial={{
                   opacity: 0,
