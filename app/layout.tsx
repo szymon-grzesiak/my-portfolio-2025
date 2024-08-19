@@ -11,16 +11,14 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata: Metadata = {
   title: "Szymon Grzesiak | Full Stack Developer | Portfolio",
   description:
-    "Hi, I'm Szymon. Discover my projects and share your thoughts. I'm trying to create good looking websites and then showcase it on my portfolio. I hope you will like it. 🚀",
+    "Explore the portfolio of Szymon Grzesiak, a skilled full stack developer. Discover his projects in web development and software engineering, and learn more about his expertise in technologies like Next.js, React, and TypeScript.",
   keywords: [
-    "Szymon Grzesiak",
-    "Full Stack Developer",
-    "Website Development",
-    "Next.js",
-    "Responsive Web Design",
-    "User Experience",
-    "Software Engineering",
+    "Full Stack Developer Portfolio",
     "Web Development",
+    "Next.js",
+    "React",
+    "typescript",
+    "Software Engineering",
   ],
   authors: [{ name: "Szymon Grzesiak", url: "https://szymongrzesiak.dev" }],
   creator: "Szymon Grzesiak",
