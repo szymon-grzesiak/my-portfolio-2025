@@ -9,6 +9,7 @@ import { projects } from "@lib/data";
 import FetchData, { content } from "@components/FetchData";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
+import { ModeToggle } from "@components/mode-toggle";
 
 export default function Home() {
   return (
@@ -53,6 +54,7 @@ export default function Home() {
               <Link href="https://x.com/jasberry_x">
                 <FaTwitter className="text-3xl hover:text-indigo-600" />
               </Link>
+              <ModeToggle/>
             </div>
           </div>
         </div>
