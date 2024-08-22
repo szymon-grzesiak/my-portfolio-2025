@@ -12,65 +12,25 @@ export const content = [
     title: "Project 1",
     description:
       "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-    content: (
-      <div className="flex items-center justify-center text-white">
-        <Image
-          src={niceBg}
-          width={500}
-          height={500}
-          className="rounded-[22px]"
-          alt="girl in the wind"
-        />
-      </div>
-    ),
+    content: niceBg,
   },
   {
     title: "Project 2",
     description:
       "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-    content: (
-      <div className="flex items-center justify-center text-white">
-        <Image
-          src={keanu}
-          width={500}
-          height={500}
-          className="rounded-[22px]"
-          alt="Keanu Reeves"
-        />
-      </div>
-    ),
+    content: keanu,
   },
   {
     title: "Project 3",
     description:
       "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="flex items-center justify-center text-white">
-        <Image
-          src={cover5}
-          width={500}
-          height={500}
-          className="rounded-[22px]"
-          alt="Dog with the butter"
-        />
-      </div>
-    ),
+    content: cover5,
   },
   {
     title: "Project 4",
     description:
       "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-    content: (
-      <div className="flex items-center justify-center text-white">
-        <Image
-          src={keanu}
-          width={500}
-          height={500}
-          className="rounded-[22px]"
-          alt="Keanu Reeves"
-        />
-      </div>
-    ),
+    content: niceBg
   },
 ];
 
@@ -96,8 +56,8 @@ const FetchData = () => {
   return (
     <div className="mx-auto w-full pt-20 flex flex-col justify-start items-center font-bold text-[32px]">
       Cool facts about me 🎲
-      <div className="w-full h-2 bg-indigo-500 rounded-full " />
-      <div className="w-full h-2 bg-black rounded-full translate-x-2" />
+      {/* <div className="w-full h-2 bg-indigo-500 rounded-full " />
+      <div className="w-full h-2 bg-black rounded-full translate-x-2" /> */}
       <button
         onClick={handleFetchCuriosity}
         className="button flex h-[50px] justify-center items-center mt-5 w-[200px]"

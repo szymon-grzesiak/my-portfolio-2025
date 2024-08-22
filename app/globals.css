@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -178,4 +179,8 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #20b9db; /* Zmiana koloru po najechaniu */
+}
+
+.hover\:animation-paused:hover {
+  animation-play-state: paused;
 }

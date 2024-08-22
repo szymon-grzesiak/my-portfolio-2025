@@ -36,7 +36,7 @@ const ContentSecurityPolicy = `
     img-src * blob: data:;
     media-src 'none';
     connect-src *;
-    font-src 'self' data:;
+    font-src 'self' data: https://fonts.googleapis.com https://fonts.gstatic.com https://use.typekit.net https://p.typekit.net https://fonts.google.com/;
     frame-src 'self';
 `;
 

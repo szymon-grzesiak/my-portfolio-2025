@@ -2,11 +2,25 @@ import { cn } from "@lib/utils";
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { Poppins, Jersey_10 } from "next/font/google";
 import { Providers } from "@components/providers";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Sidebar from "@components/sidebar";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ['400', '500', '700'],
+  display: 'swap',
+  variable: '--font-poppins',
+});
+
+const jersey = Jersey_10({
+  subsets: ["latin"],
+  display: 'swap',
+  weight: ['400'],
+  variable: '--font-jersey',
+});
 
 export const metadata: Metadata = {
   title: "Szymon Grzesiak | Full Stack Developer | Portfolio",
@@ -58,8 +72,6 @@ export const viewport: Viewport = {
   ],
 };
 
-const cx = (...classes: any) => classes.filter(Boolean).join(" ");
-
 export default function RootLayout({
   children,
 }: {
@@ -68,18 +80,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cx(
-        "text-black bg-white dark:text-white dark:bg-[#111110] scroll-pt-[3.5rem]",
-        GeistSans.variable,
-        GeistMono.variable
-      )}
+      className={`text-black ${poppins.variable} ${jersey.variable} font-sans antialiased bg-white dark:text-white dark:bg-[#111110]`}
     >
-      <body className={cn("min-h-screen font-sans antialiased")}>
+      <body className="min-h-screen">
         <Providers>
           <div className="main bg-grid">
             <div className="bg-grid" />
           </div>
           {children}
+          <Sidebar />
           <Analytics />
           <SpeedInsights />
         </Providers>

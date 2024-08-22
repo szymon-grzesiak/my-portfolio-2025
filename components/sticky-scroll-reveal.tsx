@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
-import { BackgroundGradient } from "./ui/background-gradient";
+import Image from "next/image";
 
 const DotsIndicator = ({
   count,
@@ -81,16 +81,17 @@ export const StickyScroll = ({
   });
 
   const backgroundColors = [
-    "var(--slate-900)",
-    "var(--black)",
-    "var(--neutral-900)",
+    "#DFFEF6",
+    "var(--indigo-400)",
+    "#ffaa82",
+    "#ff8188",
   ];
   return (
     <motion.div
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[30rem] customScrollContainer flex justify-center lg:gap-20 relative"
+      className="h-[30rem] customScrollContainer flex justify-center lg:gap-20 relative border-y-2 border-black"
       ref={ref}
     >
       <div className="div relative flex items-start px-4">
@@ -130,9 +131,7 @@ export const StickyScroll = ({
           contentClassName
         )}
       >
-        <BackgroundGradient className="w-full h-full">
-          {content[activeCard].content ?? null}
-        </BackgroundGradient>
+        <Image src={content[activeCard].content ?? null} width={500} height={500} alt={content[activeCard].title} className="rounded-md" />
         <DotsIndicator count={cardLength} activeIndex={activeDot} />
       </div>
     </motion.div>
