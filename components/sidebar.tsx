@@ -3,6 +3,8 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { ModeToggle } from "./mode-toggle";
 import Image from "next/image";
 import logo64 from "../app/logo-64.png";
+import { buttonVariants } from "./ui/button";
+import { cn } from "@lib/utils";
 
 const Sidebar = () => {
   return (
@@ -12,11 +14,46 @@ const Sidebar = () => {
           <Image src={logo64} width={50} height={50} alt="Logo" />
         </Link>
         <div className="flex flex-col items-start h-full gap-10">
-          <li className="font-medium text-sm">About</li>
-          <li className="font-medium">Projects</li>
-          <li className="font-medium">Blog</li>
-          <li className="font-medium">Contact</li>
-          <li className="font-medium">Resume</li>
+          <li
+            className={cn(
+              buttonVariants({ variant: "link" }),
+              "cursor-pointer [text-shadow:_3px_3px_3px_rgb(0_0_255_/_30%)]"
+            )}
+          >
+            About
+          </li>
+          <li
+            className={cn(
+              buttonVariants({ variant: "link" }),
+              "cursor-pointer [text-shadow:_3px_3px_3px_rgb(0_0_255_/_30%)]"
+            )}
+          >
+            Projects
+          </li>
+          <li
+            className={cn(
+              buttonVariants({ variant: "link" }),
+              "cursor-pointer [text-shadow:_3px_3px_3px_rgb(0_0_255_/_30%)]"
+            )}
+          >
+            Blog
+          </li>
+          <li
+            className={cn(
+              buttonVariants({ variant: "link" }),
+              "cursor-pointer [text-shadow:_3px_3px_3px_rgb(0_0_255_/_30%)]"
+            )}
+          >
+            Contact
+          </li>
+          <li
+            className={cn(
+              buttonVariants({ variant: "link" }),
+              "cursor-pointer [text-shadow:_3px_3px_3px_rgb(0_0_255_/_30%)]"
+            )}
+          >
+            Resume
+          </li>
         </div>
 
         <li className="flex flex-col gap-4 justify-center items-center">

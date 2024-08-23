@@ -12,11 +12,17 @@ import Link from "next/link";
 import port from "../assets/boy_with_telescope.png";
 import { VelocityScroll } from "@components/scrollbasedtext";
 import Marquee from "@components/marquee";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@components/ui/tooltip";
 
 export default function Home() {
   return (
     <main className="relative mx-auto">
-      <section className="relative lg:h-[80vh] pt-40 lg:pt-0 flex-col gap-10 lg:gap-0 lg:flex-row w-full flex items-end justify-around px-10">
+      <section className="relative lg:h-[90vh] pt-40 lg:pt-0 flex-col gap-10 lg:gap-0 lg:flex-row w-full flex items-end justify-around px-10">
         <Image src={port} alt="Guy with a telescope" className="" />
         <div className="flex flex-col items-start justify-center h-full gap-y-6">
           <h1
@@ -26,7 +32,9 @@ export default function Home() {
             Hey, what&apos;s up! 🤞
             <div>
               I&apos;m{" "}
-              <span className="bg-indigo-400 rounded-3xl px-4">Szymon</span>
+              <span className="bg-indigo-400 rounded-3xl px-4 border-2 border-black shadow-[4px_4px]">
+                Szymon
+              </span>
             </div>
           </h1>
           <p className="md:w-[440px] text-lg text-black">
@@ -50,11 +58,38 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Marquee pauseOnHover className="[--duration:10s] border-t-2 border-t-black">
-        {projects.map((project, index) => (
-          <Image key={index} src={project.icon} alt={project.title} width={40} height={40} className="mx-6 aspect-auto"/>
-        ))}
-      </Marquee>
+      <section className="relative w-full">
+        <div className="absolute w-full flex justify-center items-start -translate-y-4 z-[10]">
+          <h2 className="text-center bg-indigo-400 font-bold rounded-xl px-4 z-[100] border-2 border-black shadow-[4px_4px]">
+            SKILLS
+          </h2>
+        </div>
+        <Marquee
+          pauseOnHover
+          className="[--duration:15s] border-t-2 border-t-black"
+        >
+          {projects.map((project, index) => (
+            <TooltipProvider key={index}>
+              <Tooltip>
+                <TooltipTrigger className="cursor-default">
+                  <Image
+                    key={index}
+                    src={project.icon}
+                    alt={project.title}
+                    className="mx-6 shrink-0 max-w-[50px] max-h-[50px]"
+                  />
+                </TooltipTrigger>
+                <TooltipContent className="z-[9999]">
+                  {project.title}
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          ))}
+        </Marquee>
+      </section>
+      <section>
+
+      </section>
       <StickyScroll content={content} contentClassName="pr-2 xl:pr-0" />
       <section
         className="h-screen w-full flex"

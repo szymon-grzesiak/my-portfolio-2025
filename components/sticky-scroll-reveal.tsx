@@ -131,7 +131,7 @@ export const StickyScroll = ({
           contentClassName
         )}
       >
-        <Image src={content[activeCard].content ?? null} width={500} height={500} alt={content[activeCard].title} className="rounded-md" />
+        <Image src={content[activeCard].content ?? null} width={500} height={500} alt={content[activeCard].title} className="rounded-md border-2 border-black shadow-black shadow-[6px_6px]" />
         <DotsIndicator count={cardLength} activeIndex={activeDot} />
       </div>
     </motion.div>
