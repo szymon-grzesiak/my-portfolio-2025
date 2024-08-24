@@ -4,13 +4,10 @@ import { StickyScroll } from "@components/sticky-scroll-reveal";
 
 import angler from "../assets/angler.svg";
 
-import { HoverEffect } from "@components/ui/card-hover-effect";
 import { projects } from "@lib/data";
 import FetchData, { content } from "@components/FetchData";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import Link from "next/link";
 import port from "../assets/boy_with_telescope.png";
-import { VelocityScroll } from "@components/scrollbasedtext";
+import { TbMailShare } from "react-icons/tb";
 import Marquee from "@components/marquee";
 import {
   Tooltip,
@@ -42,20 +39,13 @@ export default function Home() {
             lies in building Responsive Web Designs using modern technologies
             like Next.js. 🚀
           </p>
-          <div className="flex gap-6">
-            <a
-              className="inline-block group"
-              href="mailto:szymongrzesiak.pl@gmail.com"
-            >
-              <div>
-                <h2 className="text-3xl font-bold group-hover:text-indigo-500 transition-all">
-                  Contact Me 📨
-                </h2>
-                <div className="w-40 h-2 bg-indigo-500 rounded-full " />
-                <div className="w-40 h-2 bg-black rounded-full translate-x-2" />
-              </div>
-            </a>
-          </div>
+          <a
+            className="flex justify-center items-end gap-3"
+            href="mailto:szymongrzesiak.pl@gmail.com"
+          >
+            <h2 className="text-3xl font-bold lineThroughEffect">Contact Me</h2>
+            <TbMailShare className="text-3xl" />
+          </a>
         </div>
       </section>
       <section className="relative w-full">
@@ -66,33 +56,30 @@ export default function Home() {
         </div>
         <Marquee
           pauseOnHover
-          className="[--duration:15s] border-t-2 border-t-black"
+          className="[--duration:15s] border-y-2 border-y-black"
         >
-          {projects.map((project, index) => (
-            <TooltipProvider key={index}>
-              <Tooltip>
-                <TooltipTrigger className="cursor-default">
-                  <Image
-                    key={index}
-                    src={project.icon}
-                    alt={project.title}
-                    className="mx-6 shrink-0 max-w-[50px] max-h-[50px]"
-                  />
-                </TooltipTrigger>
-                <TooltipContent className="z-[9999]">
-                  {project.title}
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          ))}
+          {projects.map((project, index) => {
+            const Icon = project.icon;
+            return (
+              <TooltipProvider key={index} delayDuration={100}>
+                <Tooltip>
+                  <TooltipTrigger className="cursor-default">
+                    <Icon className="w-16 h-16 mr-6"/>
+                  </TooltipTrigger>
+                  <TooltipContent className="mr-6">
+                    {project.title}
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            );
+          })}
         </Marquee>
       </section>
-      <section>
-
-      </section>
+      <section className="w-full h-screen bg-white">Site designed and made by Me.</section>
       <StickyScroll content={content} contentClassName="pr-2 xl:pr-0" />
       <section
         className="h-screen w-full flex"
+        id="cool"
         style={{
           zIndex: -1,
         }}

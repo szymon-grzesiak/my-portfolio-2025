@@ -91,7 +91,6 @@
   position: absolute;
   z-index: -1;
   background-color: black;
-  color: rgb(99, 102, 241);
   inset: 0;
   scale: 0 1;
   transform-origin: right;
@@ -103,18 +102,82 @@
   transform-origin: left;
   scale: 1 1;
 }
+
 .button:hover {
   color: rgb(99, 102, 241);
+
 }
 
-.text-white-outline {
-  color: rgb(0,0,0);
-  text-shadow: 
-    -1px -1px 0 #fff,  
-    1px -1px 0 #fff,
-    -1px  1px 0 #fff,
-    1px  1px 0 #fff;
+
+
+.lineThroughEffect {
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
 }
+
+.lineThroughEffect::after {
+  content: "";
+  position: absolute;
+  background-color: #00E5FF;
+  left: 0px;
+  right: 0px;
+  height: 3px;
+  scale: 0 1;
+  transform-origin: right;
+  transition: scale 450ms;
+}
+
+.lineThroughEffect:hover::after,
+.lineThroughEffect:focus-visible::after {
+  transform-origin: left;
+  scale: 1 1;
+}
+
+/* Do zrobienia na blogu
+.button {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: rgb(99 102 241);
+  position: relative;
+  overflow: hidden;
+  font-size: 1.5rem;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  color: rgb(99, 102, 241);
+  transform: translateX(-101%);
+  z-index: 1;
+}
+.button:hover::before {
+  transform: translateX(0);
+  transition: 350ms ease-in-out;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-color: black;
+  color: rgb(99, 102, 241);
+  transform: translateX(100%);
+  transition: 350ms ease-in-out;
+}
+.button:hover::after {
+  transform: translateX(0);
+  opacity: 1;
+  transition: 350ms 360ms ease-in-out;
+} */
+
 
 .main {
   width: 100vw;
@@ -184,3 +247,9 @@
 .hover\:animation-paused:hover {
   animation-play-state: paused;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+  
+

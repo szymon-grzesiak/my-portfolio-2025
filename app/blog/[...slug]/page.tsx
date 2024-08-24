@@ -6,6 +6,10 @@ import "@/styles/mdx.css";
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { Tag } from "@components/tag";
+import { cache } from "react";
+import { increment } from "@db/actions";
+import { getViewsCount } from "@db/queries";
+import ViewCounter from "../view-counter";
 interface PostPageProps {
   params: {
     slug: string[];
@@ -73,8 +77,9 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="container py-6 prose dark:prose-invert max-w-3xl mx-auto">
+    <article className="relative container py-6 prose dark:prose-invert max-w-3xl mx-auto">
       <h1 className="mb-2">{post.title}</h1>
+      <Views slug={post.slug} />
       <div className="flex gap-2 mb-2">
         {post.tags?.map((tag) => (
           <Tag tag={tag} key={tag} />
@@ -87,4 +92,14 @@ export default async function PostPage({ params }: PostPageProps) {
       <MDXContent code={post.body} />
     </article>
   );
+}
+
+
+let incrementViews = cache(increment);
+
+
+async function Views({ slug }: { slug: string }) {
+  let views = await getViewsCount();
+  incrementViews(slug);
+  return <ViewCounter allViews={views} slug={slug} />;
 }

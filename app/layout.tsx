@@ -1,4 +1,3 @@
-import { cn } from "@lib/utils";
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
@@ -84,9 +83,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen">
         <Providers>
-          <div className="main bg-grid">
-            <div className="bg-grid" />
-          </div>
+          <div className="main bg-grid"/>
           {children}
           <Sidebar />
           <Analytics />

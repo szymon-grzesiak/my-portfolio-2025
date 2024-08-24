@@ -83,7 +83,7 @@ const FetchData = () => {
             ></path>
           </svg>
         ) : (
-          "Click"
+          <p className="z-10">Click</p>
         )}
       </button>
       <div className="mt-5 w-2/3 sm:w-1/2">
