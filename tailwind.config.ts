@@ -15,7 +15,8 @@ const config: Config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
     "./content/**/*.mdx", 
-    "./public/**/*.svg"
+    "./public/**/*.svg",
+    "./lib/data.tsx",
   ],
   theme: {
     container: {

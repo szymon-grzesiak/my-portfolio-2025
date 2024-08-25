@@ -81,17 +81,16 @@ export const StickyScroll = ({
   });
 
   const backgroundColors = [
-    "#DFFEF6",
-    "var(--indigo-400)",
-    "#ffaa82",
-    "#ff8188",
+    "var(--slate-900)",
+    "var(--black)",
+    "var(--neutral-900)",
   ];
   return (
     <motion.div
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[30rem] customScrollContainer flex justify-center lg:gap-20 relative border-y-2 border-black"
+      className="h-[30rem] customScrollContainer flex justify-center lg:gap-20 border-y-2 border-black"
       ref={ref}
     >
       <div className="div relative flex items-start px-4">
@@ -131,7 +130,7 @@ export const StickyScroll = ({
           contentClassName
         )}
       >
-        <Image src={content[activeCard].content ?? null} width={500} height={500} alt={content[activeCard].title} className="rounded-md border-2 border-black shadow-black shadow-[6px_6px]" />
+        <Image src={content[activeCard].content ?? null} width={500} height={500} alt={content[activeCard].title} className="rounded-md border-2 border-white shadow-white shadow-[6px_6px]" />
         <DotsIndicator count={cardLength} activeIndex={activeDot} />
       </div>
     </motion.div>

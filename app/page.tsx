@@ -4,8 +4,8 @@ import { StickyScroll } from "@components/sticky-scroll-reveal";
 
 import angler from "../assets/angler.svg";
 
-import { projects } from "@lib/data";
-import FetchData, { content } from "@components/FetchData";
+import { projects, projectsData, timelineData } from "@lib/data";
+import FetchData from "@components/FetchData";
 import port from "../assets/boy_with_telescope.png";
 import { TbMailShare } from "react-icons/tb";
 import Marquee from "@components/marquee";
@@ -15,11 +15,15 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@components/ui/tooltip";
+import { Timeline } from "@components/timeline";
+import coolGuy from "../assets/coolguy2.webp";
+import DotPattern from "@components/dotpattern";
+import { cn } from "@lib/utils";
 
 export default function Home() {
   return (
     <main className="relative mx-auto">
-      <section className="relative lg:h-[90vh] pt-40 lg:pt-0 flex-col gap-10 lg:gap-0 lg:flex-row w-full flex items-end justify-around px-10">
+      <section className="lg:h-[90vh] pt-40 lg:pt-0 flex-col gap-10 lg:gap-0 lg:flex-row w-full flex items-end justify-around px-10">
         <Image src={port} alt="Guy with a telescope" className="" />
         <div className="flex flex-col items-start justify-center h-full gap-y-6">
           <h1
@@ -50,7 +54,7 @@ export default function Home() {
       </section>
       <section className="relative w-full">
         <div className="absolute w-full flex justify-center items-start -translate-y-4 z-[10]">
-          <h2 className="text-center bg-indigo-400 font-bold rounded-xl px-4 z-[100] border-2 border-black shadow-[4px_4px]">
+          <h2 className="text-center bg-indigo-400 font-bold rounded-xl px-4 z-[100] border-2 border-black shadow-[4px_4px] font-jersey text-2xl tracking-widest">
             SKILLS
           </h2>
         </div>
@@ -64,7 +68,7 @@ export default function Home() {
               <TooltipProvider key={index} delayDuration={100}>
                 <Tooltip>
                   <TooltipTrigger className="cursor-default">
-                    <Icon className="w-16 h-16 mr-6"/>
+                    <Icon className="w-16 h-16 mr-6" />
                   </TooltipTrigger>
                   <TooltipContent className="mr-6">
                     {project.title}
@@ -75,8 +79,25 @@ export default function Home() {
           })}
         </Marquee>
       </section>
-      <section className="w-full h-screen bg-white">Site designed and made by Me.</section>
-      <StickyScroll content={content} contentClassName="pr-2 xl:pr-0" />
+      <section className="relative pl-[132px] w-full bg-white">
+        <div className="p-4">
+          <Timeline data={timelineData} />
+          <DotPattern />
+        </div>
+        <Image
+          src={coolGuy}
+          alt="Sitting figure"
+          width={150}
+          height={150}
+          className="absolute bottom-[-55px] right-0 z-40"
+        />
+         <div className="w-full flex justify-center items-start translate-y-4 z-20">
+          <h2 className="text-center bg-indigo-400 font-bold rounded-xl px-4 border-2 border-black shadow-black shadow-[4px_4px] font-jersey text-2xl tracking-widest">
+            PROJECTS
+          </h2>
+        </div>
+      </section>
+      <StickyScroll content={projectsData} contentClassName="pr-2 xl:pr-0" />
       <section
         className="h-screen w-full flex"
         id="cool"

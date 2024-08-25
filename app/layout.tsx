@@ -6,22 +6,24 @@ import { Providers } from "@components/providers";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Sidebar from "@components/sidebar";
+import { siteConfig } from "@config/site";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ['400', '500', '700'],
-  display: 'swap',
-  variable: '--font-poppins',
+  weight: ["400", "500", "700"],
+  display: "swap",
+  variable: "--font-poppins",
 });
 
 const jersey = Jersey_10({
   subsets: ["latin"],
-  display: 'swap',
-  weight: ['400'],
-  variable: '--font-jersey',
+  display: "swap",
+  weight: ["400"],
+  variable: "--font-jersey",
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: "Szymon Grzesiak | Full Stack Developer | Portfolio",
   description:
     "Discover my projects in web development and software engineering, and learn more about my expertise in technologies like Next.js, React, and TypeScript.",
@@ -83,8 +85,8 @@ export default function RootLayout({
     >
       <body className="min-h-screen">
         <Providers>
-          <div className="main bg-grid"/>
-          {children}
+          <div className="main" />
+         {children}
           <Sidebar />
           <Analytics />
           <SpeedInsights />

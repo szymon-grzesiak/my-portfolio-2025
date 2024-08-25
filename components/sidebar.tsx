@@ -21,9 +21,6 @@ const Sidebar = () => {
             <Link href="/blog">BLOG</Link>
           </li>
           <li className="cursor-pointer font-jersey text-3xl lineThroughEffect">
-            <Link href="/contact">CONTACT</Link>
-          </li>
-          <li className="cursor-pointer font-jersey text-3xl lineThroughEffect">
             <Link href="/contact">RESUME</Link>
           </li>
         </div>

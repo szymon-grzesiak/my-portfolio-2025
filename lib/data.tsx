@@ -1,5 +1,8 @@
 import { FaGithub, FaLaravel } from "react-icons/fa";
-
+import Image from "next/image";
+import niceBg from "../assets/nicebg.png";
+import cover5 from "../assets/cover5.jpg";
+import keanu from "../assets/keanu.webp";
 const ReactIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
@@ -157,8 +160,8 @@ const TailwindCSSIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
         y2="36.552"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-color="#00c1e0"></stop>
-        <stop offset="1" stop-color="#009bb8"></stop>
+        <stop offset="0" stopColor="#00c1e0"></stop>
+        <stop offset="1" stopColor="#009bb8"></stop>
       </linearGradient>
       <path
         fill="url(#iOmQfjoCC4Hw6zVwRjSDha_x7XMNGh2vdqA_gr1)"
@@ -293,5 +296,90 @@ export const projects: ProjectType[] = [
   {
     title: "Laravel",
     icon: () => <FaLaravel className="mr-6 text-5xl" fill="#ff5530" />,
-  }
+  },
+];
+
+export const timelineData = [
+  {
+    title: "August 2023-Present",
+    occupation: "Helpfind - Frontend Developer",
+    content: (
+      <div className="flex flex-col gap-4">
+        <p className="text-neutral-800 dark:text-neutral-200 text-md font-normal ">
+          During my time at the company, I contributed to the development of a
+          CRM system using React, while also creating websites with Next.js. My
+          work involved both enhancing the CRM and building dynamic, responsive
+          web pages.
+        </p>
+        <p className="font-medium">Key responsibilities:</p>
+        <ul className="ml-4 list-disc list-inside">
+          <li className="list-item">
+            Developed and refined reusable components, enhancing both the
+            efficiency and uniformity of the codebase.
+          </li>
+          <li className="list-item">
+            Collaborated with designers using Figma to implement projects
+            according to visual requirements.
+          </li>
+          <li className="list-item">
+            Played a key role in migrating the CRM system to a modern tech
+            stack, significantly improving its performance and user experience.
+          </li>
+        </ul>
+        <p className="font-medium">Key Achievements:</p>
+        <ul className="ml-4 list-disc list-inside">
+          <li className="list-item">
+            Delivered a high-impact project, leading to increased customer
+            engagement with the new portal.
+          </li>
+          <li className="list-item">
+            Successfully launched two websites, ToTwojaKasa and Helpfind, using
+            Next.js.
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    title: "2021-Present",
+    occupation: "University of Kalisz - Computer Science Student",
+    content: (
+      <div>
+        <p className="text-neutral-800 dark:text-neutral-200 text-md font-normal mb-8">
+          Currently at 4th year. During my engineering studies in Computer
+          Science, I gained extensive knowledge and practical skills in key
+          areas of the field. I studied advanced algorithms and object-oriented
+          programming, primarily using Java. As part of my coursework, I
+          developed Android applications in Java, which helped me build
+          expertise in mobile programming. I also worked with SQL Server
+          databases, learning how to design and manage relational databases.
+          Additionally, I was introduced to PHP and the basics of the Laravel
+          framework, which enabled me to create dynamic web applications.
+        </p>
+      </div>
+    ),
+  },
+];
+
+export const curiosities = [
+  "I am a huge fan of the Marvel Cinematic Universe and have watched all the movies multiple times.",
+  "I love playing video games, especially RPGs and strategy games.",
+  "I enjoy reading books, particularly fantasy novels.",
+  "I am a big fan of the Witcher series, both the books and the games.",
+  "I am a keen follower of the NBA and enjoy watching basketball games.",
+];
+
+export const projectsData = [
+  {
+    title: "Blackfyre",
+    description:
+      "Blackfyre is a language learning app that uses games to help users improve their vocabulary and grammar. It is designed to make learning fun and engaging, with a focus on practical language skills.",
+    content: niceBg,
+  },
+  {
+    title: "Habit Talks",
+    description:
+      "Habit Talks is a platform where you can share your experiences and learn from others. It is a community of people who are passionate about self-improvement and personal growth.",
+    content: keanu,
+  },
 ];
