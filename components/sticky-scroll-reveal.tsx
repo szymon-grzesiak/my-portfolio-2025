@@ -4,6 +4,9 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 import Image from "next/image";
+import { HiExternalLink } from "react-icons/hi";
+import Link from "next/link";
+import { slug } from "github-slugger";
 
 const DotsIndicator = ({
   count,
@@ -130,7 +133,26 @@ export const StickyScroll = ({
           contentClassName
         )}
       >
-        <Image src={content[activeCard].content ?? null} width={500} height={500} alt={content[activeCard].title} className="rounded-md border-2 border-white shadow-white shadow-[6px_6px]" />
+        <div className="relative w-[500px] h-[250px] group">
+          <Image
+            src={content[activeCard].content ?? null}
+            alt={content[activeCard].title}
+            className="w-full h-full object-cover rounded-md z-10 border-2 border-white shadow-white shadow-[6px_6px]"
+          />
+
+          {/* Stały shadow na dole */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-100 flex items-end p-4 rounded-md z-20 w-full">
+            <div className="text-white w-full flex justify-between">
+              <h3 className="text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
+                Live Site <HiExternalLink className="text-white" />
+              </h3>
+              <h3 className="text-lg font-bold hover:text-[#00E5FF] cursor-pointer">
+                <Link href={`/${slug(content[activeCard].title)}`}>See Case Study</Link>
+              </h3>
+            </div>
+          </div>
+        </div>
+
         <DotsIndicator count={cardLength} activeIndex={activeDot} />
       </div>
     </motion.div>

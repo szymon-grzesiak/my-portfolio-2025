@@ -12,16 +12,16 @@ const Sidebar = () => {
         </Link>
         <div className="flex flex-col items-start justify-center h-full gap-12">
           <li className="cursor-pointer font-jersey text-3xl lineThroughEffect">
-            <Link href="#cool">ABOUT</Link>
-            </li>
+          <Link href="/#about">ABOUT</Link>
+          </li>
           <li className="cursor-pointer font-jersey text-3xl lineThroughEffect">
-            <Link href="/projects">PROJECTS</Link>
+          <Link href="/#projects">PROJECTS</Link>
           </li>
           <li className="cursor-pointer font-jersey text-3xl lineThroughEffect">
             <Link href="/blog">BLOG</Link>
           </li>
           <li className="cursor-pointer font-jersey text-3xl lineThroughEffect">
-            <Link href="/contact">RESUME</Link>
+            <Link href="/resume">RESUME</Link>
           </li>
         </div>
 

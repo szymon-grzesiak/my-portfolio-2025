@@ -92,7 +92,7 @@ export default function Home() {
           className="absolute bottom-[-55px] right-0 z-40"
         />
          <div className="w-full flex justify-center items-start translate-y-4 z-20">
-          <h2 className="text-center bg-indigo-400 font-bold rounded-xl px-4 border-2 border-black shadow-black shadow-[4px_4px] font-jersey text-2xl tracking-widest">
+          <h2 id="projects" className="text-center bg-indigo-400 font-bold rounded-xl px-4 border-2 border-black shadow-black shadow-[4px_4px] font-jersey text-2xl tracking-widest">
             PROJECTS
           </h2>
         </div>
