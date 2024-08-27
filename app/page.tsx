@@ -1,23 +1,23 @@
-import Clouds from "@components/Clouds";
+import Clouds from "@components/landing/Clouds";
 import Image from "next/image";
-import { StickyScroll } from "@components/sticky-scroll-reveal";
+import { StickyScroll } from "@components/landing/sticky-scroll-reveal";
 
 import angler from "../assets/angler.svg";
 
 import { projects, projectsData, timelineData } from "@lib/data";
-import FetchData from "@components/FetchData";
+import FetchData from "@components/landing/FetchData";
 import port from "../assets/boy_with_telescope.png";
 import { TbMailShare } from "react-icons/tb";
-import Marquee from "@components/marquee";
+import Marquee from "@components/landing/marquee";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@components/ui/tooltip";
-import { Timeline } from "@components/timeline";
+import { Timeline } from "@components/landing/timeline";
 import coolGuy from "../assets/coolguy2.webp";
-import DotPattern from "@components/dotpattern";
+import DotPattern from "@components/ui/dotpattern";
 import { cn } from "@lib/utils";
 
 export default function Home() {

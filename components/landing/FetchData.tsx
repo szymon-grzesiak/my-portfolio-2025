@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { TextGenerateEffect } from "./ui/text-generate-effect";
+import { TextGenerateEffect } from "../ui/text-generate-effect";
 import { curiosities } from "@lib/data";
 
 const FetchData = () => {

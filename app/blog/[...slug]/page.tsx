@@ -1,11 +1,11 @@
 import { posts } from "#site/content";
-import { MDXContent } from "@/components/mdx-components";
+import { MDXContent } from "@/components/blog/mdx-components";
 import { notFound } from "next/navigation";
 
 import "@/styles/mdx.css";
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
-import { Tag } from "@components/tag";
+import { Tag } from "@components/blog/tag";
 import { cache } from "react";
 import { increment } from "@db/actions";
 import { getViewsCount } from "@db/queries";

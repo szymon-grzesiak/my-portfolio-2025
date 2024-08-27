@@ -1,6 +1,6 @@
 import { posts } from "#site/content";
-import { PostItem } from "@components/post-item";
-import { Tag } from "@components/tag";
+import { PostItem } from "@components/blog/post-item";
+import { Tag } from "@components/blog/tag";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getAllTags, sortPosts, sortTagsByCount } from "@/lib/utils";
 import { Metadata } from "next";

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import Image from "next/image";
-import logo64 from "../app/logo-64.png";
+import logo64 from "../../app/logo-64.png";
 
 const Sidebar = () => {
   return (

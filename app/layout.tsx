@@ -2,10 +2,10 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
 import { Poppins, Jersey_10 } from "next/font/google";
-import { Providers } from "@components/providers";
+import { Providers } from "@components/shared/providers";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Sidebar from "@components/sidebar";
+import Sidebar from "@components/shared/sidebar";
 import { siteConfig } from "@config/site";
 
 const poppins = Poppins({
