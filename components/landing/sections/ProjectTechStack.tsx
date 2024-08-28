@@ -21,45 +21,29 @@ const ProjectTechStack: FC<ProjectTechStack> = ({
   className,
 }) => {
   return (
-    <section
-      className={cn(
-        "w-full overflow-hidden bg-white-900 px-6 py-10 dark:bg-black-200 md:px-[72px] md:pb-[43px] md:pt-[53px]",
-        className,
-      )}
-    >
-      <div className="mx-auto flex w-full max-w-[880px] flex-col">
-        <div>
-          <Typography className="text-[12px] font-semibold leading-[17px] text-primary-light dark:text-primary-dark md:text-[14px] md:leading-[20px]">
-            Technologies used
-          </Typography>
-          <Typography
-            as="h3"
-            className="md:leading-33px] mt-2.5 text-[28px] !font-semibold leading-[29px] tracking-[-0.14px] text-black-200 dark:text-white-900 md:text-[32px]"
-          >
-            Tech Stack
-          </Typography>
-        </div>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-[20px] gap-y-[33px] md:mt-11 md:gap-[35px]">
+        <div className="flex flex-wrap items-center justify-start gap-x-[20px] gap-y-[33px] md:gap-[35px]">
           {technologies.map((tech) => {
             const Icon = tech.icon || (() => null);
             return (
-              <TooltipProvider key={tech.title}>
+              <TooltipProvider key={tech.title} delayDuration={100}>
                 <Tooltip>
                   <TooltipTrigger>
                     <div
                       data-tooltip-id={tech.title}
                       className={cn(
-                        "flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white-800 dark:bg-black-300 md:h-[93px] md:w-[93px]",
+                        "flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white-800 dark:bg-black-300 md:h-[93px] md:w-[93px]"
                       )}
                     >
-                      <Icon
-                        className={cn(
-                          "h-[25px] w-[25px] md:h-[46px] md:w-[46px]",
-                        )}
-                      />
+                      <div className="border-2 border-black rounded-full p-3 shadow-[4px_4px]">
+                        <Icon
+                          className={cn(
+                            "h-[25px] w-[25px] md:h-[46px] md:w-[46px] "
+                          )}
+                        />
+                      </div>
                     </div>
                   </TooltipTrigger>
-                  <TooltipContent>
+                  <TooltipContent className="bg-white">
                     <span>{tech.title}</span>
                   </TooltipContent>
                 </Tooltip>
@@ -67,8 +51,7 @@ const ProjectTechStack: FC<ProjectTechStack> = ({
             );
           })}
         </div>
-      </div>
-    </section>
+     
   );
 };
 

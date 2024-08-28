@@ -1,6 +1,7 @@
 import { FaGithub, FaLaravel } from "react-icons/fa";
 import Image from "next/image";
 import niceBg from "../assets/nicebg.png";
+import blackfyreBg from "../assets/main_screen_blackfyre.png";
 import cover5 from "../assets/cover5.jpg";
 import keanu from "../assets/keanu.webp";
 const ReactIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
@@ -374,12 +375,12 @@ export const projectsData = [
     title: "Blackfyre",
     description:
       "Blackfyre is a language learning app that uses games to help users improve their vocabulary and grammar. It is designed to make learning fun and engaging, with a focus on practical language skills.",
-    content: niceBg,
+    content: blackfyreBg,
   },
   {
     title: "Habit Talks",
     description:
       "Habit Talks is a platform where you can share your experiences and learn from others. It is a community of people who are passionate about self-improvement and personal growth.",
-    content: keanu,
+    content: niceBg,
   },
 ];

@@ -15,7 +15,7 @@ const ProjectHero: FC<ProjectHeroProps> = ({
   return (
     <section
       className={cn(
-        "w-full overflow-hidden bg-white-800 px-6 pt-[72px] dark:bg-black-300 md:pt-[186px]",
+        "w-full overflow-hidden bg-white-800 px-6 pt-[72px] dark:bg-black-300 md:pt-[186px] bg-white/40 backdrop-blur-xl border-b-2 border-b-black",
         className,
       )}
     >
