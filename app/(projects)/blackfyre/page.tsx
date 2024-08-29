@@ -1,13 +1,15 @@
 import ProjectHero from "@components/landing/sections/ProjectHero";
 import ProjectTechStack from "@components/landing/sections/ProjectTechStack";
 import React from "react";
-import { technologies } from "./data";
+import { features, technologies } from "./data";
 import Typography from "@components/shared/Typography";
 import ProjectProcess from "@components/landing/sections/ProjectProcess";
 import { challenges, learnings } from "./data";
 import ProjectOtherCaseStudies from "@components/landing/sections/ProjectOtherCaseStudies";
 import DoubleColumn from "./double-column";
 import { ChallengeArrow, TickIcon } from "@components/icons";
+import { ArrowRight } from "lucide-react";
+import { FaStar } from "react-icons/fa";
 
 function Page() {
   return (
@@ -20,17 +22,14 @@ function Page() {
         leftSide={<h2>Overwiew</h2>}
         rightSide={
           <>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis
-            eligendi, sint voluptatum quaerat culpa deserunt ipsam cum
-            consequuntur repellat in excepturi perferendis. Autem fuga aliquam
-            nulla illum quia aspernatur facere? Explicabo iusto odio vel maxime
-            quod quae alias autem doloribus quam eveniet. Iusto, cumque modi
-            culpa alias totam id officiis vel suscipit mollitia laboreventore,
-            consequatur non numquam ullam! Provident, ipsa assumenda. Sapiente
-            mollitia placeat possimus praesentium eligendi repudiandae impedit
-            possimus accusamus blanditiis velit consequuntur maxime tempore cum,
-            aspernatur ex molestias recusandae perferendis! Tempore quis
-            expedita commodi aliquid ex! Animi, vel? Molestiae saepe voluptas
+            The objective of the project is to create a web platform for
+            language learning that allows users to create personalized sets of
+            vocabulary with translations, learn using the flashcard method,
+            solve quizzes, and engage with language games. Users will also be
+            able to track their progress and customize the app&apos;s
+            appearance. The scope of the project includes interface design,
+            functionality implementation, and evaluation of the learning
+            method&apos;s effectiveness.
           </>
         }
       />
@@ -38,14 +37,20 @@ function Page() {
         leftSide={<h2>Problem</h2>}
         rightSide={
           <>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            ut commodi nostrum dolores sapiente, repellendus fugit! Voluptate
-            fugit odit illo deserunt nobis, delectus neque tempora eveniet
-            praesentium modi rerum non? Ex molestiae vero, eos atque suscipit
-            laboriosam ipsam in quasi mollitia fuga tenetur illum incidunt
-            delectus consectetur dolorem eveniet quisquam, quo sint possimus
-            consequatur sed? Ex aspernatur saepe impedit repellat! Itaque ipsa
-            perspiciatis nesciunt, aperiam pariatur aliquam ab nam at quis
+            Current technologies offer countless possibilities to facilitate
+            learning and acquiring new skills. However, the proposed language
+            vocabulary learning platform meets the needs of individuals seeking
+            modern educational methods. Unlike other available solutions such as
+            Duolingo and Anki, this platform focuses on interactive vocabulary
+            learning through flashcards, quizzes, and language games like
+            Hangman, while also allowing users to share materials with others.
+            In contrast to Duolingo, which offers a language learning process
+            through a series of lessons and tasks, the created platform allows
+            for greater content personalization and direct involvement in
+            creating educational material. Meanwhile, Anki, a tool focused on
+            repetition and efficient memorization using a card system, does not
+            offer as wide a range of interactive learning forms as the proposed
+            application.
           </>
         }
       />
@@ -58,37 +63,29 @@ function Page() {
         }
       />
       <DoubleColumn
-        leftSide={<h2>Reflection</h2>}
+        leftSide={<h2>Features</h2>}
         rightSide={
           <>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            ut commodi nostrum dolores sapiente, repellendus fugit! Voluptate
-            fugit odit illo deserunt nobis, delectus neque tempora eveniet
-            praesentium modi rerum non? Ex molestiae vero, eos atque suscipit
-            laboriosam ipsam in quasi mollitia fuga tenetur illum incidunt
-            delectus consectetur dolorem eveniet quisquam, quo sint possimus
-            consequatur sed? Ex aspernatur saepe impedit repellat! Itaque ipsa
-            perspiciatis nesciunt, aperiam pariatur aliquam ab nam at quis
+            Features Overview My platform offers a comprehensive suite of tools
+            designed to facilitate personalized and interactive language
+            learning. Users can create custom vocabulary sets and engage with
+            them through three dynamic games: Flashcards, Matching Tiles, and
+            Hangman. To enhance the learning experience, I provide
+            Google/GitHub authentication for easy access and secure login.
+            <h3 className="font-semibold my-5">Key Features:</h3>
+            <div className="flex flex-col gap-6 rounded-[10px] bg-white-800 dark:bg-black-300 md:gap-[30px]">
+              {features.map((feature) => (
+                <p key={feature} className="flex gap-[11px]">
+                  <FaStar className="mt-[6px] shrink-0 text-indigo-400" />
+                  <span>{feature}</span>
+                </p>
+              ))}
+            </div>
           </>
         }
       />
       <DoubleColumn
-        leftSide={<h2>Features</h2>}
-        rightSide={
-          <>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            ut commodi nostrum dolores sapiente, repellendus fugit! Voluptate
-            fugit odit illo deserunt nobis, delectus neque tempora eveniet
-            praesentium modi rerum non? Ex molestiae vero, eos atque suscipit
-            laboriosam ipsam in quasi mollitia fuga tenetur illum incidunt
-            delectus consectetur dolorem eveniet quisquam, quo sint possimus
-            consequatur sed? Ex aspernatur saepe impedit repellat! Itaque ipsa
-            perspiciatis nesciunt, aperiam pariatur aliquam ab nam at quis
-          </>
-        }
-      />
-      <DoubleColumn
-        leftSide={<h2>Features</h2>}
+        leftSide={<h2>Process</h2>}
         rightSide={
           <>
             <ProjectProcess />
@@ -127,8 +124,7 @@ function Page() {
           </>
         }
       />
-
-      <ProjectOtherCaseStudies />
+      {/* <ProjectOtherCaseStudies /> */}
     </main>
   );
 }

@@ -39,6 +39,7 @@ export const StickyScroll = ({
     title: string;
     description: string;
     content?: React.ReactNode | any;
+    link?: string;
   }[];
   contentClassName?: string;
 }) => {
@@ -133,7 +134,7 @@ export const StickyScroll = ({
           contentClassName
         )}
       >
-        <div className="relative w-[500px] h-[250px] group">
+        <div className="relative w-[525px] h-[250px] group">
           <Image
             src={content[activeCard].content ?? null}
             alt={content[activeCard].title}
@@ -144,7 +145,9 @@ export const StickyScroll = ({
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-100 flex items-end p-4 rounded-md z-20 w-full">
             <div className="text-white w-full flex justify-between">
               <h3 className="text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
+                <Link className="flex gap-2 justify-center items-center" href={content[activeCard].link as string} target="_blank">
                 Live Site <HiExternalLink className="text-white" />
+                </Link>
               </h3>
               <h3 className="text-lg font-bold hover:text-[#00E5FF] cursor-pointer">
                 <Link href={`/${slug(content[activeCard].title)}`}>See Case Study</Link>

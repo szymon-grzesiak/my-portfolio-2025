@@ -5,7 +5,7 @@ import logo64 from "../../app/logo-64.png";
 
 const Sidebar = () => {
   return (
-    <div className="px-4 fixed left-0 top-0 h-screen bg-white/50 border-r-2 border-r-slate-400 backdrop-blur-xl z-[100]">
+    <div className="px-2 md:px-4 fixed left-0 top-0 h-screen bg-white/50 border-r-2 border-r-slate-400 backdrop-blur-xl z-[100]">
       <ul className="flex h-screen flex-col justify-between items-center py-6 gap-16">
         <Link href={"/"}>
           <Image src={logo64} width={50} height={50} alt="Logo" />

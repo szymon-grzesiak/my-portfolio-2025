@@ -34,6 +34,7 @@ import { DevelopIcon } from "./process/DevelopIcon";
 import { PlanIcon } from "./process/PlanIcon";
 import { SiMicrosoftsqlserver } from "react-icons/si";
 import { GsapIcon } from "./GsapIcon";
+import { TinyMCE } from "./tinymce";
 
 export const processIcons = [
   {
@@ -150,4 +151,5 @@ export {
   CallIcon,
   MessageIcon,
   GsapIcon,
+  TinyMCE,
 };

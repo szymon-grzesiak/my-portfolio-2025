@@ -4,6 +4,7 @@ import niceBg from "../assets/nicebg.png";
 import blackfyreBg from "../assets/main_screen_blackfyre.png";
 import cover5 from "../assets/cover5.jpg";
 import keanu from "../assets/keanu.webp";
+import resoursea from "../assets/resoursea.png";
 const ReactIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   return (
     <svg
@@ -376,11 +377,13 @@ export const projectsData = [
     description:
       "Blackfyre is a language learning app that uses games to help users improve their vocabulary and grammar. It is designed to make learning fun and engaging, with a focus on practical language skills.",
     content: blackfyreBg,
+    link: 'https://szymongrzesiak.dev/blackfyre/',
   },
   {
-    title: "Habit Talks",
+    title: "Resoursea",
     description:
-      "Habit Talks is a platform where you can share your experiences and learn from others. It is a community of people who are passionate about self-improvement and personal growth.",
-    content: niceBg,
+      "Resoursea is a platform where you can share your resources with others. It is designed to help students and professionals find the resources they need to succeed in their studies and careers.",
+    content: resoursea,
+    link: "https://resoursea.vercel.app/",
   },
 ];
