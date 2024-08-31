@@ -82,7 +82,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <article className="relative container py-6 prose max-w-3xl mx-auto">
         <h1 className="mb-2">{post.title}</h1>
         <Views slug={post.slug} />
-        <div className="flex gap-2 mb-2">
+        <div className="flex gap-2 mb-2 flex-wrap">
           {post.tags?.map((tag) => (
             <Tag tag={tag} key={tag} />
           ))}
