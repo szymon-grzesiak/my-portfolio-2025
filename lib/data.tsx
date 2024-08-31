@@ -303,7 +303,7 @@ export const timelineData = [
     occupation: "Helpfind - Frontend Developer",
     content: (
       <div className="flex flex-col gap-4">
-        <p className="text-neutral-800 dark:text-neutral-200 text-md font-normal ">
+        <p className="text-neutral-800 text-md font-normal ">
           During my time at the company, I contributed to the development of a
           CRM system using React, while also creating websites with Next.js. My
           work involved both enhancing the CRM and building dynamic, responsive
@@ -343,7 +343,7 @@ export const timelineData = [
     occupation: "University of Kalisz - Computer Science Student",
     content: (
       <div>
-        <p className="text-neutral-800 dark:text-neutral-200 text-md font-normal mb-8">
+        <p className="text-neutral-800 text-md font-normal mb-8">
           Currently at 4th year. During my engineering studies in Computer
           Science, I gained extensive knowledge and practical skills in key
           areas of the field. I studied advanced algorithms and object-oriented
