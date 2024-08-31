@@ -4,12 +4,14 @@ import { Tag } from "@components/blog/tag";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getAllTags, sortPosts, sortTagsByCount } from "@/lib/utils";
 import { Metadata } from "next";
+import { BackgroundBeamsWithCollision } from "@/components/blog/background-beams-with-collision";
+import Image from "next/image";
+import coolGuy from "../../assets/coolguy2.webp";
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Read my thoughts on software development, design, and more.',
+  title: "Blog",
+  description: "Read my thoughts on software development, design, and more.",
 };
-
 
 export default async function BlogPage() {
   const sortedPosts = sortPosts(posts.filter((post) => post.published));
@@ -18,40 +20,48 @@ export default async function BlogPage() {
   const sortedTags = sortTagsByCount(tags);
 
   return (
-    <div className="relative container max-w-4xl py-6 lg:py-10">
-      <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
-        <div className="flex-1 space-y-4">
-          <h1 className="inline-block font-black text-4xl lg:text-5xl">Blog</h1>
-          <p className="text-xl text-muted-foreground">
-            My ramblings on all things web dev.
-          </p>
-        </div>
+    <div className="relative">
+      <div className="relative h-64">
+        <BackgroundBeamsWithCollision>
+          <h2 className="flex flex-col relative z-20 text-4xl lg:text-7xl font-bold text-center text-black dark:text-white font-sans tracking-tight">
+            Read my thoughts on
+            <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+              <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-blue-300 via-blue-500 to-blue-800 py-4">
+                <span className="">Software Development.</span>
+              </div>
+            </div>
+          </h2>
+        </BackgroundBeamsWithCollision>
+        <Image
+          src={coolGuy}
+          alt="Sitting figure"
+          width={150}
+          height={150}
+          className="absolute bottom-[-55px] right-20 z-[120]"
+        />
       </div>
-      <div className="grid grid-cols-12 gap-3 mt-8">
-        <div className="col-span-12 col-start-1 sm:col-span-8">
-          <hr />
-          {sortedPosts?.length > 0 ? (
-            <ul className="flex flex-col">
-              {sortedPosts.map((post) => {
-                const { slug, date, title, description, tags } = post;
-                return (
-                  <li key={slug}>
-                    <PostItem
-                      slug={slug}
-                      date={date}
-                      title={title}
-                      description={description}
-                      tags={tags}
-                    />
-                  </li>
-                );
-              })}
-            </ul>
-          ) : (
-            <p>Nothing to see here yet</p>
-          )}
-        </div>
-        <Card className="col-span-12 row-start-3 h-fit sm:col-span-4 sm:col-start-9 sm:row-start-1">
+      <div className="container flex flex-col-reverse md:flex-row max-w-5xl px-6 py-6 gap-10 lg:py-10">
+        {sortedPosts?.length > 0 ? (
+          <ul className="flex flex-col">
+            {sortedPosts.map((post) => {
+              const { slug, date, title, description, tags } = post;
+              return (
+                <li key={slug}>
+                  <PostItem
+                    slug={slug}
+                    date={date}
+                    title={title}
+                    description={description}
+                    tags={tags}
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p>Nothing to see here yet</p>
+        )}
+        <Card className="bg-white/70 row-start-3 h-fit border-2 border-black shadow-[4px_4px]">
           <CardHeader>
             <CardTitle>Tags</CardTitle>
           </CardHeader>

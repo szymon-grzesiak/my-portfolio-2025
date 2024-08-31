@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Sidebar from "@components/shared/sidebar";
 import { siteConfig } from "@config/site";
+import { FamilyButton } from "@components/shared/family-button";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -86,8 +87,13 @@ export default function RootLayout({
       <body className="min-h-screen">
         <Providers>
           <div className="main" />
-         {children}
+          {children}
+
           <Sidebar />
+          <div className="block md:hidden fixed z-50 right-4 bottom-4">
+            <FamilyButton />
+          </div>
+
           <Analytics />
           <SpeedInsights />
         </Providers>

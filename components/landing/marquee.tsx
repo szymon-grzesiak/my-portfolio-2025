@@ -23,7 +23,7 @@ export default function Marquee({
     <div
       {...props}
       className={cn(
-        "bg-white/40 backdrop-blur-xl pt-10 pb-5 group [--duration:40s] [--gap:1rem] [gap:var(--gap)] w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]",
+        "bg-white/40 backdrop-blur-xl pt-5 pb-3 md:pt-10 md:pb-5 group [--duration:40s] [--gap:1rem] [gap:var(--gap)] w-full inline-flex flex-nowrap overflow-hidden md:[mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]",
         {
           "flex-row": !vertical,
           "flex-col": vertical,

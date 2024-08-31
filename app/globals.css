@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
 
 @layer base {
   :root {
@@ -37,7 +46,7 @@
   }
 
   .customScrollContainer {
-    overflow-y: auto; /* zachowuje przewijanie */
+    overflow: auto; /* zachowuje przewijanie */
   }
 
   /* Teraz ukrywasz scrollbar tylko dla tego konkretnego kontenera */
@@ -89,6 +98,7 @@
 .button::after {
   content: "";
   position: absolute;
+  border-radius: 24px;
   z-index: -1;
   background-color: black;
   inset: 0;
@@ -100,6 +110,7 @@
 .button:hover::after,
 .button:focus-visible::after {
   transform-origin: left;
+  border-radius: 24px;
   scale: 1 1;
 }
 
@@ -133,6 +144,11 @@
 
 .lineThroughEffect:hover::after,
 .lineThroughEffect:focus-visible::after {
+  transform-origin: left;
+  scale: 1 1;
+}
+
+.active-lineThroughEffect::after {
   transform-origin: left;
   scale: 1 1;
 }
@@ -235,10 +251,6 @@
 
 .hover\:animation-paused:hover {
   animation-play-state: paused;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 .bgCool {

@@ -1,9 +1,5 @@
 import { FaGithub, FaLaravel } from "react-icons/fa";
-import Image from "next/image";
-import niceBg from "../assets/nicebg.png";
 import blackfyreBg from "../assets/main_screen_blackfyre.png";
-import cover5 from "../assets/cover5.jpg";
-import keanu from "../assets/keanu.webp";
 import resoursea from "../assets/resoursea.png";
 const ReactIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   return (
@@ -364,12 +360,19 @@ export const timelineData = [
 ];
 
 export const curiosities = [
-  "I am a huge fan of the Marvel Cinematic Universe and have watched all the movies multiple times.",
-  "I love playing video games, especially RPGs and strategy games.",
-  "I enjoy reading books, particularly fantasy novels.",
-  "I am a big fan of the Witcher series, both the books and the games.",
-  "I am a keen follower of the NBA and enjoy watching basketball games.",
+  "I graduated in geography and languages ​​in high school",
+  "My favorite fruit is grapes",
+  "I began my programming journey with Java in 2020",
+  "My dream place to live is California, San Diego. Because there are more than 300 sunny days a year",
+  "I have been training calisthenics since 2016, but with considerable breaks",
+  "I just want you to know that I wish you all the best 🍀",
+  "I'm a big fan of Game of Thrones, and I've read all the books",
+  "Design of this website is called Neo-brutalism with accents of Glassmorphism",
+  "Seriously, do you keep lurking? 🤔",
+  "If you want to know more about me, just ask me on my socials"
 ];
+
+
 
 export const projectsData = [
   {

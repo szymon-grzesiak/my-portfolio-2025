@@ -10,6 +10,7 @@ import { cache } from "react";
 import { increment } from "@db/actions";
 import { getViewsCount } from "@db/queries";
 import ViewCounter from "../view-counter";
+import { ClientSideTableOfContents } from "@components/blog/client-side-toc";
 interface PostPageProps {
   params: {
     slug: string[];
@@ -77,26 +78,35 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <article className="relative container py-6 prose dark:prose-invert max-w-3xl mx-auto">
-      <h1 className="mb-2">{post.title}</h1>
-      <Views slug={post.slug} />
-      <div className="flex gap-2 mb-2">
-        {post.tags?.map((tag) => (
-          <Tag tag={tag} key={tag} />
-        ))}
-      </div>
-      {post.description ? (
-        <p className="text-xl mt-0 text-muted-foreground">{post.description}</p>
-      ) : null}
-      <hr className="my-4" />
-      <MDXContent code={post.body} />
-    </article>
+    <main className="container relative mx-auto w-full flex-1 justify-center gap-[50px] py-6 md:flex lg:gap-10 lg:pb-10 bg-white/70 pr-5">
+      <article className="relative container py-6 prose dark:prose-invert max-w-3xl mx-auto">
+        <h1 className="mb-2">{post.title}</h1>
+        <Views slug={post.slug} />
+        <div className="flex gap-2 mb-2">
+          {post.tags?.map((tag) => (
+            <Tag tag={tag} key={tag} />
+          ))}
+        </div>
+        {post.description ? (
+          <p className="text-xl mt-0 text-muted-foreground">
+            {post.description}
+          </p>
+        ) : null}
+        <hr className="my-4" />
+        <MDXContent code={post.body} />
+      </article>
+      <aside className="sticky">
+        <div className="sticky top-16 hidden pb-6 text-sm xl:block">
+          <div className="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10">
+            <ClientSideTableOfContents />
+          </div>
+        </div>
+      </aside>
+    </main>
   );
 }
 
-
 let incrementViews = cache(increment);
-
 
 async function Views({ slug }: { slug: string }) {
   let views = await getViewsCount();
