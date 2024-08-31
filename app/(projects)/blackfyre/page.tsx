@@ -102,7 +102,7 @@ function Page() {
             <div className="flex flex-col gap-6 rounded-[10px] bg-white-800 dark:bg-black-300 md:gap-[30px]">
               {challenges.map((challenge) => (
                 <p key={challenge} className="flex gap-[11px]">
-                  <ChallengeArrow className="mt-[6px] shrink-0" />
+                <TickIcon className="mt-[6px] shrink-0" />
                   <span>{challenge}</span>
                 </p>
               ))}
@@ -117,7 +117,7 @@ function Page() {
             <div className="flex flex-col gap-6 rounded-[10px] bg-white-800 6 dark:bg-black-300 md:gap-[30px]">
               {learnings.map((learning) => (
                 <p key={learning} className="flex gap-[11px]">
-                  <TickIcon className="mt-[6px] shrink-0" />
+                   <ChallengeArrow className="mt-[6px] shrink-0" />
                   <span>{learning}</span>
                 </p>
               ))}

@@ -130,7 +130,8 @@ function Page() {
                 />
                 <div className="absolute inset-0 hover:bg-black hover:bg-opacity-50 rounded-3xl">
                   <div className="flex justify-center items-center h-full text-6xl text-white">
-                    Visit website <ArrowRight className="text-white w-[50px] h-[50px] animate-bounce" />
+                    Visit website{" "}
+                    <ArrowRight className="text-white w-[50px] h-[50px] animate-bounce" />
                   </div>
                 </div>
               </div>
@@ -146,7 +147,7 @@ function Page() {
             <div className="flex flex-col gap-6 rounded-[10px] bg-white-800 dark:bg-black-300 md:gap-[30px]">
               {challenges.map((challenge) => (
                 <p key={challenge} className="flex gap-[11px]">
-                  <ChallengeArrow className="mt-[6px] shrink-0" />
+                  <TickIcon className="mt-[6px] shrink-0" />
                   <span>{challenge}</span>
                 </p>
               ))}
@@ -161,7 +162,7 @@ function Page() {
             <div className="flex flex-col gap-6 rounded-[10px] bg-white-800 6 dark:bg-black-300 md:gap-[30px]">
               {learnings.map((learning) => (
                 <p key={learning} className="flex gap-[11px]">
-                  <TickIcon className="mt-[6px] shrink-0" />
+                  <ChallengeArrow className="mt-[6px] shrink-0" />
                   <span>{learning}</span>
                 </p>
               ))}

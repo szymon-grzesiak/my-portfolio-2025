@@ -25,7 +25,7 @@ const AnglerSection = () => {
     <section className="h-full md:h-screen w-full flex md:px-6 justify-between md:justify-normal flex-col-reverse md:flex-row pt-6 md:pt-0">
       <Image
         src={angler}
-        className="w-full md:max-w-[918px] h-auto shrink md:aspect-square pb-12 max-w-2/3 sm:w-2/3"
+        className="shrink-0 w-full md:max-w-[918px] h-auto md:aspect-square pb-12 max-w-2/3 sm:w-2/3"
         alt={"angler"}
       />
       <div className="md:pt-20 flex flex-col justify-start items-center font-bold text-[32px] xl:px-6 w-full">
