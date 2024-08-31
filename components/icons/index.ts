@@ -34,7 +34,7 @@ import { DevelopIcon } from "./process/DevelopIcon";
 import { PlanIcon } from "./process/PlanIcon";
 import { SiMicrosoftsqlserver } from "react-icons/si";
 import { GsapIcon } from "./GsapIcon";
-import { TinyMCE } from "./tinymce";
+import { TinyMCE } from "./Tinymce";
 
 export const processIcons = [
   {

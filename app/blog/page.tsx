@@ -40,7 +40,7 @@ export default async function BlogPage() {
           className="absolute bottom-[-55px] right-20 z-[120]"
         />
       </div>
-      <div className="container flex flex-col-reverse md:flex-row max-w-5xl px-6 py-6 gap-10 lg:py-10">
+      <div className="md:pl-[140px] container flex flex-col-reverse md:flex-row max-w-5xl px-6 py-6 gap-10 lg:py-10">
         {sortedPosts?.length > 0 ? (
           <ul className="flex flex-col">
             {sortedPosts.map((post) => {
