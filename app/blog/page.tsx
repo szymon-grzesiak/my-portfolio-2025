@@ -65,7 +65,7 @@ export default async function BlogPage() {
           <CardHeader>
             <CardTitle>Tags</CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-wrap gap-2">
+          <CardContent className="flex flex-wrap gap-3">
             {sortedTags?.map((tag) => (
               <Tag tag={tag} key={tag} count={tags[tag]} />
             ))}
