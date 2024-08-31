@@ -302,15 +302,15 @@ export const timelineData = [
     title: "August 2023-Present",
     occupation: "Helpfind - Frontend Developer",
     content: (
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col">
         <p className="text-neutral-800 text-md font-normal ">
           During my time at the company, I contributed to the development of a
           CRM system using React, while also creating websites with Next.js. My
           work involved both enhancing the CRM and building dynamic, responsive
           web pages.
         </p>
-        <p className="font-medium">Key responsibilities:</p>
-        <ul className="ml-4 list-disc list-inside">
+        <p className="font-medium py-3">Key responsibilities:</p>
+        <ul className="flex flex-col gap-2 ml-4 list-disc list-inside">
           <li className="list-item">
             Developed and refined reusable components, enhancing both the
             efficiency and uniformity of the codebase.
@@ -324,7 +324,7 @@ export const timelineData = [
             stack, significantly improving its performance and user experience.
           </li>
         </ul>
-        <p className="font-medium">Key Achievements:</p>
+        <p className="font-medium py-3">Key Achievements:</p>
         <ul className="ml-4 list-disc list-inside">
           <li className="list-item">
             Delivered a high-impact project, leading to increased customer

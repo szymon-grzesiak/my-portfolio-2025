@@ -39,7 +39,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="flex justify-center flex-col items-center max-w-7xl mx-auto">
-        <h2 id="about" className="text-4xl mb-10 text-black dark:text-white font-bold font-jersey tracking-wide">
+        <h2 id="about" className="text-4xl mb-10 text-black font-bold font-jersey tracking-wide">
           ABOUT ME
         </h2>
       </div>
