@@ -16,6 +16,11 @@ import coolGuy from "../assets/coolguy2.webp";
 import DotPattern from "@components/ui/dotpattern";
 import SwipeCards from "@components/landing/Swiper/SwipeCards";
 import AnglerSection from "@components/landing/sections/AnglerSection";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@components/ui/popover";
 
 export default function Home() {
   return (
@@ -43,7 +48,8 @@ export default function Home() {
               </div>
             </h1>
             <p className="md:w-full md:max-w-[440px] text-lg text-black">
-              My full name is Szymon Grzesiak, I&apos;m from Poland and I&apos;m Full Stack Developer with a focus on Web Development. My expertise
+              My full name is Szymon Grzesiak, I&apos;m from Poland and I&apos;m
+              Full Stack Developer with a focus on Web Development. My expertise
               lies in building Responsive Web Designs using modern technologies
               like Next.js. 🚀
             </p>
@@ -72,16 +78,30 @@ export default function Home() {
           {projects.map((project, index) => {
             const Icon = project.icon;
             return (
-              <TooltipProvider key={index} delayDuration={100}>
-                <Tooltip>
-                  <TooltipTrigger className="cursor-default">
-                    <Icon className="w-16 h-16 mr-6" />
-                  </TooltipTrigger>
-                  <TooltipContent className="mr-6">
-                    {project.title}
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              <div key={index}>
+                <div className="hidden md:block">
+                  <TooltipProvider delayDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className="cursor-default">
+                        <Icon className="w-16 h-16 mr-6" />
+                      </TooltipTrigger>
+                      <TooltipContent className="mr-6">
+                        {project.title}
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </div>
+                <div className="block md:hidden">
+                  <Popover>
+                    <PopoverTrigger className="cursor-default">
+                      <Icon className="w-16 h-16 mr-6" />
+                    </PopoverTrigger>
+                    <PopoverContent className="w-fit bg-white">
+                      {project.title}
+                    </PopoverContent>
+                  </Popover>
+                </div>
+              </div>
             );
           })}
         </Marquee>
