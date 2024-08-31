@@ -145,7 +145,7 @@ const FamilyButton = () => {
               >
                 {isExpanded ? (
                   <motion.div
-                    className="p-[10px] group bg-indigo-200 dark:bg-black/50 border border-cyan-100/30 hover:border-neutral-200 text-orange-50 rounded-full shadow-2xl transition-colors duration-300"
+                    className="p-[10px] group bg-indigo-200 border border-cyan-100/30 hover:border-neutral-200 text-orange-50 rounded-full shadow-2xl transition-colors duration-300"
                     onClick={toggleExpand}
                     layoutId="expand-toggle"
                     initial={false}
@@ -165,7 +165,7 @@ const FamilyButton = () => {
                 ) : (
                   <motion.div
                     className={cn(
-                      "p-[10px] group bg-indigo-200 dark:bg-cyan-500/90 text-cyan-50 border border-cyan-100/10 shadow-2xl transition-colors duration-200"
+                      "p-[10px] group bg-indigo-200 text-cyan-50 border border-cyan-100/10 shadow-2xl transition-colors duration-200"
                     )}
                     style={{ borderRadius: 24 }}
                     onClick={toggleExpand}

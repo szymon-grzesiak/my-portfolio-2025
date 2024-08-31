@@ -24,7 +24,6 @@ export function ClientSideTableOfContents() {
     url: item.url,
   }));
 
-  console.log("tableOfItems", tableOfItems);
   const items = { items: tableOfItems };
 
   return <DashboardTableOfContents toc={items} />;

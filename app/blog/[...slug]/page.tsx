@@ -79,7 +79,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <main className="px-6 md:pl-[160px] container relative mx-auto w-full flex-1 justify-center gap-[50px] py-6 md:flex lg:gap-10 lg:pb-10 bg-white/70 pr-5">
-      <article className="relative container py-6 prose dark:prose-invert max-w-3xl mx-auto">
+      <article className="relative container py-6 prose max-w-3xl mx-auto">
         <h1 className="mb-2">{post.title}</h1>
         <Views slug={post.slug} />
         <div className="flex gap-2 mb-2">

@@ -27,7 +27,6 @@ interface Props {
 }
 
 const SwipeCards = ({ content }: Props) => {
-  console.log(content.length);
   return (
     <div className="h-[40rem] p-6 w-full flex justify-center items-center border-y-2 border-black bg-white/70">
       <Swiper
