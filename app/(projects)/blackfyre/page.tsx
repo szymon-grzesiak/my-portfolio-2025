@@ -20,7 +20,7 @@ function Page() {
       />
       <div className="mx-auto text-center p-3 mt-2 rounded-full border-2 bg-white border-black shadow-[4px_4px] shadow-black w-fit font-bold text-red-500">*This is my final year engineer project and I can&apos;t show live site yet, because this could be against rules of my University.</div>
       <DoubleColumn
-        leftSide={<h2>Overwiew</h2>}
+        leftSide={<h2>Overview</h2>}
         rightSide={
           <>
             The objective of the project is to create a web platform for

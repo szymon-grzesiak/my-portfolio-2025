@@ -20,7 +20,7 @@ function Page() {
     <main className="relative bgCool">
       <ProjectHero title="Resoursea" titleDescription="Share your knowledge" />
       <DoubleColumn
-        leftSide={<h2>Overwiew</h2>}
+        leftSide={<h2>Overview</h2>}
         rightSide={
           <>
             The objective of the Resoursea app is to create a versatile platform
