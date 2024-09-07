@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Sidebar from "@components/shared/sidebar";
 import { siteConfig } from "@config/site";
 import { FamilyButton } from "@components/shared/family-button";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -84,6 +85,20 @@ export default function RootLayout({
       lang="en"
       className={`text-black ${poppins.variable} ${jersey.variable} font-sans antialiased bg-white dark:text-white dark:bg-[#111110]`}
     >
+      <head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-9YFNJST6XE"
+        ></Script>
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-9YFNJST6XE');
+          `}
+        </Script>
+      </head>
       <body className="min-h-screen">
         <Providers>
           <div className="main" />
