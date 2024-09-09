@@ -109,7 +109,7 @@ export default function RootLayout({
             <FamilyButton />
           </div>
 
-          <Analytics />
+           <Analytics />
           <SpeedInsights />
         </Providers>
       </body>

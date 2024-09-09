@@ -34,7 +34,7 @@ const nextConfig = {
 };
 const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline';
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' data: https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com https://assets.aceternity.com;
     style-src 'self' 'unsafe-inline';
     img-src * blob: data: https://assets.aceternity.com;
     media-src 'none';
