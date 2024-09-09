@@ -2,23 +2,20 @@ import ProjectHero from "@components/landing/sections/ProjectHero";
 import ProjectTechStack from "@components/landing/sections/ProjectTechStack";
 import React from "react";
 import { features, technologies } from "./data";
-import Typography from "@components/shared/Typography";
 import ProjectProcess from "@components/landing/sections/ProjectProcess";
 import { challenges, learnings } from "./data";
-import ProjectOtherCaseStudies from "@components/landing/sections/ProjectOtherCaseStudies";
 import DoubleColumn from "./double-column";
 import { ChallengeArrow, TickIcon } from "@components/icons";
-import { ArrowRight } from "lucide-react";
 import { FaStar } from "react-icons/fa";
 
 function Page() {
   return (
-    <main className="relative bgCool">
+    <main className="relative bgCool md:pl-[130px] flex flex-col items-center">
       <ProjectHero
         title="Blackfyre"
         titleDescription="Your comfort learning platform"
       />
-      <div className="mx-auto text-center p-3 mt-2 rounded-full border-2 bg-white border-black shadow-[4px_4px] shadow-black w-fit font-bold text-red-500">*This is my final year engineer project and I can&apos;t show live site yet, because this could be against rules of my University.</div>
+      <div className="text-center p-3 mx-5 mt-4 rounded-full border-2 bg-white border-black shadow-[4px_4px] shadow-black w-fit font-bold text-red-500">*This is my final year engineer project and I can&apos;t show live site yet, because this could be against rules of my University.</div>
       <DoubleColumn
         leftSide={<h2>Overview</h2>}
         rightSide={

@@ -17,7 +17,7 @@ import resoursea from "../../../assets/resoursea.png";
 
 function Page() {
   return (
-    <main className="relative bgCool">
+    <main className="relative bgCool md:pl-[130px] flex flex-col items-center">
       <ProjectHero title="Resoursea" titleDescription="Share your knowledge" />
       <DoubleColumn
         leftSide={<h2>Overview</h2>}
