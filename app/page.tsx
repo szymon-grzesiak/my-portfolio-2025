@@ -33,16 +33,16 @@ export default function Home() {
           className="lg:w-[414px] lg:h-[569px] md:w-[304px] md:h-[450px] w-[273px] h-[324px] pl-12"
         />
         <div className="flex justify-center h-full">
-          <div className="flex flex-col items-center md:items-start justify-center gap-y-6 md:pb-10 lg:pb-0">
+          <div className="flex flex-col items-start md:items-start justify-center gap-y-6 md:pb-10 lg:pb-0">
             <h1
               id="home"
-              className="text-6xl sm:text-7xl font-[900] flex flex-col font-jersey tracking-widest gap-5"
+              className="text-5xl sm:text-6xl md:text-5xl lg:text-7xl font-[500] flex flex-col font-bagel tracking-widest gap-5"
             >
               Hey, what&apos;s up!🤞
               <br className="hidden md:block" />
               <div className="flex gap-3">
                 I&apos;m
-                <p className="bg-indigo-400 w-fit rounded-3xl px-4 border-2 border-black shadow-[4px_4px]">
+                <p className="bg-indigo-400 w-fit rounded-3xl px-4 pt-1 pb-4 border-2 border-black shadow-[4px_4px]">
                   Szymon
                 </p>
               </div>
@@ -67,7 +67,7 @@ export default function Home() {
       </section>
       <section className="relative w-full">
         <div className="absolute w-full flex justify-center items-start -translate-y-4 z-[10]">
-          <h2 className="text-center bg-indigo-400 font-bold rounded-xl px-2 md:px-4 z-[100] border-2 border-black shadow-[4px_4px] font-jersey text-2xl tracking-widest">
+          <h2 className="text-center bg-indigo-400 font-bold rounded-xl px-2 md:px-4 z-[100] border-2 border-black shadow-[4px_4px] font-bagel text-2xl tracking-widest">
             SKILLS
           </h2>
         </div>
@@ -121,7 +121,7 @@ export default function Home() {
         <div className="w-full flex justify-center items-start translate-y-4 z-20">
           <h2
             id="projects"
-            className="text-center bg-indigo-400 font-bold rounded-xl px-4 border-2 border-black shadow-black shadow-[4px_4px] font-jersey text-2xl tracking-widest"
+            className="text-center bg-indigo-400 font-bold rounded-xl px-4 border-2 border-black shadow-black shadow-[4px_4px] font-bagel text-xl md:text-2xl tracking-widest"
           >
             PROJECTS
           </h2>

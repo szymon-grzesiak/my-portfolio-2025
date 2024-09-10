@@ -97,7 +97,7 @@ export const ProjectsSection = ({
       className="h-[30rem] customScrollContainer flex md:flex-row justify-center lg:gap-20 border-y-2 border-black flex-col"
       ref={ref}
     >
-      <div className="div relative flex items-start pl-[150px]">
+      <div className="div relative flex items-start pl-[155px]">
         <div className="max-w-2xl">
           {content.map((item, index) => (
             <div key={item.title + index} className="my-20">

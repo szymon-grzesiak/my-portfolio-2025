@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
-import { Poppins, Jersey_10 } from "next/font/google";
+import { Poppins, Jersey_10, Bagel_Fat_One } from "next/font/google";
 import { Providers } from "@components/shared/providers";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -22,6 +22,13 @@ const jersey = Jersey_10({
   display: "swap",
   weight: ["400"],
   variable: "--font-jersey",
+});
+
+const bagel = Bagel_Fat_One({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
+  variable: "--font-bagel",
 });
 
 export const metadata: Metadata = {
@@ -83,7 +90,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`text-black ${poppins.variable} ${jersey.variable} font-sans antialiased bg-white dark:text-white dark:bg-[#111110]`}
+      className={`text-black ${poppins.variable} ${jersey.variable} ${bagel.variable} font-sans antialiased bg-white dark:text-white dark:bg-[#111110]`}
     >
       <head>
         <Script

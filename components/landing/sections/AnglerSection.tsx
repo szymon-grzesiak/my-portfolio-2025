@@ -25,11 +25,11 @@ const AnglerSection = () => {
     <section className="h-full md:h-screen w-full flex md:px-6 justify-between md:justify-normal flex-col-reverse md:flex-row pt-6 md:pt-0">
       <Image
         src={angler}
-        className="shrink-0 w-full md:max-w-[918px] h-auto md:aspect-square pb-12 max-w-2/3 sm:w-2/3"
+        className="shrink-0 w-full md:max-w-[818px] h-auto md:aspect-square pb-12 max-w-2/3 sm:w-2/3"
         alt={"angler"}
       />
       <div className="md:pt-20 flex flex-col justify-start items-center font-bold text-[32px] xl:px-6 w-full">
-        <p className="text-center">Some facts about me 🎲</p>
+        <p className="text-center font-bagel text-3xl">MORE ABOUT ME 🎲</p>
         <button
           onClick={handleFetchCuriosity}
           className="button flex h-[50px] justify-center items-center mt-5 w-[200px] cursor-pointer rounded-3xl border-2 border-black shadow-[4px_4px] shadow-black overflow-hidden"

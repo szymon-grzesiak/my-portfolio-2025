@@ -80,23 +80,23 @@ const FamilyButton = () => {
                     <Link href={"/"} onClick={handleLinkClick}>
                       <Image src={logo64} width={50} height={50} alt="Logo" />
                     </Link>
-                    <div className="flex flex-col items-start justify-center h-full">
-                      <li className="cursor-pointer font-jersey text-4xl lineThroughEffect">
+                    <div className="flex flex-col items-start justify-center h-full gap-3">
+                      <li className="cursor-pointer font-bagel text-3xl lineThroughEffect">
                         <Link href="/#about" onClick={handleLinkClick}>
                           ABOUT
                         </Link>
                       </li>
-                      <li className="cursor-pointer font-jersey text-4xl lineThroughEffect">
+                      <li className="cursor-pointer font-bagel text-3xl lineThroughEffect">
                         <Link href="/#projects" onClick={handleLinkClick}>
                           PROJECTS
                         </Link>
                       </li>
-                      <li className="cursor-pointer font-jersey text-4xl lineThroughEffect">
+                      <li className="cursor-pointer font-bagel text-3xl lineThroughEffect">
                         <Link href="/blog" onClick={handleLinkClick}>
                           BLOG
                         </Link>
                       </li>
-                      <li className="cursor-pointer font-jersey text-4xl lineThroughEffect">
+                      <li className="cursor-pointer font-bagel text-3xl lineThroughEffect">
                         <Link href="/resume" onClick={handleLinkClick}>
                           RESUME
                         </Link>
@@ -109,21 +109,21 @@ const FamilyButton = () => {
                         onClick={handleLinkClick}
                         target="_blank"
                       >
-                        <FaLinkedin className="text-4xl hover:text-[#00E5FF]" />
+                        <FaLinkedin className="text-3xl hover:text-[#00E5FF]" />
                       </Link>
                       <Link
                         href="https://github.com/itsJasberry"
                         onClick={handleLinkClick}
                         target="_blank"
                       >
-                        <FaGithub className="text-4xl hover:text-[#00E5FF]" />
+                        <FaGithub className="text-3xl hover:text-[#00E5FF]" />
                       </Link>
                       <Link
                         href="https://x.com/jasberry_x"
                         onClick={handleLinkClick}
                         target="_blank"
                       >
-                        <FaTwitter className="text-4xl hover:text-[#00E5FF]" />
+                        <FaTwitter className="text-3xl hover:text-[#00E5FF]" />
                       </Link>
                     </li>
                   </ul>

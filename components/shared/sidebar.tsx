@@ -24,7 +24,7 @@ const Sidebar = () => {
         </Link>
         <div className="flex flex-col items-start justify-center h-full gap-12">
           {links.map((link) => (
-            <li key={link.href} className="cursor-pointer font-jersey text-3xl">
+            <li key={link.href} className="cursor-pointer font-bagel text-[22px] leading-[30px] 2xl:text-2xl">
               <Link href={link.href}>
                 <span
                   className={cn(

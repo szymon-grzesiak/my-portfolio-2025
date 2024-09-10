@@ -43,6 +43,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-poppins)'],
         jersey: ['var(--font-jersey)'],
+        bagel: ["var(--font-bagel)"],
       },
       screens: {
         xs: "450px",
