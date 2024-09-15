@@ -112,13 +112,11 @@ export default function RootLayout({
         <Providers>
           <div className="main" />
           {children}
-
           <Sidebar />
           <div className="block md:hidden fixed z-50 right-4 bottom-4">
             <FamilyButton />
           </div>
-
-           <Analytics />
+          <Analytics />
           <SpeedInsights />
         </Providers>
       </body>
