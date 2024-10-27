@@ -115,7 +115,6 @@ export default function RootLayout({
           <div className="block md:hidden fixed z-50 right-4 bottom-4">
             <FamilyButton />
           </div>
-
           <Analytics />
           <SpeedInsights />
         </Providers>
