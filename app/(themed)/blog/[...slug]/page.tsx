@@ -8,8 +8,8 @@ import { siteConfig } from "@/config/site";
 import { Tag } from "@components/blog/tag";
 import { cache } from "react";
 import { increment } from "@db/actions";
-import { getViewsCount } from "@db/queries";
-import ViewCounter from "../view-counter";
+// import { getViewsCount } from "@db/queries";
+// import ViewCounter from "../view-counter";
 import { ClientSideTableOfContents } from "@components/blog/client-side-toc";
 interface PostPageProps {
   params: {
@@ -78,11 +78,11 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   return (
-    <main className="px-6 md:pl-[160px] container relative mx-auto w-full flex-1 justify-center gap-[50px] py-6 md:flex lg:gap-10 lg:pb-10 bg-white/70 pr-5">
-      <article className="relative container py-6 prose max-w-3xl mx-auto">
-        <h1 className="mb-2">{post.title}</h1>
-        <Views slug={post.slug} />
-        <div className="flex gap-2 mb-2 flex-wrap">
+    <main className="px-6 md:pl-[160px] container relative mx-auto w-full flex-1 justify-center gap-[50px] py-6 md:flex lg:gap-10 lg:pb-10 pr-5 z-10">
+      <article className="relative container px-6 py-10 prose max-w-4xl mx-auto bg-white/90 rounded-xl shadow-[4px_4px] border-2 border-black">
+        <h1 className="mb-10">{post.title}</h1>
+        {/* <Views slug={post.slug} /> */}
+        <div className="flex gap-4 mb-6 flex-wrap">
           {post.tags?.map((tag) => (
             <Tag tag={tag} key={tag} />
           ))}
@@ -97,7 +97,7 @@ export default async function PostPage({ params }: PostPageProps) {
       </article>
       <aside className="sticky">
         <div className="sticky top-16 hidden pb-6 text-sm xl:block">
-          <div className="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10">
+          <div className="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10 bg-white/90 p-6 rounded-xl shadow-[4px_4px] border-2 border-black">
             <ClientSideTableOfContents />
           </div>
         </div>
@@ -106,10 +106,10 @@ export default async function PostPage({ params }: PostPageProps) {
   );
 }
 
-let incrementViews = cache(increment);
+// let incrementViews = cache(increment);
 
-async function Views({ slug }: { slug: string }) {
-  let views = await getViewsCount();
-  incrementViews(slug);
-  return <ViewCounter allViews={views} slug={slug} />;
-}
+// async function Views({ slug }: { slug: string }) {
+//   let views = await getViewsCount();
+//   incrementViews(slug);
+//   return <ViewCounter allViews={views} slug={slug} />;
+// }

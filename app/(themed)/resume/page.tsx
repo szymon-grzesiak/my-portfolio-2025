@@ -4,8 +4,8 @@ import { HiOutlineDownload } from "react-icons/hi";
 
 const Page = () => {
   return (
-    <div className="relative mx-auto w-full h-screen flex justify-center items-center">
-      <div className="flex flex-col justify-center items-center gap-6 bg-white/80 p-10 rounded-3xl border-2 border-black shadow-[4px_4px] shadow-black">
+    <div className="relative mx-auto w-full h-screen flex justify-center items-center z-10">
+      <div className="flex flex-col justify-center items-center gap-6 bg-white/90 p-10 rounded-3xl border-2 border-black shadow-[4px_4px] shadow-black">
         <div className="button rounded-[24px] overflow-hidden px-6 py-3 font-bold">
           <Link
             href={"https://www.szymongrzesiak.dev/resume_szymon_grzesiak.pdf"}

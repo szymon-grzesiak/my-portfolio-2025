@@ -24,14 +24,14 @@ import {
 
 export default function Home() {
   return (
-    <main className="relative mx-auto">
+    <main className="relative mx-auto landing">
       <Clouds color="white" rotate position="top" />
       <section className="lg:h-[90vh] px-6 pt-40 lg:pt-0 md:flex-row gap-10 lg:gap-5 w-full flex items-center md:items-end justify-around md:px-10 flex-col-reverse">
         <Image
           src={port}
           alt="Guy with a telescope"
-          className="lg:w-[414px] lg:h-[569px] md:w-[304px] md:h-[450px] w-[273px] h-[324px] pl-12"
-        />
+          className="lg:w-[414px] md:w-[304px] w-[273px] pl-12"
+          />
         <div className="flex justify-center h-full">
           <div className="flex flex-col items-start md:items-start justify-center gap-y-6 md:pb-10 lg:pb-0">
             <h1
@@ -82,7 +82,7 @@ export default function Home() {
                 <div className="hidden md:block">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="cursor-default">
+                      <TooltipTrigger className="cursor-default" aria-label={`Icon for ${project.title}`}>
                         <Icon className="w-16 h-16 mr-6" />
                       </TooltipTrigger>
                       <TooltipContent className="mr-6">
@@ -93,7 +93,7 @@ export default function Home() {
                 </div>
                 <div className="block md:hidden">
                   <Popover>
-                    <PopoverTrigger className="cursor-default">
+                    <PopoverTrigger className="cursor-default" aria-label={`Icon for ${project.title}`}>
                       <Icon className="w-16 h-16 mr-6" />
                     </PopoverTrigger>
                     <PopoverContent className="w-fit bg-white">
