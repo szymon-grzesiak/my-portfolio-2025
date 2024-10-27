@@ -40,7 +40,7 @@ const ContentSecurityPolicy = `
     media-src 'none';
     connect-src *;
     font-src 'self' data: https://fonts.googleapis.com https://fonts.gstatic.com https://use.typekit.net https://p.typekit.net https://fonts.google.com/;
-    frame-src 'self';
+    frame-src 'self' https://vercel.live;
 `;
 
 const securityHeaders = [
