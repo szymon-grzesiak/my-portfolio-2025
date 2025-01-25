@@ -96,11 +96,11 @@ const FamilyButton = () => {
                           BLOG
                         </Link>
                       </li>
-                      <li className="cursor-pointer font-bagel text-3xl lineThroughEffect">
+                      {/* <li className="cursor-pointer font-bagel text-3xl lineThroughEffect">
                         <Link href="/resume" onClick={handleLinkClick}>
                           RESUME
                         </Link>
-                      </li>
+                      </li> */}
                     </div>
 
                     <li className="flex gap-4 justify-center items-center mb-14">

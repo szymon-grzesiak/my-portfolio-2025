@@ -11,7 +11,7 @@ const links = [
   { href: "/#about", label: "ABOUT" },
   { href: "/#projects", label: "PROJECTS" },
   { href: "/blog", label: "BLOG" },
-  { href: "/resume", label: "RESUME" },
+  // { href: "/resume", label: "RESUME" },
 ];
 
 const Sidebar = () => {
