@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
 import Image from "next/image";
 import logo64 from "../../app/logo-64.png";
 import { usePathname } from "next/navigation";
@@ -56,8 +56,8 @@ const Sidebar = () => {
           >
             <FaGithub className="text-3xl hover:text-[#00E5FF]" />
           </Link>
-          <Link href="https://x.com/jasberry_x" aria-label="Twitter profile">
-            <FaTwitter className="text-3xl hover:text-[#00E5FF]" />
+          <Link href="https://t.me/jsbr9" aria-label="Telegram profile">
+            <FaTelegram className="text-3xl hover:text-[#00E5FF]" />
           </Link>
         </li>
       </ul>

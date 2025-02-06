@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { PlusIcon, XIcon } from "lucide-react";
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaTelegram } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -119,11 +119,11 @@ const FamilyButton = () => {
                         <FaGithub className="text-3xl hover:text-[#00E5FF]" />
                       </Link>
                       <Link
-                        href="https://x.com/jasberry_x"
+                        href="https://t.me/jsbr9"
                         onClick={handleLinkClick}
                         target="_blank"
                       >
-                        <FaTwitter className="text-3xl hover:text-[#00E5FF]" />
+                        <FaTelegram className="text-3xl hover:text-[#00E5FF]" />
                       </Link>
                     </li>
                   </ul>
