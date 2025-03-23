@@ -47,7 +47,7 @@ const SwipeCards = ({ content }: Props) => {
                   alt={content[index].title}
                   className="w-full h-full object-cover rounded-t-[40px]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-100 flex items-end p-4 z-20 w-full">
+                <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-100 flex items-end p-4 z-20 w-full">
                   <div className="text-white w-full flex justify-between">
                     <h3 className="text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
                       <Link

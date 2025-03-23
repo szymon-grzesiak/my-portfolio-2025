@@ -24,10 +24,10 @@ const FamilyButton = () => {
     <div
       className={cn(
         "rounded-[24px]",
-        "bg-gradient-to-b from-neutral-900 to-black",
+        "bg-linear-to-b from-neutral-900 to-black",
         isExpanded
-          ? "w-[204px] bg-gradient-to-b dark:from-stone-900 dark:to-neutral-900/80"
-          : "dark:from-neutral-900 dark:to-stone-950 bg-gradient-to-b"
+          ? "w-[204px] bg-linear-to-b dark:from-stone-900 dark:to-neutral-900/80"
+          : "dark:from-neutral-900 dark:to-stone-950 bg-linear-to-b"
       )}
     >
       <div className="rounded-[23px]">
@@ -37,7 +37,7 @@ const FamilyButton = () => {
               className={cn(
                 "relative shadow-lg h-full w-full flex flex-col justify-center space-y-1 items-center text-white cursor-pointer z-10",
                 !isExpanded
-                  ? "bg-gradient-to-b from-neutral-900 to-stone-900 dark:from-stone-700 dark:to-neutral-800/80"
+                  ? "bg-linear-to-b from-neutral-900 to-stone-900 dark:from-stone-700 dark:to-neutral-800/80"
                   : ""
               )}
               layoutRoot

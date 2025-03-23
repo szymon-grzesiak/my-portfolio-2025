@@ -22,7 +22,7 @@ export default async function TagsPage() {
         <h2 className="pl-12 flex flex-col relative z-20 text-4xl lg:text-7xl font-bold text-center text-black font-sans tracking-tight">
           Read my thoughts on
           <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
-            <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-blue-300 via-blue-500 to-blue-800 py-4">
+            <div className="relative bg-clip-text text-transparent bg-no-repeat bg-linear-to-r from-blue-300 via-blue-500 to-blue-800 py-4">
               <span className="">Software Development.</span>
             </div>
           </div>
@@ -33,7 +33,7 @@ export default async function TagsPage() {
         alt="Sitting figure"
         width={150}
         height={150}
-        className="absolute bottom-[-55px] right-20 z-[120]"
+        className="absolute bottom-[-55px] right-20 z-120"
       />
     </div>
     <div className="w-full flex justify-center">

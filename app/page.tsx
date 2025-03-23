@@ -66,8 +66,8 @@ export default function Home() {
         </div>
       </section>
       <section className="relative w-full">
-        <div className="absolute w-full flex justify-center items-start -translate-y-4 z-[10]">
-          <h2 className="text-center bg-indigo-400 font-bold rounded-xl px-2 md:px-4 z-[100] border-2 border-black shadow-[4px_4px] font-bagel text-2xl tracking-widest">
+        <div className="absolute w-full flex justify-center items-start -translate-y-4 z-10">
+          <h2 className="text-center bg-indigo-400 font-bold rounded-xl px-2 md:px-4 z-100 border-2 border-black shadow-[4px_4px] font-bagel text-2xl tracking-widest">
             SKILLS
           </h2>
         </div>

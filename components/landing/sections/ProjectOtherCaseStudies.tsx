@@ -17,7 +17,7 @@ const ProjectOtherCaseStudies = ({ className }: { className?: string }) => {
           </Typography>
           <Typography
             as="h3"
-            className="md:leading-33px] mt-2.5 text-[28px] !font-semibold leading-[29px] tracking-[-0.14px] text-black-200 dark:text-white-900 md:text-[32px]"
+            className="md:leading-33px] mt-2.5 text-[28px] font-semibold! leading-[29px] tracking-[-0.14px] text-black-200 dark:text-white-900 md:text-[32px]"
           >
             Other Case Studies
           </Typography>

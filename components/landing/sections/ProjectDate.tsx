@@ -26,7 +26,7 @@ const ProjectDate: FC<ProjectDateProps> = ({
           <Typography className="text-[14px] leading-[20px] text-black-400 dark:text-white-500 md:text-[18px] md:leading-[29px]">
             My Role
           </Typography>
-          <Typography className="text-[20px] !font-semibold leading-[26px] text-black-200 dark:text-white-900 md:text-[24px] md:leading-[31px]">
+          <Typography className="text-[20px] font-semibold! leading-[26px] text-black-200 dark:text-white-900 md:text-[24px] md:leading-[31px]">
             {role}
           </Typography>
         </div>
@@ -34,7 +34,7 @@ const ProjectDate: FC<ProjectDateProps> = ({
           <Typography className="text-[14px] leading-[20px] text-black-400 dark:text-white-500 md:text-[18px] md:leading-[29px]">
             Start Date
           </Typography>
-          <Typography className="text-[20px] !font-semibold leading-[26px] text-black-200 dark:text-white-900 md:text-[24px] md:leading-[31px]">
+          <Typography className="text-[20px] font-semibold! leading-[26px] text-black-200 dark:text-white-900 md:text-[24px] md:leading-[31px]">
             {startDate}
           </Typography>
         </div>
@@ -42,7 +42,7 @@ const ProjectDate: FC<ProjectDateProps> = ({
           <Typography className="text-[14px] leading-[20px] text-black-400 dark:text-white-500 md:text-[18px] md:leading-[29px]">
             End Date
           </Typography>
-          <Typography className="text-[20px] !font-semibold leading-[26px] text-black-200 dark:text-white-900 md:text-[24px] md:leading-[31px]">
+          <Typography className="text-[20px] font-semibold! leading-[26px] text-black-200 dark:text-white-900 md:text-[24px] md:leading-[31px]">
             {endDate}
           </Typography>
         </div>

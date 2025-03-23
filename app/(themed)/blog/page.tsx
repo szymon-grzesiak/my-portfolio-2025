@@ -26,7 +26,7 @@ export default async function BlogPage() {
           <h2 className="flex flex-col relative z-20 text-3xl md:text-5xl lg:text-7xl font-bold text-center text-black font-sans tracking-tight">
             Read my thoughts on
             <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
-              <div className="relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-blue-300 via-blue-500 to-blue-800 py-4">
+              <div className="relative bg-clip-text text-transparent bg-no-repeat bg-linear-to-r from-blue-300 via-blue-500 to-blue-800 py-4">
                 <span>Software Development.</span>
               </div>
             </div>
@@ -37,7 +37,7 @@ export default async function BlogPage() {
           alt="Sitting figure"
           width={150}
           height={150}
-          className="absolute bottom-[-55px] right-20 z-[120]"
+          className="absolute bottom-[-55px] right-20 z-120"
         />
       </div>
       <div className="md:pl-[150px] xl:pl-10 container flex flex-col-reverse md:flex-row max-w-5xl px-6 py-6 gap-10 lg:py-10">

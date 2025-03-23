@@ -44,7 +44,7 @@ const ProjectCard = ({
       <div className="mt-5 flex flex-col md:mt-[25px] md:gap-2.5 md:px-[14px] xl:mt-[30px] xl:px-[56px]">
         <Typography
           as="h3"
-          className="text-[20px] !font-semibold leading-[26px] tracking-[-0.16px] text-black-200 dark:text-white-900 md:text-[32px] md:leading-[33px]"
+          className="text-[20px] font-semibold! leading-[26px] tracking-[-0.16px] text-black-200 dark:text-white-900 md:text-[32px] md:leading-[33px]"
         >
           {title}
         </Typography>

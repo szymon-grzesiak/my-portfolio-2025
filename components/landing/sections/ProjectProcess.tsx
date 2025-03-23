@@ -24,7 +24,7 @@ const ProjectProcess = () => {
                   className={cn("h-[35px] w-[35px]")}
                 />
               </div>
-              <Typography className="text-center text-[12px] !font-semibold leading-[18px] text-black-300 dark:text-white-900 md:text-[18px] md:leading-[22px]">
+              <Typography className="text-center text-[12px] font-semibold! leading-[18px] text-black-300 dark:text-white-900 md:text-[18px] md:leading-[22px]">
                 {process.name}
               </Typography>
             </div>
