@@ -20,6 +20,18 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+      {
+        protocol: "https",
+        hostname: "*.vercel.app",
+      },
+      {
+        protocol: "https",
+        hostname: "vercel.com",
+      },
+      {
+        protocol: "https",
         hostname: "assets.aceternity.com",
       },
     ],
@@ -37,23 +49,36 @@ const nextConfig = {
     ];
   },
 };
+
 const ContentSecurityPolicy = `
-  default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' data: https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com https://assets.aceternity.com https://va.vercel-scripts.com https://vercel.live https://vercel.com;
-  style-src 'self' 'unsafe-inline' https://vercel.live;
-  img-src * blob: data: https://assets.aceternity.com;
-  media-src 'none';
-  connect-src *;
-  font-src 'self' data: https://fonts.googleapis.com https://fonts.gstatic.com https://use.typekit.net https://p.typekit.net https://fonts.google.com/;
-  frame-src 'self' https://vercel.live;
-`
-  .replace(/\n/g, "")
-  .replace(/\s+/g, " ")
-  .trim();
+    default-src 'self';
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' data: blob: 
+      https://www.googletagmanager.com 
+      https://www.google-analytics.com 
+      https://www.google.com 
+      https://www.gstatic.com 
+      https://assets.aceternity.com 
+      https://va.vercel-scripts.com 
+      https://vercel.live 
+      https://vercel.com;
+    style-src 'self' 'unsafe-inline' https://vercel.live;
+    img-src * blob: data: https://assets.aceternity.com;
+    media-src 'none';
+    connect-src *;
+    font-src 'self' data: 
+      https://fonts.googleapis.com 
+      https://fonts.gstatic.com 
+      https://use.typekit.net 
+      https://p.typekit.net 
+      https://fonts.google.com;
+    frame-src 'self' https://vercel.live;
+    object-src 'self' data:;
+`;
+
 const securityHeaders = [
   {
     key: "Content-Security-Policy",
-    value: ContentSecurityPolicy.replace(/\n/g, ""),
+    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
   },
   {
     key: "Referrer-Policy",
@@ -77,7 +102,7 @@ const securityHeaders = [
   },
   {
     key: "Permissions-Policy",
-    value: "camera=(), microphone=(), geolocation=()",
+    value: "camera=(), microphone=(), geolocation=(), browsing-topics=()",
   },
 ];
 
