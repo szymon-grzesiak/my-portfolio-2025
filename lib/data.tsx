@@ -354,11 +354,11 @@ export const projectsData = [
     content: resoursea,
     link: "https://resoursea.vercel.app/",
   },
-  {
-    title: "Blackfyre",
-    description:
-      "Blackfyre is a language learning app that uses games to help users improve their vocabulary and grammar. It is designed to make learning fun and engaging, with a focus on practical language skills.",
-    content: blackfyreBg,
-    link: 'https://szymongrzesiak.dev/blackfyre/',
-  },
+  // {
+  //   title: "Blackfyre",
+  //   description:
+  //     "Blackfyre is a language learning app that uses games to help users improve their vocabulary and grammar. It is designed to make learning fun and engaging, with a focus on practical language skills.",
+  //   content: blackfyreBg,
+  //   link: 'https://szymongrzesiak.dev/blackfyre/',
+  // },
 ];

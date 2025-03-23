@@ -21,7 +21,7 @@ export function PostItem({
   tags,
 }: PostItemProps) {
   return (
-    <article className="flex flex-col gap-2 border-border border-b p-4 rounded-lg bg-white/60">
+    <article className="flex flex-col gap-2 border-border border-b p-4 rounded-lg bg-white/90 border-2 border-black shadow-[4px_4px] shadow-black">
       <div>
         <h2 className="text-2xl font-bold">
           <Link href={"/" + slug}>{title}</Link>

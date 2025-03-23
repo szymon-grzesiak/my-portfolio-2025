@@ -6,7 +6,7 @@ import { getAllTags, sortPosts, sortTagsByCount } from "@/lib/utils";
 import { Metadata } from "next";
 import { BackgroundBeamsWithCollision } from "@/components/blog/background-beams-with-collision";
 import Image from "next/image";
-import coolGuy from "../../assets/coolguy2.webp";
+import coolGuy from "@/assets/coolguy2.webp";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -20,7 +20,7 @@ export default async function BlogPage() {
   const sortedTags = sortTagsByCount(tags);
 
   return (
-    <div className="relative">
+    <div className="relative z-10">
       <div className="relative h-64">
         <BackgroundBeamsWithCollision>
           <h2 className="flex flex-col relative z-20 text-3xl md:text-5xl lg:text-7xl font-bold text-center text-black font-sans tracking-tight">
@@ -40,7 +40,7 @@ export default async function BlogPage() {
           className="absolute bottom-[-55px] right-20 z-[120]"
         />
       </div>
-      <div className="md:pl-[140px] container flex flex-col-reverse md:flex-row max-w-5xl px-6 py-6 gap-10 lg:py-10">
+      <div className="md:pl-[150px] xl:pl-10 container flex flex-col-reverse md:flex-row max-w-5xl px-6 py-6 gap-10 lg:py-10">
         {sortedPosts?.length > 0 ? (
           <ul className="flex flex-col">
             {sortedPosts.map((post) => {
@@ -61,7 +61,7 @@ export default async function BlogPage() {
         ) : (
           <p>Nothing to see here yet</p>
         )}
-        <Card className="bg-white/70 row-start-3 h-fit border-2 border-black shadow-[4px_4px]">
+        <Card className="bg-white/90 row-start-3 h-fit border-2 border-black shadow-[4px_4px]">
           <CardHeader>
             <CardTitle>Tags</CardTitle>
           </CardHeader>

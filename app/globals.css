@@ -4,7 +4,6 @@
 
 html {
   scroll-behavior: smooth;
-
 }
 body {
   padding: 0px;
@@ -116,10 +115,7 @@ body {
 
 .button:hover {
   color: rgb(99, 102, 241);
-
 }
-
-
 
 .lineThroughEffect {
   cursor: pointer;
@@ -133,7 +129,7 @@ body {
 .lineThroughEffect::after {
   content: "";
   position: absolute;
-  background-color: #00E5FF;
+  background-color: #00e5ff;
   left: 0px;
   right: 0px;
   height: 3px;
@@ -152,48 +148,6 @@ body {
   transform-origin: left;
   scale: 1 1;
 }
-
-/* Do zrobienia na blogu
-.button {
-  color: black;
-  cursor: pointer;
-  text-decoration: none;
-  background-color: rgb(99 102 241);
-  position: relative;
-  overflow: hidden;
-  font-size: 1.5rem;
-}
-
-.button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: black;
-  color: rgb(99, 102, 241);
-  transform: translateX(-101%);
-  z-index: 1;
-}
-.button:hover::before {
-  transform: translateX(0);
-  transition: 350ms ease-in-out;
-}
-
-.button::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-  background-color: black;
-  color: rgb(99, 102, 241);
-  transform: translateX(100%);
-  transition: 350ms ease-in-out;
-}
-.button:hover::after {
-  transform: translateX(0);
-  opacity: 1;
-  transition: 350ms 360ms ease-in-out;
-} */
-
 
 .main {
   width: 100vw;
@@ -219,7 +173,49 @@ body {
   top: 0;
 }
 
+.purple-haze {
+  background-color: rgb(99, 102, 241); 
+  width: 100%;
+  min-height: 100vh;
+  z-index: 2;
+}
 
+.purple-haze::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    to right,
+    transparent 0,
+    transparent 52%,
+    /* szerokość przezroczystego odstępu */ white 53.5%,
+    /* początek białego paska */ white 53.5%,
+    /* koniec białego paska */ transparent 53.5%
+  );
+  background-size: 5% 100%; /* powtarzanie co 5% szerokości */
+  background-position: center;
+  background-repeat: repeat-x;
+  z-index: 1;
+}
+
+.landing {
+  z-index: 1;
+}
+
+.landing:before {
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 0) 0,
+    rgb(156, 210, 253) 100%
+  );
+  position: absolute;
+  content: "";
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
 
 @layer base {
 }
@@ -256,4 +252,3 @@ body {
 .bgCool {
   background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
-
