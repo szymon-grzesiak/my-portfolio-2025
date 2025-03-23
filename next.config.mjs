@@ -21,7 +21,6 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "assets.aceternity.com",
- 
       },
     ],
   },
@@ -40,7 +39,7 @@ const nextConfig = {
 };
 const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' data: https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com https://assets.aceternity.com https://va.vercel-scripts.com https://vercel.live;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' data: https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com https://assets.aceternity.com https://va.vercel-scripts.com https://vercel.live /_vercel/speed-insights/;
     style-src 'self' 'unsafe-inline' https://vercel.live;
     img-src * blob: data: https://assets.aceternity.com;
     media-src 'none';
