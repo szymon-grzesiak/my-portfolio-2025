@@ -25,7 +25,7 @@ const ProjectHero: FC<ProjectHeroProps> = ({
         </Typography>
         <Typography
           as="h1"
-          className="mb-5 text-center text-[42px] !font-bold leading-[48px] tracking-[-0.64px] text-black-200 dark:text-white-900 md:mb-[28px] md:text-[64px] md:leading-[83px]"
+          className="mb-5 text-center text-[42px] font-bold! leading-[48px] tracking-[-0.64px] text-black-200 dark:text-white-900 md:mb-[28px] md:text-[64px] md:leading-[83px]"
         >
           <span className="highlighted-text">{title}</span> - {titleDescription}
         </Typography>

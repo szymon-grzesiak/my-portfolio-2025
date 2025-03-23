@@ -17,7 +17,7 @@ const links = [
 const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <div className="hidden md:block px-2 md:px-4 fixed left-0 top-0 h-screen bg-white/50 border-r-2 border-r-slate-400 backdrop-blur-xl z-[100]">
+    <div className="hidden md:block px-2 md:px-4 fixed left-0 top-0 h-screen bg-white/50 border-r-2 border-r-slate-400 backdrop-blur-xl z-100">
       <ul className="flex h-screen flex-col justify-between items-center py-6 gap-16">
         <li>
           <Link href={"/"}>

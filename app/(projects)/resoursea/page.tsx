@@ -128,7 +128,7 @@ function Page() {
                   className="w-full h-full object-cover border-[3px] rounded-3xl border-black shadow-black shadow-[4px_4px]"
                   alt="Resoursea app."
                 />
-                <div className="absolute inset-0 hover:bg-black hover:bg-opacity-50 rounded-3xl">
+                <div className="absolute inset-0 hover:bg-black/30 rounded-3xl">
                   <div className="flex justify-center items-center h-full text-6xl text-white">
                     Visit website{" "}
                     <ArrowRight className="text-white w-[50px] h-[50px] animate-bounce" />

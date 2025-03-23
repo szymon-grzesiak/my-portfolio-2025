@@ -29,6 +29,8 @@ export default function Home() {
       <section className="lg:h-[90vh] px-6 pt-40 lg:pt-0 md:flex-row gap-10 lg:gap-5 w-full flex items-center md:items-end justify-around md:px-10 flex-col-reverse">
         <Image
           src={port}
+          quality={75}
+          priority={true}
           alt="Guy with a telescope"
           className="lg:w-[414px] md:w-[304px] w-[273px] pl-12"
           />
@@ -66,8 +68,8 @@ export default function Home() {
         </div>
       </section>
       <section className="relative w-full">
-        <div className="absolute w-full flex justify-center items-start -translate-y-4 z-[10]">
-          <h2 className="text-center bg-indigo-400 font-bold rounded-xl px-2 md:px-4 z-[100] border-2 border-black shadow-[4px_4px] font-bagel text-2xl tracking-widest">
+        <div className="absolute w-full flex justify-center items-start -translate-y-4 z-10">
+          <h2 className="text-center bg-indigo-400 font-bold rounded-xl px-2 md:px-4 z-100 border-2 border-black shadow-[4px_4px] font-bagel text-2xl tracking-widest">
             SKILLS
           </h2>
         </div>

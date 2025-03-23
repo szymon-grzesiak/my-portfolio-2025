@@ -2,7 +2,6 @@ import { posts } from "#site/content";
 import { MDXContent } from "@/components/blog/mdx-components";
 import { notFound } from "next/navigation";
 
-import "@/styles/mdx.css";
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { Tag } from "@components/blog/tag";
@@ -11,13 +10,14 @@ import { increment } from "@db/actions";
 // import { getViewsCount } from "@db/queries";
 // import ViewCounter from "../view-counter";
 import { ClientSideTableOfContents } from "@components/blog/client-side-toc";
+
 interface PostPageProps {
-  params: {
+  params: Promise<{
     slug: string[];
-  };
+  }>;
 }
 
-async function getPostFromParams(params: PostPageProps["params"]) {
+async function getPostFromParams(params: { slug: string[] }) {
   const slug = params?.slug?.join("/");
   const post = posts.find((post) => post.slugAsParams === slug);
 
@@ -27,7 +27,8 @@ async function getPostFromParams(params: PostPageProps["params"]) {
 export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata> {
-  const post = await getPostFromParams(params);
+  const { slug } = await params;
+  const post = await getPostFromParams({ slug });
 
   if (!post) {
     return {};
@@ -64,14 +65,15 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams(): Promise<
-  PostPageProps["params"][]
-> {
+export async function generateStaticParams(): Promise<{
+  slug: string[];
+}[]> {
   return posts.map((post) => ({ slug: post.slugAsParams.split("/") }));
 }
 
 export default async function PostPage({ params }: PostPageProps) {
-  const post = await getPostFromParams(params);
+  const { slug } = await params;
+  const post = await getPostFromParams({ slug });
 
   if (!post || !post.published) {
     notFound();

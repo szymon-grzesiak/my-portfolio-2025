@@ -91,6 +91,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`text-black ${poppins.variable} ${jersey.variable} ${bagel.variable} font-sans antialiased bg-white dark:text-white dark:bg-[#111110]`}
+      suppressHydrationWarning
     >
       <head>
         <Script
@@ -112,7 +113,7 @@ export default function RootLayout({
         <Providers>
           {children}
           <Sidebar />
-          <div className="block md:hidden fixed z-[200] right-4 bottom-4">
+          <div className="block md:hidden fixed z-200 right-4 bottom-4">
             <FamilyButton />
           </div>
           <Analytics />

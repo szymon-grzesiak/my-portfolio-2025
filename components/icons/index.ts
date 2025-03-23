@@ -32,7 +32,6 @@ import { DeployIcon } from "./process/DeployIcon";
 import { DesignIcon } from "./process/DesignIcon";
 import { DevelopIcon } from "./process/DevelopIcon";
 import { PlanIcon } from "./process/PlanIcon";
-import { SiMicrosoftsqlserver } from "react-icons/si";
 import { GsapIcon } from "./GsapIcon";
 import { TinyMCE } from "./Tinymce";
 
@@ -111,10 +110,6 @@ export const skillsIcons = [
   {
     name: "Framer Motion",
     icon: MotionIcon,
-  },
-  {
-    name: "SQL Server",
-    icon: SiMicrosoftsqlserver,
   },
   {
     name: "Figma",

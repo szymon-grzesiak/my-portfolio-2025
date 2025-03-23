@@ -34,7 +34,7 @@ const OtherCaseStudyCard = ({
       />
       <div className="flex flex-col gap-4 px-5 pb-6 pt-5 md:px-6 md:pb-[34px] md:pt-6">
         <div className="flex flex-col gap-1.5 md:gap-2">
-          <Typography className="text-[20px] !font-semibold leading-[26px] text-primary-light dark:text-primary-dark md:text-[24px] md:leading-[31px]">
+          <Typography className="text-[20px] font-semibold! leading-[26px] text-primary-light dark:text-primary-dark md:text-[24px] md:leading-[31px]">
             {title}
           </Typography>
           <Typography className="text-[14px] leading-[22px] text-white-500 dark:text-white-800 md:text-[16px] md:leading-[22px] lg:text-[18px] lg:leading-[29px]">
