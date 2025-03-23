@@ -37,11 +37,11 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value: `
               default-src 'self';
-              script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com https://assets.aceternity.com https://va.vercel-scripts.com https://vercel.live https://vercel.com;
+              script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://*.google-analytics.com https://www.google.com https://www.gstatic.com https://assets.aceternity.com https://*.vercel-scripts.com https://*.vercel.com;
               style-src 'self' 'unsafe-inline' https://vercel.live;
-              img-src 'self' data: blob: https://assets.aceternity.com;
+              img-src 'self' data: blob: https://assets.aceternity.com https://*.google-analytics.com;
               media-src 'none';
-              connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com;
+              connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://www.google.com https://*.vercel.com;
               font-src 'self' data: https://fonts.googleapis.com https://fonts.gstatic.com https://use.typekit.net https://p.typekit.net https://fonts.google.com/;
               frame-src 'self' https://vercel.live;
               object-src 'none';
@@ -80,8 +80,7 @@ const nextConfig = {
           },
           {
             key: "Permissions-Policy",
-            value:
-              "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+            value: "camera=(), microphone=(), geolocation=()",
           },
         ],
       },
