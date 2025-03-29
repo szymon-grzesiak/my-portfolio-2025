@@ -16,6 +16,26 @@ const links = [
 
 const Sidebar = () => {
   const pathname = usePathname();
+
+  const SpecialUrl = () => {
+    if (pathname.includes("tags") || pathname.includes("blog")) {
+      return (
+        <div className="cursor-pointer font-bagel text-[22px] leading-[30px] 2xl:text-2xl">
+          <Link href={"/tags"}>
+            <span
+              className={cn(
+                "lineThroughEffect",
+                pathname.includes("tags") && "active-lineThroughEffect"
+              )}
+            >
+              TAGS
+            </span>
+          </Link>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className="hidden md:block px-2 md:px-4 fixed left-0 top-0 h-screen bg-white/50 border-r-2 border-r-slate-400 backdrop-blur-xl z-100">
       <ul className="flex h-screen flex-col justify-between items-center py-6 gap-16">
@@ -42,6 +62,7 @@ const Sidebar = () => {
               </Link>
             </div>
           ))}
+          <SpecialUrl />
         </li>
         <li className="flex flex-col gap-4 justify-center items-center">
           <Link
