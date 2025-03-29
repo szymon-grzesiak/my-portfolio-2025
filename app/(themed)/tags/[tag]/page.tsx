@@ -9,6 +9,7 @@ import { slug } from "github-slugger";
 import { Metadata } from "next";
 import Image from "next/image";
 import coolGuy from "@/assets/coolguy2.webp";
+import { TagSearch } from "@components/blog/tag-search";
 
 interface TagPageProps {
   params: Promise<{
@@ -31,7 +32,7 @@ export async function generateMetadata({
       url: `https://szymongrzesiak.dev/tags/${tag}`,
       images: [
         {
-          url: '/api/og',
+          url: "/api/og",
           width: 1200,
           height: 630,
           alt: tag,
@@ -42,7 +43,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: tag,
       description: `Posts on the topic of ${tag}`,
-      images: ['/api/og'],
+      images: ["/api/og"],
     },
   };
 }
@@ -58,7 +59,7 @@ export default async function TagPage({ params }: TagPageProps) {
   const title = tag.split("-").join(" ");
 
   const allPosts = getPostsByTagSlug(posts, tag);
-  const displayPosts = allPosts.filter(post => post.published);
+  const displayPosts = allPosts.filter((post) => post.published);
   const tags = getAllTags(posts);
   const sortedTags = sortTagsByCount(tags);
 
@@ -94,7 +95,7 @@ export default async function TagPage({ params }: TagPageProps) {
         <div className="grid grid-cols-12 gap-6 mt-8">
           <div className="col-span-12 col-start-1 sm:col-span-8">
             {displayPosts?.length > 0 ? (
-              <ul className="flex flex-col">
+              <ul className="flex flex-col gap-4">
                 {displayPosts.map((post) => {
                   const { slug, date, title, description, tags } = post;
                   return (
@@ -114,14 +115,11 @@ export default async function TagPage({ params }: TagPageProps) {
               <p>Nothing to see here yet</p>
             )}
           </div>
-          <Card className="bg-white/90 border-2 border-black shadow-[4px_4px] col-span-12 row-start-3 h-fit sm:col-span-4 sm:col-start-9 sm:row-start-1">
-            <CardHeader>
-              <CardTitle>Tags</CardTitle>
-            </CardHeader>
+          <Card className="col-span-12 border-none row-start-3 h-fit sm:col-span-4 sm:col-start-9 sm:row-start-1">
             <CardContent className="flex flex-wrap gap-2">
-              {sortedTags?.map((t) => (
-                <Tag tag={t} key={t} count={tags[t]} current={slug(t) === tag} />
-              ))}
+              <div className="w-full">
+                <TagSearch tags={tags} sortedTags={sortedTags} />
+              </div>
             </CardContent>
           </Card>
         </div>
