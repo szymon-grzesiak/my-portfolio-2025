@@ -1,0 +1,105 @@
+---
+title: Why I Chose Payload CMS Over Strapi for My Projects
+description: A comparison between Payload CMS and Strapi, highlighting why Payload became the preferred choice for headless CMS projects after the 3.0 release.
+date: 2025-03-29
+tags: [Payload CMS, Strapi, headless CMS, Next.js, TypeScript, web development, CMS comparison]
+published: true
+---
+
+## The Headless CMS Dilemma
+
+Let's be real – picking the right headless CMS feels like choosing which streaming service to subscribe to when everyone's recommending something different. A few months back, I was stuck between Strapi and Payload CMS for a client project that needed a flexible content management solution.
+
+I'd been using Strapi for a while and it was... fine. It did the job. But there was always this nagging feeling that I was fighting against the system rather than working with it. You know that feeling when something's technically working but just doesn't feel right? That was me with Strapi.
+
+## The Strapi Experience: Good, But Not Great
+
+Strapi definitely has its strengths. The admin interface is pretty user-friendly and non-technical folks can usually figure it out without calling me in a panic. The plugin ecosystem is extensive, which can be a lifesaver when you need to add functionality quickly.
+
+```javascript
+// Typical Strapi query
+const { data } = await strapi.query("api::article.article").findMany({
+  populate: ["feature_image", "category"],
+  filters: {
+    title: {
+      $containsi: searchTerm,
+    },
+  },
+});
+```
+
+The community around Strapi is also massive – which means plenty of StackOverflow answers when you're debugging at 2 AM. For simpler projects, Strapi often feels like the path of least resistance.
+
+## Why I Made the Switch to Payload CMS
+
+Despite Strapi's advantages, I found myself gravitating toward Payload CMS, and the 3.0 release sealed the deal for me. Here's why:
+
+### Deep Next.js Integration
+
+Payload 3.0's seamless integration with Next.js is an absolute game-changer. Instead of managing separate frontend and backend deployments, I can now install Payload directly within my Next.js app router. This creates a unified development environment that has dramatically streamlined my workflow.
+
+```jsx
+// Accessing Payload directly in Next.js Server Components
+import { payload } from "@/payload";
+
+export async function generateMetadata({ params }) {
+  const post = await payload.find({
+    collection: "posts",
+    where: {
+      slug: {
+        equals: params.slug,
+      },
+    },
+  });
+
+  return { title: post.docs[0].title };
+}
+```
+
+This means I can deploy both frontend and backend as a single application, which not only simplifies my DevOps setup but also improves performance significantly.
+
+### Developer-First Approach
+
+While Strapi focuses on creating a user-friendly admin interface, Payload prioritizes the developer experience. It provides way more control over how the CMS functions and integrates with my codebase.
+
+The TypeScript support is incredible – everything is fully typed, which means fewer runtime errors and better autocomplete in VS Code. If you're a TypeScript fan like me, this alone might be enough to switch.
+
+### Less Opinionated Than It Seems
+
+I initially hesitated because some developers on Reddit complained about Payload being too opinionated. But after diving in, I've found that it actually gives me more flexibility than Strapi in many ways.
+
+One Reddit user put it well: *"if you have a little patience and take the time to learn, ask questions in the discord and experiment, you'll see that it's actually not very opinionated at all. In fact, I wish it were a bit more opinionated."*
+
+### Performance That Doesn't Suck
+
+Let's talk about speed. Payload's lean architecture means it performs better under high-load scenarios compared to Strapi. I've noticed significantly faster build times and a more responsive admin interface, even when working with complex content types.
+
+## Real-World Usage and Community Feedback
+
+For blogging and content-heavy sites, Payload has been a dream. The rich text editor performance is solid, and I can create complex content models without the mental gymnastics required with other systems.
+
+That said, for e-commerce projects, the community seems split. Some developers suggest pairing Payload with specialized e-commerce backends like MedusaJS: *"I think one of the best ways to build e-commerce, period is with Payload and MedusaJS. Medusa should handle all of the orders, fulfillment, pricing, etc, while all content is through Payload."*
+
+## What About Stability?
+
+The elephant in the room is that Payload 3.0 is technically still in beta as of early 2025. However, according to the Payload team, they're *"hoping for full stable within the next few weeks! Just working with the Next.js team on a few remaining things and then we will be all set."*
+
+For personal projects and non-mission-critical applications, I've found it stable enough to use in production. For client work where stability is paramount, you might want to wait for the final release or stick with version 2 for now.
+
+## When Strapi Might Be the Better Choice
+
+I'm not here to bash Strapi – it's still a solid choice in certain scenarios:
+
+1. When you need a wide array of pre-built plugins
+2. If your content editors require an extremely user-friendly interface
+3. When your team isn't comfortable with a more code-centric approach
+
+But if you're comfortable rolling up your sleeves and writing some code, Payload offers more long-term flexibility.
+
+## The Bottom Line
+
+Payload describes itself as *"the open-source Next.js backend used in production by the most innovative companies on earth"*, which sounds like marketing fluff, but after using it, I can see why they're confident.
+
+The open-source nature of Payload means genuine freedom – something that's increasingly rare in the SaaS-dominated CMS landscape. As they put it, with Payload, you can *"finally build something you truly own."*
+
+For me, switching from Strapi to Payload was like upgrading from a reliable sedan to a sports car that I can customize to my heart's content. There's a learning curve, sure, but the payoff in development speed and flexibility has been worth every minute spent.

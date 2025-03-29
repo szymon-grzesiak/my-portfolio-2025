@@ -41,6 +41,7 @@ export async function generateMetadata({
     title: post.title,
     description: post.description,
     authors: { name: siteConfig.author },
+    keywords: post.tags,
     openGraph: {
       title: post.title,
       description: post.description,
