@@ -1,11 +1,12 @@
 "use client";
+
 import {
-  useMotionValueEvent,
   useScroll,
   useTransform,
   motion,
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { TimelineData } from "./timeline-data";
 
 interface TimelineEntry {
   occupation: string;
@@ -34,40 +35,18 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div
-      className="w-full bg-white pt-10"
-      ref={containerRef}
-    >
+    <div className="w-full bg-white pt-10" ref={containerRef}>
       <div className="flex justify-center flex-col items-center max-w-7xl mx-auto">
-        <h2 id="about" className="text-3xl mb-10 text-black font-bold font-bagel tracking-wide">
+        <h2
+          id="about"
+          className="text-3xl mb-10 text-black font-bold font-bagel tracking-wide"
+        >
           ABOUT ME
         </h2>
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
-        {data.map((item, index) => (
-          <div
-            key={index}
-            className="flex pt-8 md:gap-10 pl-16 md:pl-0"
-          >
-            <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-              <div className="hidden h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black md:flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
-              </div>
-              <h3 className="hidden md:block text-sm md:pl-16 md:text-4xl font-bold text-neutral-500 dark:text-neutral-500 ">
-                {item.title}
-              </h3>
-            </div>
-
-            <div className="z-20 relative pl-4 lg:pl-20 mr-4 md:pl-4 w-full bg-white/10 backdrop-blur-xl rounded-xl p-3 dark:text-black">
-              <h3 className="font-bold text-xl">{item.occupation}</h3>
-              <h4 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
-                {item.title}
-              </h4>
-              {item.content}
-            </div>
-          </div>
-        ))}
+        <TimelineData data={data} />
         <div
           style={{
             height: height + "px",

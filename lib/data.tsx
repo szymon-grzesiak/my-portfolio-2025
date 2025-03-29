@@ -271,10 +271,10 @@ export const projects: ProjectType[] = [
 
 export const timelineData = [
   {
-    title: "August 2023-Present",
+    title: "Aug 2023-Jan 2025",
     occupation: "Helpfind - Frontend Developer",
     content: (
-      <div className="flex flex-col">
+      <div className="flex flex-col pt-3">
         <p className="text-neutral-800 text-md font-normal ">
           During my time at the company, I contributed to the development of a
           CRM system using React, while also creating websites with Next.js. My
@@ -311,12 +311,12 @@ export const timelineData = [
     ),
   },
   {
-    title: "2021-Present",
+    title: "2021-2025",
     occupation: "University of Kalisz - Computer Science Student",
     content: (
       <div>
-        <p className="text-neutral-800 text-md font-normal mb-8">
-          Currently at 4th year. During my engineering studies in Computer
+        <p className="text-neutral-800 pt-3 text-md font-normal mb-8">
+          During my engineering studies in Computer
           Science, I gained extensive knowledge and practical skills in key
           areas of the field. I studied advanced algorithms and object-oriented
           programming, primarily using Java. As part of my coursework, I
@@ -354,11 +354,11 @@ export const projectsData = [
     content: resoursea,
     link: "https://resoursea.vercel.app/",
   },
-  // {
-  //   title: "Blackfyre",
-  //   description:
-  //     "Blackfyre is a language learning app that uses games to help users improve their vocabulary and grammar. It is designed to make learning fun and engaging, with a focus on practical language skills.",
-  //   content: blackfyreBg,
-  //   link: 'https://szymongrzesiak.dev/blackfyre/',
-  // },
+  {
+    title: "Blackfyre",
+    description:
+      "Blackfyre is a language learning app that uses games to help users improve their vocabulary and grammar. It is designed to make learning fun and engaging, with a focus on practical language skills.",
+    content: blackfyreBg,
+    link: 'https://szymongrzesiak.dev/blackfyre/',
+  },
 ];

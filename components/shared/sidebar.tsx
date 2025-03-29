@@ -65,6 +65,9 @@ const Sidebar = () => {
           <SpecialUrl />
         </li>
         <li className="flex flex-col gap-4 justify-center items-center">
+          <Link href="https://t.me/jsbr9" aria-label="Telegram profile">
+            <FaTelegram className="text-3xl hover:text-[#00E5FF]" />
+          </Link>
           <Link
             href="https://www.linkedin.com/in/szymon-grzesiak-296873200/"
             aria-label="LinkedIn profile"
@@ -76,9 +79,6 @@ const Sidebar = () => {
             aria-label="GitHub profile"
           >
             <FaGithub className="text-3xl hover:text-[#00E5FF]" />
-          </Link>
-          <Link href="https://t.me/jsbr9" aria-label="Telegram profile">
-            <FaTelegram className="text-3xl hover:text-[#00E5FF]" />
           </Link>
         </li>
       </ul>
