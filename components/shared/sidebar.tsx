@@ -34,7 +34,7 @@ const Sidebar = () => {
                 <span
                   className={cn(
                     "lineThroughEffect",
-                    pathname === link.href && "active-lineThroughEffect"
+                    pathname.startsWith(link.href) && "active-lineThroughEffect"
                   )}
                 >
                   {link.label}
