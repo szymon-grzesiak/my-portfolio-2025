@@ -1,4 +1,4 @@
-// @ts-nocheck 
+// @ts-nocheck
 
 import { MetadataRoute } from "next";
 import { posts } from "#site/content";
@@ -17,12 +17,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let tags = posts.reduce((acc, post) => {
     if (!post.tags) return acc;
     post.tags.forEach((tag) => {
-      if (!acc.includes(tag)) {
-        acc.push(tag);
+      const slugifiedTag = tag
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-") // Zamienia wszystkie nie-alfanumeryczne znaki na myślniki
+        .replace(/^-+|-+$/g, ""); // Usuwa myślniki z początku i końca
+
+      if (!acc.includes(slugifiedTag)) {
+        acc.push(slugifiedTag);
       }
     });
     return acc;
-  }, []);
+  }, [] as string[]);
 
   return [
     ...routes,
