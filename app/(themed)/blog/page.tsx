@@ -7,6 +7,7 @@ import { Metadata } from "next";
 import { BackgroundBeamsWithCollision } from "@/components/blog/background-beams-with-collision";
 import Image from "next/image";
 import coolGuy from "@/assets/coolguy2.webp";
+import { TagSearch } from "@components/blog/tag-search";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -42,7 +43,7 @@ export default async function BlogPage() {
       </div>
       <div className="md:pl-[150px] xl:pl-10 container flex flex-col-reverse md:flex-row max-w-5xl px-6 py-6 gap-10 lg:py-10">
         {sortedPosts?.length > 0 ? (
-          <ul className="flex flex-col">
+          <ul className="flex flex-col gap-4">
             {sortedPosts.map((post) => {
               const { slug, date, title, description, tags } = post;
               return (
@@ -61,16 +62,9 @@ export default async function BlogPage() {
         ) : (
           <p>Nothing to see here yet</p>
         )}
-        <Card className="bg-white/90 row-start-3 h-fit border-2 border-black shadow-[4px_4px]">
-          <CardHeader>
-            <CardTitle>Tags</CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-wrap gap-3">
-            {sortedTags?.map((tag) => (
-              <Tag tag={tag} key={tag} count={tags[tag]} />
-            ))}
-          </CardContent>
-        </Card>
+        <div className="w-full">
+          <TagSearch tags={tags} sortedTags={sortedTags} />
+        </div>
       </div>
     </div>
   );
