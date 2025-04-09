@@ -7,8 +7,27 @@ import { challenges, learnings } from "./data";
 import DoubleColumn from "./double-column";
 import { ChallengeArrow, TickIcon } from "@components/icons";
 import { FaStar } from "react-icons/fa";
+import { siteConfig } from "@config/site";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blackfyre",
+  description: "Project - A language learning platform",
+  keywords: [
+    "Blackfyre",
+    "Language Learning",
+    "Web Development",
+    "Next.js",
+    "React",
+    "TypeScript",
+  ],
+  alternates: {
+    canonical: `${siteConfig.url}/blackfyre`,
+  }
+};
 
 function Page() {
+  
   return (
     <main className="relative bgCool md:pl-[130px] flex flex-col items-center">
       <ProjectHero

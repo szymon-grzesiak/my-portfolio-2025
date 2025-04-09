@@ -55,6 +55,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  alternates: {
+    canonical: "https://szymongrzesiak.dev",
+  },
   robots: {
     index: true,
     follow: true,

@@ -14,6 +14,22 @@ import Link from "next/link";
 import { HiExternalLink } from "react-icons/hi";
 import Image from "next/image";
 import resoursea from "../../../assets/resoursea.png";
+import { siteConfig } from "@config/site";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Resoursea",
+  description: "Project - A platform for knowledge sharing",
+  keywords: [
+    "Resoursea",
+    "Knowledge Sharing",
+    "Web Development",
+    "Blog",
+  ],
+  alternates: {
+    canonical: `${siteConfig.url}/resoursea`,
+  }
+};
 
 function Page() {
   return (

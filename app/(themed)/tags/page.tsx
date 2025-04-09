@@ -5,10 +5,22 @@ import { Tag } from "@/components/blog/tag";
 import { BackgroundBeamsWithCollision } from "@components/blog/background-beams-with-collision";
 import coolGuy from "@/assets/coolguy2.webp";
 import Image from "next/image";
+import { siteConfig } from "@config/site";
 
 export const metadata: Metadata = {
   title: "Tags",
   description: "Topic I've written about",
+  keywords: [
+    "Tags",
+    "Software Development",
+    "Web Development",
+    "Next.js",
+    "React",
+    "TypeScript",
+  ],
+  alternates: {
+    canonical: `${siteConfig.url}/tags`,
+  },
 };
 
 export default async function TagsPage() {

@@ -8,10 +8,22 @@ import { BackgroundBeamsWithCollision } from "@/components/blog/background-beams
 import Image from "next/image";
 import coolGuy from "@/assets/coolguy2.webp";
 import { TagSearch } from "@components/blog/tag-search";
+import { siteConfig } from "@config/site";
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "Read my thoughts on software development, design, and more.",
+  title: "Blog - Szymon Grzesiak | Full Stack Developer",
+  description: "Read my thoughts on software development, design, and more. I share insights, tutorials, and experiences in web development.",
+  keywords: [
+    "Blog",
+    "Software Development",
+    "Web Development",
+    "Next.js",
+    "React",
+    "TypeScript",
+  ],
+  alternates: {
+    canonical: `${siteConfig.url}/blog`,
+  }
 };
 
 export default async function BlogPage() {
