@@ -33,10 +33,13 @@ export default function Home() {
           priority={true}
           alt="Guy with a telescope"
           className="lg:w-[414px] md:w-[304px] w-[273px] pl-12"
-          />
+        />
         <div className="flex justify-center h-full">
           <div className="flex flex-col items-start md:items-start justify-center gap-y-6 md:pb-10 lg:pb-0">
-            <h1
+            <h1 className="sr-only">
+              Szymon Grzesiak – Full Stack Web Developer using Next.js
+            </h1>
+            <p
               id="home"
               className="text-5xl sm:text-6xl md:text-5xl lg:text-7xl font-[500] flex flex-col font-bagel tracking-widest gap-5"
             >
@@ -48,13 +51,13 @@ export default function Home() {
                   Szymon
                 </p>
               </div>
-            </h1>
-            <p className="md:w-full md:max-w-[440px] text-lg text-black">
+            </p>
+            <h2 className="md:w-full md:max-w-[440px] text-lg text-black">
               My full name is Szymon Grzesiak, I&apos;m from Poland and I&apos;m
               Full Stack Developer with a focus on Web Development. My expertise
               lies in building Responsive Web Designs using modern technologies
               like Next.js. 🚀
-            </p>
+            </h2>
             <a
               className="flex justify-center items-end gap-3"
               href="mailto:szymongrzesiak.pl@gmail.com"
@@ -84,7 +87,10 @@ export default function Home() {
                 <div className="hidden md:block">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="cursor-default" aria-label={`Icon for ${project.title}`}>
+                      <TooltipTrigger
+                        className="cursor-default"
+                        aria-label={`Icon for ${project.title}`}
+                      >
                         <Icon className="w-16 h-16 mr-6" />
                       </TooltipTrigger>
                       <TooltipContent className="mr-6">
@@ -95,7 +101,10 @@ export default function Home() {
                 </div>
                 <div className="block md:hidden">
                   <Popover>
-                    <PopoverTrigger className="cursor-default" aria-label={`Icon for ${project.title}`}>
+                    <PopoverTrigger
+                      className="cursor-default"
+                      aria-label={`Icon for ${project.title}`}
+                    >
                       <Icon className="w-16 h-16 mr-6" />
                     </PopoverTrigger>
                     <PopoverContent className="w-fit bg-white">

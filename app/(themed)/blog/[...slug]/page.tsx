@@ -38,8 +38,8 @@ export async function generateMetadata({
   ogSearchParams.set("title", post.title);
 
   return {
-    title: post.title,
-    description: post.description,
+    title: `${post.title} | Blog by Szymon Grzesiak`,
+    description: post.description || "Read this insightful article on my blog.",
     authors: { name: siteConfig.author },
     keywords: post.tags,
     openGraph: {
@@ -62,6 +62,9 @@ export async function generateMetadata({
       title: post.title,
       description: post.description,
       images: [`/api/og?${ogSearchParams.toString()}`],
+    },
+    alternates: {
+      canonical: `https://szymongrzesiak.dev/blog/${post.slug}`,
     },
   };
 }

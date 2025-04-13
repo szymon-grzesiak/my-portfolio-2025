@@ -26,7 +26,7 @@ const Page = () => {
       <div className="flex flex-col justify-center items-center gap-6 bg-white/90 p-10 rounded-3xl border-2 border-black shadow-[4px_4px] shadow-black">
         <div className="button rounded-[24px] overflow-hidden px-6 py-3 font-bold">
           <Link
-            href={"https://www.szymongrzesiak.dev/resume_szymon_grzesiak.pdf"}
+            href={"https://szymongrzesiak.dev/resume_szymon_grzesiak.pdf"}
             target="_blank"
             className="text-white"
           >

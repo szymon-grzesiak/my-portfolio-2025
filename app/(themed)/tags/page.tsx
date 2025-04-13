@@ -8,16 +8,38 @@ import Image from "next/image";
 import { siteConfig } from "@config/site";
 
 export const metadata: Metadata = {
-  title: "Tags",
-  description: "Topic I've written about",
+  title: "Explore Topics & Tags | Software Development Blog | Szymon Grzesiak",
+  description: "Browse all topics and tags I write about including software development, web development, Next.js, React, and more. Find articles that interest you.",
   keywords: [
-    "Tags",
-    "Software Development",
-    "Web Development",
-    "Next.js",
-    "React",
-    "TypeScript",
+    "Software Development Topics",
+    "Programming Tags",
+    "Web Development Blog",
+    "Next.js Resources",
+    "React Articles",
+    "TypeScript Tutorials",
+    "Coding Blog Tags"
   ],
+  authors: { name: siteConfig.author },
+  openGraph: {
+    title: "Explore Topics & Tags | Software Development Blog",
+    description: "Browse all topics and tags I write about including software development, web development, Next.js, React, and more. Find articles that interest you.",
+    type: "website",
+    url: `${siteConfig.url}/tags`,
+    images: [
+      {
+        url: "/api/og",
+        width: 1200,
+        height: 630,
+        alt: "Topics and Tags - Szymon Grzesiak's Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Explore Topics & Tags | Software Development Blog",
+    description: "Browse all topics and tags I write about including software development, web development, Next.js, React, and more.",
+    images: ["/api/og"],
+  },
   alternates: {
     canonical: `${siteConfig.url}/tags`,
   },

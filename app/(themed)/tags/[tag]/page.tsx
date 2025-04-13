@@ -21,13 +21,18 @@ export async function generateMetadata({
   params,
 }: TagPageProps): Promise<Metadata> {
   const { tag } = await params;
+  const formattedTag = tag
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
   return {
-    title: tag,
-    description: `Posts on the topic of ${tag}`,
+    title: `Explore Posts About ${formattedTag} | Szymon Grzesiak`,
+    description: `Discover insightful articles and thoughts on ${formattedTag}. Stay updated with the latest posts and ideas.`,
     authors: { name: siteConfig.author },
     openGraph: {
-      title: tag,
-      description: `Posts on the topic of ${tag}`,
+      title: `Explore Posts About ${formattedTag}`,
+      description: `Discover insightful articles and thoughts on ${formattedTag}. Stay updated with the latest posts and ideas.`,
       type: "website",
       url: `https://szymongrzesiak.dev/tags/${tag}`,
       images: [
@@ -35,15 +40,18 @@ export async function generateMetadata({
           url: "/api/og",
           width: 1200,
           height: 630,
-          alt: tag,
+          alt: formattedTag,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: tag,
-      description: `Posts on the topic of ${tag}`,
+      title: `Explore Posts About ${formattedTag}`,
+      description: `Discover insightful articles and thoughts on ${formattedTag}. Stay updated with the latest posts and ideas.`,
       images: ["/api/og"],
+    },
+    alternates: {
+      canonical: `https://szymongrzesiak.dev/tags/${tag}`,
     },
   };
 }
