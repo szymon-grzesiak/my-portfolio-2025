@@ -316,15 +316,15 @@ export const timelineData = [
     content: (
       <div>
         <p className="text-neutral-800 pt-3 text-md font-normal mb-8">
-          During my engineering studies in Computer
-          Science, I gained extensive knowledge and practical skills in key
-          areas of the field. I studied advanced algorithms and object-oriented
-          programming, primarily using Java. As part of my coursework, I
-          developed Android applications in Java, which helped me build
-          expertise in mobile programming. I also worked with SQL Server
-          databases, learning how to design and manage relational databases.
-          Additionally, I was introduced to PHP and the basics of the Laravel
-          framework, which enabled me to create dynamic web applications.
+          During my engineering studies in Computer Science, I gained extensive
+          knowledge and practical skills in key areas of the field. I studied
+          advanced algorithms and object-oriented programming, primarily using
+          Java. As part of my coursework, I developed Android applications in
+          Java, which helped me build expertise in mobile programming. I also
+          worked with SQL Server databases, learning how to design and manage
+          relational databases. Additionally, I was introduced to PHP and the
+          basics of the Laravel framework, which enabled me to create dynamic
+          web applications.
         </p>
       </div>
     ),
@@ -347,13 +347,11 @@ export const curiosities = [
   "I love POP Punk music genre 🎸",
   "I'm low-key really bad programmer :D",
   "Shush 🤫, don't tell anyone, but I love to play League of Legends... and osu!",
-  "My blog is something I want to develop in the future 👌",  
+  "My blog is something I want to develop in the future 👌",
   "Easter egg: here is my Discord: jsbr",
   "I plan to make SaaS projects",
-  "If someone reads this, let's connect!"
+  "If someone reads this, let's connect!",
 ];
-
-
 
 export const projectsData = [
   {
@@ -361,7 +359,8 @@ export const projectsData = [
     description:
       "Vocablaze is a language learning app that uses games to help users improve their vocabulary and grammar. It is designed to make learning fun and engaging, with a focus on practical language skills.",
     content: blackfyreBg,
-    link: 'https://www.hgfhkmfgklmdslkr665464fdsf.space/',
+    link: "https://www.hgfhkmfgklmdslkr665464fdsf.space/",
+    githubLink: "https://github.com/itsJasberry/vocablaze",
   },
   {
     title: "Resoursea",
@@ -369,5 +368,6 @@ export const projectsData = [
       "Resoursea is a platform where you can share your resources with others. It is designed to help students and professionals find the resources they need to succeed in their studies and careers.",
     content: resoursea,
     link: "https://resoursea.vercel.app/",
+    githubLink: "https://github.com/itsJasberry/resoursea",
   },
 ];

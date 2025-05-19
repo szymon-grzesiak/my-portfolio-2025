@@ -23,6 +23,7 @@ interface Props {
     description: string;
     content?: React.ReactNode | any;
     link?: string;
+    githubLink?: string;
   }[];
 }
 
@@ -49,20 +50,33 @@ const SwipeCards = ({ content }: Props) => {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-100 flex items-end p-4 z-20 w-full">
                   <div className="text-white w-full flex justify-between">
-                    <h3 className="text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
-                      <Link
-                        className="flex gap-2 justify-center items-center"
-                        href={content[index].link as string}
-                        target="_blank"
-                      >
-                        Live Site <HiExternalLink className="text-white" />
-                      </Link>
-                    </h3>
-                    <h3 className="text-lg font-bold hover:text-[#00E5FF] cursor-pointer">
+                    <div className="flex flex-col items-start">
+                      <p className="text-base md:text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
+                        <Link
+                          className="flex gap-2 justify-center items-center"
+                          href={content[index].githubLink as string}
+                          target="_blank"
+                        >
+                          Github Code <HiExternalLink className="text-white" />
+                        </Link>
+                      </p>
+
+                      <p className="text-base lg:text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
+                        <Link
+                          className="flex gap-2 justify-center items-center"
+                          href={content[index].link as string}
+                          target="_blank"
+                        >
+                          Live Site <HiExternalLink className="text-white" />
+                        </Link>
+                      </p>
+                    </div>
+
+                    <p className="text-base md:text-lg font-bold hover:text-[#00E5FF] cursor-pointer">
                       <Link href={`/${slug(content[index].title)}`}>
                         See Case Study
                       </Link>
-                    </h3>
+                    </p>
                   </div>
                 </div>
               </div>

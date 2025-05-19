@@ -21,6 +21,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@components/ui/popover";
+import { StarIcon } from "lucide-react";
 
 export default function Home() {
   return (
@@ -134,6 +135,7 @@ export default function Home() {
             id="projects"
             className="text-center bg-indigo-400 font-bold rounded-xl px-4 border-2 border-black shadow-black shadow-[4px_4px] font-bagel text-xl md:text-2xl tracking-widest"
           >
+            <StarIcon className="inline-block mr-2 text-yellow-400 fill-amber-300" />
             PROJECTS
           </h2>
         </div>

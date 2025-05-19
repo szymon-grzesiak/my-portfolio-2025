@@ -40,6 +40,7 @@ export const ProjectsSection = ({
     description: string;
     content?: React.ReactNode | any;
     link?: string;
+    githubLink?: string;
   }[];
   contentClassName?: string;
 }) => {
@@ -140,16 +141,34 @@ export const ProjectsSection = ({
             alt={content[activeCard].title}
             className="w-full h-full object-cover rounded-md z-10 border-2 border-white shadow-white shadow-[6px_6px]"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-100 flex items-end p-4 rounded-md z-20 w-full">
-            <div className="text-white w-full flex justify-between">
-              <h3 className="text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
-                <Link className="flex gap-2 justify-center items-center" href={content[activeCard].link as string} target="_blank">
-                Live Site <HiExternalLink className="text-white" />
+          <div className="absolute inset-0 bg-linear-to-t from-black to-transparent opacity-100 flex items-end p-4 rounded-md z-20 w-full">
+            <div className="text-white w-full flex justify-between items-end">
+              <div className="flex flex-col items-start">
+                <p className="text-base lg:text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
+                  <Link
+                    className="flex gap-2 justify-center items-center"
+                    href={content[activeCard].githubLink as string}
+                    target="_blank"
+                  >
+                    Github Code <HiExternalLink className="text-white" />
+                  </Link>
+                </p>
+                <p className="text-base lg:text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
+                  <Link
+                    className="flex gap-2 justify-center items-center"
+                    href={content[activeCard].link as string}
+                    target="_blank"
+                  >
+                    Live Site <HiExternalLink className="text-white" />
+                  </Link>
+                </p>
+              </div>
+
+              <p className="text-base lg:text-lg font-bold hover:text-[#00E5FF] cursor-pointer">
+                <Link href={`/${slug(content[activeCard].title)}`}>
+                  See Case Study
                 </Link>
-              </h3>
-              <h3 className="text-lg font-bold hover:text-[#00E5FF] cursor-pointer">
-                <Link href={`/${slug(content[activeCard].title)}`}>See Case Study</Link>
-              </h3>
+              </p>
             </div>
           </div>
         </div>
