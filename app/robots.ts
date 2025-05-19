@@ -6,12 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: [
-          "/_next/",
-          "/api/",
-          "/static/",
-          "/*?_rsc=*",
-        ],
       },
     ],
     sitemap: "https://szymongrzesiak.dev/sitemap.xml",
