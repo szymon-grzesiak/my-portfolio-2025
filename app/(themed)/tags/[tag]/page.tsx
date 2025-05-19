@@ -37,7 +37,7 @@ export async function generateMetadata({
       url: `https://szymongrzesiak.dev/tags/${tag}`,
       images: [
         {
-          url: "/api/og",
+          url: `/api/og?title=${formattedTag}`,
           width: 1200,
           height: 630,
           alt: formattedTag,
@@ -48,7 +48,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `Explore Posts About ${formattedTag}`,
       description: `Discover insightful articles and thoughts on ${formattedTag}. Stay updated with the latest posts and ideas.`,
-      images: ["/api/og"],
+      images: [`https://szymongrzesiak.dev/api/og?title=${formattedTag}`],
     },
     alternates: {
       canonical: `https://szymongrzesiak.dev/tags/${tag}`,

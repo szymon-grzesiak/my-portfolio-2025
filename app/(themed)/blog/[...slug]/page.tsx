@@ -38,16 +38,16 @@ export async function generateMetadata({
   ogSearchParams.set("title", post.title);
 
   return {
-    title: `${post.title} | Blog by Szymon Grzesiak`,
+    title: `${post.title} | Blog by Szymon Grzesiak` || "Blog by Szymon Grzesiak",
     description: post.description || "Read this insightful article on my blog.",
     authors: { name: siteConfig.author },
     keywords: post.tags,
     openGraph: {
-      title: post.title,
-      description: post.description,
+      title: post.title || "Blog by Szymon Grzesiak",
+      description: post.description || "Read this insightful article on my blog.",
       type: "article",
       publishedTime: post.date,
-      url: post.slug,
+      url: `https://szymongrzesiak.dev/blog/${post.slug}`,
       images: [
         {
           url: `/api/og?${ogSearchParams.toString()}`,
