@@ -9,12 +9,18 @@ import { ChallengeArrow, TickIcon } from "@components/icons";
 import { FaStar } from "react-icons/fa";
 import { siteConfig } from "@config/site";
 import { Metadata } from "next";
+import Typography from "@components/shared/Typography";
+import Link from "next/link";
+import { HiExternalLink } from "react-icons/hi";
+import Image from "next/image";
+import blackfyre from "../../../assets/main_screen_blackfyre.png"
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Blackfyre",
+  title: "Vocablaze",
   description: "Project - A language learning platform",
   keywords: [
-    "Blackfyre",
+    "Vocablaze",
     "Language Learning",
     "Web Development",
     "Next.js",
@@ -22,7 +28,7 @@ export const metadata: Metadata = {
     "TypeScript",
   ],
   alternates: {
-    canonical: `${siteConfig.url}/blackfyre`,
+    canonical: `${siteConfig.url}/vocablaze`,
   }
 };
 
@@ -31,10 +37,9 @@ function Page() {
   return (
     <main className="relative bgCool md:pl-[130px] flex flex-col items-center">
       <ProjectHero
-        title="Blackfyre"
+        title="Vocablaze"
         titleDescription="Your comfort learning platform"
       />
-      <div className="text-center p-3 mx-5 mt-4 rounded-full border-2 bg-white border-black shadow-[4px_4px] shadow-black w-fit font-bold text-red-500">*This is my final year engineer project and I can&apos;t show live site yet, because this could be against rules of my University.</div>
       <DoubleColumn
         leftSide={<h2>Overview</h2>}
         rightSide={
@@ -106,6 +111,46 @@ function Page() {
         rightSide={
           <>
             <ProjectProcess />
+          </>
+        }
+      />
+        <DoubleColumn
+        leftSide={
+          <div>
+            <h2>Final Site</h2>
+            <Typography className="font-thin text-xl">
+              <Link
+                className="flex justify-center items-center gap-1 hover:underline underline-offset-4"
+                href="https://www.hgfhkmfgklmdslkr665464fdsf.space/"
+                target="_blank"
+              >
+                vocablaze.com{" "}
+                <HiExternalLink className="text-blue-600" />
+              </Link>
+            </Typography>
+          </div>
+        }
+        rightSide={
+          <>
+            <Link
+              className="flex justify-center items-center gap-1 hover:underline underline-offset-4"
+              href="https://resoursea.vercel.app/"
+              target="_blank"
+            >
+              <div className="relative w-full md:max-w-[1025px] md:h-[488px] h-[280px]">
+                <Image
+                  src={blackfyre}
+                  className="w-full h-full object-cover border-[3px] rounded-3xl border-black shadow-black shadow-[4px_4px]"
+                  alt="Resoursea app."
+                />
+                <div className="absolute inset-0 hover:bg-black/30 rounded-3xl">
+                  <div className="flex justify-center items-center h-full text-6xl text-white">
+                    Visit website{" "}
+                    <ArrowRight className="text-white w-[50px] h-[50px] animate-bounce" />
+                  </div>
+                </div>
+              </div>
+            </Link>
           </>
         }
       />

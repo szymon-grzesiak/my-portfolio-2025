@@ -11,7 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changefreq: 'weekly',
   }));
 
-  let routes = ["", "/blog", "/resoursea", "/blackfyre", "/tags"].map((route) => ({
+  let routes = ["", "/blog", "/resoursea", "/vocablaze", "/tags"].map((route) => ({
     url: `https://szymongrzesiak.dev${route}`,
     lastModified: new Date().toISOString().split("T")[0],
     priority: route === '' ? 1.0 : 0.8,

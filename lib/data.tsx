@@ -357,17 +357,17 @@ export const curiosities = [
 
 export const projectsData = [
   {
+    title: "Vocablaze",
+    description:
+      "Vocablaze is a language learning app that uses games to help users improve their vocabulary and grammar. It is designed to make learning fun and engaging, with a focus on practical language skills.",
+    content: blackfyreBg,
+    link: 'https://www.hgfhkmfgklmdslkr665464fdsf.space/',
+  },
+  {
     title: "Resoursea",
     description:
       "Resoursea is a platform where you can share your resources with others. It is designed to help students and professionals find the resources they need to succeed in their studies and careers.",
     content: resoursea,
     link: "https://resoursea.vercel.app/",
-  },
-  {
-    title: "Blackfyre",
-    description:
-      "Blackfyre is a language learning app that uses games to help users improve their vocabulary and grammar. It is designed to make learning fun and engaging, with a focus on practical language skills.",
-    content: blackfyreBg,
-    link: 'https://szymongrzesiak.dev/blackfyre/',
   },
 ];
