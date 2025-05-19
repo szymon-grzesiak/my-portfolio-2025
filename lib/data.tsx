@@ -333,15 +333,24 @@ export const timelineData = [
 
 export const curiosities = [
   "I graduated in geography and languages ​​in high school",
-  "My favorite fruit is grapes",
-  "I began my programming journey with Java in 2020",
-  "My dream place to live is California, San Diego. Because there are more than 300 sunny days a year",
-  "I have been training calisthenics since 2016, but with considerable breaks",
+  "My favorite fruit is grapes 🍇",
+  "I began my programming journey with Java in 2020 🧑‍💻",
+  "My dream place to live is California, San Diego, because I love sun 🌻",
+  "I have been training calisthenics 💪 since 2016, but with considerable breaks",
   "I just want you to know that I wish you all the best 🍀",
-  "I'm a big fan of Game of Thrones, and I've read all the books",
+  "I'm a big fan of Game of Thrones, and I've read all the books 📚",
   "Design of this website is called Neo-brutalism with accents of Glassmorphism",
   "Seriously, do you keep lurking? 🤔",
-  "If you want to know more about me, just ask me on my socials"
+  "If you want to know more about me, just ask me on my socials",
+  "I finished Bachelor's degree with GPA 4.52 on a 5.0 scale 🤓",
+  "I'm trying to learn new techs like AWS and Docker 🤓",
+  "I love POP Punk music genre 🎸",
+  "I'm low-key really bad programmer :D",
+  "Shush 🤫, don't tell anyone, but I love to play League of Legends... and osu!",
+  "My blog is something I want to develop in the future 👌",  
+  "Easter egg: here is my Discord: jsbr",
+  "I plan to make SaaS projects",
+  "If someone reads this, let's connect!"
 ];
 
 

@@ -59,13 +59,13 @@ export default function Home() {
               like Next.js. 🚀
             </h2>
             <a
-              className="flex justify-center items-end gap-3"
+              className="flex justify-center items-end gap-3 rounded-2xl p-2 bg-white/20 border border-gray-300 hover:bg-white/40"
               href="mailto:szymongrzesiak.pl@gmail.com"
             >
               <h2 className="text-3xl font-bold lineThroughEffect">
                 Contact Me
               </h2>
-              <TbMailShare className="text-3xl" />
+              <TbMailShare className="text-3xl shrink-0 mb-1 text-indigo-400" />
             </a>
           </div>
         </div>
