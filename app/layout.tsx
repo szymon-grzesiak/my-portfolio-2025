@@ -78,9 +78,6 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = {
-  colorScheme: "light",
-};
 
 export default function RootLayout({
   children,
@@ -90,7 +87,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scheme-light ${poppins.variable} ${jersey.variable} ${bagel.variable} font-sans antialiased text-black bg-white`}
+      className={`${poppins.variable} ${jersey.variable} ${bagel.variable} font-sans antialiased text-black bg-white`}
       suppressHydrationWarning
     >
       <head>
