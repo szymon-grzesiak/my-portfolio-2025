@@ -84,7 +84,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
+  return ( 
     <html
       lang="en"
       className={`${poppins.variable} ${jersey.variable} ${bagel.variable} font-sans antialiased text-black bg-white`}
