@@ -4,12 +4,12 @@ import { notFound } from "next/navigation";
 
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
-import { Tag } from "@components/blog/tag";
-import { cache } from "react";
-import { increment } from "@db/actions";
+import { Tag } from "@/components/blog/tag";
+// import { cache } from "react";
+// import { increment } from "@/db/actions";
 // import { getViewsCount } from "@db/queries";
 // import ViewCounter from "../view-counter";
-import { ClientSideTableOfContents } from "@components/blog/client-side-toc";
+import { ClientSideTableOfContents } from "@/components/blog/client-side-toc";
 
 interface PostPageProps {
   params: Promise<{
@@ -38,13 +38,15 @@ export async function generateMetadata({
   ogSearchParams.set("title", post.title);
 
   return {
-    title: `${post.title} | Blog by Szymon Grzesiak` || "Blog by Szymon Grzesiak",
+    title:
+      `${post.title} | Blog by Szymon Grzesiak` || "Blog by Szymon Grzesiak",
     description: post.description || "Read this insightful article on my blog.",
     authors: { name: siteConfig.author },
     keywords: post.tags,
     openGraph: {
       title: post.title || "Blog by Szymon Grzesiak",
-      description: post.description || "Read this insightful article on my blog.",
+      description:
+        post.description || "Read this insightful article on my blog.",
       type: "article",
       publishedTime: post.date,
       url: `https://szymongrzesiak.dev/blog/${post.slug}`,
@@ -69,9 +71,11 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams(): Promise<{
-  slug: string[];
-}[]> {
+export async function generateStaticParams(): Promise<
+  {
+    slug: string[];
+  }[]
+> {
   return posts.map((post) => ({ slug: post.slugAsParams.split("/") }));
 }
 

@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { memo } from "react";
 
-export const BackgroundBeams = React.memo(
+export const BackgroundBeams = memo(
   ({ className }: { className?: string }) => {
     const paths = [
       "M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875",
@@ -60,7 +61,7 @@ export const BackgroundBeams = React.memo(
     return (
       <div
         className={cn(
-          "fixed h-full w-full inset-0  [mask-size:40px] [mask-repeat:no-repeat] flex items-center justify-center",
+          "fixed h-full w-full inset-0  mask-size-[40px] mask-no-repeat flex items-center justify-center",
           className
         )}
       >

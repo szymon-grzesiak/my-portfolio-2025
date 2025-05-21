@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { TextGenerateEffect } from "../../ui/text-generate-effect";
-import { curiosities } from "@lib/data";
+import { curiosities } from "@/lib/data";
 import angler from "../../../assets/angler.png";
 import Image from "next/image";
 
@@ -58,7 +58,7 @@ const AnglerSection = () => {
             <p className="z-10">Click</p>
           )}
         </button>
-        <div className="relative px-6 mt-5 h-[100px] w-full max-w-2/3 md:max-w-[800px]">
+        <div className="relative px-6 mt-5 h-[100px] w-full md:max-w-[800px]">
           <TextGenerateEffect key={fetchCount} words={fact} />
         </div>
       </div>

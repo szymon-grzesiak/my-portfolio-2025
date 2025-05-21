@@ -1,17 +1,17 @@
 "use client";
 
-import * as React from "react";
+import { useMemo, useState, useEffect } from "react";
 
-import { TableOfContents } from "@lib/toc";
+import { TableOfContents } from "@/lib/toc";
 import { cn } from "@/lib/utils";
-import { useMounted } from "@hooks/use-mounted";
+import { useMounted } from "@/hooks/use-mounted";
 
 interface TocProps {
   toc: TableOfContents;
 }
 
 export function DashboardTableOfContents({ toc }: TocProps) {
-  const itemIds = React.useMemo(
+  const itemIds = useMemo(
     () =>
       toc.items
         ? toc.items
@@ -20,7 +20,7 @@ export function DashboardTableOfContents({ toc }: TocProps) {
             .filter(Boolean)
             .map((id) => id?.split("#")[1])
         : [],
-    [toc],
+    [toc]
   );
   const activeHeading = useActiveItem(itemIds);
   const mounted = useMounted();
@@ -38,9 +38,9 @@ export function DashboardTableOfContents({ toc }: TocProps) {
 }
 
 function useActiveItem(itemIds: (string | undefined)[]) {
-  const [activeId, setActiveId] = React.useState<string>("");
+  const [activeId, setActiveId] = useState<string>("");
 
-  React.useEffect(() => {
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -49,7 +49,7 @@ function useActiveItem(itemIds: (string | undefined)[]) {
           }
         });
       },
-      { rootMargin: `0% 0% -80% 0%` },
+      { rootMargin: `0% 0% -80% 0%` }
     );
 
     itemIds?.forEach((id) => {
@@ -98,7 +98,7 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
                 "inline-block no-underline",
                 item.url === `#${activeItem}`
                   ? "font-medium text-primary"
-                  : "text-sm text-muted-foreground",
+                  : "text-sm text-muted-foreground"
               )}
             >
               {item.title}

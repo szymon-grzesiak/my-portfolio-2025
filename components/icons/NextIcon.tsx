@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function NextIcon(props: React.ComponentProps<"svg">) {
+export function NextIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="51"

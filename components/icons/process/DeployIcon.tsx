@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function DeployIcon(props: React.ComponentProps<"svg">) {
+export function DeployIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function GsapIcon(props: React.ComponentProps<"svg">) {
+export function GsapIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       height="2500"

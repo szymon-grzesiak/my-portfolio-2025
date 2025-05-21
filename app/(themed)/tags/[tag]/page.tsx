@@ -1,15 +1,14 @@
 import { posts } from "#site/content";
 import { PostItem } from "@/components/blog/post-item";
-import { Tag } from "@/components/blog/tag";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent  } from "@/components/ui/card";
 import { getAllTags, getPostsByTagSlug, sortTagsByCount } from "@/lib/utils";
-import { BackgroundBeamsWithCollision } from "@components/blog/background-beams-with-collision";
-import { siteConfig } from "@config/site";
+import { BackgroundBeamsWithCollision } from "@/components/blog/background-beams-with-collision";
+import { siteConfig } from "@/config/site";
 import { slug } from "github-slugger";
 import { Metadata } from "next";
 import Image from "next/image";
 import coolGuy from "@/assets/coolguy2.webp";
-import { TagSearch } from "@components/blog/tag-search";
+import { TagSearch } from "@/components/blog/tag-search";
 
 interface TagPageProps {
   params: Promise<{
@@ -75,9 +74,9 @@ export default async function TagPage({ params }: TagPageProps) {
     <div className="relative z-10">
       <div className="relative h-64">
         <BackgroundBeamsWithCollision>
-          <h2 className="flex flex-col relative z-20 text-4xl lg:text-7xl font-bold text-center text-black font-sans tracking-tight">
+          <h2 className="flex flex-col relative z-20 text-3xl lg:text-7xl font-bold text-center text-black font-sans tracking-tight">
             Read my thoughts on
-            <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+            <div className="relative mx-auto inline-block w-max filter-[drop-shadow(0px_1px_3px_rgba(27,37,80,0.14))]">
               <div className="relative bg-clip-text text-transparent bg-no-repeat bg-linear-to-r from-blue-300 via-blue-500 to-blue-800 py-4">
                 <span className="">Software Development.</span>
               </div>
@@ -101,7 +100,15 @@ export default async function TagPage({ params }: TagPageProps) {
           </div>
         </div>
         <div className="grid grid-cols-12 gap-6 mt-8">
-          <div className="col-span-12 col-start-1 sm:col-span-8">
+          <Card className="w-full col-span-12 border-none row-start-1 h-fit sm:col-span-4 sm:col-start-9 sm:row-start-1 bg-transparent">
+            <CardContent className="flex p-0 flex-wrap gap-2 w-full">
+              <div className="w-full">
+                <TagSearch tags={tags} sortedTags={sortedTags} />
+              </div>
+            </CardContent>
+          </Card>
+
+          <div className="col-span-12 col-start-1 row-start-2 sm:col-span-8 sm:row-start-1">
             {displayPosts?.length > 0 ? (
               <ul className="flex flex-col gap-4">
                 {displayPosts.map((post) => {
@@ -123,13 +130,6 @@ export default async function TagPage({ params }: TagPageProps) {
               <p>Nothing to see here yet</p>
             )}
           </div>
-          <Card className="col-span-12 border-none row-start-3 h-fit sm:col-span-4 sm:col-start-9 sm:row-start-1">
-            <CardContent className="flex flex-wrap gap-2">
-              <div className="w-full">
-                <TagSearch tags={tags} sortedTags={sortedTags} />
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </div>

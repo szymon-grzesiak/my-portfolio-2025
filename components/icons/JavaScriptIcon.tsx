@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function JavaScriptIcon(props: React.ComponentProps<"svg">) {
+export function JavaScriptIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="51"

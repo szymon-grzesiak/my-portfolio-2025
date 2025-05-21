@@ -1,12 +1,12 @@
-import Typography from "@components/shared/Typography";
-import { cn } from "@lib/utils";
+import Typography from "@/components/shared/Typography";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React, { ComponentPropsWithoutRef, FC } from "react";
+import { ComponentProps, ComponentPropsWithoutRef, FC } from "react";
 import restlyImageDesktop from "../../../assets/keanu.webp";
 
 interface ProjectProblemStatement extends ComponentPropsWithoutRef<"section"> {
   description?: string;
-  image?: React.ComponentProps<typeof Image>["src"];
+  image?: ComponentProps<typeof Image>["src"];
   alt?: string;
 }
 
@@ -20,7 +20,7 @@ const ProjectProblemStatement: FC<ProjectProblemStatement> = ({
     <section
       className={cn(
         "w-full overflow-hidden bg-white-900 px-6 py-10 dark:bg-black-200 md:px-[72px] md:pb-[43px] md:pt-[53px]",
-        className,
+        className
       )}
     >
       <div className="mx-auto flex w-full max-w-[880px] flex-col">

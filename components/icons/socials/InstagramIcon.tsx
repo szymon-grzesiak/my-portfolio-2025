@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function InstagramIcon(props: React.ComponentProps<"svg">) {
+export function InstagramIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="24"

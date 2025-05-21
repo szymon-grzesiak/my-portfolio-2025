@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function TypeScriptIcon(props: React.ComponentProps<"svg">) {
+export function TypeScriptIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="51"

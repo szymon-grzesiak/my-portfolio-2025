@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   motion,
   useAnimationFrame,
@@ -11,7 +11,7 @@ import {
   useVelocity,
 } from "framer-motion";
 
-import { cn } from "@lib/utils";
+import { cn } from "@/lib/utils";
 
 interface VelocityScrollProps {
   text: string;
@@ -74,7 +74,7 @@ export function VelocityScroll({
 
     const x = useTransform(baseX, (v) => `${wrap(-100 / repetitions, 0, v)}%`);
 
-    const directionFactor = React.useRef<number>(1);
+    const directionFactor = useRef<number>(1);
     useAnimationFrame((t, delta) => {
       let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 

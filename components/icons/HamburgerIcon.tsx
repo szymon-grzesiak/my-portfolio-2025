@@ -1,9 +1,9 @@
-import React from "react";
+import { ComponentProps, forwardRef } from "react";
 
 // Zastosowanie forwardRef do obsługi refs
-export const HamburgerIcon = React.forwardRef<
+export const HamburgerIcon = forwardRef<
   SVGSVGElement,
-  React.ComponentProps<"svg">
+  ComponentProps<"svg">
 >((props, ref) => {
   return (
     <svg

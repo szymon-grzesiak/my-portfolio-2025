@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function SEOIcon(props: React.ComponentProps<"svg">) {
+export function SEOIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="25"

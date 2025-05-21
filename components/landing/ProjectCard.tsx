@@ -1,5 +1,5 @@
-// import Typography from "@components/shared/Typography";
-// import { cn } from "@lib/utils";
+// import Typography from "@/components/shared/Typography";
+// import { cn } from "@/lib/utils";
 // import Image, { StaticImageData } from "next/image";
 // import React, { ComponentPropsWithoutRef } from "react";
 // import restlyImageDesktop from "../../public/images/projects/restly.svg";

@@ -1,5 +1,5 @@
-import Typography from "@components/shared/Typography";
-import { cn } from "@lib/utils";
+import Typography from "@/components/shared/Typography";
+import { cn } from "@/lib/utils";
 import OtherCaseStudyCard from "../OtherCaseStudyCard";
 
 const ProjectOtherCaseStudies = ({ className }: { className?: string }) => {
@@ -7,7 +7,7 @@ const ProjectOtherCaseStudies = ({ className }: { className?: string }) => {
     <section
       className={cn(
         "w-full overflow-hidden bg-white-800 px-6 py-9 dark:bg-black-300 md:p-[72px]",
-        className,
+        className
       )}
     >
       <div className="mx-auto flex w-full max-w-[880px] flex-col gap-[30px] md:gap-[40px]">

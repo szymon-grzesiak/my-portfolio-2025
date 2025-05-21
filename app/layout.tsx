@@ -2,12 +2,12 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 
 import { Poppins, Jersey_10, Bagel_Fat_One } from "next/font/google";
-import { Providers } from "@components/shared/providers";
-import { Analytics } from "@vercel/analytics/react";
+import { Providers } from "@/components/shared/providers";
+import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Sidebar from "@components/shared/sidebar";
-import { siteConfig } from "@config/site";
-import { FamilyButton } from "@components/shared/family-button";
+import Sidebar from "@/components/shared/sidebar";
+import { siteConfig } from "@/config/site";
+import { FamilyButton } from "@/components/shared/family-button";
 import Script from "next/script";
 
 const poppins = Poppins({

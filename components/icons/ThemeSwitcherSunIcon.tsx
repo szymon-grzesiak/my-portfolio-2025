@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function ThemeSwitcherSunIcon(props: React.ComponentProps<"svg">) {
+export function ThemeSwitcherSunIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="24"

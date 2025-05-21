@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function MotionIcon(props: React.ComponentProps<"svg">) {
+export function MotionIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="51"

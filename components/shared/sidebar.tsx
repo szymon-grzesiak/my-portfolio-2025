@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
 import Image from "next/image";
 import logo64 from "../../app/logo-64.png";
 import { usePathname } from "next/navigation";
-import { cn } from "@lib/utils";
+import { cn } from "@/lib/utils";
 
 const links = [
   { href: "/#about", label: "ABOUT" },

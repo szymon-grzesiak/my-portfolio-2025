@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function HtmlIcon(props: React.ComponentProps<"svg">) {
+export function HtmlIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="51"

@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function CSSIcon(props: React.ComponentProps<"svg">) {
+export function CSSIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="51"

@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function GitIcon(props: React.ComponentProps<"svg">) {
+export function GitIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="51"

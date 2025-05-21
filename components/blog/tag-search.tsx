@@ -19,7 +19,7 @@ export const TagSearch = ({ tags, sortedTags }: TagSearchProps) => {
   );
 
   return (
-    <div className="sticky top-[120px] z-10 w-full ">
+    <div className="sticky top-[120px] z-10 w-full">
       <Card className="bg-white/90 h-[400px] overflow-y-auto border-2 border-black shadow-[4px_4px]">
         <CardHeader>
           <CardTitle>Search Tags</CardTitle>

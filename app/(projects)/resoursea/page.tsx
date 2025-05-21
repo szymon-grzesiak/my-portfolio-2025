@@ -1,34 +1,28 @@
-import ProjectHero from "@components/landing/sections/ProjectHero";
-import ProjectTechStack from "@components/landing/sections/ProjectTechStack";
-import React from "react";
+import ProjectHero from "@/components/landing/sections/ProjectHero";
+import ProjectTechStack from "@/components/landing/sections/ProjectTechStack";
 import { features, technologies } from "./data";
-import Typography from "@components/shared/Typography";
-import ProjectProcess from "@components/landing/sections/ProjectProcess";
+import Typography from "@/components/shared/Typography";
+import ProjectProcess from "@/components/landing/sections/ProjectProcess";
 import { challenges, learnings } from "./data";
-import ProjectOtherCaseStudies from "@components/landing/sections/ProjectOtherCaseStudies";
+// import ProjectOtherCaseStudies from "@/components/landing/sections/ProjectOtherCaseStudies";
 import DoubleColumn from "./double-column";
-import { ChallengeArrow, TickIcon } from "@components/icons";
+import { ChallengeArrow, TickIcon } from "@/components/icons";
 import { ArrowRight } from "lucide-react";
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";
 import { HiExternalLink } from "react-icons/hi";
 import Image from "next/image";
 import resoursea from "../../../assets/resoursea.png";
-import { siteConfig } from "@config/site";
+import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Resoursea",
   description: "Project - A platform for knowledge sharing",
-  keywords: [
-    "Resoursea",
-    "Knowledge Sharing",
-    "Web Development",
-    "Blog",
-  ],
+  keywords: ["Resoursea", "Knowledge Sharing", "Web Development", "Blog"],
   alternates: {
     canonical: `${siteConfig.url}/resoursea`,
-  }
+  },
 };
 
 function Page() {

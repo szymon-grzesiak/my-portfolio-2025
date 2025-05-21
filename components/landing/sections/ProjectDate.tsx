@@ -1,5 +1,5 @@
-import Typography from "@components/shared/Typography";
-import { cn } from "@lib/utils";
+import Typography from "@/components/shared/Typography";
+import { cn } from "@/lib/utils";
 import { ComponentPropsWithoutRef, FC } from "react";
 
 interface ProjectDateProps extends ComponentPropsWithoutRef<"section"> {
@@ -18,7 +18,7 @@ const ProjectDate: FC<ProjectDateProps> = ({
     <section
       className={cn(
         "w-full overflow-hidden bg-white-900 px-6 py-10 dark:bg-black-200 md:px-[72px] md:pb-[43px] md:pt-[53px]",
-        className,
+        className
       )}
     >
       <div className="mx-auto flex w-full max-w-[880px] flex-col gap-9 md:flex-row md:items-center md:justify-between md:gap-0">

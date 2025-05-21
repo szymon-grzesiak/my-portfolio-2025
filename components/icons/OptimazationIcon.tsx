@@ -1,8 +1,8 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function OptimazationIcon(props: React.ComponentProps<"svg">) {
+export function OptimazationIcon(props: ComponentProps<"svg">) {
   return (
-    <svg 
+    <svg
       width="31"
       height="24"
       viewBox="0 0 31 24"

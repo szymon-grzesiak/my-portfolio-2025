@@ -1,19 +1,19 @@
-import ProjectHero from "@components/landing/sections/ProjectHero";
-import ProjectTechStack from "@components/landing/sections/ProjectTechStack";
+import ProjectHero from "@/components/landing/sections/ProjectHero";
+import ProjectTechStack from "@/components/landing/sections/ProjectTechStack";
 import React from "react";
 import { features, technologies } from "./data";
-import ProjectProcess from "@components/landing/sections/ProjectProcess";
+import ProjectProcess from "@/components/landing/sections/ProjectProcess";
 import { challenges, learnings } from "./data";
 import DoubleColumn from "./double-column";
-import { ChallengeArrow, TickIcon } from "@components/icons";
+import { ChallengeArrow, TickIcon } from "@/components/icons";
 import { FaStar } from "react-icons/fa";
-import { siteConfig } from "@config/site";
+import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
-import Typography from "@components/shared/Typography";
+import Typography from "@/components/shared/Typography";
 import Link from "next/link";
 import { HiExternalLink } from "react-icons/hi";
 import Image from "next/image";
-import blackfyre from "../../../assets/main_screen_blackfyre.png"
+import blackfyre from "../../../assets/main_screen_blackfyre.png";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -29,17 +29,13 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: `${siteConfig.url}/vocablaze`,
-  }
+  },
 };
 
 function Page() {
-  
   return (
     <main className="relative bgCool md:pl-[130px] flex flex-col items-center">
-      <ProjectHero
-        title="Vocablaze"
-        titleDescription="a learning platform"
-      />
+      <ProjectHero title="Vocablaze" titleDescription="a learning platform" />
       <DoubleColumn
         leftSide={<h2>Overview</h2>}
         rightSide={
@@ -92,8 +88,8 @@ function Page() {
             designed to facilitate personalized and interactive language
             learning. Users can create custom vocabulary sets and engage with
             them through three dynamic games: Flashcards, Matching Tiles, and
-            Hangman. To enhance the learning experience, I provide
-            Google/GitHub authentication for easy access and secure login.
+            Hangman. To enhance the learning experience, I provide Google/GitHub
+            authentication for easy access and secure login.
             <h3 className="font-semibold my-5">Key Features:</h3>
             <div className="flex flex-col gap-6 rounded-[10px] bg-white-800 dark:bg-black-300 md:gap-[30px]">
               {features.map((feature) => (
@@ -114,7 +110,7 @@ function Page() {
           </>
         }
       />
-        <DoubleColumn
+      <DoubleColumn
         leftSide={
           <div>
             <h2>Final Site</h2>
@@ -124,8 +120,7 @@ function Page() {
                 href="https://www.hgfhkmfgklmdslkr665464fdsf.space/"
                 target="_blank"
               >
-                vocablaze.com{" "}
-                <HiExternalLink className="text-blue-600" />
+                vocablaze.com <HiExternalLink className="text-blue-600" />
               </Link>
             </Typography>
           </div>
@@ -163,7 +158,7 @@ function Page() {
             <div className="flex flex-col gap-6 rounded-[10px] bg-white-800 dark:bg-black-300 md:gap-[30px]">
               {challenges.map((challenge) => (
                 <p key={challenge} className="flex gap-[11px]">
-                <TickIcon className="mt-[6px] shrink-0" />
+                  <TickIcon className="mt-[6px] shrink-0" />
                   <span>{challenge}</span>
                 </p>
               ))}
@@ -178,7 +173,7 @@ function Page() {
             <div className="flex flex-col gap-6 rounded-[10px] bg-white-800 6 dark:bg-black-300 md:gap-[30px]">
               {learnings.map((learning) => (
                 <p key={learning} className="flex gap-[11px]">
-                   <ChallengeArrow className="mt-[6px] shrink-0" />
+                  <ChallengeArrow className="mt-[6px] shrink-0" />
                   <span>{learning}</span>
                 </p>
               ))}

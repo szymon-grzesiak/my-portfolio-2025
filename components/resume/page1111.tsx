@@ -2,14 +2,14 @@
 // import React from "react";
 // import { HiOutlineDownload } from "react-icons/hi";
 // import { Metadata } from 'next';
-// import { siteConfig } from "@config/site";
+// import { siteConfig } from "@/config/site";
 
 // export const metadata: Metadata = {
 //   title: "Download My Resume | Szymon Grzesiak | Full Stack Developer",
 //   description: "Download my professional resume in PDF format to learn about my skills, experience and qualifications as a Full Stack Developer specializing in Next.js, React, and TypeScript.",
 //   keywords: [
 //     "Resume Download",
-//     "CV Download", 
+//     "CV Download",
 //     "Szymon Grzesiak Resume",
 //     "Full Stack Developer CV",
 //     "Developer Portfolio"
@@ -18,7 +18,6 @@
 //     canonical: `${siteConfig.url}/resume`,
 //   }
 // };
-
 
 // const Page = () => {
 //   return (

@@ -1,18 +1,13 @@
-import { FaGitAlt, FaGithub, FaReact, FaStripe } from "react-icons/fa";
+import { FaGitAlt, FaGithub, FaReact } from "react-icons/fa";
 import {
   SiClerk,
   SiMongoose,
   SiNextdotjs,
   SiOpenai,
-  SiPostgresql,
-  SiPrisma,
-  SiResend,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import { TbBrandFramerMotion } from "react-icons/tb";
-import { BsFillShieldLockFill } from "react-icons/bs";
-import { MongoIcon, TinyMCE } from "@components/icons";
+import { MongoIcon, TinyMCE } from "@/components/icons";
 
 export const technologies = [
   {

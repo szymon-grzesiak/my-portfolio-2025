@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function TailwindIcon(props: React.ComponentProps<"svg">) {
+export function TailwindIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="51"

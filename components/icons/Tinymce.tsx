@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function TinyMCE(props: React.ComponentProps<"svg">) {
+export function TinyMCE(props: ComponentProps<"svg">) {
   return (
     <svg
       version="1.0"

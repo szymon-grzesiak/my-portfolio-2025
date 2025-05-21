@@ -1,4 +1,5 @@
 "use client";
+
 import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
@@ -73,7 +74,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl gap-3 flex justify-center flex-col items-center h-full w-full p-4 overflow-hidden shadow-lg bg-white/30 border-[4px] border-transparent dark:border-white/[0.2]  relative z-20",
+        "rounded-2xl gap-3 flex justify-center flex-col items-center h-full w-full p-4 overflow-hidden shadow-lg bg-white/30 border-4 border-transparent dark:border-white/[0.2]  relative z-20",
         className
       )}
     >

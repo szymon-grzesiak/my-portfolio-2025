@@ -1,4 +1,4 @@
-import React, { JSX } from "react";
+import { ComponentPropsWithoutRef, JSX } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import clsx from "clsx";
 
@@ -27,9 +27,13 @@ interface TypographyProps extends VariantProps<typeof typography> {
   as?: keyof JSX.IntrinsicElements;
 }
 
-const Typography: React.FC<
-  TypographyProps & React.ComponentPropsWithoutRef<any>
-> = ({ children, className, variant, as = "p", ...props }) => {
+const Typography: React.FC<TypographyProps & ComponentPropsWithoutRef<any>> = ({
+  children,
+  className,
+  variant,
+  as = "p",
+  ...props
+}) => {
   const Component = as;
   const classes = clsx(typography({ variant }), className);
 

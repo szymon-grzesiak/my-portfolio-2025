@@ -7,7 +7,7 @@ const NotFound = () => {
   return (
     <div className="relative w-screen flex flex-col items-center justify-center h-screen">
       <div className="flex flex-col items-center gap-4">
-        <h1 className="text-5xl font-bold [text-shadow:_1px_1px_1px_rgb(0_0_255_/_40%)]">
+        <h1 className="text-5xl font-bold [text-shadow:1px_1px_1px_rgb(0_0_255/40%)]">
           Unfortunately, page was not found.
         </h1>
       </div>

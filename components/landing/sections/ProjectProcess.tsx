@@ -1,7 +1,7 @@
-import Typography from "@components/shared/Typography";
-import { cn } from "@lib/utils";
+import Typography from "@/components/shared/Typography";
+import { cn } from "@/lib/utils";
 
-import { processIcons } from "@components/icons";
+import { processIcons } from "@/components/icons";
 
 const ProjectProcess = () => {
   return (
@@ -20,9 +20,7 @@ const ProjectProcess = () => {
                   "flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white-800 dark:bg-black-300"
                 )}
               >
-                <Icon
-                  className={cn("h-[35px] w-[35px]")}
-                />
+                <Icon className={cn("h-[35px] w-[35px]")} />
               </div>
               <Typography className="text-center text-[12px] font-semibold! leading-[18px] text-black-300 dark:text-white-900 md:text-[18px] md:leading-[22px]">
                 {process.name}

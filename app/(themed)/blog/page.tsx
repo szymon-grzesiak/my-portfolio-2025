@@ -1,18 +1,17 @@
 import { posts } from "#site/content";
-import { PostItem } from "@components/blog/post-item";
-import { Tag } from "@components/blog/tag";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PostItem } from "@/components/blog/post-item";
 import { getAllTags, sortPosts, sortTagsByCount } from "@/lib/utils";
 import { Metadata } from "next";
 import { BackgroundBeamsWithCollision } from "@/components/blog/background-beams-with-collision";
 import Image from "next/image";
 import coolGuy from "@/assets/coolguy2.webp";
-import { TagSearch } from "@components/blog/tag-search";
-import { siteConfig } from "@config/site";
+import { TagSearch } from "@/components/blog/tag-search";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Blog - Szymon Grzesiak | Full Stack Developer",
-  description: "Read my thoughts on software development, design, and more. I share insights, tutorials, and experiences in web development.",
+  description:
+    "Read my thoughts on software development, design, and more. I share insights, tutorials, and experiences in web development.",
   keywords: [
     "Blog",
     "Software Development",
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: `${siteConfig.url}/blog`,
-  }
+  },
 };
 
 export default async function BlogPage() {
@@ -38,7 +37,7 @@ export default async function BlogPage() {
         <BackgroundBeamsWithCollision>
           <h2 className="flex flex-col relative z-20 text-3xl md:text-5xl lg:text-7xl font-bold text-center text-black font-sans tracking-tight">
             Read my thoughts on
-            <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
+            <div className="relative mx-auto inline-block w-max filter-[drop-shadow(0px_1px_3px_rgba(27,37,80,0.14))]">
               <div className="relative bg-clip-text text-transparent bg-no-repeat bg-linear-to-r from-blue-300 via-blue-500 to-blue-800 py-4">
                 <span>Software Development.</span>
               </div>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState, memo } from "react";
+import { useEffect, useRef, useState, memo } from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { cn } from "@/utils/cn";
@@ -56,7 +56,7 @@ export const TextRevealCard = ({
       onMouseMove={mouseMoveHandler}
       ref={cardRef}
       className={cn(
-        "bg-black/80 border border-white/[0.08] w-[40rem] rounded-lg p-8 relative overflow-hidden",
+        "bg-black/80 border border-white/[0.08] w-160 rounded-lg p-8 relative overflow-hidden",
         className
       )}
     >
@@ -99,7 +99,7 @@ export const TextRevealCard = ({
           className="h-40 w-[8px] bg-linear-to-b from-transparent via-neutral-800 to-transparent absolute z-50 will-change-transform"
         ></motion.div>
 
-        <div className=" overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
+        <div className=" overflow-hidden mask-[linear-gradient(to_bottom,transparent,white,transparent)]">
           <p className="text-base sm:text-[3rem] py-10 font-bold bg-clip-text text-transparent bg-[#323238]">
             {text}
           </p>

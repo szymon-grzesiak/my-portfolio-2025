@@ -1,12 +1,12 @@
-import Typography from "@components/shared/Typography";
-import { cn } from "@lib/utils";
+import Typography from "@/components/shared/Typography";
+import { cn } from "@/lib/utils";
 
 const Hero = ({ className }: { className?: string }) => {
   return (
     <section
       className={cn(
         "w-full overflow-hidden bg-white-800 px-6 pt-[72px] dark:bg-black-300 md:pt-[186px]",
-        className,
+        className
       )}
     >
       <div className="relative mx-auto flex w-full max-w-[740px] flex-col items-center justify-center py-[48px] md:py-0 md:pb-[108px]">

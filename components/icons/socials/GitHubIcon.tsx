@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function GitHubIcon(props: React.ComponentProps<"svg">) {
+export function GitHubIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="24"

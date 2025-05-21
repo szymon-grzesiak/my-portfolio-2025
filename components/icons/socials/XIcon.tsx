@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function XIcon(props: React.ComponentProps<"svg">) {
+export function XIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="24"

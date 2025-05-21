@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function LinkedInIcon(props: React.ComponentProps<"svg">) {
+export function LinkedInIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="24"

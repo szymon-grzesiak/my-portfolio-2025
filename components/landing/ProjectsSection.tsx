@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
@@ -86,16 +86,16 @@ export const ProjectsSection = ({
   });
 
   const backgroundColors = [
-    "var(--slate-900)",
-    "var(--black)",
-    "var(--neutral-900)",
+    "var(--color-slate-900)",
+    "var(--color-black)",
+    "var(--color-neutral-900)",
   ];
   return (
     <motion.div
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[30rem] customScrollContainer flex md:flex-row justify-center lg:gap-20 border-y-2 border-black flex-col"
+      className="h-120 customScrollContainer flex md:flex-row justify-center lg:gap-20 border-y-2 border-black flex-col"
       ref={ref}
     >
       <div className="div relative flex items-start pl-[155px]">

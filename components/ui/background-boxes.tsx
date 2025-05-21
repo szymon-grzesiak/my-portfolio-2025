@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
+import { memo } from "react";
 
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
   const rows = new Array(150).fill(1);
@@ -73,4 +74,4 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
   );
 };
 
-export const Boxes = React.memo(BoxesCore);
+export const Boxes = memo(BoxesCore);

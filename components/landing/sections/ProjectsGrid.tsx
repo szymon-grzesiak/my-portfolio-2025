@@ -1,4 +1,4 @@
-// import { cn } from "@lib/utils";
+// import { cn } from "@/lib/utils";
 // import ProjectCard from "../ProjectCard";
 
 // const ProjectsGrid = ({ className }: { className?: string }) => {

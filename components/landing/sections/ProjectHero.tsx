@@ -1,5 +1,5 @@
-import Typography from "@components/shared/Typography";
-import { cn } from "@lib/utils";
+import Typography from "@/components/shared/Typography";
+import { cn } from "@/lib/utils";
 import { ComponentPropsWithoutRef, FC } from "react";
 
 interface ProjectHeroProps extends ComponentPropsWithoutRef<"section"> {
@@ -16,7 +16,7 @@ const ProjectHero: FC<ProjectHeroProps> = ({
     <section
       className={cn(
         "w-full overflow-hidden bg-white-800 px-6 pt-[72px] dark:bg-black-300 md:pt-[186px] bg-white/40 backdrop-blur-xl border-b-2 border-b-black",
-        className,
+        className
       )}
     >
       <div className="relative mx-auto flex w-full flex-col items-center justify-center py-[48px] md:py-0 md:pb-[108px]">

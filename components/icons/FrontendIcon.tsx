@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function FrontendIcon(props: React.ComponentProps<"svg">) {
+export function FrontendIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="25"

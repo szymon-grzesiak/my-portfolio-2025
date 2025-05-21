@@ -1,9 +1,9 @@
-import Typography from "@components/shared/Typography";
-import { cn } from "@lib/utils";
+import Typography from "@/components/shared/Typography";
+import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
-import React, { ComponentPropsWithoutRef } from "react";
-import restlyImageDesktop from "../../assets/keanu.webp"
-import { Button } from "@components/ui/button";
+import { ComponentPropsWithoutRef } from "react";
+import restlyImageDesktop from "../../assets/keanu.webp";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 interface ProjectCardProps extends ComponentPropsWithoutRef<"div"> {
@@ -24,7 +24,7 @@ const OtherCaseStudyCard = ({
     <div
       className={cn(
         "h-[385px] w-[345px] rounded-[20px] bg-white-900 shadow-otherCaseStudyCardLight dark:bg-black-300 dark:shadow-otherCaseStudyCardDark md:h-[481px] md:w-[430px]",
-        className,
+        className
       )}
     >
       <Image

@@ -1,6 +1,6 @@
-import React from "react";
+import { ComponentProps } from "react";
 
-export function ExpressIcon(props: React.ComponentProps<"svg">) {
+export function ExpressIcon(props: ComponentProps<"svg">) {
   return (
     <svg
       width="51"

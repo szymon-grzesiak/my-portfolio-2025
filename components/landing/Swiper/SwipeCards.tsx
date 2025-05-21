@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -29,7 +27,7 @@ interface Props {
 
 const SwipeCards = ({ content }: Props) => {
   return (
-    <div className="h-[40rem] p-6 w-full flex justify-center items-center border-y-2 border-black bg-white/70">
+    <div className="h-160 p-6 w-full flex justify-center items-center border-y-2 border-black bg-white/70">
       <Swiper
         spaceBetween={30}
         pagination={{
