@@ -90,7 +90,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${jersey.variable} ${bagel.variable} font-sans antialiased text-black bg-white dark:text-white dark:bg-[#111110]`}
+      className={`${poppins.variable} ${jersey.variable} ${bagel.variable} font-sans antialiased text-black bg-white`}
       suppressHydrationWarning
     >
       <head>
