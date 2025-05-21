@@ -89,7 +89,6 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${jersey.variable} ${bagel.variable} font-sans antialiased text-black bg-white`}
       suppressHydrationWarning
-      style={{ colorScheme: 'light' }}
     >
       <head>
         <Script
