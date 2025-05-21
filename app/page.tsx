@@ -40,7 +40,7 @@ export default function Home() {
             <h1 className="sr-only">
               Szymon Grzesiak – Full Stack Web Developer using Next.js
             </h1>
-            <p
+            <div
               id="home"
               className="text-5xl sm:text-6xl md:text-5xl lg:text-7xl font-[500] flex flex-col font-bagel tracking-widest gap-5"
             >
@@ -52,7 +52,7 @@ export default function Home() {
                   Szymon
                 </p>
               </div>
-            </p>
+            </div>
             <h2 className="md:w-full md:max-w-[440px] text-lg text-black">
               My full name is Szymon Grzesiak, I&apos;m from Poland and I&apos;m
               Full Stack Developer with a focus on Web Development. My expertise

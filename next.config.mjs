@@ -1,17 +1,14 @@
-import { build } from "velite";
+// next.config.mjs
 
-class VeliteWebpackPlugin {
-  static started = false;
-  apply(/** @type {import('webpack').Compiler} */ compiler) {
-    // executed three times in nextjs
-    // twice for the server (nodejs / edge runtime) and once for the client
-    compiler.hooks.beforeCompile.tapPromise("VeliteWebpackPlugin", async () => {
-      if (VeliteWebpackPlugin.started) return;
-      VeliteWebpackPlugin.started = true;
-      const dev = compiler.options.mode === "development";
-      await build({ watch: dev, clean: !dev });
-    });
-  }
+// Nowa integracja Velite dla Turbopacka
+const isDev = process.argv.includes('dev'); // Bardziej odporne sprawdzenie niż indexOf
+const isBuild = process.argv.includes('build');
+
+if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
+  process.env.VELITE_STARTED = '1';
+  // Używamy dynamicznego importu, ponieważ jest to top-level await
+  const { build } = await import('velite');
+  await build({ watch: isDev, clean: !isDev });
 }
 
 /** @type {import('next').NextConfig} */
@@ -23,10 +20,6 @@ const nextConfig = {
         hostname: "assets.aceternity.com",
       },
     ],
-  },
-  webpack: (config) => {
-    config.plugins.push(new VeliteWebpackPlugin());
-    return config;
   },
   // async headers() {
   //   return [

@@ -38,7 +38,7 @@ function Page() {
     <main className="relative bgCool md:pl-[130px] flex flex-col items-center">
       <ProjectHero
         title="Vocablaze"
-        titleDescription="Your comfort learning platform"
+        titleDescription="a learning platform"
       />
       <DoubleColumn
         leftSide={<h2>Overview</h2>}
