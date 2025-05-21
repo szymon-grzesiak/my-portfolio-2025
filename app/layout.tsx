@@ -78,12 +78,12 @@ export const metadata: Metadata = {
   },
 };
 
-// export const viewport: Viewport = {
-//     themeColor: [
-//     { media: "(prefers-color-scheme: light)", color: "white" },
-//     { media: "(prefers-color-scheme: dark)", color: "white" }, 
-//   ],
-// };
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+};
 
 export default function RootLayout({
   children,
@@ -93,7 +93,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scheme-light dark:scheme-light ${poppins.variable} ${jersey.variable} ${bagel.variable} font-sans antialiased text-black bg-white`}
+      className={`${poppins.variable} ${jersey.variable} ${bagel.variable} font-sans antialiased text-black bg-white`}
       suppressHydrationWarning
     >
       <head>
