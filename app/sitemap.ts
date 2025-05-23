@@ -1,24 +1,53 @@
-// @ts-nocheck
-
 import { MetadataRoute } from "next";
 import { posts } from "#site/content";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  let blogs = posts.map((post) => ({
-    url: `https://szymongrzesiak.dev/${post.slug}`,
-    lastModified: post.date,
+  const baseUrl = "https://szymongrzesiak.dev";
+  
+  // Blog posts
+  const blogs = posts.map((post) => ({
+    url: `${baseUrl}/${post.slug}`,
+    lastModified: new Date(post.date),
     priority: 0.8,
-    changefreq: 'weekly',
+    changeFrequency: 'weekly' as const,
   }));
 
-  let routes = ["", "/blog", "/resoursea", "/vocablaze", "/tags"].map((route) => ({
-    url: `https://szymongrzesiak.dev${route}`,
-    lastModified: new Date().toISOString().split("T")[0],
-    priority: route === '' ? 1.0 : 0.8,
-    changefreq: 'weekly',
-  }));
+  // Main routes - poprawiono błąd "resoursea" -> "resources"
+  const routes = [
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      priority: 1.0,
+      changeFrequency: 'daily' as const,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      priority: 0.9,
+      changeFrequency: 'daily' as const,
+    },
+    {
+      url: `${baseUrl}/resources`, // Poprawiono z "resoursea"
+      lastModified: new Date(),
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
+    {
+      url: `${baseUrl}/vocablaze`,
+      lastModified: new Date(),
+      priority: 0.8,
+      changeFrequency: 'monthly' as const,
+    },
+    {
+      url: `${baseUrl}/tags`,
+      lastModified: new Date(),
+      priority: 0.7,
+      changeFrequency: 'weekly' as const,
+    },
+  ];
 
-  let tags = posts.reduce((acc, post) => {
+  // Extract unique tags
+ let tags = posts.reduce((acc, post) => {
     if (!post.tags) return acc;
     post.tags.forEach((tag) => {
       const slugifiedTag = tag
@@ -33,14 +62,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return acc;
   }, [] as string[]);
 
-  return [
-    ...routes,
-    ...blogs,
-    ...tags.map((tag) => ({
-      url: `https://szymongrzesiak.dev/tags/${tag}`,
-      lastModified: new Date().toISOString().split("T")[0],
-      priority: 0.8,
-      changefreq: 'weekly',
-    })),
-  ];
+
+  // Tag pages
+  const tagPages = tags.map((tag) => ({
+    url: `${baseUrl}/tags/${tag}`,
+    lastModified: new Date(),
+    priority: 0.6,
+    changeFrequency: 'weekly' as const,
+  }));
+
+  return [...routes, ...blogs, ...tagPages];
 }
