@@ -32,6 +32,7 @@ export default function Home() {
           src={port}
           quality={75}
           priority={true}
+          fetchPriority="high"
           alt="Guy with a telescope"
           className="lg:w-[414px] md:w-[304px] md:block hidden pl-12"
         />
