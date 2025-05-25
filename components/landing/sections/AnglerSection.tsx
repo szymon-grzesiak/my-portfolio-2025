@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { TextGenerateEffect } from "../../ui/text-generate-effect";
 import { curiosities } from "@/lib/data";
@@ -22,14 +21,16 @@ const AnglerSection = () => {
   };
 
   return (
-    <section className="h-full md:h-screen w-full flex md:px-6 justify-between md:justify-normal flex-col-reverse md:flex-row pt-6 md:pt-0">
-      <Image
-        src={angler}
-        className="shrink-0 w-full md:max-w-[818px] h-auto md:aspect-square pb-12 max-w-2/3 sm:w-2/3"
-        alt={"angler"}
-      />
-      <div className="md:pt-20 flex flex-col justify-start items-center font-bold text-[32px] xl:px-6 w-full">
-        <p className="text-center font-bagel text-3xl">MORE ABOUT ME 🎲</p>
+    <section className="h-auto w-full flex md:px-6 justify-between md:justify-normal flex-col-reverse md:flex-row pt-6 md:pt-0">
+      <div className="shrink-0 w-2/3 md:w-auto md:h-full md:max-w-2/3 pb-14 md:pb-0 md:pl-0 lg:pl-15">
+        <Image
+          src={angler}
+          className="w-full h-auto md:w-auto md:h-full object-contain object-bottom"
+          alt={"A cute angler fish illustration"}
+        />
+      </div>
+      <div className="md:pt-4 lg:pt-10 flex flex-col justify-start items-center font-bold text-[32px] xl:px-6 w-full">
+        <p className="text-center font-bagel text-3xl">MORE ABOUT ME <span className="inline-block md:hidden lg:inline-block">🎲</span></p>
         <button
           onClick={handleFetchCuriosity}
           className="button flex h-[50px] justify-center items-center mt-5 w-[200px] cursor-pointer rounded-3xl border-2 border-black shadow-[4px_4px] shadow-black overflow-hidden"
