@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Portfolio and Blog
 
-## Getting Started
+![My Portfolio Banner](./public/readme_img.png)
 
-First, run the development server:
+Welcome to my portfolio and blog! This repository showcases my projects, thoughts, and experiences as I explore the world of technology and development.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+While this repository might not stand out as something particularly unique, it serves as a **well-structured template** for a modern portfolio and blog. It demonstrates a clean folder organization, ensuring maintainability and scalability for future development.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## About
+This portfolio is more than just a collection of work; it is a testament to thoughtful design and technical execution:
+- **Projects**: Carefully selected projects to highlight my skills and knowledge.
+- **Blog**: Powered by `.mdx` for seamless blogging. Easily add posts with Markdown, incorporating React components where needed.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Key Features
+- **SEO Perfection**: The website is fully optimized for search engines, ensuring high visibility.
+- **Lighthouse Scored 100**: The homepage achieves a perfect score in all categories—Performance, Accessibility, Best Practices, and SEO.
+  
+![Lighthouse score](./public/lighthouse_img.png)
 
-## Learn More
+- **Design**: A blend of **Glassmorphism** for modern aesthetics with touches of **Neobrutalism** to create a striking and unique visual identity.
+- **Security**: Fully optimized security headers, making the site highly resilient and secure against threats.
+  
+![Lighthouse score](./public/securityheaders_img.png)
 
-To learn more about Next.js, take a look at the following resources:
+- **Ease of Use**: Adding and managing blog posts is effortless thanks to `.mdx`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+All design elements, features, and code are **entirely created and coded by me**, reflecting both creativity and technical proficiency.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## License and Copyright
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+© 2025 Szymon Grzesiak. All rights reserved.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This repository is shared for **viewing purposes only**. Redistribution, modification, and use of the code or content in any form or for any purpose without prior written consent are strictly prohibited.
+
+If you have any questions or would like to discuss collaborations, feel free to reach out!
+
+---
+
+## Contact
+- Email: [szymongrzesiak.pl@gmail.com](mailto:szymongrzesiak.pl@gmail.com)
+- Website: [https://szymongrzesiak.dev/](https://szymongrzesiak.dev/)
+- LinkedIn: [https://www.linkedin.com/in/szymon-grzesiak-296873200/](https://www.linkedin.com/in/szymon-grzesiak-296873200/)
