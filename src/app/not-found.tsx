@@ -19,7 +19,7 @@ const NotFound = () => {
       />
       <Link
         href="/"
-        className="bg-slate-300 flex px-6 py-3 rounded-xl gap-3 hover:bg-opacity-80"
+        className="bg-slate-400 flex px-6 py-3 rounded-xl gap-3 hover:bg-opacity-80"
       >
         <ArrowLeft className="animate-bounce-horizontal dark:text-black" />
         <div className="text-black">
