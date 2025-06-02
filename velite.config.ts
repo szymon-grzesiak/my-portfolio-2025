@@ -25,7 +25,7 @@ const posts = defineCollection({
 });
 
 export default defineConfig({
-  root: "content",
+  root: "src/content", // <--- ZMIANA TUTAJ: Dodajemy 'src/', bo tu jest teraz folder content.
   output: {
     data: ".velite",
     assets: "public/static",

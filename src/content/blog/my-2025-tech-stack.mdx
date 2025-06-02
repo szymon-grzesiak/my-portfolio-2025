@@ -1,0 +1,106 @@
+---
+title: My 2025 Tech Stack
+description: A deep dive into the modern web development tools and design philosophies shaping my projects in 2025, including React, Supabase, and Material Design v3.
+date: 2025-03-29
+tags:
+  [
+    ReactJS,
+    Supabase,
+    TypeScript,
+    TailwindCSS,
+    Material Design,
+    Neobrutalism,
+    Next.js,
+    Prisma,
+    AWS,
+  ]
+published: true
+---
+
+## The Evolution of My 2025 Tech Stack
+
+Keeping up with the ever-changing JavaScript ecosystem feels like trying to drink from a firehose. After years of experimentation, I've finally settled on a tech stack that balances modernity with pragmatism – here's what's working for me in 2025.
+
+### Frontend: Where Beauty Meets Performance
+
+My current frontend arsenal combines the best of modern tooling with thoughtful design principles:
+
+1. **ReactJS + TypeScript**  
+   The foundation remains React with TypeScript for type safety. No surprises here – it's the bread and butter of modern web dev.
+
+2. **Tailwind CSS v4 + ShadcnUI + HeroUI**
+
+   ```tsx
+   // Example component using ShadcnUI and Tailwind
+   import { Button } from "@/components/ui/button";
+
+   export const HeroSection = () => (
+     <div className="flex min-h-screen bg-linear-to-r from-cyan-500 to-blue-500">
+       <Button variant="outline" className="mt-40">
+         Get Started
+       </Button>
+     </div>
+   );
+   ```
+
+3. **Design Philosophy**  
+   I blend **Material Design v3**'s polished components (especially their motion system) with **neobrutalism** accents – think bold shadows and exaggerated borders for key elements.
+
+4. **3D & Motion**  
+   Three.js handles complex 3D visualizations while Framer Motion creates buttery-smooth page transitions.
+
+### Backend: Supabase All The Things
+
+After years of using NextAuth and Prisma, I've fully embraced **Supabase** for:
+
+- **Authentication** (replaced NextAuth)
+- **PostgreSQL Database** with row-level security
+- **Stored Procedures** via PostgreSQL's RPC capabilities
+
+```sql
+-- Example Supabase RPC procedure
+CREATE OR REPLACE FUNCTION get_user_posts(uid text)
+RETURNS SETOF posts AS $$
+  SELECT * FROM posts WHERE author_id = uid
+$$ LANGUAGE SQL SECURITY DEFINER;
+```
+
+### The Supporting Cast
+
+1. **Emails & Payments**
+
+   - **Resend** for transactional emails (bye-bye SendGrid)
+   - **Stripe** for payments with new 2024 EU regulations compliance
+
+2. **CMS**  
+   **Payload CMS** remains my headless CMS of choice for content-heavy projects.
+
+3. **Infrastructure**
+   - **Vercel** for frontend hosting and Serverless Functions
+   - **Railway** for Python-based microservices
+   - **AWS Learning** in progress (currently mastering EC2 and RDS)
+
+### Why This Stack Works
+
+1. **Supabase Flexibility**  
+   The all-in-one solution reduced my AWS usage by 60% while maintaining scalability.
+
+2. **Design Consistency**  
+   Material Design v3 provides a solid foundation while neobrutalism accents add memorable flair.
+
+3. **Performance**  
+   Tailwind v4's new JIT compiler reduced CSS bundle size by 35% compared to v3.
+
+### Future Plans
+
+I'm currently diving into:
+
+- **AWS Certifications** (Cloud Practitioner → Solutions Architect)
+- **Supabase Edge Functions** for global low-latency APIs
+- **WebGPU** integration with Three.js for next-level 3D rendering
+
+## Final Thoughts
+
+This stack isn't about chasing trends – it's about using battle-tested tools that play nicely together. While I still use some "old school" SQL alongside modern TypeScript, the key is maintaining a balance between innovation and maintainability.
+
+As the great Alan Kay said: _"The best way to predict the future is to invent it."_ Here's to building better web experiences in 2025 and beyond!

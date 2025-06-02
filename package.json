@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
     "reset": "rm -rf node_modules/ && rm -rf package-lock.json && rm -rf bun.lock && rm -rf .next/ && rm -rf .velite/ && rm -rf .vercel/ && npm install && npm run build && npm run dev"
   },
   "dependencies": {
