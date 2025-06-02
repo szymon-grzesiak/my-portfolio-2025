@@ -9,7 +9,7 @@ const AnglerSection = () => {
   const [fact, setFact] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [fetchCount, setFetchCount] = useState(0);
-
+//
   const handleFetchCuriosity = () => {
     setIsLoading(true); // Rozpocznij ładowanie
     setFact(""); // Wyczyść poprzednią ciekawostkę
