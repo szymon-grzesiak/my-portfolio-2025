@@ -112,7 +112,7 @@ const FamilyButton = () => {
                         <FaLinkedin className="text-3xl hover:text-[#00E5FF]" />
                       </Link>
                       <Link
-                        href="https://github.com/itsJasberry"
+                        href="https://github.com/szymon-grzesiak"
                         onClick={handleLinkClick}
                         target="_blank"
                       >

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: "Szymon Grzesiak | Full Stack Developer | Portfolio",
-    template: "%s | Szymon Grzesiak"
+    template: "%s | Szymon Grzesiak",
   },
   description:
     "Experienced Full Stack Developer specializing in Next.js, React, and TypeScript. View my portfolio of modern web applications and software engineering projects.",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     "Software Engineer",
     "Web Applications",
     "Responsive Design",
-    "Modern Web Development"
+    "Modern Web Development",
   ],
   authors: [{ name: "Szymon Grzesiak", url: "https://szymongrzesiak.dev" }],
   creator: "Szymon Grzesiak",
@@ -69,16 +69,17 @@ export const metadata: Metadata = {
         url: "https://szymongrzesiak.dev/og-image.jpg", // Dodaj ten obraz!
         width: 1200,
         height: 630,
-        alt: "Szymon Grzesiak - Full Stack Developer Portfolio"
-      }
-    ]
+        alt: "Szymon Grzesiak - Full Stack Developer Portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Szymon Grzesiak | Full Stack Developer Portfolio",
-    description: "Experienced Full Stack Developer specializing in modern web technologies",
+    description:
+      "Experienced Full Stack Developer specializing in modern web technologies",
     images: ["https://szymongrzesiak.dev/og-image.jpg"],
-    creator: "@jasberry_x" // Dodaj jeśli masz
+    creator: "@jasberry_x", // Dodaj jeśli masz
   },
   alternates: {
     canonical: "https://szymongrzesiak.dev",
@@ -99,55 +100,56 @@ export const metadata: Metadata = {
   },
   other: {
     "msapplication-TileColor": "#ffffff",
-    "theme-color": "#ffffff"
-  }
+    "theme-color": "#ffffff",
+  },
 };
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
-}
+};
 
 // JSON-LD Structured Data
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Szymon Grzesiak",
-  "jobTitle": "Full Stack Developer",
-  "description": "Experienced Full Stack Developer specializing in Next.js, React, and TypeScript",
-  "url": "https://szymongrzesiak.dev",
-  "image": "https://szymongrzesiak.dev/profile-image.jpg", // Dodaj swoje zdjęcie
-  "sameAs": [
-    "https://github.com/itsJasberry", // Dodaj swoje profile
+  name: "Szymon Grzesiak",
+  jobTitle: "Full Stack Developer",
+  description:
+    "Experienced Full Stack Developer specializing in Next.js, React, and TypeScript",
+  url: "https://szymongrzesiak.dev",
+  image: "https://szymongrzesiak.dev/profile-image.jpg", // Dodaj swoje zdjęcie
+  sameAs: [
+    "https://github.com/szymon-grzesiak", // Dodaj swoje profile
     "https://www.linkedin.com/in/szymon-grzesiak-296873200/",
     // inne profile społecznościowe
   ],
-  "knowsAbout": [
+  knowsAbout: [
     "JavaScript",
-    "TypeScript", 
+    "TypeScript",
     "React",
     "Next.js",
     "Node.js",
     "Full Stack Development",
     "Web Development",
-    "Software Engineering"
+    "Software Engineering",
   ],
-  "alumniOf": {
+  alumniOf: {
     "@type": "Organization",
-    "name": "University of Kalisz" // Jeśli chcesz dodać
-  }
+    name: "University of Kalisz", // Jeśli chcesz dodać
+  },
 };
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Szymon Grzesiak Portfolio",
-  "url": "https://szymongrzesiak.dev",
-  "description": "Portfolio of Szymon Grzesiak - Full Stack Developer",
-  "author": {
+  name: "Szymon Grzesiak Portfolio",
+  url: "https://szymongrzesiak.dev",
+  description: "Portfolio of Szymon Grzesiak - Full Stack Developer",
+  author: {
     "@type": "Person",
-    "name": "Szymon Grzesiak"
-  }
+    name: "Szymon Grzesiak",
+  },
 };
 
 export default function RootLayout({
@@ -171,15 +173,19 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-        
+
         {/* Preconnects for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        
+
         {/* Google Analytics */}
         <Script
           async

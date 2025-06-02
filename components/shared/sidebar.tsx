@@ -75,7 +75,7 @@ const Sidebar = () => {
             <FaLinkedin className="text-3xl hover:text-[#00E5FF]" />
           </Link>
           <Link
-            href="https://github.com/itsJasberry"
+            href="https://github.com/szymon-grzesiak"
             aria-label="GitHub profile"
           >
             <FaGithub className="text-3xl hover:text-[#00E5FF]" />
