@@ -1,7 +1,9 @@
 # My Portfolio and Blog
 
 ![My Portfolio Banner](./public/readme_img.png)
-
+#
+Whole documentation of this codebase available at: [https://deepwiki.com/szymon-grzesiak/my-portfolio-2025](https://deepwiki.com/szymon-grzesiak/my-portfolio-2025)
+#
 Welcome to my portfolio and blog! This repository showcases my projects, thoughts, and experiences as I explore the world of technology and development.
 
 While this repository might not stand out as something particularly unique, it serves as a **well-structured template** for a modern portfolio and blog. It demonstrates a clean folder organization, ensuring maintainability and scalability for future development.
