@@ -27,7 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'daily' as const,
     },
     {
-      url: `${baseUrl}/resources`, // Poprawiono z "resoursea"
+      url: `${baseUrl}/resoursea`,
       lastModified: new Date(),
       priority: 0.8,
       changeFrequency: 'weekly' as const,
