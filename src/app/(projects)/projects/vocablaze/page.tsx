@@ -15,14 +15,6 @@ import { HiExternalLink } from "react-icons/hi";
 import Image from "next/image";
 import blackfyre from "@/assets/main_screen_blackfyre.png";
 import { ArrowRight } from "lucide-react";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
 import StickyBreadcrumb from "@/components/shared/sticky-breadcrumb";
 
 export const metadata: Metadata = {
@@ -37,12 +29,12 @@ export const metadata: Metadata = {
     "TypeScript",
   ],
   alternates: {
-    canonical: `${siteConfig.url}/vocablaze`,
+    canonical: `${siteConfig.url}/projects/vocablaze`,
   },
   openGraph: {
-    title: "Resoursea",
-    description: "Discover Resoursea, a curated platform for knowledge sharing. Find top-tier articles, tools, and resources for web developers looking to learn best practices.",
-    url: `${siteConfig.url}/resoursea`,
+    title: "Vocablaze",
+    description: "Boost your language skills with Vocablaze, an interactive learning platform. Master new vocabulary effectively with smart flashcards and personalized quizzes.",
+    url: `${siteConfig.url}/projects/vocablaze`,
   },
 };
 

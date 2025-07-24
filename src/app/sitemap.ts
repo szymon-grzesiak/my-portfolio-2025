@@ -51,6 +51,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
       changeFrequency: 'weekly' as const,
     },
+    {
+      url: `${baseUrl}/projects`,
+      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+    },
   ];
 
   const allTags = new Set(publishedPosts.flatMap((post: Post) => post.tags || []));

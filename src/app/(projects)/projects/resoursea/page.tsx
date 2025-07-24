@@ -15,14 +15,6 @@ import Image from "next/image";
 import resoursea from "@/assets/resoursea.png";
 import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
 import StickyBreadcrumb from "@/components/shared/sticky-breadcrumb";
 
 export const metadata: Metadata = {
@@ -31,14 +23,14 @@ export const metadata: Metadata = {
     "Discover Resoursea, a curated platform for knowledge sharing. Find top-tier articles, tools, and resources for web developers looking to learn best practices.",
   keywords: ["Resoursea", "Knowledge Sharing", "Web Development", "Blog"],
   alternates: {
-    canonical: `${siteConfig.url}/resoursea`,
+    canonical: `${siteConfig.url}/projects/resoursea`,
   },
   // POPRAWKA: Dane w openGraph muszą dotyczyć projektu Resoursea
   openGraph: {
     title: "Resoursea",
     description:
       "Discover Resoursea, a curated platform for knowledge sharing. Find top-tier articles, tools, and resources for web developers looking to learn best practices.",
-    url: `${siteConfig.url}/resoursea`,
+    url: `${siteConfig.url}/projects/resoursea`,
   },
 };
 

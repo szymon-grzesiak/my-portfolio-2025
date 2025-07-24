@@ -17,25 +17,17 @@ import {
 } from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Projects",
   description:
-    "Read my thoughts on software development, design, and more. I share insights, tutorials, and experiences in web development.",
-  keywords: [
-    "Blog",
-    "Software Development",
-    "Web Development",
-    "Next.js",
-    "React",
-    "TypeScript",
-  ],
+    "Explore my projects showcasing my skills in web development, including Next.js, React, and TypeScript. View case studies and live demos.",
   alternates: {
-    canonical: `${siteConfig.url}/blog`,
+    canonical: `${siteConfig.url}/projects`,
   },
   openGraph: {
-    title: "Vocablaze",
+    title: "Projects",
     description:
-      "Boost your language skills with Vocablaze, an interactive learning platform. Master new vocabulary effectively with smart flashcards and personalized quizzes.",
-    url: `${siteConfig.url}/vocablaze`,
+      "Explore my projects showcasing my skills in web development, including Next.js, React, and TypeScript. View case studies and live demos.",
+    url: `${siteConfig.url}/projects`,
   },
 };
 
