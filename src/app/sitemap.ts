@@ -1,16 +1,25 @@
 import { MetadataRoute } from "next";
 import { posts } from "#site/content";
+import { slug } from "github-slugger";
+
+interface Post {
+  slug: string;
+  title: string;
+  description?: string;
+  date: string;
+  published: boolean;
+  tags?: string[];
+  body: string;
+  slugAsParams: string;
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://szymongrzesiak.dev";
 
-  // ZMIANA: Filtrujemy posty, aby uwzględnić tylko te opublikowane.
-  // To kluczowe, aby nie umieszczać w sitemapie wersji roboczych.
-  const publishedPosts = posts.filter((post) => post.published);
+  const publishedPosts = posts.filter((post: Post) => post.published);
 
-  const blogPostEntries = publishedPosts.map((post) => ({
+  const blogPostEntries = publishedPosts.map((post: Post) => ({
     url: `${baseUrl}/${post.slug}`,
-    // DOBRZE: Używasz faktycznej daty publikacji lub ostatniej modyfikacji posta.
     lastModified: new Date(post.date),
     priority: 0.8,
     changeFrequency: 'weekly' as const,
@@ -19,9 +28,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     {
       url: baseUrl,
-      // ŹLE: lastModified: new Date()
-      // ZMIANA: Usuwamy 'lastModified'. Lepiej nie podawać tej daty,
-      // niż podawać codziennie fałszywą. Google sam ustali, kiedy przeskanować stronę.
       priority: 1.0,
       changeFrequency: 'daily' as const,
     },
@@ -47,13 +53,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  // Generowanie stron tagów
-  const allTags = new Set(publishedPosts.flatMap((post) => post.tags || []));
+  const allTags = new Set(publishedPosts.flatMap((post: Post) => post.tags || []));
   const tagEntries = Array.from(allTags).map((tag) => {
-    const slugifiedTag = tag.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
     return {
-      url: `${baseUrl}/tags/${slugifiedTag}`,
-      priority: 0.5, // Tagi mają niższy priorytet
+      url: `${baseUrl}/tags/${slug(tag)}`,
+      priority: 0.5,
       changeFrequency: 'weekly' as const,
     };
   });
