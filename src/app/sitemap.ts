@@ -37,12 +37,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'daily' as const,
     },
     {
-      url: `${baseUrl}/resoursea`,
+      url: `${baseUrl}/projects/resoursea`,
       priority: 0.7,
       changeFrequency: 'monthly' as const,
     },
     {
-      url: `${baseUrl}/vocablaze`,
+      url: `${baseUrl}/projects/vocablaze`,
       priority: 0.7,
       changeFrequency: 'monthly' as const,
     },
