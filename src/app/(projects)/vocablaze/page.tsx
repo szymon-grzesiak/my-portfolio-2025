@@ -30,6 +30,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteConfig.url}/vocablaze`,
   },
+  openGraph: {
+    title: "Resoursea",
+    description: "Discover Resoursea, a curated platform for knowledge sharing. Find top-tier articles, tools, and resources for web developers looking to learn best practices.",
+    url: `${siteConfig.url}/resoursea`,
+  },
 };
 
 function Page() {

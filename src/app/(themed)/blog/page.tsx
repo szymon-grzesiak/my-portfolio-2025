@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteConfig.url}/blog`,
   },
+  openGraph: {
+    title: "Vocablaze",
+    description: "Boost your language skills with Vocablaze, an interactive learning platform. Master new vocabulary effectively with smart flashcards and personalized quizzes.",
+    url: `${siteConfig.url}/vocablaze`,
+  },
 };
 
 export default async function BlogPage() {
