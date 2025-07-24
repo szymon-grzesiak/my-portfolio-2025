@@ -18,7 +18,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Resoursea",
-  description: "Project - A platform for knowledge sharing",
+  description: "Discover Resoursea, a curated platform for knowledge sharing. Find top-tier articles, tools, and resources for web developers looking to learn best practices.",
   keywords: ["Resoursea", "Knowledge Sharing", "Web Development", "Blog"],
   alternates: {
     canonical: `${siteConfig.url}/resoursea`,

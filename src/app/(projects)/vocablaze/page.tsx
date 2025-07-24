@@ -18,7 +18,7 @@ import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Vocablaze",
-  description: "Project - A language learning platform",
+  description: "Boost your language skills with Vocablaze, an interactive learning platform. Master new vocabulary effectively with smart flashcards and personalized quizzes.",
   keywords: [
     "Vocablaze",
     "Language Learning",

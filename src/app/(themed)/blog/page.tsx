@@ -9,7 +9,7 @@ import { TagSearch } from "@/components/blog/tag-search";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Blog - Szymon Grzesiak | Full Stack Developer",
+  title: "Blog",
   description:
     "Read my thoughts on software development, design, and more. I share insights, tutorials, and experiences in web development.",
   keywords: [
@@ -35,14 +35,14 @@ export default async function BlogPage() {
     <div className="relative z-10">
       <div className="relative h-64">
         <BackgroundBeamsWithCollision>
-          <h2 className="flex flex-col relative z-20 text-3xl md:text-5xl lg:text-7xl font-bold text-center text-black font-sans tracking-tight">
+          <h1 className="flex flex-col lg:pl-20 xl:pl-0 relative z-20 text-3xl md:text-5xl lg:text-7xl font-bold text-center text-black font-sans tracking-tight">
             Read my thoughts on
             <div className="relative mx-auto inline-block w-max filter-[drop-shadow(0px_1px_3px_rgba(27,37,80,0.14))]">
               <div className="relative bg-clip-text text-transparent bg-no-repeat bg-linear-to-r from-blue-300 via-blue-500 to-blue-800 py-4">
                 <span>Software Development.</span>
               </div>
             </div>
-          </h2>
+          </h1>
         </BackgroundBeamsWithCollision>
         <Image
           src={coolGuy}

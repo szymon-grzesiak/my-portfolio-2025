@@ -3,73 +3,60 @@ import { posts } from "#site/content";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://szymongrzesiak.dev";
-  
-  // Blog posts
-  const blogs = posts.map((post) => ({
+
+  // ZMIANA: Filtrujemy posty, aby uwzględnić tylko te opublikowane.
+  // To kluczowe, aby nie umieszczać w sitemapie wersji roboczych.
+  const publishedPosts = posts.filter((post) => post.published);
+
+  const blogPostEntries = publishedPosts.map((post) => ({
     url: `${baseUrl}/${post.slug}`,
+    // DOBRZE: Używasz faktycznej daty publikacji lub ostatniej modyfikacji posta.
     lastModified: new Date(post.date),
     priority: 0.8,
     changeFrequency: 'weekly' as const,
   }));
 
-  // Main routes - poprawiono błąd "resoursea" -> "resources"
-  const routes = [
+  const staticRoutes = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      // ŹLE: lastModified: new Date()
+      // ZMIANA: Usuwamy 'lastModified'. Lepiej nie podawać tej daty,
+      // niż podawać codziennie fałszywą. Google sam ustali, kiedy przeskanować stronę.
       priority: 1.0,
       changeFrequency: 'daily' as const,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
       priority: 0.9,
       changeFrequency: 'daily' as const,
     },
     {
       url: `${baseUrl}/resoursea`,
-      lastModified: new Date(),
-      priority: 0.8,
-      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+      changeFrequency: 'monthly' as const,
     },
     {
       url: `${baseUrl}/vocablaze`,
-      lastModified: new Date(),
-      priority: 0.8,
+      priority: 0.7,
       changeFrequency: 'monthly' as const,
     },
     {
       url: `${baseUrl}/tags`,
-      lastModified: new Date(),
-      priority: 0.7,
+      priority: 0.6,
       changeFrequency: 'weekly' as const,
     },
   ];
 
-  // Extract unique tags
- let tags = posts.reduce((acc, post) => {
-    if (!post.tags) return acc;
-    post.tags.forEach((tag) => {
-      const slugifiedTag = tag
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-") // Zamienia wszystkie nie-alfanumeryczne znaki na myślniki
-        .replace(/^-+|-+$/g, ""); // Usuwa myślniki z początku i końca
+  // Generowanie stron tagów
+  const allTags = new Set(publishedPosts.flatMap((post) => post.tags || []));
+  const tagEntries = Array.from(allTags).map((tag) => {
+    const slugifiedTag = tag.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    return {
+      url: `${baseUrl}/tags/${slugifiedTag}`,
+      priority: 0.5, // Tagi mają niższy priorytet
+      changeFrequency: 'weekly' as const,
+    };
+  });
 
-      if (!acc.includes(slugifiedTag)) {
-        acc.push(slugifiedTag);
-      }
-    });
-    return acc;
-  }, [] as string[]);
-
-
-  // Tag pages
-  const tagPages = tags.map((tag) => ({
-    url: `${baseUrl}/tags/${tag}`,
-    lastModified: new Date(),
-    priority: 0.6,
-    changeFrequency: 'weekly' as const,
-  }));
-
-  return [...routes, ...blogs, ...tagPages];
+  return [...staticRoutes, ...blogPostEntries, ...tagEntries];
 }

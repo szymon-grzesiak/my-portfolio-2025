@@ -8,7 +8,7 @@ import Image from "next/image";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Explore Topics & Tags | Software Development Blog | Szymon Grzesiak",
+  title: "Tags | Engineer Blog",
   description:
     "Browse all topics and tags I write about including software development, web development, Next.js, React, and more. Find articles that interest you.",
   keywords: [

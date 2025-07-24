@@ -20,7 +20,6 @@ interface PostPageProps {
 async function getPostFromParams(params: { slug: string[] }) {
   const slug = params?.slug?.join("/");
   const post = posts.find((post) => post.slugAsParams === slug);
-
   return post;
 }
 
@@ -39,7 +38,7 @@ export async function generateMetadata({
 
   return {
     title:
-      `${post.title} | Blog by Szymon Grzesiak` || "Blog by Szymon Grzesiak",
+      `${post.title}` || "Blog by Szymon Grzesiak",
     description: post.description || "Read this insightful article on my blog.",
     authors: { name: siteConfig.author },
     keywords: post.tags,
@@ -49,7 +48,7 @@ export async function generateMetadata({
         post.description || "Read this insightful article on my blog.",
       type: "article",
       publishedTime: post.date,
-      url: `https://szymongrzesiak.dev/blog/${post.slug}`,
+      url: `https://szymongrzesiak.dev/${post.slug}`,
       images: [
         {
           url: `/api/og?${ogSearchParams.toString()}`,
@@ -66,7 +65,7 @@ export async function generateMetadata({
       images: [`/api/og?${ogSearchParams.toString()}`],
     },
     alternates: {
-      canonical: `https://szymongrzesiak.dev/blog/${post.slug}`,
+      canonical: `https://szymongrzesiak.dev/${post.slug}`,
     },
   };
 }

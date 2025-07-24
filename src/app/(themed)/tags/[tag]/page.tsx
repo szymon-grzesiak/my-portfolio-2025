@@ -25,13 +25,16 @@ export async function generateMetadata({
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
+  // REWRITTEN: A longer, more engaging description for better CTR.
+  const newDescription = `Explore a curated collection of in-depth articles, tutorials, and insights on ${formattedTag}. Dive deep into practical examples and stay ahead with the latest trends.`;
+
   return {
-    title: `Explore Posts About ${formattedTag} | Szymon Grzesiak`,
-    description: `Discover insightful articles and thoughts on ${formattedTag}. Stay updated with the latest posts and ideas.`,
+    title: `Posts about ${formattedTag}`,
+    description: newDescription,
     authors: { name: siteConfig.author },
     openGraph: {
       title: `Explore Posts About ${formattedTag}`,
-      description: `Discover insightful articles and thoughts on ${formattedTag}. Stay updated with the latest posts and ideas.`,
+      description: newDescription, // Also updated here
       type: "website",
       url: `https://szymongrzesiak.dev/tags/${tag}`,
       images: [
@@ -46,7 +49,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: `Explore Posts About ${formattedTag}`,
-      description: `Discover insightful articles and thoughts on ${formattedTag}. Stay updated with the latest posts and ideas.`,
+      description: newDescription,
       images: [`https://szymongrzesiak.dev/api/og?title=${formattedTag}`],
     },
     alternates: {
