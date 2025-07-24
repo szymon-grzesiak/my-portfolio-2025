@@ -87,7 +87,7 @@ const FamilyButton = () => {
                         </Link>
                       </li>
                       <li className="cursor-pointer font-bagel text-3xl lineThroughEffect">
-                        <Link href="/#projects" onClick={handleLinkClick}>
+                        <Link href="/projects" onClick={handleLinkClick}>
                           PROJECTS
                         </Link>
                       </li>

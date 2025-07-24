@@ -10,6 +10,14 @@ import { Tag } from "@/components/blog/tag";
 // import { getViewsCount } from "@db/queries";
 // import ViewCounter from "../view-counter";
 import { ClientSideTableOfContents } from "@/components/blog/client-side-toc";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 interface PostPageProps {
   params: Promise<{
@@ -37,8 +45,7 @@ export async function generateMetadata({
   ogSearchParams.set("title", post.title);
 
   return {
-    title:
-      `${post.title}` || "Blog by Szymon Grzesiak",
+    title: `${post.title}` || "Blog by Szymon Grzesiak",
     description: post.description || "Read this insightful article on my blog.",
     authors: { name: siteConfig.author },
     keywords: post.tags,
@@ -106,7 +113,34 @@ export default async function PostPage({ params }: PostPageProps) {
       </article>
       <aside className="sticky">
         <div className="sticky top-16 hidden pb-6 text-sm xl:block">
-          <div className="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10 bg-white/90 p-6 rounded-xl shadow-[4px_4px] border-2 border-black">
+          <div className="sticky top-16 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto bg-white/90 px-6 py-6 pt-2 rounded-xl shadow-[4px_4px] border-2 border-black">
+            <Breadcrumb className="relative left-[-8px] pb-4">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink
+                    className="hover:text-blue-500 hover:bg-sky-100 px-2 py-1 rounded-lg duration-300 text-gray-600 text-sm"
+                    href="/"
+                  >
+                    Home
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink
+                    className="hover:text-blue-500 hover:bg-sky-100 px-2 py-1 rounded-lg duration-300 text-gray-600 text-sm"
+                    href="/blog"
+                  >
+                    Blog
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="text-blue-500 text-sm">
+                    {post.title.length > 15 ? post.title.slice(0, 15) + "..." : post.title}
+                  </BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
             <ClientSideTableOfContents />
           </div>
         </div>

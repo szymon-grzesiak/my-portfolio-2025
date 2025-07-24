@@ -15,25 +15,47 @@ import Image from "next/image";
 import resoursea from "@/assets/resoursea.png";
 import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import StickyBreadcrumb from "@/components/shared/sticky-breadcrumb";
 
 export const metadata: Metadata = {
   title: "Resoursea",
-  description: "Discover Resoursea, a curated platform for knowledge sharing. Find top-tier articles, tools, and resources for web developers looking to learn best practices.",
+  description:
+    "Discover Resoursea, a curated platform for knowledge sharing. Find top-tier articles, tools, and resources for web developers looking to learn best practices.",
   keywords: ["Resoursea", "Knowledge Sharing", "Web Development", "Blog"],
   alternates: {
     canonical: `${siteConfig.url}/resoursea`,
   },
+  // POPRAWKA: Dane w openGraph muszą dotyczyć projektu Resoursea
   openGraph: {
-    title: "Vocablaze",
-    description: "Boost your language skills with Vocablaze, an interactive learning platform. Master new vocabulary effectively with smart flashcards and personalized quizzes.",
-    url: `${siteConfig.url}/vocablaze`,
+    title: "Resoursea",
+    description:
+      "Discover Resoursea, a curated platform for knowledge sharing. Find top-tier articles, tools, and resources for web developers looking to learn best practices.",
+    url: `${siteConfig.url}/resoursea`,
   },
 };
+
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/projects" },
+];
 
 function Page() {
   return (
     <main className="relative bgCool md:pl-[130px] flex flex-col items-center">
       <ProjectHero title="Resoursea" titleDescription="Share your knowledge" />
+      <StickyBreadcrumb
+        items={breadcrumbItems}
+        currentPage="Resoursea"
+        sentinelTopPosition={453} // opcjonalne
+      />
       <DoubleColumn
         leftSide={<h2>Overview</h2>}
         rightSide={

@@ -203,7 +203,6 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="min-h-screen">
-        <Providers>
           {children}
           <Sidebar />
           <div className="block md:hidden fixed z-200 right-4 bottom-4">
@@ -211,7 +210,6 @@ export default function RootLayout({
           </div>
           <Analytics />
           <SpeedInsights />
-        </Providers>
       </body>
     </html>
   );

@@ -33,19 +33,19 @@
     "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
-    "eslint": "9.27.0",
-    "eslint-config-next": "15.3.2",
     "@tailwindcss/postcss": "^4.1.7",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
+    "@types/npm": "latest",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/npm": "latest",
+    "eslint": "9.27.0",
+    "eslint-config-next": "15.3.2",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-pretty-code": "^0.14.1",
     "rehype-slug": "^6.0.0",
-    "@tailwindcss/typography": "^0.5.16",
-    "velite": "^0.2.4",
+    "tailwindcss": "^4.1.7",
     "typescript": "^5",
-    "tailwindcss": "^4.1.7"
+    "velite": "^0.2.4"
   }
 }

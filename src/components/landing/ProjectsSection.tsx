@@ -7,6 +7,7 @@ import Image from "next/image";
 import { HiExternalLink } from "react-icons/hi";
 import Link from "next/link";
 import { slug } from "github-slugger";
+import { ArrowRight, ChevronRight } from "lucide-react";
 
 const DotsIndicator = ({
   count,
@@ -141,6 +142,9 @@ export const ProjectsSection = ({
             alt={content[activeCard].title}
             className="w-full h-full object-cover rounded-md z-10 border-2 border-white shadow-white shadow-[6px_6px]"
           />
+          <Link href={"/projects"} className="bg-white w-fit font-semibold px-4 py-2 hover:text-indigo-500 rounded-md shadow-md border-2">
+            See more projects <ArrowRight className="inline-block size-5" />
+          </Link>
           <div className="absolute inset-0 bg-linear-to-t from-black to-transparent opacity-100 flex items-end p-4 rounded-md z-20 w-full">
             <div className="text-white w-full flex justify-between items-end">
               <div className="flex flex-col items-start">

@@ -15,6 +15,15 @@ import { HiExternalLink } from "react-icons/hi";
 import Image from "next/image";
 import blackfyre from "@/assets/main_screen_blackfyre.png";
 import { ArrowRight } from "lucide-react";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import StickyBreadcrumb from "@/components/shared/sticky-breadcrumb";
 
 export const metadata: Metadata = {
   title: "Vocablaze",
@@ -37,10 +46,22 @@ export const metadata: Metadata = {
   },
 };
 
+
+const breadcrumbItems = [
+  { label: "Home", href: "/" },
+  { label: "Projects", href: "/projects" },
+];
+
+
 function Page() {
   return (
     <main className="relative bgCool md:pl-[130px] flex flex-col items-center">
       <ProjectHero title="Vocablaze" titleDescription="a learning platform" />
+        <StickyBreadcrumb
+        items={breadcrumbItems}
+        currentPage="Resoursea"
+        sentinelTopPosition={453} // opcjonalne
+      />
       <DoubleColumn
         leftSide={<h2>Overview</h2>}
         rightSide={

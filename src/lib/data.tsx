@@ -361,6 +361,7 @@ export const projectsData = [
     content: blackfyreBg,
     link: "https://www.hgfhkmfgklmdslkr665464fdsf.space/",
     githubLink: "https://github.com/szymon-grzesiak/vocablaze",
+    new: true,
   },
   {
     title: "Resoursea",
@@ -369,5 +370,6 @@ export const projectsData = [
     content: resoursea,
     link: "https://resoursea.vercel.app/",
     githubLink: "https://github.com/szymon-grzesiak/resoursea",
+    new: false,
   },
 ];
