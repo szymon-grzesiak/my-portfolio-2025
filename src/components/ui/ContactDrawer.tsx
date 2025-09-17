@@ -131,7 +131,7 @@ const ContactDrawer = () => {
             Get in touch
           </DrawerTitle>
           <DrawerDescription className="text-black/80">
-            Send me a message - I'll get back to you as soon as possible!
+            Send me a message - I&apos;ll get back to you as soon as possible!
           </DrawerDescription>
         </DrawerHeader>
 
