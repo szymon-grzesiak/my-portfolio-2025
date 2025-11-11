@@ -12,7 +12,7 @@ import bnpBg from "@/assets/bnpBg.jpg";
 import hustlersBg from "@/assets/hustlersBg.jpg";
 import wnetrzeBg from "@/assets/wnetrzeBg.jpg";
 import cytrynuchBg from "@/assets/cytrynuchBg.jpg";
-import diffy from "@/assets/diffy.png"
+import diffy from "@/assets/diffy.png";
 
 import {
   SiClerk,
@@ -343,6 +343,94 @@ export const projects: ProjectType[] = [
 ];
 
 export const timelineData = [
+  {
+    title: "Sep 2025-Now",
+    occupation: "🕵️ [REDACTED] - Frontend Developer",
+    content: (
+      <div className="flex flex-col pt-3">
+        <p className="text-neutral-800 text-md font-normal">
+          Maybe it's Google, maybe it's AliExpress, and maybe I'm the McDonald's
+          CEO. Who knows? 🤷‍♂️
+        </p>
+        <p className="text-neutral-800 text-md font-normal mt-2">
+          What I can tell you is that I'm slinging React/TypeScript code daily,
+          and sometimes even wrestling with Angular when the situation calls for
+          it.
+        </p>
+        <p className="text-neutral-800 text-md font-normal mt-2 italic">
+          Plot twist: It's none of the above, but I'm keeping it mysterious 😎
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Jan 2025-Sep 2025",
+    occupation: "Freelance/SaaS Developer",
+    content: (
+      <div className="flex flex-col pt-3">
+        <p className="text-neutral-800 text-md font-normal ">
+          As a freelance developer, I am focused on building SaaS projects that
+          solve real-world problems. I am currently working on several projects
+          that leverage the latest technologies to deliver high-quality
+          solutions.
+        </p>
+        <p className="font-medium py-3"> Some of the projects:</p>
+        <ul className="flex flex-col gap-2 ml-4 list-disc list-inside">
+          <li className="list-item">
+            <a
+              className="underline"
+              href="https://www.pippulse.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              PipPulse Academy
+            </a>
+          </li>
+          <li className="list-item">
+            <a
+              className="underline"
+              href="https://www.hustlersgang.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hustlers Gang
+            </a>
+          </li>
+          <li className="list-item">
+            <a
+              className="underline"
+              href="https://www.bnp.global"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              bnp.global
+            </a>
+          </li>
+          <li>
+            <a
+              className="underline"
+              href="https://www.cytrynuch.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Cytrynuch
+            </a>
+          </li>
+          <li>
+            <a
+              className="underline"
+              href="https://www.wnetrzeraju.pl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wnętrze Raju
+            </a>
+          </li>
+          And many more...
+        </ul>
+      </div>
+    ),
+  },
   {
     title: "Aug 2023-Jan 2025",
     occupation: "Helpfind - Frontend Developer",
