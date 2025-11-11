@@ -11,7 +11,7 @@ import {
 
 interface ProjectTechStack extends ComponentPropsWithoutRef<"section"> {
   technologies?: {
-    icon?: IconType;
+    icon?: IconType | React.ComponentType<{ className?: string }>;
     title: string;
   }[];
 }

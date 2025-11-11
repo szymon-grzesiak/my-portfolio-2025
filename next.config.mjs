@@ -21,6 +21,18 @@ const nextConfig = {
       },
     ],
   },
+   reactCompiler: true,
+    compress: true,
+    experimental: {
+    optimizePackageImports: [
+      "@/components",
+      "@/lib",
+      "framer-motion",
+      "lucide-react",
+    ],
+    // Kompresja CSS - usuwa niepotrzebne style
+    optimizeCss: true,
+  },
   // async headers() {
   //   return [
   //     {

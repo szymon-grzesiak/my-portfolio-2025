@@ -1,12 +1,16 @@
 import { cn } from "@/lib/utils";
 
-interface Props {
+interface DoubleColumnProps {
   leftSide: React.ReactNode;
   rightSide: React.ReactNode;
   className?: string;
 }
 
-const DoubleColumn = ({ leftSide, rightSide, className }: Props) => {
+const DoubleColumn = ({
+  leftSide,
+  rightSide,
+  className,
+}: DoubleColumnProps) => {
   return (
     <section
       className={cn(

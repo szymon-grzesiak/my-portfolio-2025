@@ -124,9 +124,9 @@ export default function Home() {
         <Image
           src={coolGuy}
           alt="Sitting figure"
-          width={150}
-          height={150}
-          className="absolute bottom-[-55px] right-0 z-40"
+          width={120}
+          height={120}
+          className="size-30 md:size-[150px] absolute bottom-[-55px] right-0 z-40"
         />
         <div className="w-full flex justify-center items-start translate-y-4 z-20">
           <h2
@@ -134,19 +134,19 @@ export default function Home() {
             className="text-center bg-indigo-400 font-bold rounded-xl px-4 border-2 border-black shadow-black shadow-[4px_4px] font-bagel text-xl md:text-2xl tracking-widest"
           >
             <StarIcon className="inline-block mr-2 text-yellow-400 fill-amber-300" />
-            PROJECTS
+            LATEST WORK
           </h2>
         </div>
       </section>
       <section>
         <div className="hidden md:block">
           <ProjectsSection
-            content={projectsData}
+            content={projectsData.slice(0, 3)}
             contentClassName="px-6 xl:pr-0"
           />
         </div>
         <div className="block md:hidden">
-          <SwipeCards content={projectsData} />
+          <SwipeCards content={projectsData.slice(0, 3)} />
         </div>
       </section>
       <AnglerSection />

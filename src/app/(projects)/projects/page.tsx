@@ -6,7 +6,6 @@ import { siteConfig } from "@/config/site";
 import { projectsData } from "@/lib/data";
 import Link from "next/link";
 import { HiExternalLink } from "react-icons/hi";
-import { slug } from "github-slugger";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -99,15 +98,18 @@ export default async function BlogPage() {
                 <div className="absolute inset-0 bg-linear-to-t from-gray-700 to-transparent opacity-100 flex items-end p-4 rounded-md  w-full">
                   <div className="text-white w-full flex justify-between items-end">
                     <div className="flex flex-col items-start">
-                      <p className="text-base lg:text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
-                        <Link
-                          className="flex gap-2 justify-center items-center"
-                          href={project.githubLink as string}
-                          target="_blank"
-                        >
-                          Github Code <HiExternalLink className="text-white" />
-                        </Link>
-                      </p>
+                      {project?.githubLink && (
+                        <p className="text-base lg:text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
+                          <Link
+                            className="flex gap-2 justify-center items-center"
+                            href={project.githubLink as string}
+                            target="_blank"
+                          >
+                            Github Code{" "}
+                            <HiExternalLink className="text-white" />
+                          </Link>
+                        </p>
+                      )}
                       <p className="text-base lg:text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
                         <Link
                           className="flex gap-2 justify-center items-center"
@@ -120,7 +122,7 @@ export default async function BlogPage() {
                     </div>
 
                     <p className="text-base lg:text-lg font-bold hover:text-[#00E5FF] cursor-pointer">
-                      <Link href={`projects/${slug(project.title)}`}>
+                      <Link href={`/projects/${project.slug}`}>
                         See Case Study
                       </Link>
                     </p>

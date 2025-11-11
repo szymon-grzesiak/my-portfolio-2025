@@ -1,7 +1,35 @@
-import { FaGithub, FaLaravel } from "react-icons/fa";
+import type { StaticImageData } from "next/image";
+import {
+  FaGithub,
+  FaGitAlt,
+  FaLaravel,
+  FaReact,
+  FaStripe,
+} from "react-icons/fa";
 import blackfyreBg from "@/assets/main_screen_blackfyre.png";
 import resoursea from "@/assets/resoursea.png";
+import bnpBg from "@/assets/bnpBg.jpg";
+import hustlersBg from "@/assets/hustlersBg.jpg";
+import wnetrzeBg from "@/assets/wnetrzeBg.jpg";
+import cytrynuchBg from "@/assets/cytrynuchBg.jpg";
+import diffy from "@/assets/diffy.png"
+
+import {
+  SiClerk,
+  SiGooglesheets,
+  SiMongoose,
+  SiNextdotjs,
+  SiOpenai,
+  SiPostgresql,
+  SiPrisma,
+  SiResend,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
+import { TbBrandFramerMotion } from "react-icons/tb";
+import { BsFillShieldLockFill } from "react-icons/bs";
+import { MongoIcon, TinyMCE } from "@/components/icons";
 
 const ReactIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   return (
@@ -226,6 +254,51 @@ export interface ProjectType {
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
+export interface ProjectSummary {
+  title: string;
+  slug: string;
+  description: string;
+  content: StaticImageData;
+  link: string;
+  githubLink: string | null;
+  new?: boolean;
+  heroTagline?: string;
+}
+
+export interface ProjectFeature {
+  title?: string;
+  description: string;
+}
+
+export interface ProjectFinalSite {
+  url: string;
+  label: string;
+  image: StaticImageData;
+  ctaText?: string;
+}
+
+export interface ProjectCaseStudy {
+  slug: string;
+  title: string;
+  heroTagline: string;
+  metadata: {
+    title: string;
+    description: string;
+    keywords?: string[];
+  };
+  overview: string[];
+  problem: string[];
+  technologies: {
+    icon?: React.ComponentType<{ className?: string }>;
+    title: string;
+  }[];
+  features: ProjectFeature[];
+  includeProcess?: boolean;
+  finalSite: ProjectFinalSite;
+  learnings: string[];
+  challenges: string[];
+}
+
 export const projects: ProjectType[] = [
   {
     title: "React",
@@ -353,23 +426,576 @@ export const curiosities = [
   "If someone reads this, let's connect!",
 ];
 
-export const projectsData = [
+export const projectsData: ProjectSummary[] = [
+  {
+    title: "PipPulse Academy",
+    slug: "diffy",
+    description:
+      "PipPulse Academy is an educational platform offering a comprehensive trading methodology course for professional traders.",
+    content: diffy,
+    link: "https://diffy.pl/",
+    githubLink: null,
+    new: true,
+    heroTagline: "Professional trading methodology platform",
+  },
+  {
+    title: "Hustlers Gang",
+    slug: "hustlers-gang",
+    description:
+      "Hustlers Gang is a website for a community of hustlers. It is designed to help hustlers connect with each other and share their knowledge and experiences.",
+    content: hustlersBg,
+    link: "https://hustlersgang.pl/",
+    githubLink: null,
+    new: true,
+    heroTagline: "Community-first membership experience",
+  },
+  {
+    title: "bnp.global",
+    slug: "bnp-global",
+    description:
+      "bnp.global is a website for a global business network. It is designed to help businesses connect with each other and share their knowledge and experiences.",
+    content: bnpBg,
+    link: "https://bnp.global/",
+    githubLink: null,
+    new: false,
+    heroTagline: "Connecting innovators across borders",
+  },
+  {
+    title: "Wnetrze Raju",
+    slug: "wnetrze-raju",
+    description:
+      "Wnetrze Raju is a website for a massage parlor in Sieradz, Poland. It is designed to showcase the services offered by the parlor and to provide information about the location and contact details.",
+    content: wnetrzeBg,
+    githubLink: null,
+    link: "https://wnetrze-raju.vercel.app/.vercel.app/",
+    new: false,
+    heroTagline: "Relaxation elevated through design",
+  },
+  {
+    title: "Cytrynuch TikToker",
+    slug: "cytrynuch-tiktoker",
+    description:
+      "Cytrynuch TikToker is a website for a TikTok content creator. It is designed to showcase the creator's videos and to provide information about the creator.",
+    content: cytrynuchBg,
+    link: "https://cytrynuch.szymongrzesiak.dev/",
+    githubLink: null,
+    new: false,
+    heroTagline: "Building a playful creator hub",
+  },
   {
     title: "Vocablaze",
+    slug: "vocablaze",
     description:
       "Vocablaze is a language learning app that uses games to help users improve their vocabulary and grammar. It is designed to make learning fun and engaging, with a focus on practical language skills.",
     content: blackfyreBg,
     link: "https://www.hgfhkmfgklmdslkr665464fdsf.space/",
     githubLink: "https://github.com/szymon-grzesiak/vocablaze",
-    new: true,
+    new: false,
+    heroTagline: "A gamified journey for language lovers",
   },
   {
     title: "Resoursea",
+    slug: "resoursea",
     description:
       "Resoursea is a platform where you can share your resources with others. It is designed to help students and professionals find the resources they need to succeed in their studies and careers.",
     content: resoursea,
     link: "https://resoursea.vercel.app/",
     githubLink: "https://github.com/szymon-grzesiak/resoursea",
     new: false,
+    heroTagline: "Empowering knowledge exchange online",
   },
 ];
+
+const summaryBySlug = Object.fromEntries(
+  projectsData.map((project) => [project.slug, project] as const)
+);
+
+export const projectCaseStudies: ProjectCaseStudy[] = [
+  {
+    slug: "diffy",
+    title: "PipPulse Academy",
+    heroTagline:
+      summaryBySlug["diffy"].heroTagline ??
+      "Professional trading methodology platform",
+    metadata: {
+      title: "PipPulse Academy Case Study",
+      description:
+        "Building a premium educational platform for professional traders with countdown mechanics, advanced form handling, and Google Sheets integration.",
+      keywords: [
+        "PipPulse",
+        "trading",
+        "Next.js",
+        "education",
+        "Google Sheets",
+      ],
+    },
+    overview: [
+      "PipPulse Academy needed a high-converting landing page to present a comprehensive trading methodology course with limited annual enrollment spots.",
+      "I built a sophisticated countdown system, multi-step application form with Google Sheets integration, and conversion-optimized sections that communicate professional value while maintaining exclusivity.",
+    ],
+    problem: [
+      "The platform required precise time-gated launches with automatic content reveals, while avoiding hydration issues in Next.js 16.",
+      "We needed a complex application form that saves to Google Sheets, sends automated emails, and maintains a smooth user experience across multiple steps.",
+    ],
+    technologies: [
+      { icon: FaReact, title: "React" },
+      { icon: SiNextdotjs, title: "Next.js 16" },
+      { icon: SiTailwindcss, title: "Tailwind CSS" },
+      { icon: SiGooglesheets, title: "Google Sheets API" },
+      { icon: FaGitAlt, title: "Git" },
+      { icon: FaGithub, title: "GitHub" },
+    ],
+    features: [
+      {
+        title: "Client-side countdown system",
+        description:
+          "Custom hook-based countdown with automatic content gating that eliminates hydration mismatches and handles timezone conversions seamlessly.",
+      },
+      {
+        title: "Multi-step application form",
+        description:
+          "Sophisticated form dialog with progress indicators, validation, step-by-step data collection, and smooth transitions between application stages.",
+      },
+      {
+        title: "Google Sheets integration",
+        description:
+          "Automated application data submission to Google Sheets with email notifications, comprehensive error handling, and duplicate prevention.",
+      },
+      {
+        title: "Performance-optimized sections",
+        description:
+          "Dynamic imports for below-the-fold content, animated section reveals, and optimized asset loading for buttery-smooth scrolling experience.",
+      },
+    ],
+    includeProcess: false,
+    finalSite: {
+      url: summaryBySlug["diffy"].link,
+      label: "diffy.pl",
+      image: summaryBySlug["diffy"].content,
+      ctaText: "Visit website",
+    },
+    learnings: [
+      "Solving Next.js 16 hydration issues with countdown timers required separating client components with ssr:false dynamic imports.",
+      "Building reusable form components with TypeScript strict mode and Zod validation improved maintainability and user experience.",
+    ],
+    challenges: [
+      "Managing countdown state across multiple components while avoiding server-client mismatches demanded a centralized controller pattern.",
+      "Balancing urgency-driven design elements with professional credibility required careful UX testing and copy refinement.",
+    ],
+  },
+  {
+    slug: "hustlers-gang",
+    title: "Hustlers Gang",
+    heroTagline:
+      summaryBySlug["hustlers-gang"].heroTagline ??
+      "Community-first membership experience",
+    metadata: {
+      title: "Hustlers Gang Case Study",
+      description:
+        "Building a bold digital home for the Hustlers Gang community with gated content and streamlined onboarding.",
+      keywords: ["Hustlers Gang", "membership", "Next.js", "community"],
+    },
+    overview: [
+      "Hustlers Gang needed a premium digital space where members could access exclusive events, drops, and resources without friction.",
+      "I focused on building a high-energy landing experience that highlights the brand voice, while keeping the stack lean so new campaigns can launch quickly.",
+    ],
+    problem: [
+      "Existing tools made it tough to manage launches and communicate the value of the community in one place.",
+      "We wanted a site that converts visitors, handles live updates, and still feels unmistakably on-brand.",
+    ],
+    technologies: [
+      { icon: FaReact, title: "React" },
+      { icon: SiNextdotjs, title: "Next.js" },
+      { icon: SiTailwindcss, title: "Tailwind CSS" },
+      { icon: FaGitAlt, title: "Git" },
+      { icon: FaGithub, title: "GitHub" },
+    ],
+    features: [
+      {
+        title: "Launch-ready pages",
+        description:
+          "Modular sections make it easy to spin up drops, collect signups, or promote offline events in minutes.",
+      },
+      {
+        title: "Mobile-first storytelling",
+        description:
+          "The design keeps the Hustlers aesthetic while staying responsive and buttery-smooth on mobile devices.",
+      },
+      {
+        title: "Campaign analytics hooks",
+        description:
+          "Tracking is wired for quick integrations, so performance data from each drop is always within reach.",
+      },
+      {
+        title: "CMS-ready architecture",
+        description:
+          "Structured components make future migrations to a headless CMS straightforward when the community scales.",
+      },
+    ],
+    includeProcess: false,
+    finalSite: {
+      url: summaryBySlug["hustlers-gang"].link,
+      label: "hustlersgang.pl",
+      image: summaryBySlug["hustlers-gang"].content,
+      ctaText: "Visit website",
+    },
+    learnings: [
+      "Leaning into bold typography and motion helped communicate the community vibe while still keeping conversion in check.",
+      "Setting up reusable sections dramatically sped up iteration during launch week.",
+    ],
+    challenges: [
+      "Balancing strong visuals with performance budgets required continuous auditing and pruning assets.",
+      "Coordinating quick turnarounds during campaign sprints demanded tight feedback loops with stakeholders.",
+    ],
+  },
+  {
+    slug: "bnp-global",
+    title: "bnp.global",
+    heroTagline:
+      summaryBySlug["bnp-global"].heroTagline ??
+      "Connecting innovators across borders",
+    metadata: {
+      title: "bnp.global Case Study",
+      description:
+        "Designing a business network portal that helps international teams showcase opportunities and connect faster.",
+      keywords: ["bnp.global", "business network", "Next.js", "design"],
+    },
+    overview: [
+      "bnp.global brings founders and investors together, so the site needed to communicate credibility and momentum from the first scroll.",
+      "The layout emphasises storytelling and metrics, while keeping the team ready to localise the experience for new markets.",
+    ],
+    problem: [
+      "The previous web presence felt static and couldn't surface fresh success stories or partners on demand.",
+      "The new experience had to be responsive, easy to update, and reflect the global footprint of the network.",
+    ],
+    technologies: [
+      { icon: SiNextdotjs, title: "Next.js" },
+      { icon: SiTailwindcss, title: "Tailwind CSS" },
+      { icon: SiTypescript, title: "TypeScript" },
+      { icon: FaGitAlt, title: "Git" },
+      { icon: FaGithub, title: "GitHub" },
+    ],
+    features: [
+      {
+        title: "Opportunity highlights",
+        description:
+          "Homepage callouts put the newest partner stories front and centre with flexible content slots.",
+      },
+      {
+        title: "Localized contact flows",
+        description:
+          "Inquiry forms adapt to target markets so leads reach the right team instantly.",
+      },
+      {
+        title: "Performance-first visuals",
+        description:
+          "Optimised imagery and loading strategies keep the experience sharp even on low-bandwidth connections.",
+      },
+    ],
+    includeProcess: false,
+    finalSite: {
+      url: summaryBySlug["bnp-global"].link,
+      label: "bnp.global",
+      image: summaryBySlug["bnp-global"].content,
+      ctaText: "Visit website",
+    },
+    learnings: [
+      "I refined my approach to typescale systems that translate well across multiple language lengths.",
+      "Close collaboration with the marketing team ensured the story matched the evolving brand voice.",
+    ],
+    challenges: [
+      "Coordinating asset delivery across time zones required tight asynchronous workflows.",
+      "We needed to maintain accessibility and load performance while showcasing rich partner imagery.",
+    ],
+  },
+  {
+    slug: "wnetrze-raju",
+    title: "Wnetrze Raju",
+    heroTagline:
+      summaryBySlug["wnetrze-raju"].heroTagline ??
+      "Relaxation elevated through design",
+    metadata: {
+      title: "Wnetrze Raju Case Study",
+      description:
+        "Crafting a calming web experience for a premium massage studio with clear service presentation and booking prompts.",
+      keywords: ["spa website", "massage studio", "Next.js"],
+    },
+    overview: [
+      "The goal was to translate the studio's in-person atmosphere into a digital story that feels serene and trustworthy.",
+      "Call-to-action touchpoints guide visitors seamlessly from exploration to booking without overwhelming them.",
+    ],
+    problem: [
+      "Offline customers loved the brand, but the existing web presence didn't match the experience or convert leads.",
+      "We needed to highlight unique treatments, gift cards, and testimonials while keeping the flow light and inviting.",
+    ],
+    technologies: [
+      { icon: FaReact, title: "React" },
+      { icon: SiNextdotjs, title: "Next.js" },
+      { icon: SiTypescript, title: "TypeScript" },
+      { icon: SiTailwindcss, title: "Tailwind CSS" },
+      { icon: FaGitAlt, title: "Git" },
+    ],
+    features: [
+      {
+        title: "Service-focused layout",
+        description:
+          "Informational sections spotlight signature treatments with space for rich imagery.",
+      },
+      {
+        title: "Lightweight booking prompts",
+        description:
+          "Clear CTAs connect visitors to preferred booking channels without unnecessary steps.",
+      },
+      {
+        title: "Mood-driven visuals",
+        description:
+          "Soft colour gradients, typography, and motion mimic the relaxing tone of the studio.",
+      },
+    ],
+    includeProcess: false,
+    finalSite: {
+      url: summaryBySlug["wnetrze-raju"].link,
+      label: "wnetrze-raju.vercel.app",
+      image: summaryBySlug["wnetrze-raju"].content,
+      ctaText: "Visit website",
+    },
+    learnings: [
+      "Fine-tuning the visual hierarchy taught me how small typographic tweaks improve scan-ability for hospitality brands.",
+      "Reusable content blocks now make it easy for the owners to promote seasonal offers.",
+    ],
+    challenges: [
+      "Sourcing high-quality imagery within tight timelines required creative direction support.",
+      "Balancing aesthetic flourishes with performance budgets meant continuous iteration on assets.",
+    ],
+  },
+  {
+    slug: "cytrynuch-tiktoker",
+    title: "Cytrynuch TikToker",
+    heroTagline:
+      summaryBySlug["cytrynuch-tiktoker"].heroTagline ??
+      "Building a playful creator hub",
+    metadata: {
+      title: "Cytrynuch TikToker Case Study",
+      description:
+        "A colourful hub for a Polish TikTok creator with space for campaigns, socials, and collaborations.",
+      keywords: ["creator website", "TikTok", "portfolio"],
+    },
+    overview: [
+      "Cytrynuch wanted a playful site that feels like scrolling through the TikTok feed but still guides partners toward collaboration.",
+      "We leaned into bold colour blocks and interactive widgets to showcase recent content and highlight contact points.",
+    ],
+    problem: [
+      "Social profiles alone made it tough to present brand partners with a polished media kit.",
+      "The new experience had to celebrate the creator's style without sacrificing clarity for agencies and sponsors.",
+    ],
+    technologies: [
+      { icon: FaReact, title: "React" },
+      { icon: SiNextdotjs, title: "Next.js" },
+      { icon: SiTailwindcss, title: "Tailwind CSS" },
+      { icon: FaGitAlt, title: "Git" },
+      { icon: FaGithub, title: "GitHub" },
+    ],
+    features: [
+      {
+        title: "Drop-in content embeds",
+        description:
+          "Short-form videos, stats, and testimonials can be refreshed without redeploying the site.",
+      },
+      {
+        title: "Branded contact flow",
+        description:
+          "Partners can request collaborations while staying immersed in the creator's unmistakable tone.",
+      },
+      {
+        title: "Sponsor-ready layout",
+        description:
+          "Sections for metrics, audience insights, and brand pillars help sell campaigns fast.",
+      },
+    ],
+    includeProcess: false,
+    finalSite: {
+      url: summaryBySlug["cytrynuch-tiktoker"].link,
+      label: "cytrynuch.szymongrzesiak.dev",
+      image: summaryBySlug["cytrynuch-tiktoker"].content,
+      ctaText: "Visit website",
+    },
+    learnings: [
+      "I refined component APIs so the creator can tweak accent colours and imagery for each campaign.",
+      "Embedding social proof dynamically keeps the page feeling as alive as the TikTok feed.",
+    ],
+    challenges: [
+      "Ensuring accessibility with vibrant gradients required careful contrast audits.",
+      "Keeping bundle size light while embedding multiple third-party widgets took experimentation.",
+    ],
+  },
+  {
+    slug: "vocablaze",
+    title: "Vocablaze",
+    heroTagline:
+      summaryBySlug["vocablaze"].heroTagline ??
+      "A gamified journey for language lovers",
+    metadata: {
+      title: "Vocablaze",
+      description:
+        "Boost your language skills with Vocablaze, an interactive learning platform. Master new vocabulary effectively with smart flashcards and personalized quizzes.",
+      keywords: [
+        "Vocablaze",
+        "Language Learning",
+        "Web Development",
+        "Next.js",
+        "React",
+        "TypeScript",
+      ],
+    },
+    overview: [
+      "The goal of Vocablaze is to build a web platform for language learning where users create personalised vocabulary sets, track progress, and play interactive games.",
+      "Scope covered UI/UX design, implementation across the stack, and validating how gamification keeps learners engaged.",
+    ],
+    problem: [
+      "Most language apps focus on rigid lesson paths. We wanted to give learners creative control while keeping the experience fun.",
+      "The product also needed a secure payment gateway and robust auth flows to support premium content.",
+    ],
+    technologies: [
+      { icon: FaReact, title: "React" },
+      { icon: SiNextdotjs, title: "Next.js" },
+      { icon: SiTypescript, title: "TypeScript" },
+      { icon: SiTailwindcss, title: "Tailwind CSS" },
+      { icon: TbBrandFramerMotion, title: "Framer Motion" },
+      { icon: FaGitAlt, title: "Git" },
+      { icon: FaGithub, title: "GitHub" },
+      { icon: SiPostgresql, title: "PostgreSQL" },
+      { icon: SiPrisma, title: "Prisma" },
+      { icon: FaStripe, title: "Stripe" },
+      { icon: SiResend, title: "Resend" },
+      { icon: BsFillShieldLockFill, title: "NextAuth" },
+    ],
+    features: [
+      {
+        description:
+          "Language games like Flashcards, Matching Tiles, and Hangman keep vocabulary practice engaging.",
+      },
+      {
+        description:
+          "Progress tracking dashboards help learners monitor improvements over time.",
+      },
+      {
+        description:
+          "Customizable themes let users tailor the interface to their preferences.",
+      },
+      {
+        description:
+          "Material sharing allows teachers and learners to distribute custom decks easily.",
+      },
+      {
+        description:
+          "Import tools support bulk uploading vocabulary from external files.",
+      },
+      {
+        description:
+          "Premium tiers unlock advanced analytics and additional game modes powered by Stripe.",
+      },
+    ],
+    includeProcess: true,
+    finalSite: {
+      url: summaryBySlug["vocablaze"].link,
+      label: "vocablaze.com",
+      image: summaryBySlug["vocablaze"].content,
+      ctaText: "Visit website",
+    },
+    learnings: [
+      "Implemented advanced auth flows with password resets and 2FA, gaining confidence with secure user journeys.",
+      "Integrated Stripe end-to-end, from subscription management to webhook handling.",
+      "Levelled up backend skills by tuning Prisma queries and optimising server-side logic.",
+      "Deepened my understanding of Next.js features like server actions and on-demand revalidation.",
+    ],
+    challenges: [
+      "Working solo meant owning design, development, and QA without backup.",
+      "Learning Stripe from scratch took time to ensure payments stayed secure.",
+      "Email-based password resets and 2FA added complexity to the auth layer.",
+      "Balancing scope with tight personal deadlines demanded strong prioritisation.",
+    ],
+  },
+  {
+    slug: "resoursea",
+    title: "Resoursea",
+    heroTagline:
+      summaryBySlug["resoursea"].heroTagline ??
+      "Empowering knowledge exchange online",
+    metadata: {
+      title: "Resoursea",
+      description:
+        "Discover Resoursea, a curated platform for knowledge sharing. Find top-tier articles, tools, and resources for web developers looking to learn best practices.",
+      keywords: ["Resoursea", "Knowledge Sharing", "Web Development", "Blog"],
+    },
+    overview: [
+      "Resoursea is a versatile platform for knowledge sharing where users can post content, engage in discussions, and exchange ideas.",
+      "It combines customizable profiles, forums, badges, and a job search feature to keep the community active and rewarded.",
+    ],
+    problem: [
+      "Most forums lack a unified space that encourages learning, recognition, and real-world opportunities.",
+      "Resoursea bridges that gap by blending discussion threads with career growth tools like job discovery.",
+    ],
+    technologies: [
+      { icon: FaReact, title: "React" },
+      { icon: SiNextdotjs, title: "Next.js" },
+      { icon: SiTypescript, title: "TypeScript" },
+      { icon: SiTailwindcss, title: "Tailwind CSS" },
+      { icon: FaGitAlt, title: "Git" },
+      { icon: FaGithub, title: "GitHub" },
+      { icon: MongoIcon, title: "MongoDB" },
+      { icon: SiMongoose, title: "Mongoose" },
+      { icon: SiClerk, title: "Clerk.js" },
+      { icon: TinyMCE, title: "TinyMCE" },
+      { icon: SiOpenai, title: "OpenAI" },
+    ],
+    features: [
+      {
+        title: "Advanced login system",
+        description:
+          "Clerk.js powers secure authentication with options like two-factor verification for power users.",
+      },
+      {
+        title: "Global search",
+        description:
+          "A unified search surface makes it easy to find questions, community posts, and curated collections.",
+      },
+      {
+        title: "Knowledge sharing hubs",
+        description:
+          "Sections such as Community, Collections, and Tags encourage exploration and collaboration.",
+      },
+      {
+        title: "AI-assisted replies",
+        description:
+          "OpenAI integration allows users to generate draft answers to posts (feature currently paused to manage API costs).",
+      },
+      {
+        title: "Job discovery",
+        description:
+          "Built-in job finder helps members connect their learning journey with new opportunities.",
+      },
+    ],
+    includeProcess: true,
+    finalSite: {
+      url: summaryBySlug["resoursea"].link,
+      label: "resoursea.vercel.app",
+      image: summaryBySlug["resoursea"].content,
+      ctaText: "Visit website",
+    },
+    learnings: [
+      "Mastered advanced auth workflows with Clerk.js, including two-factor authentication.",
+      "Gained experience integrating AI features with OpenAI while keeping costs predictable.",
+      "Improved how I design global search experiences that balance speed and accuracy.",
+      "Sharpened responsive UI skills to deliver a polished experience across devices.",
+    ],
+    challenges: [
+      "Setting up Clerk.js with nuanced auth flows demanded careful UX planning.",
+      "Building AI-powered responses meant managing tokens, rate limits, and user expectations.",
+      "Designing a fast search across multiple data entities required data modeling and caching work.",
+      "Maintaining consistent design while supporting dark and light modes pushed the design system.",
+    ],
+  },
+];
+
+export const getProjectCaseStudy = (slug: string) =>
+  projectCaseStudies.find((project) => project.slug === slug);

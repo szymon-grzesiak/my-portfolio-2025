@@ -14,6 +14,7 @@ import Link from "next/link";
 import { HiExternalLink } from "react-icons/hi";
 import { slug } from "github-slugger";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 interface Props {
   content: {
@@ -21,13 +22,14 @@ interface Props {
     description: string;
     content?: React.ReactNode | any;
     link?: string;
-    githubLink?: string;
+    githubLink?: string | null;
+    new?: boolean;
   }[];
 }
 
 const SwipeCards = ({ content }: Props) => {
   return (
-    <div className="h-160 p-6 w-full flex justify-center items-center border-y-2 border-black bg-white/70">
+    <div className="py-6 px-2 w-full flex justify-center items-center bg-white/70 min-h-[600px] relative">
       <Swiper
         spaceBetween={30}
         pagination={{
@@ -38,9 +40,14 @@ const SwipeCards = ({ content }: Props) => {
         className="mySwiper"
       >
         {content.map((item, index) => (
-          <SwiperSlide key={index} className="border-2 border-black">
-            <div className="flex flex-col h-full w-full justify-start">
-              <div className="relative w-full h-2/5 group border-b-2">
+          <SwiperSlide key={index} className="border-2 border-black !h-auto">
+            <div className="flex flex-col w-full min-h-[520px]">
+              <div className="relative w-full aspect-video group border-b-2 flex-shrink-0">
+                {content[index].new && (
+                  <div className="absolute top-2 left-2 font-bold bg-red-500 text-white px-4 py-2 rounded-full text-xs animate-bounce z-30">
+                    NEW
+                  </div>
+                )}
                 <Image
                   src={content[index].content ?? null}
                   alt={content[index].title}
@@ -49,15 +56,18 @@ const SwipeCards = ({ content }: Props) => {
                 <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-100 flex items-end p-4 z-20 w-full">
                   <div className="text-white w-full flex justify-between">
                     <div className="flex flex-col items-start">
-                      <p className="text-base md:text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
-                        <Link
-                          className="flex gap-2 justify-center items-center"
-                          href={content[index].githubLink as string}
-                          target="_blank"
-                        >
-                          Github Code <HiExternalLink className="text-white" />
-                        </Link>
-                      </p>
+                      {content[index]?.githubLink && (
+                        <p className="text-base md:text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
+                          <Link
+                            className="flex gap-2 justify-center items-center"
+                            href={content[index].githubLink as string}
+                            target="_blank"
+                          >
+                            Github Code{" "}
+                            <HiExternalLink className="text-white" />
+                          </Link>
+                        </p>
+                      )}
 
                       <p className="text-base lg:text-lg font-bold flex justify-center items-center gap-2 lineThroughEffect">
                         <Link
@@ -78,14 +88,17 @@ const SwipeCards = ({ content }: Props) => {
                   </div>
                 </div>
               </div>
-              <div className="h-[calc(100%-300px)] gap-6 flex flex-col justify-center items-start px-4 text-start pt-3">
-                <p className="text-white font-bold">{item.title}</p>
-                <p className="text-gray-300">{item.description}</p>
+              <div className="flex-1 gap-4 flex flex-col justify-center items-start px-4 py-6 text-start">
+                <p className="text-white font-bold text-lg">{item.title}</p>
+                <p className="text-gray-300 text-sm">{item.description}</p>
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+      <Link href={"/projects"} className="swiper-more-projects">
+        More projects <ArrowRight className="inline-block size-5" />
+      </Link>
     </div>
   );
 };
