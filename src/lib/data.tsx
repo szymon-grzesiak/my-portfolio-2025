@@ -379,7 +379,7 @@ export const timelineData = [
           <li className="list-item">
             <a
               className="underline"
-              href="https://www.pippulse.com"
+              href="https://diffy.pl"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -389,7 +389,7 @@ export const timelineData = [
           <li className="list-item">
             <a
               className="underline"
-              href="https://www.hustlersgang.com"
+              href="https://www.hustlersgang.pl"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -409,7 +409,7 @@ export const timelineData = [
           <li>
             <a
               className="underline"
-              href="https://www.cytrynuch.com"
+              href="https://cytrynuch.szymongrzesiak.dev"
               target="_blank"
               rel="noopener noreferrer"
             >
