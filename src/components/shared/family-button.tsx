@@ -105,7 +105,7 @@ const FamilyButton = () => {
 
                     <li className="flex gap-4 justify-center items-center mb-14">
                       <Link
-                        href="https://www.linkedin.com/in/szymon-grzesiak-296873200/"
+                        href="https://www.linkedin.com/in/szymongrzesiak/"
                         onClick={handleLinkClick}
                         target="_blank"
                       >

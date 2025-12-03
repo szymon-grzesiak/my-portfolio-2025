@@ -18,12 +18,12 @@ export const socials = [
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/hubertgrzesiakjs/",
+    url: "https://www.linkedin.com/in/szymongrzesiak/",
     icon: LinkedInIcon,
   },
   {
     name: "GitHub",
-    url: "https://github.com/hubert-grzesiak",
+    url: "https://github.com/szymon-grzesiak",
     icon: GitHubIcon,
   },
 ];

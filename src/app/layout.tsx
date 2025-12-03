@@ -121,7 +121,7 @@ const jsonLd = {
   image: "https://szymongrzesiak.dev/profile-image.jpg", // Dodaj swoje zdjęcie
   sameAs: [
     "https://github.com/szymon-grzesiak", // Dodaj swoje profile
-    "https://www.linkedin.com/in/szymon-grzesiak-296873200/",
+    "https://www.linkedin.com/in/szymongrzesiak/",
     // inne profile społecznościowe
   ],
   knowsAbout: [

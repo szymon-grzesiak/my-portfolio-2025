@@ -69,7 +69,7 @@ const Sidebar = () => {
             <FaTelegram className="text-3xl hover:text-[#00E5FF]" />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/szymon-grzesiak-296873200/"
+            href="https://www.linkedin.com/in/szymongrzesiak/"
             aria-label="LinkedIn profile"
           >
             <FaLinkedin className="text-3xl hover:text-[#00E5FF]" />
