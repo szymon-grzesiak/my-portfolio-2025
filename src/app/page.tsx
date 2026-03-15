@@ -1,5 +1,7 @@
 import Clouds from "@/components/landing/Clouds";
 import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
 import { ProjectsSection } from "@/components/landing/ProjectsSection";
 import { projects, projectsData, timelineData } from "@/lib/data";
 import port from "@/assets/boy_with_telescope.png";
@@ -22,6 +24,23 @@ import {
 } from "@/components/ui/popover";
 import { StarIcon } from "lucide-react";
 import ContactDrawer from "@/components/ui/ContactDrawer";
+import { siteConfig } from "@/config/site";
+
+export const metadata: Metadata = {
+  title: "Full Stack Developer in Poland | Szymon Grzesiak",
+  description:
+    "I build fast, conversion-focused web apps in Next.js, React, and TypeScript. Explore recent case studies, practical engineering notes, and the process behind my work.",
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  openGraph: {
+    title: "Szymon Grzesiak | Full Stack Developer Portfolio",
+    description:
+      "Case studies, product-focused development, and practical frontend/backend engineering with Next.js and TypeScript.",
+    url: siteConfig.url,
+    type: "website",
+  },
+};
 
 export default function Home() {
   return (
@@ -42,13 +61,11 @@ export default function Home() {
               id="home"
               className="flex flex-col items-center gap-4 text-center md:items-start md:text-left md:gap-5"
             >
-              {/* ZMIANA: Kreatywny tekst jest teraz w tagu <p>, a nie <h1> */}
               <p className="font-bagel font-medium tracking-widest text-5xl xs:text-5xl sm:text-6xl md:text-5xl lg:text-7xl">
                 <span className="block md:hidden">Hi, I&apos;m</span>
                 <span className="hidden md:block">Hey, what&apos;s up!🤞</span>
               </p>
 
-              {/* ZMIANA: To jest teraz Twój jedyny i główny nagłówek H1 */}
               <h1 className="text-6xl sm:text-6xl md:text-5xl lg:text-7xl font-bagel font-medium tracking-widest">
                 <span className="hidden md:inline">I&apos;m </span>
                 <span className="inline-block bg-indigo-400 w-fit rounded-3xl px-4 pt-1 pb-3 md:pb-4 border-2 border-black shadow-[4px_4px] mt-1 md:mt-0">
@@ -57,13 +74,23 @@ export default function Home() {
               </h1>
             </div>
 
-            {/* Ten nagłówek H2 jest teraz poprawny, bo stanowi podtytuł dla H1 */}
             <h2 className="md:w-full md:max-w-[440px] text-lg text-black">
-              My full name is Szymon Grzesiak, I&apos;m from Poland and I&apos;m
-              Full Stack Developer with a focus on Web Development. My expertise
-              lies in building Responsive Web Designs using modern technologies
-              like Next.js. 🚀
+              I&apos;m Szymon Grzesiak, a Full Stack Developer from Poland. I
+              design and ship web products that load fast, feel clear, and help
+              real users complete real tasks.
             </h2>
+
+            <p className="md:w-full md:max-w-[500px] text-base leading-relaxed text-black/80">
+              If you want to see how I work, start with{" "}
+              <Link href="/projects" className="underline underline-offset-4">
+                project case studies
+              </Link>{" "}
+              and then read a few practical notes on the{" "}
+              <Link href="/blog" className="underline underline-offset-4">
+                blog
+              </Link>
+              .
+            </p>
 
             <ContactDrawer />
           </div>

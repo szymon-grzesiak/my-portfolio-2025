@@ -1,18 +1,14 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+  ExpandableScreen,
+  ExpandableScreenContent,
+  ExpandableScreenTrigger,
+  useExpandableScreen,
+} from "@/components/ui/expandable-screen";
+import Grainient from "@/components/ui/grainient";
 import { TbMailShare } from "react-icons/tb";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,23 +23,60 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const ContactDrawer = () => {
+  return (
+    <ExpandableScreen
+      layoutId="contact-expandable-screen"
+      triggerRadius="16px"
+      contentRadius="24px"
+    >
+      <ExpandableScreenTrigger>
+        <button className="mb-10 md:mb-0 flex justify-center items-end gap-3 rounded-2xl p-2 bg-white/20 md:border md:border-gray-300 hover:bg-white/40 transition-all duration-300">
+          <span className="text-3xl font-bold lineThroughEffect">
+            Contact Me
+          </span>
+          <TbMailShare className="text-3xl shrink-0 mb-1 text-indigo-400" />
+        </button>
+      </ExpandableScreenTrigger>
+
+      <ExpandableScreenContent className="bg-primary" showCloseButton>
+        <Grainient
+          color1="#341833"
+          color2="#bab5cf"
+          color3="#3c00ff"
+          timeSpeed={0.25}
+          colorBalance={0}
+          warpStrength={1}
+          warpFrequency={5}
+          warpSpeed={2}
+          warpAmplitude={50}
+          blendAngle={0}
+          blendSoftness={0.05}
+          rotationAmount={500}
+          noiseScale={2}
+          grainAmount={0.1}
+          grainScale={2}
+          grainAnimated={false}
+          contrast={1.5}
+          gamma={1}
+          saturation={1}
+          centerX={0}
+          centerY={0}
+          zoom={0.9}
+        />
+        <div className="absolute inset-0 z-10 flex items-center justify-center overflow-y-auto p-4">
+          <ContactForm />
+        </div>
+      </ExpandableScreenContent>
+    </ExpandableScreen>
+  );
+};
+
+const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error" | "rate-limited"
   >("idle");
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkIsMobile();
-    window.addEventListener("resize", checkIsMobile);
-
-    return () => window.removeEventListener("resize", checkIsMobile);
-  }, []);
+  const { collapse } = useExpandableScreen();
 
   const {
     register,
@@ -83,7 +116,7 @@ const ContactDrawer = () => {
         setSubmitStatus("success");
         reset();
         setTimeout(() => {
-          setIsOpen(false);
+          collapse();
           setSubmitStatus("idle");
         }, 2000);
       } else {
@@ -102,144 +135,102 @@ const ContactDrawer = () => {
   };
 
   return (
-    <Drawer
-      open={isOpen}
-      onOpenChange={setIsOpen}
-      direction={isMobile ? "bottom" : "right"}
-    >
-      <DrawerTrigger asChild>
-        <button className="mb-10 md:mb-0 flex justify-center items-end gap-3 rounded-2xl p-2 bg-white/20 md:border md:border-gray-300 hover:bg-white/40 transition-all duration-300">
-          <span className="text-3xl font-bold lineThroughEffect">
-            Contact Me
-          </span>
-          <TbMailShare className="text-3xl shrink-0 mb-1 text-indigo-400" />
-        </button>
-      </DrawerTrigger>
-      <DrawerContent
-        className={`
-        ${
-          isMobile
-            ? "h-[80vh] inset-x-0 bottom-0 rounded-t-[20px]"
-            : "h-full w-[400px] inset-y-0 right-0 rounded-l-[20px] rounded-r-none"
-        }
-        backdrop-blur-xl bg-white/30 border border-white/20 shadow-2xl
-        before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/20 before:to-transparent before:rounded-inherit before:pointer-events-none
-      `}
-      >
-        <DrawerHeader className="relative z-10">
-          <DrawerTitle className="text-black text-xl font-semibold">
-            Get in touch
-          </DrawerTitle>
-          <DrawerDescription className="text-black/80">
-            Send me a message - I&apos;ll get back to you as soon as possible!
-          </DrawerDescription>
-        </DrawerHeader>
+    <div className="z-20 mx-auto w-full max-w-md rounded-2xl border border-white/20 bg-black/35 p-4 shadow-2xl backdrop-blur-md md:p-8">
+      <h2 className="text-xl font-semibold text-white">Get in touch</h2>
+      <p className="mt-2 text-sm text-white/80">
+        Send me a message and I&apos;ll get back to you as soon as possible.
+      </p>
+      <p className="mt-1 text-sm text-white/70">
+        Want a project like this? Send your inquiry by email.
+      </p>
 
-        <div className="p-6 flex-1 relative z-10">
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium mb-2 text-black"
-              >
-                Your email
-              </label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="your.email@example.com"
-                {...register("email")}
-                className={`bg-white/10 backdrop-blur-sm border-white/20 text-black placeholder:text-black/60 focus:border-white/40 focus:ring-white/20 ${
-                  errors.email ? "border-red-400" : ""
-                }`}
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.email.message}
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium mb-2 text-black"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                rows={6}
-                placeholder="Write your message here..."
-                {...register("message")}
-                className={`w-full px-3 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-md 
-                  focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/40 resize-none 
-                  text-black placeholder:text-black/60 ${
-                    errors.message ? "border-red-400" : ""
-                  }`}
-              />
-              {errors.message && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.message.message}
-                </p>
-              )}
-            </div>
-
-            {/* Honeypot field - hidden from users but visible to bots */}
-            <div
-              className="absolute left-[-9999px] opacity-0 pointer-events-none"
-              aria-hidden="true"
-            >
-              <label htmlFor="website">Leave this field empty</label>
-              <input
-                id="website"
-                type="text"
-                {...register("website")}
-                tabIndex={-1}
-                autoComplete="off"
-              />
-            </div>
-
-            {submitStatus === "success" && (
-              <div className="text-green-600 text-sm font-medium bg-green-500/20 p-3 rounded-lg backdrop-blur-sm">
-                ✅ Message sent successfully!
-              </div>
-            )}
-
-            {submitStatus === "error" && (
-              <div className="text-red-300 text-sm font-medium bg-red-500/20 p-3 rounded-lg backdrop-blur-sm">
-                ❌ Error sending message. Please try again.
-              </div>
-            )}
-
-            {submitStatus === "rate-limited" && (
-              <div className="text-yellow-600 text-sm font-medium bg-yellow-500/20 p-3 rounded-lg backdrop-blur-sm">
-                ⏱️ Too many requests. Please wait before sending another
-                message.
-              </div>
-            )}
-          </form>
+      <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6">
+        <div>
+          <label
+            htmlFor="email"
+            className="mb-2 block text-sm font-medium text-white"
+          >
+            Your email
+          </label>
+          <Input
+            id="email"
+            type="email"
+            placeholder="your.email@example.com"
+            {...register("email")}
+            className={`border-white/30 bg-white/10 text-white placeholder:text-white/60 focus:border-white/60 focus:ring-white/30 ${
+              errors.email ? "border-red-400" : ""
+            }`}
+          />
+          {errors.email && (
+            <p className="mt-1 text-sm text-red-200">{errors.email.message}</p>
+          )}
         </div>
 
-        <DrawerFooter className={`relative z-10`}>
-          <Button
-            onClick={handleSubmit(onSubmit)}
-            disabled={isSubmitting}
-            className="w-full bg-indigo-400 hover:bg-indigo-400/80 text-black border-white/20 backdrop-blur-sm transition-all duration-300 cursor-pointer"
+        <div>
+          <label
+            htmlFor="message"
+            className="mb-2 block text-sm font-medium text-white"
           >
-            {isSubmitting ? "Sending..." : "Send message"}
-          </Button>
-          <DrawerClose asChild>
-            <Button
-              variant="outline"
-              className="w-full bg-black/10 hover:bg-black/20 text-black border-white/20 backdrop-blur-sm cursor-pointer"
-            >
-              Cancel
-            </Button>
-          </DrawerClose>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
+            Message
+          </label>
+          <textarea
+            id="message"
+            rows={6}
+            placeholder="How can I help you?"
+            {...register("message")}
+            className={`w-full resize-none rounded-md border border-white/30 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:border-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 ${
+              errors.message ? "border-red-400" : ""
+            }`}
+          />
+          {errors.message && (
+            <p className="mt-1 text-sm text-red-200">
+              {errors.message.message}
+            </p>
+          )}
+        </div>
+
+        {/* Honeypot field hidden from humans; bots often fill it. */}
+        <div
+          className="pointer-events-none absolute left-[-9999px] opacity-0"
+          aria-hidden="true"
+        >
+          <label htmlFor="website">Leave this field empty</label>
+          <input
+            id="website"
+            type="text"
+            {...register("website")}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
+
+        {submitStatus === "success" && (
+          <div className="rounded-lg bg-green-500/20 p-3 text-sm font-medium text-green-100">
+            Message sent successfully!
+          </div>
+        )}
+
+        {submitStatus === "error" && (
+          <div className="rounded-lg bg-red-500/20 p-3 text-sm font-medium text-red-100">
+            Error sending message. Please try again.
+          </div>
+        )}
+
+        {submitStatus === "rate-limited" && (
+          <div className="rounded-lg bg-yellow-500/20 p-3 text-sm font-medium text-yellow-100">
+            Too many requests. Please wait before sending another message.
+          </div>
+        )}
+
+        <button
+          disabled={isSubmitting}
+          className="w-full rounded-md bg-indigo-400 px-4 py-2 font-medium text-black transition-all duration-300 hover:bg-indigo-300 disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
+          type="submit"
+        >
+          {isSubmitting ? "Sending..." : "Send message"}
+        </button>
+      </form>
+    </div>
   );
 };
 

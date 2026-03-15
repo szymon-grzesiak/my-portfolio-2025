@@ -1,0 +1,329 @@
+W 2026 w Polsce za zwykłą stronę dla małej firmy najczęściej spotkasz 1300-5000 zł netto, ale praktyczniej patrzeć na widełki według typu projektu: landing 1500-3000 zł, wizytówka 2000-4000 zł, strona firmowa 3000-8000 zł, mały sklep 5000-15000 zł, a portal lub większy serwis custom 15000-45000 zł netto.
+​
+Przy WordPressie aktualne cenniki wykonawców pokazują zwykle około 3000 zł za wizytówkę, 5000-10000 zł za stronę firmową z blogiem i 10000-25000 zł za rozbudowany serwis z custom funkcjami, a Next.js częściej wpada do droższego segmentu, bo jest wybierany tam, gdzie liczą się integracje z API, niestandardowe funkcje i większa wydajność.
+
+Widełki 2026
+Typ projektu	Realne widełki	Gdzie to zwykle ląduje
+One page	1000-2500 zł netto	Często WordPress lub prosty builder, gdy ma być szybko i tanio.
+Landing page	1500-3000 zł netto	WordPress przy prostym lead gen, Next.js gdy masz custom sekcje, animacje albo nietypowy flow.
+Wizytówka 1-5 podstron	2000-4000 zł netto rynkowo, a w jednym z cenników WordPress od 3000 zł netto	Najczęściej WordPress.
+Strona firmowa 5-15 podstron	3000-8000 zł netto rynkowo, a WordPress firmowy 5000-10000 zł netto	WordPress, chyba że wchodzi custom logika lub API.
+Rozbudowany serwis / custom	10000-25000 zł przy WordPressie z custom funkcjami albo 15000-45000 zł przy większym portalu	To jest obszar, w którym częściej uzasadnisz Next.js.
+WordPress i Next.js
+WordPress wygrywa ceną tam, gdzie klient chce głównie treści, blog, prostą edycję po szkoleniu, SEO on-page i szybkie wdrożenie, a przykładowe terminy z rynku to około 2-3 tygodnie dla wizytówki i 3-5 tygodni dla strony firmowej.
+Next.js ma sens wtedy, gdy sprzedajesz nie tylko „stronę”, ale także custom frontend, integracje, logikę kampanii, API albo projekt, który może rozwinąć się w web appkę, bo właśnie takie przypadki źródła wskazują jako lepsze dla rozwiązań custom niż klasyczny WordPress.
+Dla Ciebie, jako osoby pracującej solo i mającej doświadczenie w Next.js, sensowne jest trzymanie dwóch osobnych półek cenowych: WordPress jako produkt contentowy i Next.js jako produkt custom.
+
+Solo dev i software house
+Źródła wprost wskazują, że freelancer zwykle bywa tańszy, ale trzeba liczyć się z dłuższą realizacją albo ograniczeniami przy bardziej złożonych projektach, podczas gdy agencja lub software house są droższe, ale mają większe zasoby do trudniejszych realizacji.
+Przy rozliczeniu godzinowym opisywane stawki w polskim software house mieszczą się orientacyjnie na poziomie około 80 zł netto za juniora, 120 zł za mida i 180 zł lub więcej za seniora, a cenę podbijają też technologia, lokalizacja i złożoność projektu.
+​
+W praktyce różnicę klientowi najłatwiej tłumaczyć tak: solo dev sprzedaje tańszy i bardziej bezpośredni kontakt, a software house sprzedaje większą skalę, większy bufor organizacyjny i zwykle szerszy zakres usług dodatkowych.
+
+Co podbija cenę
+Na wycenę najmocniej wpływają: zakres materiałów i liczba podstron, niestandardowe funkcjonalności, typ serwisu, wybór szablonu lub indywidualnego projektu graficznego oraz to, czy stronę robi freelancer czy agencja.
+Dodatkowe koszty, które często nie mieszczą się w „cenie strony”, to hosting, domena i SSL, a home.pl szacuje roczne utrzymanie zwykle na około 700-1340 zł netto; dochodzą też dopłaty za dodatkowe podstrony, formularze, płatności, aktualizacje CMS i naprawy błędów.
+W jednym z cenników WordPress późniejsze zmiany są liczone na 150-200 zł za godzinę albo w pakietach wsparcia od 300 zł miesięcznie, a hosting jest rozliczany osobno od 50 zł miesięcznie.
+
+Jak wyceniać na JDG
+Jeżeli robisz stronę sam, to sensowny podział oferty wygląda tak: WordPress na szablonie lub lekkim customie wyceniasz jako tańszy produkt wdrożeniowy, a Next.js jako droższy produkt customowy, bo rynek wiąże go z większą liczbą godzin, większą odpowiedzialnością techniczną i częściej z niestandardowymi funkcjami.
+Nie porównuj swojej ceny Next.js do najtańszych ofert „strona za 1500”, bo te widełki zwykle dotyczą prostych landingów, one page albo bardzo podstawowych wizytówek.
+Dobrze też rozdzielać w ofercie: projekt i wdrożenie, wpisanie treści, SEO techniczne, integracje, analitykę, support i utrzymanie, bo wtedy klient widzi, za co dokładnie płaci
+
+
+
+Ile kosztuje zrobienie strony w 2026? Prawdziwe widełki i co wpływa na cenę
+Dla kogo ten dokument?
+Ten cennik jest przeznaczony dla freelancera/JDG pracującego solo w Next.js lub WordPress, który potrzebuje konkretnych, rynkowych widełek cenowych do wyceny projektów w Polsce w 2026 roku. Pokazuję różnice między pracą jako solo developer a software house, żebyś mógł jasno pozycjonować swoją ofertę.
+Prawdziwe widełki cenowe 2026 – Polska
+Podstawowe typy projektów
+Typ projektu	Widełki rynkowe (netto)	Gdzie najczęściej ląduje	Twój target jako solo dev
+One page / landing page	1000–3000 zł	WordPress (prosty), Next.js (z animacjami/custom)	WordPress: 1200–2000 zł
+Next.js: 2000–3500 zł
+Wizytówka (1-5 podstron)	2000–4000 zł	Najczęściej WordPress	WordPress: 2500–3500 zł
+Next.js: 3500–5500 zł
+Strona firmowa (5-15 podstron)	3000–8000 zł	WordPress, chyba że custom logika	WordPress: 4000–6500 zł
+Next.js: 6000–10000 zł
+Rozbudowana strona / custom	10000–25000 zł (WP custom)
+15000–45000 zł (portal)	Next.js ma tu sens	Next.js: 12000–30000 zł
+
+Stawki godzinowe w Polsce 2026
+Profil	Stawka godzinowa B2B	Miesięczna (pełny etat)
+Frontend Junior	50–80 zł/h	7500–13500 zł
+Frontend Mid (Ty)	100–180 zł/h	13500–18000 zł
+Frontend Senior	180–350 zł/h	22000–25000 zł
+Software house (Mid)	120–180 zł/h	–
+Software house (Senior)	180–250+ zł/h	–
+
+Źródła wskazują, że freelancerzy frontend w Polsce zarabiają średnio 143 zł/h, a na kontraktach B2B mid-level frontend developer osiąga medianę 13500 zł/miesiąc[web:26][web:28][web:29].
+WordPress vs Next.js – kiedy co sprzedawać?
+WordPress – produkt contentowy
+Kiedy ma sens:
+•	Klient potrzebuję głównie treści, bloga, prostej edycji
+•	Ma ograniczony budżet (2000–6500 zł)
+•	Chce szybkie wdrożenie (2-4 tygodnie)
+•	Nie potrzebuje custom logiki ani nietypowych integracji
+•	Zależy mu na łatwej edycji po szkoleniu
+Twoje widełki WordPress:
+•	Wizytówka (szablon/builder): 2500–3500 zł (7-14 dni)
+•	Strona firmowa (lekki custom): 4000–6500 zł (3-5 tygodni)
+•	Rozbudowana z custom funkcjami: 8000–15000 zł (6-10 tygodni)
+Co wliczasz:
+•	Wdrożenie WordPress + motyw (szablon lub lekkie dostosowanie)
+•	Wpisanie treści (do 10-15 podstron)
+•	Podstawowe SEO techniczne (meta tagi, sitemap, robots.txt)
+•	Responsywność i podstawowa optymalizacja szybkości
+•	1 miesiąc wsparcia po wdrożeniu
+Dopłaty:
+•	Dodatkowa podstrona: 150–300 zł
+•	Niestandardowy formularz: 200–400 zł
+•	Integracja płatności: 500–1200 zł
+•	E-commerce (WooCommerce podstawowy): +3000–8000 zł
+Next.js – produkt custom
+Kiedy ma sens:
+•	Potrzebna custom logika, nietypowe API, integracje
+•	Projekt może rozwinąć się w web appkę
+•	Liczy się wydajność, SEO dla dużego ruchu
+•	Klient płaci za technologię i skalowalne rozwiązanie
+•	Strona z dynamicznymi sekcjami, kampaniami, personalizacją
+Twoje widełki Next.js:
+•	Landing page (z animacjami/custom): 2500–4500 zł (10-20 dni)
+•	Strona firmowa (custom frontend): 6000–10000 zł (4-7 tygodni)
+•	Rozbudowana z API/logiką: 12000–30000 zł (8-16 tygodni)
+Co wliczasz:
+•	Custom Next.js setup (TypeScript, Tailwind, struktura)
+•	Projekt UI/UX dopasowany do marki
+•	Integracje API (jeśli wymagane)
+•	SSR/SSG dla SEO i wydajności
+•	Deployment (Vercel/własny hosting)
+•	1 miesiąc wsparcia technicznego
+Dopłaty:
+•	CMS headless (Sanity, Contentful): +2000–5000 zł
+•	Autoryzacja (NextAuth, Clerk): +1500–3000 zł
+•	Płatności (Stripe, PayU): +2000–4000 zł
+•	Admin panel custom: +3000–8000 zł
+•	Integracja z zewnętrznymi systemami: +1500–5000 zł (w zależności)
+Solo dev vs Software house – różnice dla klienta
+Solo developer (Ty)
+Mocne strony:
+•	Cena: 30-50% taniej niż software house przy podobnym zakresie
+•	Bezpośredni kontakt: szybka komunikacja, elastyczność, brak pośredników
+•	Zaangażowanie: 100% skupienia na projekcie klienta
+•	Elastyczność: łatwiejsza negocjacja terminów, zakresu, zmian w trakcie
+Słabe strony:
+•	Czas realizacji: może być dłuższy przy dużych projektach (pracujesz sam)
+•	Ograniczenia: trudniej obsłużyć bardzo duże/złożone projekty wymagające wielu specjalizacji jednocześnie
+•	Bufor czasowy: urlop/choroba może opóźnić projekt
+•	Zakres usług: nie zawsze oferujesz grafika/copywriting/marketing w pakiecie
+Twoja propozycja wartości:
+•	"Pracuję bezpośrednio z Tobą, bez agencyjnych narzutów"
+•	"30-50% taniej niż software house przy tej samej jakości kodu"
+•	"Elastyczność i szybka komunikacja – bez biurokracji"
+•	"Doświadczenie w BNP Paribas + freelance portfolio"
+Software house
+Mocne strony:
+•	Skala: zespół specjalistów (frontend, backend, UX, grafik, tester)
+•	Ciągłość: zastępowalność osób – projekt nie zatrzymuje się
+•	Zakres: kompleksowa obsługa (design, dev, marketing, content)
+•	Bezpieczeństwo prawne: umowy, faktury VAT, gwarancje, ubezpieczenie OC
+Słabe strony:
+•	Cena: 2-3x drożej (150-250 zł/h za mid-level vs Twoje 100-180 zł/h)
+•	Biurokracja: wolniejsza komunikacja, więcej warstw decyzyjnych
+•	Narzuty: płacisz za strukturę firmy (biuro, HR, marketing agencji)
+Kiedy klient powinien wybrać software house:
+•	Bardzo duży projekt (>50000 zł)
+•	Potrzeba wielu specjalizacji równolegle (UX, backend, frontend, mobile, DevOps)
+•	Krótki deadline + duży zakres (potrzeba 3-5 osób jednocześnie)
+•	Firma korporacyjna wymagająca faktur VAT, umów, gwarancji
+Co wpływa na cenę – szczegółowo
+Czynniki podnoszące cenę
+•	Liczba podstron i zakres treści – Każda dodatkowa podstrona to +150-300 zł (WordPress) lub +300-800 zł (Next.js custom)
+•	Niestandardowe funkcjonalności – Formularze, kalkulatory, API, integracje: +500-5000 zł w zależności od złożoności
+•	Projekt graficzny od zera – Indywidualny design: +1500-8000 zł (vs szablon/gotowe komponenty)
+•	Integracje zewnętrzne – Płatności, CRM, analytics, newsletter: +500-3000 zł za każdą
+•	E-commerce – Sklep internetowy dodaje +3000-15000 zł do bazowej ceny
+•	Optymalizacja SEO – Techniczne SEO on-page: +800-2500 zł, pełny audyt: +1500-5000 zł
+•	Wielojęzyczność – Każdy dodatkowy język: +20-30% ceny bazowej
+•	Animacje i efekty wizualne – Zaawansowane animacje (GSAP, Framer Motion): +1000-4000 zł
+•	Deadline rush – Skrócenie czasu realizacji o 50%: +20-40% ceny
+•	Dostępność (WCAG)} – Pełna zgodność z WCAG 2.1: +1500-4000 zł
+Czynniki obniżające cenę / neutralne
+•	Gotowe szablony – Użycie premium template (WordPress): -30-50% vs custom design
+•	Klient dostarcza content – Teksty, zdjęcia gotowe: -500-2000 zł
+•	Klient ma design gotowy (Figma) – Tylko implementacja: -20-40% vs projekt + dev
+•	Uproszczona struktura – Mniej podstron, prostsza nawigacja: -30-50%
+•	Brak integracji – Static site bez API/baz danych: -20-40%
+•	Dłuższy deadline – Elastyczny termin (>8 tygodni): możesz dać -10-15% rabatu
+Koszty utrzymania – co mówić klientowi
+Oprócz jednorazowego kosztu stworzenia strony, klient ponosi koszty utrzymania:
+Hosting i domena
+Element	Koszt miesięczny	Koszt roczny
+Domena (.pl, .com)	–	50–100 zł
+Hosting podstawowy (WordPress)	20–50 zł	240–600 zł
+Hosting VPS (Next.js własny)	50–150 zł	600–1800 zł
+Vercel Pro (Next.js)	~90 zł (~$20)	~1080 zł
+SSL certyfikat	Zazwyczaj gratis (Let's Encrypt)	0–200 zł
+
+Wsparcie techniczne i rozwój
+Usługa	Stawka
+Pakiet godzinowy (5h/mc)	400–800 zł/mc (zmian technicznych, aktualizacji)
+Pakiet S (do 2h/mc)	200–400 zł/mc
+Pakiet M (5-10h/mc)	600–1500 zł/mc
+Pakiet L (>10h/mc)	1500–3000 zł/mc
+Stawka godzinowa ad-hoc (Ty)	120–180 zł/h (zmiany, poprawki, rozwój)
+
+Pozycjonowanie SEO
+Zakres	Koszt miesięczny
+SEO lokalne (mała nisza)	800–1500 zł/mc
+SEO ogólnopolskie (średnia konkurencja)	1500–3500 zł/mc
+SEO wysoce konkurencyjne branże	3500–8000+ zł/mc
+
+Pozycjonowanie to proces długoterminowy – efekty widoczne po 3-6 miesiącach[page:1][cite:10].
+Twój cennik – gotowy do wysłania klientowi
+Pakiet A: Strona Wizytówka WordPress
+3500 zł netto
+Zakres:
+•	Do 5 podstron (Home, O nas, Oferta, Kontakt + 1 dowolna)
+•	Responsywny design (szablon premium dopasowany)
+•	Wpisanie treści (klient dostarcza teksty i zdjęcia)
+•	Podstawowe SEO (meta tagi, sitemap, robots.txt)
+•	Formularz kontaktowy
+•	Integracja Google Maps
+•	1 miesiąc wsparcia technicznego po wdrożeniu
+Czas realizacji: 2-3 tygodnie
+Dopłaty:
+•	Dodatkowa podstrona: +200 zł
+•	Blog z 3 wpisami: +600 zł
+•	Wielojęzyczność (EN): +800 zł
+________________________________________
+Pakiet B: Strona Firmowa WordPress
+6000 zł netto
+Zakres:
+•	Do 10 podstron
+•	Lekko dostosowany design (custom CSS, kolory, fonty)
+•	Responsywność + optymalizacja szybkości
+•	Blog z możliwością dodawania wpisów
+•	Zaawansowane formularze (multi-step możliwe)
+•	SEO on-page + schema markup
+•	Integracja z Google Analytics i Meta Pixel
+•	1 miesiąc wsparcia technicznego
+Czas realizacji: 4-5 tygodni
+Dopłaty:
+•	Integracja z CRM (np. HubSpot): +1200 zł
+•	Newsletter (Mailchimp/Brevo): +600 zł
+•	E-commerce podstawowy (WooCommerce, do 20 produktów): +4000 zł
+________________________________________
+Pakiet C: Landing Page Next.js (Custom)
+4000 zł netto
+Zakres:
+•	Single-page z custom designem i animacjami
+•	Next.js 14+ (App Router, TypeScript, Tailwind)
+•	Responsywność + perfekcyjna wydajność (Lighthouse >90)
+•	SEO optymalizacja (SSG, meta tags, Open Graph)
+•	Formularze z walidacją (Resend/nodemailer)
+•	Deployment na Vercel
+•	1 miesiąc wsparcia technicznego
+Czas realizacji: 2-3 tygodnie
+Dopłaty:
+•	CMS headless (Sanity): +2500 zł
+•	A/B testing setup: +1500 zł
+•	Zaawansowane animacje (GSAP): +1200 zł
+________________________________________
+Pakiet D: Strona Firmowa Next.js (Custom Full)
+9500 zł netto
+Zakres:
+•	Do 10 podstron custom
+•	Next.js 14+ z App Router, TypeScript, Tailwind
+•	Indywidualny design dopasowany do marki
+•	CMS headless (Sanity lub Contentful) – klient edytuje treści
+•	Blog z możliwością dodawania wpisów przez CMS
+•	SEO optymalizacja (SSR/SSG, sitemap dynamiczny, structured data)
+•	Integracje API (analytics, formularze, newsletter)
+•	Deployment na Vercel + CI/CD
+•	1 miesiąc wsparcia technicznego
+Czas realizacji: 6-8 tygodni
+Dopłaty:
+•	Autoryzacja użytkowników (NextAuth/Clerk): +2500 zł
+•	Dashboard dla klienta (custom admin panel): +5000 zł
+•	Płatności (Stripe): +3000 zł
+•	Wielojęzyczność (i18n): +2000 zł
+________________________________________
+Pakiet E: Projekt Custom / Aplikacja Web
+Od 15000 zł netto (wycena indywidualna)
+Zakres:
+•	Pełna aplikacja webowa w Next.js
+•	Autoryzacja, bazy danych, backend logic
+•	Admin panel do zarządzania
+•	Integracje zewnętrzne (API, płatności, CRM)
+•	Testy, dokumentacja, deployment
+•	2 miesiące wsparcia technicznego
+Czas realizacji: 10-16 tygodni (w zależności od zakresu)
+________________________________________
+Pozycjonowanie SEO – Twoja oferta
+Pakiet	Zakres	Cena miesięczna
+SEO Start (lokalne)	Audyt techniczny, optymalizacja 5-10 fraz, 2 artykuły/mc, raport	1200 zł/mc
+SEO Standard (ogólnopolskie)	Audyt, optymalizacja 10-20 fraz, 4 artykuły/mc, link building, raport	2500 zł/mc
+SEO Premium (konkurencyjne)	Pełny audyt, optymalizacja 20-30 fraz, 6 artykułów/mc, zaawansowany link building, analiza konkurencji, miesięczny raport	4500 zł/mc
+
+Ważne: SEO to proces długoterminowy. Pierwsze efekty po 3-6 miesiącach. Rekomendowana współpraca: minimum 6 miesięcy[page:1][cite:10].
+________________________________________
+Jak komunikować różnicę: Solo dev vs Software house
+Przykładowy pitch dla klienta
+"Dlaczego warto wybrać freelancera zamiast agencji?"
+Pracuję solo, co oznacza:
+✅ 30-50% niższa cena – nie płacisz za strukturę firmy, biuro, marketing agencji
+✅ Bezpośredni kontakt – piszesz do mnie, nie do project managera. Szybsze decyzje, zero biurokracji
+✅ 100% zaangażowanie – Twój projekt to mój priorytet, nie jeden z 20 równoległych
+✅ Elastyczność – łatwiej negocjujemy zakres, terminy, zmiany w trakcie
+✅ Jakość kodu – sam piszę kod (3 lata doświadczenia + praca w BNP Paribas), nie outsourcuję do juniorów
+Kiedy lepiej wybrać software house?
+Jeśli Twój projekt to:
+Wtedy agencja ma sens. Ale dla 90% projektów małych i średnich firm – freelancer to lepszy wybór.
+________________________________________
+Co zawrzeć w ofercie – checklist
+Gdy wysyłasz ofertę klientowi, upewnij się, że zawiera:
+•	Zakres prac – punkt po punkcie, co robisz (design, dev, SEO, content, deployment)
+•	Co NIE wchodzi w cenę – np. teksty (klient dostarcza), zdjęcia (klient dostarcza lub stock za +X zł), dodatkowe integracje
+•	Czas realizacji – konkretny przedział (np. 4-6 tygodni od akceptacji projektu)
+•	Harmonogram płatności – np. 30% zaliczka, 40% po akceptacji designu, 30% po wdrożeniu
+•	Wsparcie po wdrożeniu – ile czasu gratis (zazwyczaj 1 miesiąc), potem stawka godzinowa
+•	Dopłaty i opcje – dodatkowe funkcje jako opcjonalne pozycje (+X zł)
+•	Hosting i utrzymanie – czy klient płaci osobno (tak), orientacyjne koszty roczne
+•	Warunki zmian – ile zmian w trakcie projektu jest OK, kiedy dopłata
+________________________________________
+Podsumowanie – kluczowe liczby
+Typ projektu	WordPress (Ty)	Next.js (Ty)
+Wizytówka	2500–3500 zł	3500–5500 zł
+Strona firmowa	4000–6500 zł	6000–10000 zł
+Landing page	1500–2500 zł	2500–4500 zł
+Rozbudowana/custom	8000–15000 zł	12000–30000 zł
+E-commerce	+3000–8000 zł (WooCommerce)	+5000–15000 zł (custom)
+
+Table 1: Porównanie widełek WordPress vs Next.js dla solo developera
+Profil	Stawka godzinowa	Miesięczna (B2B)
+Solo dev Mid (Ty)	100–180 zł/h	13500–18000 zł
+Software house Mid	120–180 zł/h	–
+Software house Senior	180–250+ zł/h	–
+
+Table 2: Stawki w Polsce 2026
+Różnica między Tobą a software house:
+•	Cena: Ty 30-50% taniej
+•	Komunikacja: Ty bezpośrednio, oni przez PM
+•	Skala: Oni lepsi przy >50k zł i zespołach 5+ osób
+•	Twoja przewaga: elastyczność, cena, zaangażowanie, brak biurokracji
+Koszty utrzymania rocznie:
+•	Hosting + domena: 300–2000 zł
+•	Wsparcie techniczne: 2400–18000 zł (w zależności od pakietu)
+•	SEO: 9600–54000 zł (w zależności od pakietu i czasu trwania)
+Co podnosi cenę:
+Niestandardowe funkcje, integracje, custom design, wielojęzyczność, e-commerce, zaawansowane animacje, rush deadline.
+Co obniża cenę:
+Gotowe szablony, klient dostarcza content/design, prostsza struktura, dłuższy deadline.
+________________________________________
+Źródła i dalsze informacje
+Cennik oparto na rzeczywistych danych z rynku polskiego w 2026 roku, uwzględniając:
+•	Stawki freelancerów frontend (143 zł/h średnia, 100-180 zł/h mid-level)[web:26][web:29]
+•	Ceny stron WordPress od wykonawców (3000 zł wizytówka, 5000-10000 zł firmowa)[page:1]
+•	Widełki ogólnorynkowe (1000-5000 zł podstawowe, 15000-45000 zł rozbudowane)[page:2][web:11]
+•	Dane o zarobkach frontend developerów B2B (13500-18000 zł/mc mid-level)[web:28][web:32]
+•	Praktyczne doświadczenie (wyceny dla klientów, realizacje projektów)[cite:8][cite:9]
