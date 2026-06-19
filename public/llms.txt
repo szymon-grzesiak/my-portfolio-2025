@@ -1,0 +1,37 @@
+# Szymon Grzesiak – Full Stack Developer / Frontend Developer
+> Portfolio i blog o tworzeniu nowoczesnych aplikacji webowych, wycenie stron i freelance w ekosystemie Next.js / React / TypeScript.
+
+## Core
+
+- [Strona główna](https://szymongrzesiak.dev/): Przegląd portfolio, specjalizacje (Next.js, React, TypeScript) i dane kontaktowe.
+- [Blog](https://szymongrzesiak.dev/blog): Artykuły o web developmencie, wycenie projektów, freelancingu i stacku technologicznym.
+- [Projekty](https://szymongrzesiak.dev/projects): Wybrane projekty komercyjne i side‑projecty (m.in. aplikacje SaaS i strony dla klientów).
+
+## Blog – wycena, biznes, freelancing
+
+- [Ile kosztuje strona 2026](https://szymongrzesiak.dev/blog/ile-kosztuje-strona-2026): Przewodnik po aktualnych widełkach cenowych stron WWW w 2026 roku z perspektywy solo‑dev freelancera.
+- [Jak przygotować ofertę na stronę i nie tracić marży](https://szymongrzesiak.dev/blog/jak-przygotowac-oferte-na-strone-i-nie-tracic-marzy): Jak budować oferty dla klientów, żeby chronić marżę i jasno komunikować zakres prac.
+- [Solo dev vs software house – ile to kosztuje](https://szymongrzesiak.dev/blog/solo-dev-vs-software-house-ile-to-kosztuje): Porównanie kosztów współpracy z freelancerem i software housem z punktu widzenia klienta.
+- [WordPress vs Next.js – cennik 2026](https://szymongrzesiak.dev/blog/wordpress-vs-nextjs-cennik-2026): Różnice cenowe i biznesowe między WordPressem a stackiem Next.js w 2026 roku.
+
+## Blog – technologia
+
+- [Debouncing](https://szymongrzesiak.dev/blog/debouncing): Wyjaśnienie techniki debouncingu w JavaScript i jej wpływu na wydajność interfejsu.
+- [My 2025 Tech Stack](https://szymongrzesiak.dev/blog/my-2025-tech-stack): Omówienie osobistego stacku technologicznego na 2025 rok (Next.js, React, TypeScript itd.).
+- [Payload vs Strapi](https://szymongrzesiak.dev/blog/payload-vs-strapi): Porównanie headless CMS‑ów Payload i Strapi pod kątem wydajności, DX i zastosowań.
+
+## Projekty
+
+- [Diffy](https://szymongrzesiak.dev/projects/diffy): Aplikacja webowa do [tu możesz dodać 1‑zdaniowy opis – np. automatyzacji porównywania plików lub zasobów].
+- [Hustlers Gang](https://szymongrzesiak.dev/projects/hustlers-gang): Projekt dla społeczności / biznesu online – strona lub aplikacja zorientowana na growth i sprzedaż.
+- [BNP Global](https://szymongrzesiak.dev/projects/bnp-global): Realizacja komercyjna dla klienta z branży [tu dopisz branżę], skupiona na czytelnej prezentacji oferty.
+- [Wnętrze Raju](https://szymongrzesiak.dev/projects/wnetrze-raju): Strona dla marki związanej z wnętrzami / designem, z naciskiem na estetykę i performance.
+- [Cytrynuch – Tiktoker](https://szymongrzesiak.dev/projects/cytrynuch-tiktoker): Strona / landing page dla twórcy TikTok, zoptymalizowana pod social proof i konwersję.
+- [Vocablaze](https://szymongrzesiak.dev/projects/vocablaze): Aplikacja do nauki słownictwa lub efektywnego uczenia się z wykorzystaniem nowoczesnego frontendu.
+- [Resoursea](https://szymongrzesiak.dev/projects/resoursea): Projekt SaaS / aplikacja webowa do zarządzania zasobami lub wiedzą (doprecyzuj opis pod faktyczne use‑case).
+
+## Tematyka i profil
+
+- Główne technologie: Next.js, React, TypeScript, Node.js, Tailwind CSS.
+- Obszary: full‑stack development, frontend development, wycena projektów webowych, freelancing, SEO, optymalizacja wydajności.
+- Języki: polski i angielski (treści blogowe i portfolio).
