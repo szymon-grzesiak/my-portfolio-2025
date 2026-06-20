@@ -1,9 +1,7 @@
 import { Calendar } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { cn, formatDate } from "@/lib/utils";
 import { Tag } from "./tag";
-import coolGuy from "@/assets/coolguy2.webp";
 
 interface PostItemProps {
   slug: string;
@@ -24,15 +22,6 @@ export function PostItem({
 
   return (
     <article className="flex flex-col h-full overflow-hidden rounded-xl bg-white/90 border-2 border-black shadow-[4px_4px] shadow-black group">
-      <Link href={"/" + slug} className="block relative w-full aspect-video border-b-2 border-black overflow-hidden bg-slate-100 shrink-0">
-        <Image
-          src={coolGuy}
-          alt={title}
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-      </Link>
       <div className="flex flex-col flex-1 p-5 gap-3">
         <div className="flex-1 flex flex-col gap-2">
           <div className="flex flex-wrap gap-2">

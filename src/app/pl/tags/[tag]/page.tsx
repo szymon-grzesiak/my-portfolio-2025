@@ -74,7 +74,7 @@ export default async function TagPage({ params }: TagPageProps) {
   const sortedTags = sortTagsByCount(tags);
 
   return (
-    <div className="relative z-10">
+    <div className="relative purple-haze z-10">
       <div className="relative h-64">
         <BackgroundBeamsWithCollision>
           <h2 className="flex flex-col relative z-20 text-3xl lg:text-7xl font-bold text-center text-black font-sans tracking-tight">

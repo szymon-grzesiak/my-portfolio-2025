@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils"; // Upewnij się, że masz poprawny import
 import logo64 from "../../app/logo-64.png";
 
-const CONTAINER_SIZE = 400;
+const CONTAINER_SIZE = 540;
 
 const FamilyButton = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -63,7 +63,7 @@ const FamilyButton = () => {
         "rounded-[24px]",
         "bg-linear-to-b from-neutral-900 to-black",
         isExpanded
-          ? "w-[204px] bg-linear-to-b dark:from-stone-900 dark:to-neutral-900/80"
+          ? "w-[244px] bg-linear-to-b dark:from-stone-900 dark:to-neutral-900/80"
           : "dark:from-neutral-900 dark:to-stone-950 bg-linear-to-b"
       )}
     >
@@ -84,7 +84,7 @@ const FamilyButton = () => {
                 isExpanded
                   ? {
                     borderRadius: 20,
-                    width: "200px",
+                    width: "240px",
                     height: CONTAINER_SIZE,
                     transition: {
                       type: "spring",
@@ -113,11 +113,11 @@ const FamilyButton = () => {
                   }}
                   className="h-full"
                 >
-                  <ul className="flex flex-col items-start p-4 justify-between h-full w-full">
-                    <Link href={"/"} onClick={handleLinkClick}>
+                  <ul className="flex flex-col items-start p-6 justify-between h-full w-full">
+                    <Link href={"/"} onClick={handleLinkClick} className="mb-6">
                       <Image src={logo64} width={50} height={50} alt="Logo" />
                     </Link>
-                    <div className="flex flex-col items-start justify-center h-full gap-3">
+                    <div className="flex flex-col items-start justify-center h-full gap-5 mt-2">
                       <li className="cursor-pointer font-display text-3xl lineThroughEffect">
                         <Link href={isPolish ? "/pl/#about" : "/#about"} onClick={handleLinkClick}>
                           {isPolish ? "O MNIE" : "ABOUT"}
@@ -172,7 +172,7 @@ const FamilyButton = () => {
                         </Link>
                       </div>
 
-                      <div className="flex gap-4 justify-center items-center mb-14">
+                      <div className="flex gap-4 justify-center items-center mb-20">
                         <Link
                           href="https://www.linkedin.com/in/szymongrzesiak/"
                           onClick={handleLinkClick}

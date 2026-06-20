@@ -73,19 +73,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allTags = new Set(
     publishedPosts.flatMap((post: Post) => post.tags || [])
   );
-  const tagEntries = Array.from(allTags).map((tag) => {
-    return {
+  const tagEntries = Array.from(allTags).flatMap((tag) => [
+    {
       url: `${baseUrl}/tags/${slug(tag)}`,
       priority: 0.5,
       changeFrequency: "weekly" as const,
-    };
-  });
+    },
+    {
+      url: `${baseUrl}/pl/tags/${slug(tag)}`,
+      priority: 0.5,
+      changeFrequency: "weekly" as const,
+    },
+  ]);
 
-  const projectEntries = projectCaseStudies.map((project) => ({
-    url: `${baseUrl}/projects/${project.slug}`,
-    priority: 0.7,
-    changeFrequency: "monthly" as const,
-  }));
+  const projectEntries = projectCaseStudies.flatMap((project) => [
+    {
+      url: `${baseUrl}/projects/${project.slug}`,
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    },
+    {
+      url: `${baseUrl}/pl/projects/${project.slug}`,
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    },
+  ]);
 
   return [
     ...staticRoutes,

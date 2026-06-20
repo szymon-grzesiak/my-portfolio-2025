@@ -46,13 +46,14 @@ export function getAllPosts(): Post[] {
 
     // Compute slug relative to src/content/
     // e.g. /Users/.../src/content/blog/en/my-post.mdx -> blog/en/my-post
-    const relativePath = path.relative(path.join(process.cwd(), "src/content"), filePath);
+    // Normalize to forward slashes for cross-platform compatibility (Windows uses backslashes)
+    const relativePath = path.relative(path.join(process.cwd(), "src/content"), filePath).replace(/\\/g, "/");
     const rawSlug = relativePath.replace(/\.mdx?$/, "");
     
     // Compute slugAsParams (e.g. blog/en/my-post -> en/my-post)
     const slugAsParams = rawSlug.split("/").slice(1).join("/");
     
-    const isPl = filePath.includes("/pl/") || filePath.endsWith("/pl") || relativePath.startsWith("blog/pl/");
+    const isPl = relativePath.includes("/pl/") || relativePath.startsWith("blog/pl/");
     const locale: "en" | "pl" = isPl ? "pl" : "en";
     
     const slugWithoutLocale = slugAsParams.replace(/^(en|pl)\//, "");

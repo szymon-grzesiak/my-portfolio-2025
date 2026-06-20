@@ -105,7 +105,7 @@ const Sidebar = () => {
         </li>
         <li className="flex flex-col gap-4 justify-center items-center">
           {/* Language Switcher */}
-          <div className="flex items-center gap-1 bg-white border-2 border-black p-0.5 rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-xs font-bold font-display shrink-0 mb-4">
+          <div className="flex items-center gap-1 bg-white border-2 border-black p-0.5 rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-xs font-base font-display shrink-0 mb-4">
             <Link
               href={enHref}
               className={cn(

@@ -22,7 +22,7 @@ export default async function TagsPage() {
   const sortedTags = sortTagsByCount(tags);
 
   return (
-    <div className="relative flex flex-col justify-center z-10">
+    <div className="relative purple-haze flex flex-col justify-center z-10">
       <div className="relative h-64">
         <BackgroundBeamsWithCollision>
           <h2 className="pl-12 flex flex-col relative z-20 text-4xl lg:text-7xl font-bold text-center text-black font-sans tracking-tight">

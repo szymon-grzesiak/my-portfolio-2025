@@ -16,19 +16,18 @@
 
 ## Blog – technologia
 
-- [Debouncing](https://szymongrzesiak.dev/blog/debouncing): Wyjaśnienie techniki debouncingu w JavaScript i jej wpływu na wydajność interfejsu.
 - [My 2025 Tech Stack](https://szymongrzesiak.dev/blog/my-2025-tech-stack): Omówienie osobistego stacku technologicznego na 2025 rok (Next.js, React, TypeScript itd.).
 - [Payload vs Strapi](https://szymongrzesiak.dev/blog/payload-vs-strapi): Porównanie headless CMS‑ów Payload i Strapi pod kątem wydajności, DX i zastosowań.
 
 ## Projekty
 
-- [Diffy](https://szymongrzesiak.dev/projects/diffy): Aplikacja webowa do [tu możesz dodać 1‑zdaniowy opis – np. automatyzacji porównywania plików lub zasobów].
-- [Hustlers Gang](https://szymongrzesiak.dev/projects/hustlers-gang): Projekt dla społeczności / biznesu online – strona lub aplikacja zorientowana na growth i sprzedaż.
-- [BNP Global](https://szymongrzesiak.dev/projects/bnp-global): Realizacja komercyjna dla klienta z branży [tu dopisz branżę], skupiona na czytelnej prezentacji oferty.
-- [Wnętrze Raju](https://szymongrzesiak.dev/projects/wnetrze-raju): Strona dla marki związanej z wnętrzami / designem, z naciskiem na estetykę i performance.
-- [Cytrynuch – Tiktoker](https://szymongrzesiak.dev/projects/cytrynuch-tiktoker): Strona / landing page dla twórcy TikTok, zoptymalizowana pod social proof i konwersję.
-- [Vocablaze](https://szymongrzesiak.dev/projects/vocablaze): Aplikacja do nauki słownictwa lub efektywnego uczenia się z wykorzystaniem nowoczesnego frontendu.
-- [Resoursea](https://szymongrzesiak.dev/projects/resoursea): Projekt SaaS / aplikacja webowa do zarządzania zasobami lub wiedzą (doprecyzuj opis pod faktyczne use‑case).
+- [PipPulse Academy](https://szymongrzesiak.dev/projects/diffy): Platforma edukacyjna oferująca profesjonalny kurs tradingu zintegrowany z Google Sheets API.
+- [Hustlers Gang](https://szymongrzesiak.dev/projects/hustlers-gang): Portal dla społeczności przedsiębiorców z zamkniętą sekcją dla członków i dynamicznym onboardingiem.
+- [bnp.global](https://szymongrzesiak.dev/projects/bnp-global): Realizacja komercyjna dla międzynarodowej sieci biznesowej łączącej startupy, innowatorów oraz inwestorów.
+- [Wnętrze Raju](https://szymongrzesiak.dev/projects/wnetrze-raju): Strona dla salonu masażu i SPA zorientowana na estetykę, relaksujący design i konwersję rezerwacji.
+- [Cytrynuch – Tiktoker](https://szymongrzesiak.dev/projects/cytrynuch-tiktoker): Witryna hub dla twórcy internetowego, pełniąca rolę interaktywnego media-kitu dla marek i agencji.
+- [Vocablaze](https://szymongrzesiak.dev/projects/vocablaze): Grywalizacyjna aplikacja webowa SaaS do nauki słownictwa z systemem płatności Stripe i NextAuth.
+- [Resoursea](https://szymongrzesiak.dev/projects/resoursea): Platforma SaaS ułatwiająca studentom i profesjonalistom wymianę i katalogowanie materiałów naukowych.
 
 ## Tematyka i profil
 

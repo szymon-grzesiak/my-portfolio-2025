@@ -95,9 +95,40 @@ export default async function PostPage({ params }: PostPageProps) {
   const fileSlug = post.slugAsParams;
   const MDXContent = (await import(`@/content/blog/${fileSlug}.mdx`)).default;
   const isPolish = false;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description || "Read this insightful article on my blog.",
+    datePublished: post.date,
+    dateModified: post.date,
+    image: `https://szymongrzesiak.dev/api/og?title=${encodeURIComponent(post.title)}`,
+    author: {
+      "@type": "Person",
+      "name": siteConfig.author,
+      "url": "https://szymongrzesiak.dev",
+    },
+    publisher: {
+      "@type": "Organization",
+      "name": "Szymon Grzesiak Portfolio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://szymongrzesiak.dev/logo-64.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://szymongrzesiak.dev/${post.slug}`,
+    },
+  };
 
   return (
-    <main className="px-6 md:pl-[130px] container relative mx-auto w-full flex-1 justify-center gap-[50px] py-6 md:flex lg:gap-10 lg:pb-10 pr-5 z-10">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main className="px-6 md:pl-[130px] container relative mx-auto w-full flex-1 justify-center gap-[50px] py-6 md:flex lg:gap-10 lg:pb-10 pr-5 z-10">
       <article className="relative container px-6 py-10 prose max-w-5xl mx-auto bg-white/90 rounded-xl shadow-[4px_4px] border-2 border-black">
         {/* Sticky Breadcrumbs inside the container */}
         <div className="sticky top-0 bg-white/95 backdrop-blur-md z-20 py-3 -mx-6 px-6 -mt-10 mb-8 border-b-2 border-black rounded-t-xl not-prose">
@@ -146,7 +177,8 @@ export default async function PostPage({ params }: PostPageProps) {
         <MDXContent components={components} />
       </article>
     </main>
-  );
+  </>
+);
 }
 // let incrementViews = cache(increment);
 // async function Views({ slug }: { slug: string }) {
