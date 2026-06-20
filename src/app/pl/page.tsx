@@ -7,6 +7,7 @@ import { projects } from "@/lib/data";
 import { projectsDataPl as projectsData, timelineDataPl as timelineData } from "@/lib/data-pl";
 import port from "@/assets/boy_with_telescope.png";
 import Marquee from "@/components/landing/marquee";
+import { WordRotate } from "@/components/ui/word-rotate";
 import {
   Tooltip,
   TooltipContent,
@@ -24,7 +25,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { StarIcon } from "lucide-react";
-import ContactDrawer from "@/components/ui/ContactDrawer";
+import { TbMailShare } from "react-icons/tb";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -47,36 +48,48 @@ export default function Home() {
   return (
     <main className="relative mx-auto landing">
       <Clouds color="white" rotate position="top" />
-      <section className="lg:h-[90vh] px-6 pt-40 lg:pt-0 md:flex-row gap-10 lg:gap-5 w-full flex items-center md:items-end justify-around md:px-10 flex-col-reverse md:pl-[130px]">
+      <section className="lg:h-[90vh] px-6 pt-40 lg:pt-0 md:flex-row w-full flex items-center md:items-end justify-center gap-8 lg:gap-16 xl:gap-24 md:px-10 flex-col-reverse md:pl-[130px]">
         <Image
           src={port}
           quality={75}
           priority={true}
           fetchPriority="high"
           alt="Chłopak z teleskopem"
-          className="lg:w-[414px] md:w-[304px] md:block hidden pl-12"
+          className="xl:w-[414px] lg:w-[320px] md:w-[280px] md:block hidden flex-shrink-0"
         />
-        <div className="flex justify-center h-full">
-          <div className="flex flex-col items-center md:items-start justify-center gap-y-6 md:pb-10 lg:pb-0">
+        <div className="flex justify-center md:justify-start items-center h-full w-full flex-1 min-w-0 max-w-[600px] lg:max-w-[750px] xl:max-w-[850px]">
+          <div className="flex flex-col items-center md:items-start justify-center gap-y-6 md:pb-10 lg:pb-0 lg:pt-16 w-full">
             <div
               id="home"
               className="flex flex-col items-center gap-4 text-center md:items-start md:text-left md:gap-5"
             >
-              <p className="font-display font-medium tracking-widest text-5xl xs:text-5xl sm:text-6xl md:text-5xl lg:text-7xl">
-                <span className="block md:hidden">Cześć, jestem</span>
-                <span className="hidden md:block">Cześć, co tam!🤞</span>
-              </p>
-
-              <h1 className="text-6xl sm:text-6xl md:text-5xl lg:text-7xl font-display font-medium tracking-widest">
-                <span className="hidden md:inline">Jestem </span>
-                <span className="inline-block bg-indigo-400 w-fit rounded-3xl px-4 pt-1 pb-3 md:pb-4 border-2 border-black shadow-[4px_4px] mt-1 md:mt-0">
-                  Szymon<span className="sr-only"> Grzesiak</span>
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
+                <span className="inline-block bg-amber-300 text-black text-xs md:text-sm font-bold uppercase tracking-wider px-3 py-1 rounded-full border-2 border-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                  Szymon Grzesiak
                 </span>
+                <span className="inline-block bg-green-400 text-black text-xs md:text-sm font-bold uppercase tracking-wider px-3 py-1 rounded-full border-2 border-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                  Dostępny do współpracy
+                </span>
+              </div>
+
+              <h1 className="font-display font-medium text-[2.2rem] min-[380px]:text-[2.8rem] sm:text-5xl md:text-4xl lg:text-5xl xl:text-7xl leading-[1.2] uppercase tracking-wider text-black">
+                Projektuję & wdrażam.<br />
+                <span className="text-zinc-500">Dbam o</span><br />
+                <WordRotate 
+                  words={[
+                    "estetyczne strony.",
+                    "integracje AI.",
+                    "optymalizację SEO.",
+                    "szybkie ładowanie.",
+                    "responsywny design.",
+                  ]} 
+                  duration={3000} 
+                />
               </h1>
             </div>
 
-            <h2 className="md:w-full md:max-w-[440px] text-lg text-black">
-              Nazywam się Szymon Grzesiak, jestem Full Stack Developerem z Polski. Projektuję i tworzę produkty webowe, które działają szybko, są przejrzyste i pomagają użytkownikom realizować ich cele.
+            <h2 className="md:w-full md:max-w-[500px] text-lg text-black leading-relaxed">
+              Tworzę nowoczesne, zoptymalizowane pod kątem konwersji i wyszukiwarek aplikacje internetowe w Next.js i TypeScript. Łączę estetyczny design z techniczną doskonałością.
             </h2>
 
             <p className="md:w-full md:max-w-[500px] text-base leading-relaxed text-black/80">
@@ -91,10 +104,67 @@ export default function Home() {
               .
             </p>
 
-            <ContactDrawer />
+            <Link
+              href="/pl/contact"
+              className="mb-10 md:mb-0 flex justify-center items-center gap-3 rounded-2xl border-2 border-black bg-indigo-400 hover:bg-indigo-300 text-black px-6 py-3 font-display font-bold text-xl md:text-2xl shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] transition-all group cursor-pointer"
+            >
+              <span>Wycena projektu i proces</span>
+              <TbMailShare className="text-2xl shrink-0 text-black transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </Link>
           </div>
         </div>
       </section>
+
+      <section className="py-20 px-6 md:pl-[130px] w-full bg-indigo-50 border-t-2 border-black">
+        <div className="max-w-6xl mx-auto flex flex-col gap-12">
+          
+          {/* Header block with button on the right */}
+          <div className="flex flex-col md:flex-row md:justify-between md:items-end w-full gap-6">
+            <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
+              <span className="bg-amber-300 text-black text-xs md:text-sm font-bold uppercase tracking-wider px-3 py-1 rounded-full border-2 border-black shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                Proces
+              </span>
+              <h2 className="font-display font-bold text-3xl md:text-5xl uppercase tracking-wider text-black">
+                Prosty Proces Współpracy
+              </h2>
+              <p className="text-gray-700 max-w-xl text-base leading-relaxed">
+                Pracuję według przejrzystego schematu krok po kroku, aby dostarczyć Twój projekt na czas, w ustalonym budżecie i z najwyższą dbałością o jakość kodu.
+              </p>
+            </div>
+            <Link
+              href="/pl/contact"
+              className="flex items-center justify-center gap-2 rounded-xl border-2 border-black bg-indigo-400 hover:bg-indigo-300 text-black px-5 py-3 font-bold text-sm shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] transition-all cursor-pointer shrink-0 w-fit self-center md:self-auto"
+            >
+              <span>Zobacz ofertę i proces</span>
+              <TbMailShare className="text-lg text-black" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+            <div className="border-2 border-black rounded-2xl p-5 bg-white shadow-[4px_4px_0px_rgba(0,0,0,1)] relative overflow-hidden">
+              <span className="absolute right-4 top-2 text-6xl font-black text-indigo-100 select-none">1</span>
+              <h3 className="font-bold text-lg mb-2 relative z-10">Brief & Wycena</h3>
+              <p className="text-gray-600 text-sm leading-relaxed relative z-10">Rozmawiamy o Twoich potrzebach, analizujemy strukturę podstron i ustalamy stały budżet.</p>
+            </div>
+            <div className="border-2 border-black rounded-2xl p-5 bg-white shadow-[4px_4px_0px_rgba(0,0,0,1)] relative overflow-hidden">
+              <span className="absolute right-4 top-2 text-6xl font-black text-indigo-100 select-none">2</span>
+              <h3 className="font-bold text-lg mb-2 relative z-10">Mój projekt</h3>
+              <p className="text-gray-600 text-sm leading-relaxed relative z-10">Unikalny projekt graficzny stworzony w pełni przeze mnie, dopasowany do Twojej marki.</p>
+            </div>
+            <div className="border-2 border-black rounded-2xl p-5 bg-white shadow-[4px_4px_0px_rgba(0,0,0,1)] relative overflow-hidden">
+              <span className="absolute right-4 top-2 text-6xl font-black text-indigo-100 select-none">3</span>
+              <h3 className="font-bold text-lg mb-2 relative z-10">Szybki Kod</h3>
+              <p className="text-gray-600 text-sm leading-relaxed relative z-10">Pisanie zoptymalizowanego kodu w Next.js & React, optymalizacja pod SEO i szybkość.</p>
+            </div>
+            <div className="border-2 border-black rounded-2xl p-5 bg-white shadow-[4px_4px_0px_rgba(0,0,0,1)] relative overflow-hidden">
+              <span className="absolute right-4 top-2 text-6xl font-black text-indigo-100 select-none">4</span>
+              <h3 className="font-bold text-lg mb-2 relative z-10">Wdrożenie & Start</h3>
+              <p className="text-gray-600 text-sm leading-relaxed relative z-10">Podłączenie domeny, konfiguracja analityki, wdrożenie i stała opieka techniczna.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="relative w-full">
         <div className="absolute w-full flex justify-center items-start -translate-y-4 z-10">
           <h2 className="text-center bg-indigo-400 font-bold rounded-xl px-2 md:px-4 z-100 border-2 border-black shadow-[4px_4px] font-display text-2xl tracking-widest">

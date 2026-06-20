@@ -86,7 +86,7 @@ const ContactDrawer = () => {
   );
 };
 
-export const ContactForm = () => {
+export const ContactForm = ({ className = "" }: { className?: string }) => {
   const pathname = usePathname();
   const isPolish = pathname.startsWith("/pl");
 
@@ -153,66 +153,69 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className="z-20 mx-auto w-full max-w-md rounded-2xl border border-white/20 bg-black/35 p-4 shadow-2xl backdrop-blur-md md:p-8">
-      <h2 className="text-xl font-semibold text-white">
-        {isPolish ? "Napisz do mnie" : "Get in touch"}
-      </h2>
-      <p className="mt-2 text-sm text-white/80">
-        {isPolish
-          ? "Wyślij mi wiadomość, a odpowiem tak szybko, jak to możliwe."
-          : "Send me a message and I'll get back to you as soon as possible."}
-      </p>
-      <p className="mt-1 text-sm text-white/70">
-        {isPolish
-          ? "Chcesz podobną stronę? Wyślij zapytanie e-mailem."
-          : "Want a project like this? Send your inquiry by email."}
-      </p>
+    <div className={`z-20 mx-auto w-full max-w-md rounded-3xl border border-white/10 bg-black/75 p-4 shadow-none backdrop-blur-md md:p-8 hover:border-indigo-500/20 transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,102,241,0.05)] flex flex-col ${className}`}>
+      <div>
+        <h2 className="text-xl font-semibold text-white">
+          {isPolish ? "Napisz do mnie" : "Get in touch"}
+        </h2>
+        <p className="mt-2 text-sm text-white/80">
+          {isPolish
+            ? "Wyślij mi wiadomość, a odpowiem tak szybko, jak to możliwe."
+            : "Send me a message and I'll get back to you as soon as possible."}
+        </p>
+        <p className="mt-1 text-sm text-white/70">
+          {isPolish
+            ? "Chcesz podobną stronę? Wyślij zapytanie e-mailem."
+            : "Want a project like this? Send your inquiry by email."}
+        </p>
+      </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6">
-        <div>
-          <label
-            htmlFor="email"
-            className="mb-2 block text-sm font-medium text-white"
-          >
-            {isPolish ? "Twój e-mail" : "Your email"}
-          </label>
-          <Input
-            id="email"
-            type="email"
-            placeholder={isPolish ? "[ADRES_EMAIL]" : "[EMAIL_ADDRESS]"}
-            {...register("email")}
-            className={`border-white/30 bg-white/10 text-white placeholder:text-white/60 focus:border-white/60 focus:ring-white/30 ${
-              errors.email ? "border-red-400" : ""
-            }`}
-          />
-          {errors.email && (
-            <p className="mt-1 text-sm text-red-200">{errors.email.message}</p>
-          )}
-        </div>
+      <form onSubmit={handleSubmit(onSubmit)} className="mt-8 flex-1 flex flex-col justify-between gap-4">
+        <div className="flex-1 flex flex-col gap-4">
+          <div>
+            <label
+              htmlFor="email"
+              className="mb-2 block text-sm font-medium text-white"
+            >
+              {isPolish ? "Twój e-mail" : "Your email"}
+            </label>
+            <Input
+              id="email"
+              type="email"
+              placeholder={isPolish ? "[ADRES_EMAIL]" : "[EMAIL_ADDRESS]"}
+              {...register("email")}
+              className={`border-white/30 bg-white/10 text-white placeholder:text-white/60 focus:border-white/60 focus:ring-white/30 ${
+                errors.email ? "border-red-400" : ""
+              }`}
+            />
+            {errors.email && (
+              <p className="mt-1 text-sm text-red-200">{errors.email.message}</p>
+            )}
+          </div>
 
-        <div>
-          <label
-            htmlFor="message"
-            className="mb-2 block text-sm font-medium text-white"
-          >
-            {isPolish ? "Wiadomość" : "Message"}
-          </label>
-          <textarea
-            id="message"
-            rows={6}
-            placeholder={
-              isPolish ? "W czym mogę Ci pomóc?" : "How can I help you?"
-            }
-            {...register("message")}
-            className={`w-full resize-none rounded-md border border-white/30 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:border-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 ${
-              errors.message ? "border-red-400" : ""
-            }`}
-          />
-          {errors.message && (
-            <p className="mt-1 text-sm text-red-200">
-              {errors.message.message}
-            </p>
-          )}
+          <div className="flex-1 flex flex-col">
+            <label
+              htmlFor="message"
+              className="mb-2 block text-sm font-medium text-white"
+            >
+              {isPolish ? "Wiadomość" : "Message"}
+            </label>
+            <textarea
+              id="message"
+              placeholder={
+                isPolish ? "W czym mogę Ci pomóc?" : "How can I help you?"
+              }
+              {...register("message")}
+              className={`w-full flex-1 min-h-[140px] resize-none rounded-md border border-white/30 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:border-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 ${
+                errors.message ? "border-red-400" : ""
+              }`}
+            />
+            {errors.message && (
+              <p className="mt-1 text-sm text-red-200">
+                {errors.message.message}
+              </p>
+            )}
+          </div>
         </div>
 
         {/* Honeypot field hidden from humans; bots often fill it. */}
@@ -230,69 +233,71 @@ export const ContactForm = () => {
           />
         </div>
 
-        <div className="text-xs text-white/70 text-center mt-4 mb-4">
-          {isPolish ? (
-            <span>
-              Wysyłając formularz, akceptujesz{" "}
-              <Link
-                href="/pl/privacy-policy"
-                className="underline hover:text-white transition-colors duration-200"
-              >
-                Politykę Prywatności
-              </Link>
-              .
-            </span>
-          ) : (
-            <span>
-              By submitting the form, you accept the{" "}
-              <Link
-                href="/privacy-policy"
-                className="underline hover:text-white transition-colors duration-200"
-              >
-                Privacy Policy
-              </Link>
-              .
-            </span>
+        <div>
+          <div className="text-xs text-white/70 text-center mt-2 mb-4">
+            {isPolish ? (
+              <span>
+                Wysyłając formularz, akceptujesz{" "}
+                <Link
+                  href="/pl/privacy-policy"
+                  className="underline hover:text-white transition-colors duration-200"
+                >
+                  Politykę Prywatności
+                </Link>
+                .
+              </span>
+            ) : (
+              <span>
+                By submitting the form, you accept the{" "}
+                <Link
+                  href="/privacy-policy"
+                  className="underline hover:text-white transition-colors duration-200"
+                >
+                  Privacy Policy
+                </Link>
+                .
+              </span>
+            )}
+          </div>
+
+          {submitStatus === "success" && (
+            <div className="rounded-lg bg-green-500/20 p-3 text-sm font-medium text-green-100 mb-4">
+              {isPolish
+                ? "Wiadomość wysłana pomyślnie!"
+                : "Message sent successfully!"}
+            </div>
           )}
+
+          {submitStatus === "error" && (
+            <div className="rounded-lg bg-red-500/20 p-3 text-sm font-medium text-red-100 mb-4">
+              {isPolish
+                ? "Błąd wysyłania wiadomości. Spróbuj ponownie."
+                : "Error sending message. Please try again."}
+            </div>
+          )}
+
+          {submitStatus === "rate-limited" && (
+            <div className="rounded-lg bg-yellow-500/20 p-3 text-sm font-medium text-yellow-100 mb-4">
+              {isPolish
+                ? "Zbyt wiele prób. Odczekaj chwilę."
+                : "Too many requests. Please wait before sending another message."}
+            </div>
+          )}
+
+          <button
+            disabled={isSubmitting}
+            className="w-full rounded-md bg-indigo-400 px-4 py-2 font-medium text-black transition-all duration-300 hover:bg-indigo-300 disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
+            type="submit"
+          >
+            {isSubmitting
+              ? isPolish
+                ? "Wysyłanie..."
+                : "Sending..."
+              : isPolish
+              ? "Wyślij wiadomość"
+              : "Send message"}
+          </button>
         </div>
-
-        {submitStatus === "success" && (
-          <div className="rounded-lg bg-green-500/20 p-3 text-sm font-medium text-green-100">
-            {isPolish
-              ? "Wiadomość wysłana pomyślnie!"
-              : "Message sent successfully!"}
-          </div>
-        )}
-
-        {submitStatus === "error" && (
-          <div className="rounded-lg bg-red-500/20 p-3 text-sm font-medium text-red-100">
-            {isPolish
-              ? "Błąd wysyłania wiadomości. Spróbuj ponownie."
-              : "Error sending message. Please try again."}
-          </div>
-        )}
-
-        {submitStatus === "rate-limited" && (
-          <div className="rounded-lg bg-yellow-500/20 p-3 text-sm font-medium text-yellow-100">
-            {isPolish
-              ? "Zbyt wiele prób. Odczekaj chwilę."
-              : "Too many requests. Please wait before sending another message."}
-          </div>
-        )}
-
-        <button
-          disabled={isSubmitting}
-          className="w-full rounded-md bg-indigo-400 px-4 py-2 font-medium text-black transition-all duration-300 hover:bg-indigo-300 disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
-          type="submit"
-        >
-          {isSubmitting
-            ? isPolish
-              ? "Wysyłanie..."
-              : "Sending..."
-            : isPolish
-            ? "Wyślij wiadomość"
-            : "Send message"}
-        </button>
       </form>
     </div>
   );
