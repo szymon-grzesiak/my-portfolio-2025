@@ -106,7 +106,7 @@ export default function Home() {
 
             <Link
               href="/pl/contact"
-              className="mb-10 md:mb-0 flex justify-center items-center gap-3 rounded-2xl border-2 border-black bg-indigo-400 hover:bg-indigo-300 text-black px-6 py-3 font-display font-bold text-xl md:text-2xl shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] transition-all group cursor-pointer"
+              className="mb-10 md:mb-0 flex justify-center items-center gap-3 rounded-2xl border-2 border-black bg-indigo-400 hover:bg-indigo-300 text-black px-6 py-3 font-display font-base text-xl md:text-2xl shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] transition-all group cursor-pointer"
             >
               <span>Wycena projektu i proces</span>
               <TbMailShare className="text-2xl shrink-0 text-black transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -167,7 +167,7 @@ export default function Home() {
 
       <section className="relative w-full">
         <div className="absolute w-full flex justify-center items-start -translate-y-4 z-10">
-          <h2 className="text-center bg-indigo-400 font-bold rounded-xl px-2 md:px-4 z-100 border-2 border-black shadow-[4px_4px] font-display text-2xl tracking-widest">
+          <h2 className="text-center bg-indigo-400 font-base rounded-xl px-2 md:px-4 z-100 border-2 border-black shadow-[4px_4px] font-display text-2xl tracking-widest">
             UMIEJĘTNOŚCI
           </h2>
         </div>
@@ -227,7 +227,7 @@ export default function Home() {
         <div className="w-full flex justify-center items-start translate-y-4 z-20">
           <h2
             id="projects"
-            className="text-center bg-indigo-400 font-bold rounded-xl px-4 border-2 border-black shadow-black shadow-[4px_4px] font-display text-xl md:text-2xl tracking-widest"
+            className="text-center bg-indigo-400 font-base rounded-xl px-4 border-2 border-black shadow-black shadow-[4px_4px] font-display text-xl md:text-2xl tracking-widest"
           >
             <StarIcon className="inline-block mr-2 text-yellow-400 fill-amber-300" />
             OSTATNIE PROJEKTY

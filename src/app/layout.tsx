@@ -155,6 +155,7 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${spaceGrotesk.variable} font-sans antialiased text-black bg-white`}
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
     >
       <head>
         {/* Structured Data */}
