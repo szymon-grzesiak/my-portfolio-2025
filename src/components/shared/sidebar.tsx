@@ -106,7 +106,7 @@ const Sidebar = () => {
         <li className="flex flex-col gap-4 justify-center items-center">
           {/* Language Switcher */}
           <div className="flex items-center gap-1 bg-white border-2 border-black p-0.5 rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-xs font-base font-display shrink-0 mb-4">
-            <Link
+            <a
               href={enHref}
               onClick={() => {
                 document.cookie = "user-selected-lang=en; path=/; max-age=31536000";
@@ -119,8 +119,8 @@ const Sidebar = () => {
               )}
             >
               EN
-            </Link>
-            <Link
+            </a>
+            <a
               href={plHref}
               onClick={() => {
                 document.cookie = "user-selected-lang=pl; path=/; max-age=31536000";
@@ -133,7 +133,7 @@ const Sidebar = () => {
               )}
             >
               PL
-            </Link>
+            </a>
           </div>
 
           <Link href="https://t.me/jsbr9" aria-label="Telegram profile">

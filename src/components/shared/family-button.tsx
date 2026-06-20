@@ -150,7 +150,7 @@ const FamilyButton = () => {
                     <li className="flex flex-col gap-4 items-start w-full">
                       {/* Language Switcher */}
                       <div className="flex gap-4 items-center font-display text-xl border-t border-white/20 pt-3 w-full">
-                        <Link
+                        <a
                           href={enHref}
                           onClick={() => {
                             document.cookie = "user-selected-lang=en; path=/; max-age=31536000";
@@ -162,8 +162,8 @@ const FamilyButton = () => {
                           )}
                         >
                           EN
-                        </Link>
-                        <Link
+                        </a>
+                        <a
                           href={plHref}
                           onClick={() => {
                             document.cookie = "user-selected-lang=pl; path=/; max-age=31536000";
@@ -175,7 +175,7 @@ const FamilyButton = () => {
                           )}
                         >
                           PL
-                        </Link>
+                        </a>
                       </div>
 
                       <div className="flex gap-4 justify-center items-center mb-20">
