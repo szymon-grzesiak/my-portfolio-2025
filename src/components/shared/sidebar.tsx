@@ -7,28 +7,67 @@ import logo64 from "../../app/logo-64.png";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-const links = [
-  { href: "/#about", label: "ABOUT" },
-  { href: "/projects", label: "PROJECTS" },
-  { href: "/blog", label: "BLOG" },
-  // { href: "/resume", label: "RESUME" },
-];
-
 const Sidebar = () => {
   const pathname = usePathname();
+  const isPolish = pathname.startsWith("/pl");
+
+  const links = isPolish
+    ? [
+      { href: "/pl/projects", label: "PROJEKTY" },
+      { href: "/pl/blog", label: "BLOG" },
+      { href: "/pl/contact", label: "KONTAKT" },
+    ]
+    : [
+      { href: "/projects", label: "PROJECTS" },
+      { href: "/blog", label: "BLOG" },
+      { href: "/contact", label: "CONTACT" },
+    ];
+
+  const getLanguageLinks = () => {
+    let enHref = pathname;
+    let plHref = `/pl${pathname === "/" ? "" : pathname}`;
+
+    if (isPolish) {
+      enHref = pathname.replace(/^\/pl/, "") || "/";
+      plHref = pathname;
+    }
+
+    const isBlogPost = pathname.includes("/blog/") || pathname.includes("/pl/blog/");
+    const isProjectStudy = pathname.includes("/projects/") || pathname.includes("/pl/projects/");
+
+    if (isBlogPost) {
+      if (!isPolish) {
+        plHref = "/pl/blog";
+      } else {
+        enHref = pathname.replace(/^\/pl/, "") || "/";
+      }
+    }
+
+    if (isProjectStudy) {
+      if (!isPolish) {
+        plHref = "/pl/projects";
+      } else {
+        enHref = pathname.replace(/^\/pl/, "") || "/";
+      }
+    }
+
+    return { enHref, plHref };
+  };
+
+  const { enHref, plHref } = getLanguageLinks();
 
   const SpecialUrl = () => {
     if (pathname.includes("tags") || pathname.includes("blog")) {
       return (
-        <div className="cursor-pointer font-bagel text-[22px] leading-[30px] 2xl:text-2xl">
-          <Link href={"/tags"}>
+        <div className="cursor-pointer font-display text-[22px] leading-[30px] 2xl:text-2xl">
+          <Link href={isPolish ? "/pl/tags" : "/tags"}>
             <span
               className={cn(
                 "lineThroughEffect",
                 pathname.includes("tags") && "active-lineThroughEffect"
               )}
             >
-              TAGS
+              {isPolish ? "TAGI" : "TAGS"}
             </span>
           </Link>
         </div>
@@ -37,7 +76,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="hidden md:block px-2 md:px-4 fixed left-0 top-0 h-screen bg-white/50 border-r-2 border-r-slate-400 backdrop-blur-xl z-100">
+    <div className="hidden md:block w-[130px] px-2 md:px-4 fixed left-0 top-0 h-screen bg-white/70 border-r-2 border-r-slate-400 backdrop-blur-xl z-100">
       <ul className="flex h-screen flex-col justify-between items-center py-6 gap-16">
         <li>
           <Link href={"/"}>
@@ -48,7 +87,7 @@ const Sidebar = () => {
           {links.map((link) => (
             <div
               key={link.href}
-              className="cursor-pointer font-bagel text-[22px] leading-[30px] 2xl:text-2xl"
+              className="cursor-pointer font-display text-[22px] leading-[30px] 2xl:text-2xl"
             >
               <Link href={link.href}>
                 <span
@@ -65,20 +104,46 @@ const Sidebar = () => {
           <SpecialUrl />
         </li>
         <li className="flex flex-col gap-4 justify-center items-center">
+          {/* Language Switcher */}
+          <div className="flex items-center gap-1 bg-white border-2 border-black p-0.5 rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-xs font-bold font-display shrink-0 mb-4">
+            <Link
+              href={enHref}
+              className={cn(
+                "px-2 py-0.5 rounded-md transition-all duration-200",
+                !isPolish
+                  ? "bg-main text-white border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"
+                  : "text-slate-600 hover:text-indigo-500"
+              )}
+            >
+              EN
+            </Link>
+            <Link
+              href={plHref}
+              className={cn(
+                "px-2 py-0.5 rounded-md transition-all duration-200",
+                isPolish
+                  ? "bg-main text-white border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"
+                  : "text-slate-600 hover:text-indigo-500"
+              )}
+            >
+              PL
+            </Link>
+          </div>
+
           <Link href="https://t.me/jsbr9" aria-label="Telegram profile">
-            <FaTelegram className="text-3xl hover:text-[#00E5FF]" />
+            <FaTelegram className="text-3xl hover:text-main" />
           </Link>
           <Link
             href="https://www.linkedin.com/in/szymongrzesiak/"
             aria-label="LinkedIn profile"
           >
-            <FaLinkedin className="text-3xl hover:text-[#00E5FF]" />
+            <FaLinkedin className="text-3xl hover:text-main" />
           </Link>
           <Link
             href="https://github.com/szymon-grzesiak"
             aria-label="GitHub profile"
           >
-            <FaGithub className="text-3xl hover:text-[#00E5FF]" />
+            <FaGithub className="text-3xl hover:text-main" />
           </Link>
         </li>
       </ul>

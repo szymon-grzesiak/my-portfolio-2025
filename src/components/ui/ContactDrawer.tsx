@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import {
   ExpandableScreen,
@@ -13,16 +14,30 @@ import { TbMailShare } from "react-icons/tb";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { usePathname } from "next/navigation";
 
-const contactSchema = z.object({
-  email: z.string().email("Invalid email address"),
-  message: z.string().min(10, "Message must be at least 10 characters long"),
-  website: z.string().optional(), // Honeypot field - should be empty
-});
+const getContactSchema = (isPolish: boolean) =>
+  z.object({
+    email: z
+      .string()
+      .email(isPolish ? "Niepoprawny adres e-mail" : "Invalid email address"),
+    message: z
+      .string()
+      .min(
+        10,
+        isPolish
+          ? "Wiadomość musi mieć co najmniej 10 znaków"
+          : "Message must be at least 10 characters long"
+      ),
+    website: z.string().optional(), // Honeypot field - should be empty
+  });
 
-type ContactFormData = z.infer<typeof contactSchema>;
+type ContactFormData = z.infer<ReturnType<typeof getContactSchema>>;
 
 const ContactDrawer = () => {
+  const pathname = usePathname();
+  const isPolish = pathname.startsWith("/pl");
+
   return (
     <ExpandableScreen
       layoutId="contact-expandable-screen"
@@ -30,11 +45,11 @@ const ContactDrawer = () => {
       contentRadius="24px"
     >
       <ExpandableScreenTrigger>
-        <button className="mb-10 md:mb-0 flex justify-center items-end gap-3 rounded-2xl p-2 bg-white/20 md:border md:border-gray-300 hover:bg-white/40 transition-all duration-300">
-          <span className="text-3xl font-bold lineThroughEffect">
-            Contact Me
+        <button className="mb-10 md:mb-0 flex justify-center items-end gap-3 rounded-2xl p-2 bg-white/20 hover:bg-white/40 transition-all duration-300 group cursor-pointer">
+          <span className="text-3xl font-bold">
+            {isPolish ? "Napisz do mnie" : "Contact Me"}
           </span>
-          <TbMailShare className="text-3xl shrink-0 mb-1 text-indigo-400" />
+          <TbMailShare className="text-3xl shrink-0 mb-1 text-indigo-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
         </button>
       </ExpandableScreenTrigger>
 
@@ -71,7 +86,10 @@ const ContactDrawer = () => {
   );
 };
 
-const ContactForm = () => {
+export const ContactForm = () => {
+  const pathname = usePathname();
+  const isPolish = pathname.startsWith("/pl");
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error" | "rate-limited"
@@ -84,7 +102,7 @@ const ContactForm = () => {
     formState: { errors },
     reset,
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
+    resolver: zodResolver(getContactSchema(isPolish)),
   });
 
   const onSubmit = async (data: ContactFormData) => {
@@ -136,12 +154,18 @@ const ContactForm = () => {
 
   return (
     <div className="z-20 mx-auto w-full max-w-md rounded-2xl border border-white/20 bg-black/35 p-4 shadow-2xl backdrop-blur-md md:p-8">
-      <h2 className="text-xl font-semibold text-white">Get in touch</h2>
+      <h2 className="text-xl font-semibold text-white">
+        {isPolish ? "Napisz do mnie" : "Get in touch"}
+      </h2>
       <p className="mt-2 text-sm text-white/80">
-        Send me a message and I&apos;ll get back to you as soon as possible.
+        {isPolish
+          ? "Wyślij mi wiadomość, a odpowiem tak szybko, jak to możliwe."
+          : "Send me a message and I'll get back to you as soon as possible."}
       </p>
       <p className="mt-1 text-sm text-white/70">
-        Want a project like this? Send your inquiry by email.
+        {isPolish
+          ? "Chcesz podobną stronę? Wyślij zapytanie e-mailem."
+          : "Want a project like this? Send your inquiry by email."}
       </p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6">
@@ -150,12 +174,12 @@ const ContactForm = () => {
             htmlFor="email"
             className="mb-2 block text-sm font-medium text-white"
           >
-            Your email
+            {isPolish ? "Twój e-mail" : "Your email"}
           </label>
           <Input
             id="email"
             type="email"
-            placeholder="your.email@example.com"
+            placeholder={isPolish ? "[ADRES_EMAIL]" : "[EMAIL_ADDRESS]"}
             {...register("email")}
             className={`border-white/30 bg-white/10 text-white placeholder:text-white/60 focus:border-white/60 focus:ring-white/30 ${
               errors.email ? "border-red-400" : ""
@@ -171,12 +195,14 @@ const ContactForm = () => {
             htmlFor="message"
             className="mb-2 block text-sm font-medium text-white"
           >
-            Message
+            {isPolish ? "Wiadomość" : "Message"}
           </label>
           <textarea
             id="message"
             rows={6}
-            placeholder="How can I help you?"
+            placeholder={
+              isPolish ? "W czym mogę Ci pomóc?" : "How can I help you?"
+            }
             {...register("message")}
             className={`w-full resize-none rounded-md border border-white/30 bg-white/10 px-3 py-2 text-white placeholder:text-white/60 focus:border-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 ${
               errors.message ? "border-red-400" : ""
@@ -204,21 +230,53 @@ const ContactForm = () => {
           />
         </div>
 
+        <div className="text-xs text-white/70 text-center mt-4 mb-4">
+          {isPolish ? (
+            <span>
+              Wysyłając formularz, akceptujesz{" "}
+              <Link
+                href="/pl/privacy-policy"
+                className="underline hover:text-white transition-colors duration-200"
+              >
+                Politykę Prywatności
+              </Link>
+              .
+            </span>
+          ) : (
+            <span>
+              By submitting the form, you accept the{" "}
+              <Link
+                href="/privacy-policy"
+                className="underline hover:text-white transition-colors duration-200"
+              >
+                Privacy Policy
+              </Link>
+              .
+            </span>
+          )}
+        </div>
+
         {submitStatus === "success" && (
           <div className="rounded-lg bg-green-500/20 p-3 text-sm font-medium text-green-100">
-            Message sent successfully!
+            {isPolish
+              ? "Wiadomość wysłana pomyślnie!"
+              : "Message sent successfully!"}
           </div>
         )}
 
         {submitStatus === "error" && (
           <div className="rounded-lg bg-red-500/20 p-3 text-sm font-medium text-red-100">
-            Error sending message. Please try again.
+            {isPolish
+              ? "Błąd wysyłania wiadomości. Spróbuj ponownie."
+              : "Error sending message. Please try again."}
           </div>
         )}
 
         {submitStatus === "rate-limited" && (
           <div className="rounded-lg bg-yellow-500/20 p-3 text-sm font-medium text-yellow-100">
-            Too many requests. Please wait before sending another message.
+            {isPolish
+              ? "Zbyt wiele prób. Odczekaj chwilę."
+              : "Too many requests. Please wait before sending another message."}
           </div>
         )}
 
@@ -227,7 +285,13 @@ const ContactForm = () => {
           className="w-full rounded-md bg-indigo-400 px-4 py-2 font-medium text-black transition-all duration-300 hover:bg-indigo-300 disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
           type="submit"
         >
-          {isSubmitting ? "Sending..." : "Send message"}
+          {isSubmitting
+            ? isPolish
+              ? "Wysyłanie..."
+              : "Sending..."
+            : isPolish
+            ? "Wyślij wiadomość"
+            : "Send message"}
         </button>
       </form>
     </div>

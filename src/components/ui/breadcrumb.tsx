@@ -75,7 +75,7 @@ function BreadcrumbSeparator({
       className={cn("flex items-center", className)}
       {...props}
     >
-      {children ?? <ChevronRight size={25} className="stroke-3" />}
+      {children ?? <ChevronRight size={14} className="text-slate-400" />}
     </li>
   )
 }

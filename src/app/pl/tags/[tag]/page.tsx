@@ -25,18 +25,17 @@ export async function generateMetadata({
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
-  // REWRITTEN: A longer, more engaging description for better CTR.
-  const newDescription = `Explore a curated collection of in-depth articles, tutorials, and insights on ${formattedTag}. Dive deep into practical examples and stay ahead with the latest trends.`;
+  const newDescription = `Przeglądaj artykuły, poradniki i analizy oznaczone tagiem: ${formattedTag}. Dowiedz się więcej i bądź na bieżąco z najnowszymi trendami.`;
 
   return {
-    title: `Posts about ${formattedTag}`,
+    title: `Posty z tagiem: ${formattedTag} | Szymon Grzesiak`,
     description: newDescription,
     authors: { name: siteConfig.author },
     openGraph: {
-      title: `Explore Posts About ${formattedTag}`,
-      description: newDescription, // Also updated here
+      title: `Przeglądaj wpisy z tagiem: ${formattedTag}`,
+      description: newDescription,
       type: "website",
-      url: `https://szymongrzesiak.dev/tags/${tag}`,
+      url: `https://szymongrzesiak.dev/pl/tags/${tag}`,
       images: [
         {
           url: `/api/og?title=${formattedTag}`,
@@ -48,18 +47,18 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `Explore Posts About ${formattedTag}`,
+      title: `Przeglądaj wpisy z tagiem: ${formattedTag}`,
       description: newDescription,
       images: [`https://szymongrzesiak.dev/api/og?title=${formattedTag}`],
     },
     alternates: {
-      canonical: `https://szymongrzesiak.dev/tags/${tag}`,
+      canonical: `https://szymongrzesiak.dev/pl/tags/${tag}`,
     },
   };
 }
 
 export const generateStaticParams = () => {
-  const tags = getAllTags(posts.filter((post) => post.published && post.locale === "en"));
+  const tags = getAllTags(posts.filter((post) => post.published && post.locale === "pl"));
   const paths = Object.keys(tags).map((tag) => ({ tag: slug(tag) }));
   return paths;
 };
@@ -68,10 +67,10 @@ export default async function TagPage({ params }: TagPageProps) {
   const { tag } = await params;
   const title = tag.split("-").join(" ");
 
-  const englishPosts = posts.filter((post) => post.published && post.locale === "en");
-  const allPosts = getPostsByTagSlug(englishPosts, tag);
+  const polishPosts = posts.filter((post) => post.published && post.locale === "pl");
+  const allPosts = getPostsByTagSlug(polishPosts, tag);
   const displayPosts = allPosts.filter((post) => post.published);
-  const tags = getAllTags(englishPosts);
+  const tags = getAllTags(polishPosts);
   const sortedTags = sortTagsByCount(tags);
 
   return (
@@ -79,17 +78,17 @@ export default async function TagPage({ params }: TagPageProps) {
       <div className="relative h-64">
         <BackgroundBeamsWithCollision>
           <h2 className="flex flex-col relative z-20 text-3xl lg:text-7xl font-bold text-center text-black font-sans tracking-tight">
-            Read my thoughts on
+            Przemyślenia na temat
             <div className="relative mx-auto inline-block w-max filter-[drop-shadow(0px_1px_3px_rgba(27,37,80,0.14))]">
               <div className="relative bg-clip-text text-transparent bg-no-repeat bg-linear-to-r from-indigo-300 via-main to-indigo-800 py-4">
-                <span className="">Software Development.</span>
+                <span className="">programowania.</span>
               </div>
             </div>
           </h2>
         </BackgroundBeamsWithCollision>
         <Image
           src={coolGuy}
-          alt="Sitting figure"
+          alt="Siedząca postać"
           width={150}
           height={150}
           className="absolute bottom-[-55px] right-20 z-120"
@@ -131,7 +130,7 @@ export default async function TagPage({ params }: TagPageProps) {
                 })}
               </ul>
             ) : (
-              <p>Nothing to see here yet</p>
+              <p>Nic tu jeszcze nie ma</p>
             )}
           </div>
         </div>

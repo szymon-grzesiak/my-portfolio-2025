@@ -7,6 +7,7 @@ import { HiExternalLink } from "react-icons/hi";
 import Link from "next/link";
 import { slug } from "github-slugger";
 import { ArrowRight, ChevronRight } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const DotsIndicator = ({
   count,
@@ -22,7 +23,7 @@ const DotsIndicator = ({
           <span
             key={index}
             className={`w-[10px] h-[10px] my-[5px] rounded-full ${
-              index === activeIndex ? "active bg-[#3FBEF5]" : "bg-gray-500"
+              index === activeIndex ? "active bg-main" : "bg-gray-500"
             }`}
           ></span>
         ))}
@@ -46,6 +47,8 @@ export const ProjectsSection = ({
   }[];
   contentClassName?: string;
 }) => {
+  const pathname = usePathname();
+  const isPolish = pathname.startsWith("/pl");
   const [activeCard, setActiveCard] = useState(0);
   const ref = useRef<any>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -119,9 +122,9 @@ export const ProjectsSection = ({
   }
 
   const backgroundColors = [
-    "var(--color-slate-900)",
-    "var(--color-black)",
-    "var(--color-neutral-900)",
+    "#0f172a",
+    "#000000",
+    "#171717",
   ];
   return (
     <motion.div
@@ -186,10 +189,10 @@ export const ProjectsSection = ({
             className="w-full h-full object-cover rounded-md z-10 border-2 border-white shadow-white shadow-[6px_6px]"
           />
           <Link
-            href={"/projects"}
+            href={isPolish ? "/pl/projects" : "/projects"}
             className="bg-white w-fit font-semibold px-4 py-2 hover:text-indigo-500 rounded-md shadow-md border-2"
           >
-            See more projects <ArrowRight className="inline-block size-5" />
+            {isPolish ? "Zobacz więcej projektów" : "See more projects"} <ArrowRight className="inline-block size-5" />
           </Link>
           <div className="absolute inset-0 bg-linear-to-t from-black to-transparent opacity-100 flex items-end p-4 rounded-md z-20 w-full">
             <div className="text-white w-full flex justify-between items-end">
@@ -201,7 +204,7 @@ export const ProjectsSection = ({
                       href={content[activeCard]?.githubLink as string}
                       target="_blank"
                     >
-                      Github Code <HiExternalLink className="text-white" />
+                      {isPolish ? "Kod GitHub" : "Github Code"} <HiExternalLink className="text-white" />
                     </Link>
                   </p>
                 )}
@@ -212,18 +215,18 @@ export const ProjectsSection = ({
                     href={content[activeCard].link as string}
                     target="_blank"
                   >
-                    Live Site <HiExternalLink className="text-white" />
+                    {isPolish ? "Strona na żywo" : "Live Site"} <HiExternalLink className="text-white" />
                   </Link>
                 </p>
               </div>
 
-              <p className="text-base lg:text-lg font-bold hover:text-[#00E5FF] cursor-pointer">
+              <p className="text-base lg:text-lg font-bold hover:text-main cursor-pointer">
                 <Link
-                  href={`/projects/${
+                  href={`${isPolish ? "/pl" : ""}/projects/${
                     content[activeCard].slug ?? slug(content[activeCard].title)
                   }`}
                 >
-                  See Case Study
+                  {isPolish ? "Zobacz studium" : "See Case Study"}
                 </Link>
               </p>
             </div>

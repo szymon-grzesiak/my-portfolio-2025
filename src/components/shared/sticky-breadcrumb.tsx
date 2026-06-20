@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -56,27 +56,26 @@ export default function StickyBreadcrumb({
       
       <div className={`sticky top-[10px] rounded-xl px-4 py-2 z-50 duration-100 ease-in ${
         isSticky 
-          ? 'bg-white/50 backdrop-blur-3xl shadow-md border-b border-gray-200' 
+          ? 'bg-white/80 backdrop-blur-3xl shadow-md border-b border-gray-200' 
           : 'bg-transparent'
       }`}>
         <Breadcrumb>
           <BreadcrumbList>
-            {items.map((item, index) => (
-              <div key={item.href} className="flex items-center">
+            {items.map((item) => (
+              <React.Fragment key={item.href}>
                 <BreadcrumbItem>
                   <BreadcrumbLink
-                    className="hover:text-blue-500 hover:bg-sky-100 px-2 py-1 rounded-lg duration-300 text-gray-600 font-semibold text-lg"
+                    className="hover:text-main hover:bg-main/20 px-2 py-1 rounded-lg duration-300 text-gray-600 font-semibold text-lg"
                     href={item.href}
                   >
                     {item.label}
                   </BreadcrumbLink>
                 </BreadcrumbItem>
-                {index < items.length - 1 && <BreadcrumbSeparator />}
-              </div>
+                <BreadcrumbSeparator />
+              </React.Fragment>
             ))}
-            <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage className="text-blue-500 font-semibold text-lg">
+              <BreadcrumbPage className="text-main font-semibold text-lg">
                 {currentPage}
               </BreadcrumbPage>
             </BreadcrumbItem>

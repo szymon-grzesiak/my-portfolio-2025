@@ -6,6 +6,7 @@ import { PlusIcon, XIcon } from "lucide-react";
 import { FaLinkedin, FaGithub, FaTelegram } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils"; // Upewnij się, że masz poprawny import
 import logo64 from "../../app/logo-64.png";
@@ -15,6 +16,42 @@ const CONTAINER_SIZE = 400;
 const FamilyButton = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const toggleExpand = () => setIsExpanded(!isExpanded);
+
+  const pathname = usePathname();
+  const isPolish = pathname.startsWith("/pl");
+
+  const getLanguageLinks = () => {
+    let enHref = pathname;
+    let plHref = `/pl${pathname === "/" ? "" : pathname}`;
+
+    if (isPolish) {
+      enHref = pathname.replace(/^\/pl/, "") || "/";
+      plHref = pathname;
+    }
+
+    const isBlogPost = pathname.includes("/blog/") || pathname.includes("/pl/blog/");
+    const isProjectStudy = pathname.includes("/projects/") || pathname.includes("/pl/projects/");
+
+    if (isBlogPost) {
+      if (!isPolish) {
+        plHref = "/pl/blog";
+      } else {
+        enHref = pathname.replace(/^\/pl/, "") || "/";
+      }
+    }
+
+    if (isProjectStudy) {
+      if (!isPolish) {
+        plHref = "/pl/projects";
+      } else {
+        enHref = pathname.replace(/^\/pl/, "") || "/";
+      }
+    }
+
+    return { enHref, plHref };
+  };
+
+  const { enHref, plHref } = getLanguageLinks();
 
   const handleLinkClick = () => {
     setIsExpanded(false);
@@ -46,21 +83,21 @@ const FamilyButton = () => {
               animate={
                 isExpanded
                   ? {
-                      borderRadius: 20,
-                      width: "200px",
-                      height: CONTAINER_SIZE,
-                      transition: {
-                        type: "spring",
-                        damping: 25,
-                        stiffness: 400,
-                        when: "beforeChildren",
-                      },
-                    }
+                    borderRadius: 20,
+                    width: "200px",
+                    height: CONTAINER_SIZE,
+                    transition: {
+                      type: "spring",
+                      damping: 25,
+                      stiffness: 400,
+                      when: "beforeChildren",
+                    },
+                  }
                   : {
-                      borderRadius: 21,
-                      width: "4rem",
-                      height: "4rem",
-                    }
+                    borderRadius: 21,
+                    width: "4rem",
+                    height: "4rem",
+                  }
               }
             >
               {isExpanded && (
@@ -81,50 +118,83 @@ const FamilyButton = () => {
                       <Image src={logo64} width={50} height={50} alt="Logo" />
                     </Link>
                     <div className="flex flex-col items-start justify-center h-full gap-3">
-                      <li className="cursor-pointer font-bagel text-3xl lineThroughEffect">
-                        <Link href="/#about" onClick={handleLinkClick}>
-                          ABOUT
+                      <li className="cursor-pointer font-display text-3xl lineThroughEffect">
+                        <Link href={isPolish ? "/pl/#about" : "/#about"} onClick={handleLinkClick}>
+                          {isPolish ? "O MNIE" : "ABOUT"}
                         </Link>
                       </li>
-                      <li className="cursor-pointer font-bagel text-3xl lineThroughEffect">
-                        <Link href="/projects" onClick={handleLinkClick}>
-                          PROJECTS
+                      <li className="cursor-pointer font-display text-3xl lineThroughEffect">
+                        <Link href={isPolish ? "/pl/projects" : "/projects"} onClick={handleLinkClick}>
+                          {isPolish ? "PROJEKTY" : "PROJECTS"}
                         </Link>
                       </li>
-                      <li className="cursor-pointer font-bagel text-3xl lineThroughEffect">
-                        <Link href="/blog" onClick={handleLinkClick}>
-                          BLOG
+                      <li className="cursor-pointer font-display text-3xl lineThroughEffect">
+                        <Link href={isPolish ? "/pl/blog" : "/blog"} onClick={handleLinkClick}>
+                          {isPolish ? "BLOG" : "BLOG"}
                         </Link>
                       </li>
-                      {/* <li className="cursor-pointer font-bagel text-3xl lineThroughEffect">
-                        <Link href="/resume" onClick={handleLinkClick}>
-                          RESUME
+                      <li className="cursor-pointer font-display text-3xl lineThroughEffect">
+                        <Link href={isPolish ? "/pl/contact" : "/contact"} onClick={handleLinkClick}>
+                          {isPolish ? "KONTAKT" : "CONTACT"}
                         </Link>
-                      </li> */}
+                      </li>
+                      {(pathname.includes("tags") || pathname.includes("blog")) && (
+                        <li className="cursor-pointer font-display text-3xl lineThroughEffect">
+                          <Link href={isPolish ? "/pl/tags" : "/tags"} onClick={handleLinkClick}>
+                            {isPolish ? "TAGI" : "TAGS"}
+                          </Link>
+                        </li>
+                      )}
                     </div>
 
-                    <li className="flex gap-4 justify-center items-center mb-14">
-                      <Link
-                        href="https://www.linkedin.com/in/szymongrzesiak/"
-                        onClick={handleLinkClick}
-                        target="_blank"
-                      >
-                        <FaLinkedin className="text-3xl hover:text-[#00E5FF]" />
-                      </Link>
-                      <Link
-                        href="https://github.com/szymon-grzesiak"
-                        onClick={handleLinkClick}
-                        target="_blank"
-                      >
-                        <FaGithub className="text-3xl hover:text-[#00E5FF]" />
-                      </Link>
-                      <Link
-                        href="https://t.me/jsbr9"
-                        onClick={handleLinkClick}
-                        target="_blank"
-                      >
-                        <FaTelegram className="text-3xl hover:text-[#00E5FF]" />
-                      </Link>
+                    <li className="flex flex-col gap-4 items-start w-full">
+                      {/* Language Switcher */}
+                      <div className="flex gap-4 items-center font-display text-xl border-t border-white/20 pt-3 w-full">
+                        <Link
+                          href={enHref}
+                          onClick={handleLinkClick}
+                          className={cn(
+                            "hover:text-main transition-colors duration-200",
+                            !isPolish ? "text-main underline font-bold" : "text-neutral-400 font-medium"
+                          )}
+                        >
+                          EN
+                        </Link>
+                        <Link
+                          href={plHref}
+                          onClick={handleLinkClick}
+                          className={cn(
+                            "hover:text-main transition-colors duration-200",
+                            isPolish ? "text-main underline font-bold" : "text-neutral-400 font-medium"
+                          )}
+                        >
+                          PL
+                        </Link>
+                      </div>
+
+                      <div className="flex gap-4 justify-center items-center mb-14">
+                        <Link
+                          href="https://www.linkedin.com/in/szymongrzesiak/"
+                          onClick={handleLinkClick}
+                          target="_blank"
+                        >
+                          <FaLinkedin className="text-3xl hover:text-main" />
+                        </Link>
+                        <Link
+                          href="https://github.com/szymon-grzesiak"
+                          onClick={handleLinkClick}
+                          target="_blank"
+                        >
+                          <FaGithub className="text-3xl hover:text-main" />
+                        </Link>
+                        <Link
+                          href="https://t.me/jsbr9"
+                          onClick={handleLinkClick}
+                          target="_blank"
+                        >
+                          <FaTelegram className="text-3xl hover:text-main" />
+                        </Link>
+                      </div>
                     </li>
                   </ul>
                 </motion.div>

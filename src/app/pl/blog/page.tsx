@@ -11,30 +11,22 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Read my thoughts on software development, design, and more. I share insights, tutorials, and experiences in web development.",
-  keywords: [
-    "Blog",
-    "Software Development",
-    "Web Development",
-    "Next.js",
-    "React",
-    "TypeScript",
-  ],
+    "Artykuły i przemyślenia na temat programowania, technologii webowych i moich doświadczeń.",
   alternates: {
-    canonical: `${siteConfig.url}/blog`,
+    canonical: `${siteConfig.url}/pl/blog`,
   },
   openGraph: {
     title: "Blog | Szymon Grzesiak",
     description:
-      "Read my thoughts on software development, design, and more. I share insights, tutorials, and experiences in web development.",
-    url: `${siteConfig.url}/blog`,
+      "Artykuły i przemyślenia na temat programowania, technologii webowych i moich doświadczeń.",
+    url: `${siteConfig.url}/pl/blog`,
   },
 };
 export default async function BlogPage() {
-  const englishPosts = posts.filter((post) => post.published && post.locale === "en");
-  const sortedPosts = sortPosts(englishPosts);
+  const polishPosts = posts.filter((post) => post.published && post.locale === "pl");
+  const sortedPosts = sortPosts(polishPosts);
 
-  const tags = getAllTags(englishPosts);
+  const tags = getAllTags(polishPosts);
   const sortedTags = sortTagsByCount(tags);
 
   return (
@@ -42,17 +34,17 @@ export default async function BlogPage() {
       <div className="relative h-64">
         <BackgroundBeamsWithCollision>
           <h1 className="flex flex-col lg:pl-20 xl:pl-0 relative z-20 text-3xl md:text-5xl lg:text-7xl font-bold text-center text-black font-sans tracking-tight">
-            Read my thoughts on
+            Przemyślenia na temat
             <div className="relative mx-auto inline-block w-max filter-[drop-shadow(0px_1px_3px_rgba(27,37,80,0.14))]">
               <div className="relative bg-clip-text text-transparent bg-no-repeat bg-linear-to-r from-indigo-300 via-main to-indigo-800 py-4">
-                <span>Software Development.</span>
+                <span>programowania.</span>
               </div>
             </div>
           </h1>
         </BackgroundBeamsWithCollision>
         <Image
           src={coolGuy}
-          alt="Sitting figure"
+          alt="Siedząca postać"
           width={150}
           height={150}
           className="absolute bottom-[-55px] right-20 z-120"
@@ -78,7 +70,7 @@ export default async function BlogPage() {
             })}
           </ul>
         ) : (
-          <p>Nothing to see here yet</p>
+          <p>Nic tu jeszcze nie ma</p>
         )}
       </div>
     </div>

@@ -3,7 +3,7 @@ import { BackgroundBeamsWithCollision } from "@/components/blog/background-beams
 import Image from "next/image";
 import coolGuy from "@/assets/coolguy2.webp";
 import { siteConfig } from "@/config/site";
-import { projectsData } from "@/lib/data";
+import { projectsDataPl as projectsData } from "@/lib/data-pl";
 import Link from "next/link";
 import { HiExternalLink } from "react-icons/hi";
 import {
@@ -16,37 +16,37 @@ import {
 } from "@/components/ui/breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "Projekty",
   description:
-    "Explore my projects showcasing my skills in web development, including Next.js, React, and TypeScript. View case studies and live demos.",
+    "Poznaj zrealizowane przeze mnie projekty programistyczne w Next.js, React i TypeScript. Zobacz studia przypadków i demonstracje.",
   alternates: {
-    canonical: `${siteConfig.url}/projects`,
+    canonical: `${siteConfig.url}/pl/projects`,
   },
   openGraph: {
-    title: "Projects",
+    title: "Projekty | Szymon Grzesiak",
     description:
-      "Explore my projects showcasing my skills in web development, including Next.js, React, and TypeScript. View case studies and live demos.",
-    url: `${siteConfig.url}/projects`,
+      "Poznaj zrealizowane przeze mnie projekty programistyczne w Next.js, React i TypeScript. Zobacz studia przypadków i demonstracje.",
+    url: `${siteConfig.url}/pl/projects`,
   },
 };
 
-export default async function BlogPage() {
+export default async function ProjectsPage() {
   return (
     <div className="relative purple-haze">
       <div className="relative h-46 md:h-64 z-20">
         <BackgroundBeamsWithCollision>
           <h1 className="flex justify-center items-start md:items-center gap-3 md:gap-0 md:flex-col lg:pl-20 xl:pl-0 relative z-20 text-5xl lg:text-7xl font-bold text-center text-black font-sans tracking-tight">
-            My
+            Moje
             <div className="relative mx-auto inline-block w-max filter-[drop-shadow(0px_1px_3px_rgba(27,37,80,0.14))]">
               <div className="relative bg-clip-text text-transparent bg-no-repeat bg-linear-to-r from-indigo-300 via-main to-indigo-800 pb-2 md:py-4">
-                <span>Projects</span>
+                <span>Projekty</span>
               </div>
             </div>
           </h1>
         </BackgroundBeamsWithCollision>
         <Image
           src={coolGuy}
-          alt="Sitting figure"
+          alt="Siedząca postać"
           width={150}
           height={150}
           className="absolute bottom-[-55px] right-0 md:bottom-[-55px] md:right-20 z-120"
@@ -59,15 +59,15 @@ export default async function BlogPage() {
               <BreadcrumbItem>
                 <BreadcrumbLink
                   className="hover:text-main hover:bg-main/10 px-2 py-1 rounded-lg duration-300 text-gray-600 font-semibold text-lg"
-                  href="/"
+                  href="/pl"
                 >
-                  Home
+                  Główna
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbPage className="text-main font-semibold text-lg">
-                  Projects
+                  Projekty
                 </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
@@ -87,7 +87,7 @@ export default async function BlogPage() {
               <div className="relative w-full md:max-w-[500px] lg:max-w-[650px] xl:max-w-[725px] xl:h-[350px] group">
                 {project.new && (
                   <div className="absolute top-2 left-2 font-bold bg-red-500 text-white px-4 py-2 rounded-full text-xs animate-bounce">
-                    NEW
+                    NOWY
                   </div>
                 )}
                 <Image
@@ -105,7 +105,7 @@ export default async function BlogPage() {
                             href={project.githubLink as string}
                             target="_blank"
                           >
-                            Github Code{" "}
+                            Kod GitHub{" "}
                             <HiExternalLink className="text-white" />
                           </Link>
                         </p>
@@ -116,14 +116,14 @@ export default async function BlogPage() {
                           href={project.link as string}
                           target="_blank"
                         >
-                          Live Site <HiExternalLink className="text-white" />
+                          Strona na żywo <HiExternalLink className="text-white" />
                         </Link>
                       </p>
                     </div>
 
                     <p className="text-base lg:text-lg font-bold hover:text-main cursor-pointer">
-                      <Link href={`/projects/${project.slug}`}>
-                        See Case Study
+                      <Link href={`/pl/projects/${project.slug}`}>
+                        Zobacz studium
                       </Link>
                     </p>
                   </div>

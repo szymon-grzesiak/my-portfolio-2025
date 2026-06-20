@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
-import { getProjectCaseStudy, projectCaseStudies } from "@/lib/data";
+import { getProjectCaseStudyPl, projectCaseStudiesPl } from "@/lib/data-pl";
 import ProjectCaseStudyTemplate from "@/components/landing/ProjectCaseStudyTemplate";
 
 interface ProjectPageProps {
@@ -8,18 +8,18 @@ interface ProjectPageProps {
 }
 
 export async function generateStaticParams() {
-  return projectCaseStudies.map((project) => ({ slug: project.slug }));
+  return projectCaseStudiesPl.map((project) => ({ slug: project.slug }));
 }
 
 export async function generateMetadata({
   params,
 }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = getProjectCaseStudy(slug);
+  const project = getProjectCaseStudyPl(slug);
 
   if (!project) {
     return {
-      title: "Project not found",
+      title: "Nie znaleziono projektu",
     };
   }
 
@@ -28,12 +28,12 @@ export async function generateMetadata({
     description: project.metadata.description,
     keywords: project.metadata.keywords,
     alternates: {
-      canonical: `${siteConfig.url}/projects/${project.slug}`,
+      canonical: `${siteConfig.url}/pl/projects/${project.slug}`,
     },
     openGraph: {
       title: project.metadata.title,
       description: project.metadata.description,
-      url: `${siteConfig.url}/projects/${project.slug}`,
+      url: `${siteConfig.url}/pl/projects/${project.slug}`,
     },
   };
 }
@@ -43,5 +43,5 @@ export default async function ProjectCaseStudyPage({
 }: ProjectPageProps) {
   const { slug } = await params;
 
-  return <ProjectCaseStudyTemplate slug={slug} isPolish={false} />;
+  return <ProjectCaseStudyTemplate slug={slug} isPolish={true} />;
 }

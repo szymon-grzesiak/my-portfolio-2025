@@ -2,7 +2,6 @@ import type { StaticImageData } from "next/image";
 import {
   FaGithub,
   FaGitAlt,
-  FaLaravel,
   FaReact,
   FaStripe,
 } from "react-icons/fa";
@@ -336,156 +335,49 @@ export const projects: ProjectType[] = [
     title: "Github",
     icon: () => <FaGithub className="mr-6 text-5xl" />,
   },
-  {
-    title: "Laravel",
-    icon: () => <FaLaravel className="mr-6 text-5xl" fill="#ff5530" />,
-  },
 ];
 
 export const timelineData = [
   {
-    title: "Sep 2025-Now",
-    occupation: "🕵️ [REDACTED] - Frontend Developer",
+    title: "09.2025 - Present",
+    occupation: "Frontend Developer",
     content: (
       <div className="flex flex-col pt-3">
         <p className="text-neutral-800 text-md font-normal">
-          Maybe it's Google, maybe it's AliExpress, and maybe I'm the McDonald's
-          CEO. Who knows? 🤷‍♂️
-        </p>
-        <p className="text-neutral-800 text-md font-normal mt-2">
-          What I can tell you is that I'm slinging React/TypeScript code daily,
-          and sometimes even wrestling with Angular when the situation calls for
-          it.
-        </p>
-        <p className="text-neutral-800 text-md font-normal mt-2 italic">
-          Plot twist: It's none of the above, but I'm keeping it mysterious 😎
+          Working as a Frontend Developer in big corpo.
         </p>
       </div>
     ),
   },
   {
-    title: "Jan 2025-Sep 2025",
+    title: "01.2025 - 09.2025",
     occupation: "Freelance/SaaS Developer",
     content: (
       <div className="flex flex-col pt-3">
-        <p className="text-neutral-800 text-md font-normal ">
-          As a freelance developer, I am focused on building SaaS projects that
-          solve real-world problems. I am currently working on several projects
-          that leverage the latest technologies to deliver high-quality
-          solutions.
+        <p className="text-neutral-800 text-md font-normal">
+          Focused on building custom web products and SaaS applications for clients using Next.js and TypeScript.
         </p>
-        <p className="font-medium py-3"> Some of the projects:</p>
-        <ul className="flex flex-col gap-2 ml-4 list-disc list-inside">
-          <li className="list-item">
-            <a
-              className="underline"
-              href="https://diffy.pl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              PipPulse Academy
-            </a>
-          </li>
-          <li className="list-item">
-            <a
-              className="underline"
-              href="https://www.hustlersgang.pl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Hustlers Gang
-            </a>
-          </li>
-          <li className="list-item">
-            <a
-              className="underline"
-              href="https://www.bnp.global"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              bnp.global
-            </a>
-          </li>
-          <li>
-            <a
-              className="underline"
-              href="https://cytrynuch.szymongrzesiak.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Cytrynuch
-            </a>
-          </li>
-          <li>
-            <a
-              className="underline"
-              href="https://www.wnetrzeraju.pl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Wnętrze Raju
-            </a>
-          </li>
-          And many more...
-        </ul>
       </div>
     ),
   },
   {
-    title: "Aug 2023-Jan 2025",
+    title: "08.2023 - 01.2025",
     occupation: "Helpfind - Frontend Developer",
     content: (
       <div className="flex flex-col pt-3">
-        <p className="text-neutral-800 text-md font-normal ">
-          During my time at the company, I contributed to the development of a
-          CRM system using React, while also creating websites with Next.js. My
-          work involved both enhancing the CRM and building dynamic, responsive
-          web pages.
+        <p className="text-neutral-800 text-md font-normal">
+          Contributed to building a large React-based CRM system and optimized dynamic customer portals using Next.js.
         </p>
-        <p className="font-medium py-3">Key responsibilities:</p>
-        <ul className="flex flex-col gap-2 ml-4 list-disc list-inside">
-          <li className="list-item">
-            Developed and refined reusable components, enhancing both the
-            efficiency and uniformity of the codebase.
-          </li>
-          <li className="list-item">
-            Collaborated with designers using Figma to implement projects
-            according to visual requirements.
-          </li>
-          <li className="list-item">
-            Played a key role in migrating the CRM system to a modern tech
-            stack, significantly improving its performance and user experience.
-          </li>
-        </ul>
-        <p className="font-medium py-3">Key Achievements:</p>
-        <ul className="ml-4 list-disc list-inside">
-          <li className="list-item">
-            Delivered a high-impact project, leading to increased customer
-            engagement with the new portal.
-          </li>
-          <li className="list-item">
-            Successfully launched two websites, ToTwojaKasa and Helpfind, using
-            Next.js.
-          </li>
-        </ul>
       </div>
     ),
   },
   {
-    title: "2021-2025",
+    title: "2021 - 2025",
     occupation: "University of Kalisz - Computer Science Student",
     content: (
       <div>
         <p className="text-neutral-800 pt-3 text-md font-normal mb-8">
-          During my engineering studies in Computer Science, I gained extensive
-          knowledge and practical skills in key areas of the field. I studied
-          advanced algorithms and object-oriented programming, primarily using
-          Java. As part of my coursework, I developed Android applications in
-          Java, which helped me build expertise in mobile programming. I also
-          worked with SQL Server databases, learning how to design and manage
-          relational databases. Additionally, I was introduced to PHP and the
-          basics of the Laravel framework, which enabled me to create dynamic
-          web applications.
+          Completed engineering studies in Computer Science, focusing on software engineering, database design, and web technologies.
         </p>
       </div>
     ),
@@ -506,10 +398,6 @@ export const curiosities = [
   "I finished Bachelor's degree with GPA 4.52 on a 5.0 scale 🤓",
   "I'm trying to learn new techs like AWS and Docker 🤓",
   "I love POP Punk music genre 🎸",
-  "I'm low-key really bad programmer :D",
-  "Shush 🤫, don't tell anyone, but I love to play League of Legends... and osu!",
-  "My blog is something I want to develop in the future 👌",
-  "Easter egg: here is my Discord: jsbr",
   "I plan to make SaaS projects",
   "If someone reads this, let's connect!",
 ];

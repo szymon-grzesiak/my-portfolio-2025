@@ -2,46 +2,53 @@
 import { useState } from "react";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { curiosities } from "@/lib/data";
+import { curiositiesPl } from "@/lib/data-pl";
 import angler from "@/assets/angler.png";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const AnglerSection = () => {
+  const pathname = usePathname();
+  const isPolish = pathname.startsWith("/pl");
+
   const [fact, setFact] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [fetchCount, setFetchCount] = useState(0);
-  //
-  const handleFetchCuriosity = () => {
-    setIsLoading(true); // Rozpocznij ładowanie
-    setFact(""); // Wyczyść poprzednią ciekawostkę
 
-    const randomIndex = Math.floor(Math.random() * curiosities.length);
-    setFact(curiosities[randomIndex]); // Ustaw wylosowaną ciekawostkę
-    setIsLoading(false); // Zakończ ładowanie
-    setFetchCount((c) => c + 1); // Zaktualizuj licznik fetchy
+  const activeCuriosities = isPolish ? curiositiesPl : curiosities;
+
+  const handleFetchCuriosity = () => {
+    setIsLoading(true);
+    setFact("");
+
+    const randomIndex = Math.floor(Math.random() * activeCuriosities.length);
+    setFact(activeCuriosities[randomIndex]);
+    setIsLoading(false);
+    setFetchCount((c) => c + 1);
   };
 
   return (
-    <section className="h-auto w-full flex md:px-6 justify-between md:justify-normal flex-col-reverse md:flex-row pt-6 md:pt-0">
-      <div className="shrink-0 w-2/3 md:w-auto md:h-full md:max-w-2/3 pb-14 md:pb-0 md:pl-0 lg:pl-15">
+    <section className="min-h-[450px] md:min-h-[500px] lg:min-h-[580px] w-full flex flex-col-reverse md:flex-row justify-between items-start py-12 md:py-16 pl-0 pr-6 md:px-12 gap-8 md:gap-16 relative md:pl-[130px]">
+      <div className="shrink-0 h-[250px] md:h-[350px] lg:h-[450px] flex items-end justify-center">
         <Image
           src={angler}
-          className="w-full h-auto md:w-auto md:h-full object-contain object-bottom"
-          alt={"A cute angler fish illustration"}
+          className="w-full h-full object-contain object-bottom"
+          alt={isPolish ? "Ilustracja uroczej żabnicy" : "A cute angler fish illustration"}
         />
       </div>
-      <div className="md:pt-4 lg:pt-10 flex flex-col justify-start items-center font-bold text-[32px] xl:px-6 w-full">
-        <p className="text-center font-bagel text-3xl">
-          MORE ABOUT ME{" "}
-          <span className="inline-block md:hidden lg:inline-block">🎲</span>
-        </p>
+      <div className="flex flex-col justify-center items-center font-bold text-[32px] w-full md:max-w-[650px] py-4 text-center">
+        <h2 className="font-display text-3xl md:text-4xl text-black">
+          {isPolish ? "WIĘCEJ O MNIE" : "MORE ABOUT ME"}{" "}
+          <span className="inline-block">🎲</span>
+        </h2>
         <button
           onClick={handleFetchCuriosity}
-          className="button flex h-[50px] justify-center items-center mt-5 w-[200px] cursor-pointer rounded-3xl border-2 border-black shadow-[4px_4px] shadow-black overflow-hidden"
+          className="button flex h-[50px] justify-center items-center mt-6 w-[200px] cursor-pointer rounded-3xl border-2 border-black shadow-[4px_4px] shadow-black overflow-hidden font-bold text-lg"
           disabled={isLoading}
         >
           {isLoading ? (
             <svg
-              className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+              className="animate-spin -ml-1 mr-3 h-5 w-5 text-black"
               viewBox="0 0 24 24"
             >
               <circle
@@ -59,11 +66,21 @@ const AnglerSection = () => {
               ></path>
             </svg>
           ) : (
-            <p className="z-10">Click</p>
+            <span className="z-10 text-black select-none font-bold text-lg">
+              {isPolish ? "Losuj" : "Click"}
+            </span>
           )}
         </button>
-        <div className="relative px-6 mt-5 h-[100px] w-full md:max-w-[800px]">
-          <TextGenerateEffect key={fetchCount} words={fact} />
+        <div className="relative px-4 mt-6 min-h-[140px] md:min-h-[160px] w-full flex items-start justify-center">
+          {fact ? (
+            <TextGenerateEffect key={fetchCount} words={fact} />
+          ) : (
+            <p className="text-neutral-500 font-normal text-lg italic mt-4">
+              {isPolish
+                ? "Kliknij przycisk, aby wylosować ciekawostkę!"
+                : "Click the button to reveal a fact!"}
+            </p>
+          )}
         </div>
       </div>
     </section>

@@ -21,7 +21,7 @@ import { StarIcon } from "./StarIcon";
 import { ButtonArrow } from "./ButtonArrow";
 import { DownloadIcon } from "./DownloadIcon";
 import { HamburgerIcon } from "./HamburgerIcon";
-import { FaFigma, FaJava, FaLaravel, FaReact } from "react-icons/fa";
+import { FaFigma, FaJava, FaReact } from "react-icons/fa";
 import { ChallengeArrow } from "./ChallengeArrow";
 import { TickIcon } from "./TickIcon";
 import { CallIcon } from "./CallIcon";
@@ -86,10 +86,6 @@ export const skillsIcons = [
   {
     name: "Java",
     icon: FaJava,
-  },
-  {
-    name: "Laravel",
-    icon: FaLaravel,
   },
   {
     name: "MongoDB",

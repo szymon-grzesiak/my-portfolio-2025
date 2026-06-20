@@ -28,9 +28,15 @@ const ExpandableScreenContext =
 function useExpandableScreen() {
   const context = useContext(ExpandableScreenContext);
   if (!context) {
-    throw new Error(
-      "useExpandableScreen must be used within an ExpandableScreen",
-    );
+    return {
+      isExpanded: false,
+      expand: () => {},
+      collapse: () => {},
+      layoutId: "",
+      triggerRadius: "",
+      contentRadius: "",
+      animationDuration: 0.3,
+    };
   }
   return context;
 }

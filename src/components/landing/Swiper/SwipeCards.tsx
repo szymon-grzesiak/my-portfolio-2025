@@ -15,6 +15,7 @@ import { HiExternalLink } from "react-icons/hi";
 import { slug } from "github-slugger";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 interface Props {
   content: {
@@ -24,10 +25,13 @@ interface Props {
     link?: string;
     githubLink?: string | null;
     new?: boolean;
+    slug?: string;
   }[];
 }
 
 const SwipeCards = ({ content }: Props) => {
+  const pathname = usePathname();
+  const isPolish = pathname.startsWith("/pl");
   return (
     <div className="py-6 px-2 w-full flex justify-center items-center bg-white/70 min-h-[600px] relative">
       <Swiper
@@ -75,14 +79,14 @@ const SwipeCards = ({ content }: Props) => {
                           href={content[index].link as string}
                           target="_blank"
                         >
-                          Live Site <HiExternalLink className="text-white" />
+                          {isPolish ? "Strona na żywo" : "Live Site"} <HiExternalLink className="text-white" />
                         </Link>
                       </p>
                     </div>
 
-                    <p className="text-base md:text-lg font-bold hover:text-[#00E5FF] cursor-pointer">
-                      <Link href={`/${slug(content[index].title)}`}>
-                        See Case Study
+                    <p className="text-base md:text-lg font-bold hover:text-main cursor-pointer">
+                      <Link href={`${isPolish ? "/pl" : ""}/projects/${content[index].slug ?? slug(content[index].title)}`}>
+                        {isPolish ? "Zobacz studium" : "See Case Study"}
                       </Link>
                     </p>
                   </div>

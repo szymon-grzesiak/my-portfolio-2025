@@ -1,0 +1,94 @@
+---
+title: "Mój stos technologiczny na rok 2025"
+description: "Szczegółowa analiza nowoczesnych narzędzi i filozofii projektowych, które kształtują moje projekty w 2025 roku, w tym React, Supabase i Material Design v3."
+date: 2025-03-29
+tags: [ReactJS, Supabase, TypeScript, TailwindCSS, Material Design, Neobrutalizm, Next.js, Prisma, AWS]
+published: true
+---
+
+## Ewolucja Mojego Stosu Technologicznego w 2025 roku
+
+Nadążanie za nieustannie zmieniającym się ekosystemem JavaScriptu przypomina próby napicia się wody z hydrantu. Po latach eksperymentów wreszcie zdecydowałem się na stos technologiczny, który równoważy nowoczesność z pragmatyzmem – oto co sprawdza się u mnie w 2025 roku.
+
+### Frontend: Gdzie piękno spotyka się z wydajnością
+
+Mój obecny arsenał frontendowy łączy to, co najlepsze w nowoczesnych narzędziach z przemyślanymi zasadami projektowania:
+
+1. **ReactJS + TypeScript**  
+   Fundamentem pozostaje React wraz z TypeScriptem zapewniającym bezpieczeństwo typów. Bez niespodzianek – to chleb powszedni współczesnego web developmentu.
+
+2. **Tailwind CSS v4 + ShadcnUI + HeroUI**
+
+   ```tsx
+   // Przykładowy komponent z użyciem ShadcnUI i Tailwind CSS
+   import { Button } from "@/components/ui/button";
+
+   export const HeroSection = () => (
+     <div className="flex min-h-screen bg-linear-to-r from-cyan-500 to-blue-500">
+       <Button variant="outline" className="mt-40">
+         Zacznij teraz
+       </Button>
+     </div>
+   );
+   ```
+
+3. **Filozofia projektowania**  
+   Łączę dopracowane komponenty **Material Design v3** (zwłaszcza ich system ruchu i animacji) z akcentami **neobrutalizmu** – wyobraź sobie odważne, mocne cienie i przesadzone, czarne obramowania dla kluczowych elementów.
+
+4. **3D i Ruch**  
+   Three.js obsługuje zaawansowane wizualizacje 3D, podczas gdy Framer Motion tworzy płynne przejścia między stronami.
+
+### Backend: Supabase do wszystkiego
+
+Po latach korzystania z NextAuth i Prisma, w pełni zaufałem platformie **Supabase** w zakresie:
+
+- **Autoryzacji** (zastąpiła NextAuth)
+- **Bazy danych PostgreSQL** z zabezpieczeniami na poziomie wierszy (RLS)
+- **Procedur składowanych** poprzez możliwości RPC w PostgreSQL
+
+```sql
+-- Przykładowa procedura RPC w Supabase
+CREATE OR REPLACE FUNCTION get_user_posts(uid text)
+RETURNS SETOF posts AS $$
+  SELECT * FROM posts WHERE author_id = uid
+$$ LANGUAGE SQL SECURITY DEFINER;
+```
+
+### Narzędzia wspierające
+
+1. **E-maile i płatności**
+   - **Resend** do e-maili transakcyjnych (pożegnałem SendGrid)
+   - **Stripe** do płatności, w pełnej zgodności z nowymi unijnymi regulacjami z 2024 roku
+
+2. **CMS**  
+   **Payload CMS** pozostaje moim ulubionym bezgłowym (headless) CMS-em dla projektów opartych na dużej ilości treści.
+
+3. **Infrastruktura**
+   - **Vercel** do hostowania frontendu i funkcji bezserwerowych (Serverless Functions)
+   - **Railway** do mikroserwisów opartych na Pythonie
+   - **Nauka AWS** w toku (obecnie opanowuję EC2 oraz RDS)
+
+### Dlaczego ten stos się sprawdza
+
+1. **Elastyczność Supabase**  
+   To kompleksowe rozwiązanie zmniejszyło moje zużycie AWS o 60% przy jednoczesnym zachowaniu pełnej skalowalności.
+
+2. **Spójność wizualna**  
+   Material Design v3 zapewnia solidne fundamenty, podczas gdy neobrutalistyczne akcenty dodają zapamiętywalnego charakteru.
+
+3. **Wydajność**  
+   Nowy kompilator JIT w Tailwind v4 zmniejszył rozmiar paczki CSS o 35% w porównaniu do wersji v3.
+
+### Plany na przyszłość
+
+Obecnie zagłębiam się w:
+
+- **Certyfikaty AWS** (od Cloud Practitioner do Solutions Architect)
+- **Supabase Edge Functions** dla globalnych interfejsów API o niskich opóźnieniach
+- **WebGPU** i jego integrację z Three.js, aby wejść na wyższy poziom renderowania 3D
+
+## Przemyślenia końcowe
+
+Ten stos nie powstał po to, by gonić za najnowszymi modami – chodzi o używanie sprawdzonych w bojach narzędzi, które świetnie ze sobą współpracują. Choć wciąż korzystam z tradycyjnego SQL obok nowoczesnego TypeScriptu, kluczem jest utrzymanie równowagi między innowacyjnością a łatwością utrzymania kodu.
+
+Jak powiedział wybitny Alan Kay: _„Najlepszym sposobem na przewidzenie przyszłości jest jej wynalezienie”_. Życzę udanego budowania jeszcze lepszych doświadczeń w sieci w roku 2025 i kolejnych latach!

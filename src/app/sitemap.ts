@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { posts } from "#site/content";
+import { posts } from "@/lib/posts";
 import { slug } from "github-slugger";
 import { siteConfig } from "@/config/site";
 import { projectCaseStudies } from "@/lib/data";
@@ -34,7 +34,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "daily" as const,
     },
     {
+      url: `${baseUrl}/pl`,
+      priority: 1.0,
+      changeFrequency: "daily" as const,
+    },
+    {
       url: `${baseUrl}/blog`,
+      priority: 0.9,
+      changeFrequency: "daily" as const,
+    },
+    {
+      url: `${baseUrl}/pl/blog`,
       priority: 0.9,
       changeFrequency: "daily" as const,
     },
@@ -44,7 +54,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly" as const,
     },
     {
+      url: `${baseUrl}/pl/tags`,
+      priority: 0.6,
+      changeFrequency: "weekly" as const,
+    },
+    {
       url: `${baseUrl}/projects`,
+      priority: 0.8,
+      changeFrequency: "weekly" as const,
+    },
+    {
+      url: `${baseUrl}/pl/projects`,
       priority: 0.8,
       changeFrequency: "weekly" as const,
     },

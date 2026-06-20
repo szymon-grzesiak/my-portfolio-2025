@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import { Poppins, Jersey_10, Bagel_Fat_One } from "next/font/google";
+import { Poppins, Anton } from "next/font/google";
 import { Providers } from "@/components/shared/providers";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -16,18 +16,11 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-const jersey = Jersey_10({
+const spaceGrotesk = Anton({
   subsets: ["latin"],
   display: "swap",
   weight: ["400"],
-  variable: "--font-jersey",
-});
-
-const bagel = Bagel_Fat_One({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400"],
-  variable: "--font-bagel",
+  variable: "--font-display",
 });
 
 export const metadata: Metadata = {
@@ -160,7 +153,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${jersey.variable} ${bagel.variable} font-sans antialiased text-black bg-white`}
+      className={`${poppins.variable} ${spaceGrotesk.variable} font-sans antialiased text-black bg-white`}
       suppressHydrationWarning
     >
       <head>
@@ -182,9 +175,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
 
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
 
         {/* Google Analytics */}
         <Script
@@ -203,13 +194,13 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="min-h-screen">
-          {children}
-          <Sidebar />
-          <div className="block md:hidden fixed z-200 right-4 bottom-4">
-            <FamilyButton />
-          </div>
-          <Analytics />
-          <SpeedInsights />
+        {children}
+        <Sidebar />
+        <div className="block md:hidden fixed z-200 right-4 bottom-4">
+          <FamilyButton />
+        </div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
