@@ -53,6 +53,11 @@ export const projectsDataPl = projectsData.map((project) => {
   let heroTagline = project.heroTagline;
 
   switch (project.slug) {
+    case "parafia-latowice":
+      description =
+        "Strona internetowa Parafii pw. Matki Bożej Częstochowskiej w Latowicach, stworzona w celu udostępniania ogłoszeń parafialnych, historii oraz ułatwienia kontaktu z parafianami.";
+      heroTagline = "Portal społeczności parafialnej";
+      break;
     case "diffy":
       description =
         "PipPulse Academy to platforma edukacyjna oferująca kompleksowy kurs metodologii tradingu dla profesjonalnych inwestorów.";

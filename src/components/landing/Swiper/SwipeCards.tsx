@@ -26,6 +26,7 @@ interface Props {
     githubLink?: string | null;
     new?: boolean;
     slug?: string;
+    noCaseStudy?: boolean;
   }[];
 }
 
@@ -84,11 +85,13 @@ const SwipeCards = ({ content }: Props) => {
                       </p>
                     </div>
 
-                    <p className="text-base md:text-lg font-bold hover:text-main cursor-pointer">
-                      <Link href={`${isPolish ? "/pl" : ""}/projects/${content[index].slug ?? slug(content[index].title)}`}>
-                        {isPolish ? "Zobacz studium" : "See Case Study"}
-                      </Link>
-                    </p>
+                    {!content[index].noCaseStudy && (
+                      <p className="text-base md:text-lg font-bold hover:text-main cursor-pointer">
+                        <Link href={`${isPolish ? "/pl" : ""}/projects/${content[index].slug ?? slug(content[index].title)}`}>
+                          {isPolish ? "Zobacz studium" : "See Case Study"}
+                        </Link>
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>

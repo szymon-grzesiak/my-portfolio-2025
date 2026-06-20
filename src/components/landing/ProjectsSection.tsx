@@ -44,6 +44,7 @@ export const ProjectsSection = ({
     githubLink?: string | null;
     slug?: string;
     new?: boolean;
+    noCaseStudy?: boolean;
   }[];
   contentClassName?: string;
 }) => {
@@ -220,15 +221,17 @@ export const ProjectsSection = ({
                 </p>
               </div>
 
-              <p className="text-base lg:text-lg font-bold hover:text-main cursor-pointer">
-                <Link
-                  href={`${isPolish ? "/pl" : ""}/projects/${
-                    content[activeCard].slug ?? slug(content[activeCard].title)
-                  }`}
-                >
-                  {isPolish ? "Zobacz studium" : "See Case Study"}
-                </Link>
-              </p>
+              {!content[activeCard].noCaseStudy && (
+                <p className="text-base lg:text-lg font-bold hover:text-main cursor-pointer">
+                  <Link
+                    href={`${isPolish ? "/pl" : ""}/projects/${
+                      content[activeCard].slug ?? slug(content[activeCard].title)
+                    }`}
+                  >
+                    {isPolish ? "Zobacz studium" : "See Case Study"}
+                  </Link>
+                </p>
+              )}
             </div>
           </div>
         </div>

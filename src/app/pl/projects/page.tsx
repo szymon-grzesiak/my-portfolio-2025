@@ -121,11 +121,13 @@ export default async function ProjectsPage() {
                       </p>
                     </div>
 
-                    <p className="text-base lg:text-lg font-bold hover:text-main cursor-pointer">
-                      <Link href={`/pl/projects/${project.slug}`}>
-                        Zobacz studium
-                      </Link>
-                    </p>
+                    {!project.noCaseStudy && (
+                      <p className="text-base lg:text-lg font-bold hover:text-main cursor-pointer">
+                        <Link href={`/pl/projects/${project.slug}`}>
+                          Zobacz studium
+                        </Link>
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>

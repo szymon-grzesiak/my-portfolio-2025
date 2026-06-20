@@ -12,6 +12,7 @@ import hustlersBg from "@/assets/hustlersBg.jpg";
 import wnetrzeBg from "@/assets/wnetrzeBg.jpg";
 import cytrynuchBg from "@/assets/cytrynuchBg.jpg";
 import diffy from "@/assets/diffy.png";
+import parafiaBg from "@/assets/parafia_latowice.png";
 
 import {
   SiClerk,
@@ -262,6 +263,7 @@ export interface ProjectSummary {
   githubLink: string | null;
   new?: boolean;
   heroTagline?: string;
+  noCaseStudy?: boolean;
 }
 
 export interface ProjectFeature {
@@ -403,6 +405,18 @@ export const curiosities = [
 ];
 
 export const projectsData: ProjectSummary[] = [
+  {
+    title: "Parafia Latowice",
+    slug: "parafia-latowice",
+    description:
+      "Website for the Parish of Our Lady of Częstochowa in Latowice, built to provide parish announcements, histories, and direct communication to parishioners.",
+    content: parafiaBg,
+    link: "https://www.parafialatowice.pl/",
+    githubLink: null,
+    new: true,
+    heroTagline: "Parish community portal",
+    noCaseStudy: true,
+  },
   {
     title: "PipPulse Academy",
     slug: "diffy",

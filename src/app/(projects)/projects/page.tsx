@@ -121,11 +121,13 @@ export default async function BlogPage() {
                       </p>
                     </div>
 
-                    <p className="text-base lg:text-lg font-bold hover:text-main cursor-pointer">
-                      <Link href={`/projects/${project.slug}`}>
-                        See Case Study
-                      </Link>
-                    </p>
+                    {!project.noCaseStudy && (
+                      <p className="text-base lg:text-lg font-bold hover:text-main cursor-pointer">
+                        <Link href={`/projects/${project.slug}`}>
+                          See Case Study
+                        </Link>
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
