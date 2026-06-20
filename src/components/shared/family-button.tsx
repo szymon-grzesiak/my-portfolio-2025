@@ -114,7 +114,7 @@ const FamilyButton = () => {
                   className="h-full"
                 >
                   <ul className="flex flex-col items-start p-6 justify-between h-full w-full">
-                    <Link href={"/"} onClick={handleLinkClick} className="mb-6">
+                    <Link href={isPolish ? "/pl" : "/"} onClick={handleLinkClick} className="mb-6">
                       <Image src={logo64} width={50} height={50} alt="Logo" />
                     </Link>
                     <div className="flex flex-col items-start justify-center h-full gap-5 mt-2">
@@ -152,7 +152,10 @@ const FamilyButton = () => {
                       <div className="flex gap-4 items-center font-display text-xl border-t border-white/20 pt-3 w-full">
                         <Link
                           href={enHref}
-                          onClick={handleLinkClick}
+                          onClick={() => {
+                            document.cookie = "user-selected-lang=en; path=/; max-age=31536000";
+                            handleLinkClick();
+                          }}
                           className={cn(
                             "hover:text-main transition-colors duration-200",
                             !isPolish ? "text-main underline font-bold" : "text-neutral-400 font-medium"
@@ -162,7 +165,10 @@ const FamilyButton = () => {
                         </Link>
                         <Link
                           href={plHref}
-                          onClick={handleLinkClick}
+                          onClick={() => {
+                            document.cookie = "user-selected-lang=pl; path=/; max-age=31536000";
+                            handleLinkClick();
+                          }}
                           className={cn(
                             "hover:text-main transition-colors duration-200",
                             isPolish ? "text-main underline font-bold" : "text-neutral-400 font-medium"

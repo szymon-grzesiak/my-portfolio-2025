@@ -7,6 +7,8 @@ import {
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
+import { usePathname } from "next/navigation";
+
 interface TimelineEntry {
   occupation: string;
   title: string;
@@ -17,6 +19,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
+  const pathname = usePathname();
+  const isPolish = pathname.startsWith("/pl");
 
   useEffect(() => {
     if (ref.current) {
@@ -40,7 +44,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           id="about"
           className="text-3xl mb-10 text-black font-bold font-display tracking-wide"
         >
-          ABOUT ME
+          {isPolish ? "O MNIE" : "ABOUT ME"}
         </h2>
       </div>
 

@@ -28,15 +28,15 @@ const AnglerSection = () => {
   };
 
   return (
-    <section className="min-h-[450px] md:min-h-[500px] lg:min-h-[580px] w-full flex flex-col-reverse md:flex-row justify-between items-start py-12 md:py-16 pl-0 pr-6 md:px-12 gap-8 md:gap-16 relative md:pl-[130px]">
-      <div className="shrink-0 h-[250px] md:h-[350px] lg:h-[450px] flex items-end justify-center">
+    <section className="h-auto w-full flex md:px-6 justify-between md:justify-normal flex-col-reverse md:flex-row pt-6 md:pt-0">
+      <div className="shrink-0 w-2/3 md:w-auto md:h-full md:max-w-2/3 pb-14 md:pb-0 md:pl-0 lg:pl-15">
         <Image
           src={angler}
-          className="w-full h-full object-contain object-bottom"
+          className="w-full h-auto md:w-auto md:h-full object-contain object-bottom"
           alt={isPolish ? "Ilustracja uroczej żabnicy" : "A cute angler fish illustration"}
         />
       </div>
-      <div className="flex flex-col justify-center items-center font-bold text-[32px] w-full md:max-w-[650px] py-4 text-center">
+      <div className="md:pt-4 lg:pt-10 flex flex-col justify-start items-center font-bold text-[32px] xl:px-6 w-full max-w-[650px] md:mx-auto text-center">
         <h2 className="font-display text-3xl md:text-4xl text-black">
           {isPolish ? "WIĘCEJ O MNIE" : "MORE ABOUT ME"}{" "}
           <span className="inline-block">🎲</span>
@@ -66,7 +66,7 @@ const AnglerSection = () => {
               ></path>
             </svg>
           ) : (
-            <span className="z-10 text-black select-none font-bold text-lg">
+            <span className="z-10 text-current select-none font-bold text-lg">
               {isPolish ? "Losuj" : "Click"}
             </span>
           )}

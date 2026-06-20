@@ -79,7 +79,7 @@ const Sidebar = () => {
     <div className="hidden md:block w-[130px] px-2 md:px-4 fixed left-0 top-0 h-screen bg-white/70 border-r-2 border-r-slate-400 backdrop-blur-xl z-100">
       <ul className="flex h-screen flex-col justify-between items-center py-6 gap-16">
         <li>
-          <Link href={"/"}>
+          <Link href={isPolish ? "/pl" : "/"}>
             <Image src={logo64} width={50} height={50} alt="Logo" />
           </Link>
         </li>
@@ -108,6 +108,9 @@ const Sidebar = () => {
           <div className="flex items-center gap-1 bg-white border-2 border-black p-0.5 rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-xs font-base font-display shrink-0 mb-4">
             <Link
               href={enHref}
+              onClick={() => {
+                document.cookie = "user-selected-lang=en; path=/; max-age=31536000";
+              }}
               className={cn(
                 "px-2 py-0.5 rounded-md transition-all duration-200",
                 !isPolish
@@ -119,6 +122,9 @@ const Sidebar = () => {
             </Link>
             <Link
               href={plHref}
+              onClick={() => {
+                document.cookie = "user-selected-lang=pl; path=/; max-age=31536000";
+              }}
               className={cn(
                 "px-2 py-0.5 rounded-md transition-all duration-200",
                 isPolish
