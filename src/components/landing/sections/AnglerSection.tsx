@@ -28,15 +28,15 @@ const AnglerSection = () => {
   };
 
   return (
-    <section className="h-auto w-full flex md:px-6 justify-between md:justify-normal flex-col-reverse md:flex-row pt-6 md:pt-0">
-      <div className="shrink-0 w-2/3 md:w-auto md:h-full md:max-w-2/3 pb-14 md:pb-0 md:pl-0 lg:pl-15">
+    <section className="h-auto md:h-[500px] lg:h-[600px] w-full flex md:pl-[130px] md:pr-6 justify-between md:justify-normal flex-col-reverse md:flex-row pt-6 md:pt-0">
+      <div className="shrink-0 w-2/3 md:w-auto md:h-full md:max-w-2/3 pb-14 md:pb-0 md:pl-0">
         <Image
           src={angler}
           className="w-full h-auto md:w-auto md:h-full object-contain object-bottom"
           alt={isPolish ? "Ilustracja uroczej żabnicy" : "A cute angler fish illustration"}
         />
       </div>
-      <div className="md:pt-4 lg:pt-10 flex flex-col justify-start items-center font-bold text-[32px] xl:px-6 w-full max-w-[650px] md:mx-auto text-center">
+      <div className="md:pt-8 lg:pt-14 flex flex-col justify-start items-center font-bold text-[32px] xl:px-6 w-full max-w-[650px] md:mx-auto text-center">
         <h2 className="font-display text-3xl md:text-4xl text-black">
           {isPolish ? "WIĘCEJ O MNIE" : "MORE ABOUT ME"}{" "}
           <span className="inline-block">🎲</span>
