@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <main className="relative mx-auto landing">
       <Clouds color="white" rotate position="top" />
-      <section className="lg:h-[90vh] px-6 pt-40 lg:pt-0 md:flex-row w-full flex items-center md:items-end justify-center gap-8 lg:gap-16 xl:gap-24 md:px-10 flex-col-reverse md:pl-[130px]">
+      <section className="lg:h-[calc(90vh+100px)] px-6 pt-40 lg:pt-0 md:flex-row w-full flex items-center md:items-end justify-center gap-8 lg:gap-16 xl:gap-24 md:px-10 flex-col-reverse md:pl-[130px]">
         <Image
           src={port}
           quality={75}
@@ -72,7 +72,7 @@ export default function Home() {
                 </span>
               </div>
 
-              <h1 className="font-display font-medium text-[2.2rem] min-[380px]:text-[2.8rem] sm:text-5xl md:text-4xl lg:text-5xl xl:text-7xl leading-[1.2] uppercase tracking-wider text-black">
+              <h1 className="font-display font-medium text-[1.8rem] min-[380px]:text-[2.2rem] sm:text-5xl md:text-4xl lg:text-5xl xl:text-7xl leading-[1.2] uppercase tracking-wider text-black">
                 Projektuję & wdrażam.<br />
                 <span className="text-zinc-500">Dbam o</span><br />
                 <WordRotate 
@@ -83,7 +83,8 @@ export default function Home() {
                     "szybkie ładowanie.",
                     "responsywny design.",
                   ]} 
-                  duration={3000} 
+                  className="text-indigo-600 underline decoration-wavy decoration-zinc-800 decoration-1 md:decoration-2 underline-offset-4 sm:underline-offset-6 md:underline-offset-[10px]"
+                  duration={3500} 
                 />
               </h1>
             </div>
