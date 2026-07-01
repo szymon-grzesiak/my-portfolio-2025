@@ -1,6 +1,5 @@
 import { MetadataRoute } from "next";
 import { posts } from "@/lib/posts";
-import { slug } from "github-slugger";
 import { siteConfig } from "@/config/site";
 import { projectCaseStudies } from "@/lib/data";
 
@@ -49,16 +48,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "daily" as const,
     },
     {
-      url: `${baseUrl}/tags`,
-      priority: 0.6,
-      changeFrequency: "weekly" as const,
-    },
-    {
-      url: `${baseUrl}/pl/tags`,
-      priority: 0.6,
-      changeFrequency: "weekly" as const,
-    },
-    {
       url: `${baseUrl}/projects`,
       priority: 0.8,
       changeFrequency: "weekly" as const,
@@ -68,23 +57,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
       changeFrequency: "weekly" as const,
     },
+    {
+      url: `${baseUrl}/contact`,
+      priority: 0.8,
+      changeFrequency: "weekly" as const,
+    },
+    {
+      url: `${baseUrl}/pl/contact`,
+      priority: 0.8,
+      changeFrequency: "weekly" as const,
+    },
+    {
+      url: `${baseUrl}/privacy-policy`,
+      priority: 0.5,
+      changeFrequency: "monthly" as const,
+    },
+    {
+      url: `${baseUrl}/pl/privacy-policy`,
+      priority: 0.5,
+      changeFrequency: "monthly" as const,
+    },
   ];
-
-  const allTags = new Set(
-    publishedPosts.flatMap((post: Post) => post.tags || [])
-  );
-  const tagEntries = Array.from(allTags).flatMap((tag) => [
-    {
-      url: `${baseUrl}/tags/${slug(tag)}`,
-      priority: 0.5,
-      changeFrequency: "weekly" as const,
-    },
-    {
-      url: `${baseUrl}/pl/tags/${slug(tag)}`,
-      priority: 0.5,
-      changeFrequency: "weekly" as const,
-    },
-  ]);
 
   const projectEntries = projectCaseStudies.flatMap((project) => [
     {
@@ -102,7 +95,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...staticRoutes,
     ...blogPostEntries,
-    ...tagEntries,
     ...projectEntries,
   ];
 }

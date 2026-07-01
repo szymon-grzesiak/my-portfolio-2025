@@ -11,15 +11,24 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Artykuły i przemyślenia na temat programowania, technologii webowych i moich doświadczeń.",
+    "Artykuły i przemyślenia na temat programowania, nowoczesnych technologii webowych oraz moich doświadczeń jako Full Stack Developer. Zapraszam do czytania!",
   alternates: {
     canonical: `${siteConfig.url}/pl/blog`,
   },
   openGraph: {
     title: "Blog | Szymon Grzesiak",
     description:
-      "Artykuły i przemyślenia na temat programowania, technologii webowych i moich doświadczeń.",
+      "Artykuły i przemyślenia na temat programowania, nowoczesnych technologii webowych oraz moich doświadczeń jako Full Stack Developer. Zapraszam do czytania!",
     url: `${siteConfig.url}/pl/blog`,
+    type: "website",
+    images: [
+      {
+        url: "https://szymongrzesiak.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Szymon Grzesiak Portfolio",
+      },
+    ],
   },
 };
 export default async function BlogPage() {

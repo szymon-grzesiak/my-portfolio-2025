@@ -27,6 +27,15 @@ export const metadata: Metadata = {
     description:
       "Explore my projects showcasing my skills in web development, including Next.js, React, and TypeScript. View case studies and live demos.",
     url: `${siteConfig.url}/projects`,
+    type: "website",
+    images: [
+      {
+        url: "https://szymongrzesiak.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Szymon Grzesiak Portfolio",
+      },
+    ],
   },
 };
 

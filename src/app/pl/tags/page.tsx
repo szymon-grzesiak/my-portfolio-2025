@@ -14,6 +14,25 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteConfig.url}/pl/tags`,
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
+  openGraph: {
+    title: "Tagi | Szymon Grzesiak",
+    description:
+      "Przeglądaj wszystkie tematy i tagi, o których piszę na blogu, w tym programowanie, technologie webowe, Next.js, React i inne.",
+    url: `${siteConfig.url}/pl/tags`,
+    type: "website",
+    images: [
+      {
+        url: "https://szymongrzesiak.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Szymon Grzesiak Portfolio",
+      },
+    ],
+  },
 };
 
 export default async function TagsPage() {

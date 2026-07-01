@@ -54,6 +54,10 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://szymongrzesiak.dev/pl/tags/${tag}`,
     },
+    robots: {
+      index: false,
+      follow: true,
+    },
   };
 }
 

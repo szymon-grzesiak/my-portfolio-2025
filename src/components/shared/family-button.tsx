@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils"; // Upewnij się, że masz poprawny import
 import logo64 from "../../app/logo-64.png";
+import postsMeta from "@/lib/posts-meta.json";
 
 const CONTAINER_SIZE = 540;
 
@@ -33,18 +34,45 @@ const FamilyButton = () => {
     const isProjectStudy = pathname.includes("/projects/") || pathname.includes("/pl/projects/");
 
     if (isBlogPost) {
-      if (!isPolish) {
-        plHref = "/pl/blog";
+      const match = pathname.match(/(?:\/pl)?\/blog\/(.+)$/);
+      const postSlug = match ? match[1] : "";
+
+      if (postSlug) {
+        if (!isPolish) {
+          const plExists = postsMeta.some(
+            (p) => p.locale === "pl" && p.slugAsParams === `pl/${postSlug}`
+          );
+          plHref = plExists ? `/pl/blog/${postSlug}` : "/pl/blog";
+        } else {
+          const enExists = postsMeta.some(
+            (p) => p.locale === "en" && p.slugAsParams === `en/${postSlug}`
+          );
+          enHref = enExists ? `/blog/${postSlug}` : "/blog";
+        }
       } else {
-        enHref = pathname.replace(/^\/pl/, "") || "/";
+        if (!isPolish) {
+          plHref = "/pl/blog";
+        } else {
+          enHref = "/blog";
+        }
       }
     }
 
     if (isProjectStudy) {
-      if (!isPolish) {
-        plHref = "/pl/projects";
+      const match = pathname.match(/(?:\/pl)?\/projects\/(.+)$/);
+      const projectSlug = match ? match[1] : "";
+      if (projectSlug) {
+        if (!isPolish) {
+          plHref = `/pl/projects/${projectSlug}`;
+        } else {
+          enHref = `/projects/${projectSlug}`;
+        }
       } else {
-        enHref = pathname.replace(/^\/pl/, "") || "/";
+        if (!isPolish) {
+          plHref = "/pl/projects";
+        } else {
+          enHref = "/projects";
+        }
       }
     }
 

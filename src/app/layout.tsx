@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Szymon Grzesiak | Full Stack Developer Portfolio",
     description:
-      "Experienced Full Stack Developer creating modern, responsive web applications. Explore my portfolio showcasing projects in Next.js, React, and TypeScript.",
+      "Experienced Full Stack Developer creating modern, responsive web apps. Explore my portfolio showcasing projects in Next.js, React, and TypeScript.",
     url: "https://szymongrzesiak.dev",
     siteName: "Szymon Grzesiak Portfolio",
     locale: "en_US",

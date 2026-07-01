@@ -34,6 +34,15 @@ export async function generateMetadata({
       title: project.metadata.title,
       description: project.metadata.description,
       url: `${siteConfig.url}/projects/${project.slug}`,
+      type: "article",
+      images: [
+        {
+          url: `/api/og?title=${encodeURIComponent(project.title)}`,
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        },
+      ],
     },
   };
 }

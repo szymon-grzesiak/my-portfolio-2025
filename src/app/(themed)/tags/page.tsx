@@ -46,6 +46,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteConfig.url}/tags`,
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default async function TagsPage() {

@@ -42,12 +42,12 @@ export async function generateMetadata({
   const ogSearchParams = new URLSearchParams();
   ogSearchParams.set("title", post.title);
   return {
-    title: `${post.title}` || "Blog | Szymon Grzesiak",
+    title: post.metaTitle || post.title || "Blog | Szymon Grzesiak",
     description: post.description || "Przeczytaj ten artykuł na moim blogu.",
     authors: { name: siteConfig.author },
     keywords: post.tags,
     openGraph: {
-      title: post.title || "Blog | Szymon Grzesiak",
+      title: post.metaTitle || post.title || "Blog | Szymon Grzesiak",
       description:
         post.description || "Przeczytaj ten artykuł na moim blogu.",
       type: "article",

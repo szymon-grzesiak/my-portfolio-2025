@@ -27,6 +27,15 @@ export const metadata: Metadata = {
     description:
       "Poznaj zrealizowane przeze mnie projekty programistyczne w Next.js, React i TypeScript. Zobacz studia przypadków i demonstracje.",
     url: `${siteConfig.url}/pl/projects`,
+    type: "website",
+    images: [
+      {
+        url: "https://szymongrzesiak.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Szymon Grzesiak Portfolio",
+      },
+    ],
   },
 };
 

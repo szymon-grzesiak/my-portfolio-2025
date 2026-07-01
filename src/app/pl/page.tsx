@@ -41,6 +41,14 @@ export const metadata: Metadata = {
       "Studia przypadków projektów, tworzenie produktów oraz inżynieria oprogramowania z użyciem Next.js i TypeScript.",
     url: `${siteConfig.url}/pl`,
     type: "website",
+    images: [
+      {
+        url: "https://szymongrzesiak.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Szymon Grzesiak Portfolio",
+      },
+    ],
   },
 };
 

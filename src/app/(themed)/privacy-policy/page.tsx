@@ -11,9 +11,23 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Szymon Grzesiak",
-  description: "Privacy Policy and GDPR compliance details for the contact form of Szymon Grzesiak's portfolio.",
+  description: "Privacy Policy and GDPR compliance details for the contact form of Szymon Grzesiak's portfolio website. Learn how your personal data is handled and protected.",
   alternates: {
     canonical: `${siteConfig.url}/privacy-policy`,
+  },
+  openGraph: {
+    title: "Privacy Policy | Szymon Grzesiak",
+    description: "Privacy Policy and GDPR compliance details for the contact form of Szymon Grzesiak's portfolio website. Learn how your personal data is handled and protected.",
+    url: `${siteConfig.url}/privacy-policy`,
+    type: "website",
+    images: [
+      {
+        url: "https://szymongrzesiak.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Szymon Grzesiak Portfolio",
+      },
+    ],
   },
 };
 

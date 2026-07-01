@@ -44,12 +44,12 @@ export async function generateMetadata({
   const ogSearchParams = new URLSearchParams();
   ogSearchParams.set("title", post.title);
   return {
-    title: `${post.title}` || "Blog by Szymon Grzesiak",
+    title: post.metaTitle || post.title || "Blog by Szymon Grzesiak",
     description: post.description || "Read this insightful article on my blog.",
     authors: { name: siteConfig.author },
     keywords: post.tags,
     openGraph: {
-      title: post.title || "Blog by Szymon Grzesiak",
+      title: post.metaTitle || post.title || "Blog by Szymon Grzesiak",
       description:
         post.description || "Read this insightful article on my blog.",
       type: "article",

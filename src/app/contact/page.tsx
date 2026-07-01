@@ -18,6 +18,15 @@ export const metadata: Metadata = {
     title: "Services, Process & Contact | Szymon Grzesiak",
     description: "Learn how I build fast e-commerce shops, websites, and AI tools. Review process, baseline pricing, FAQs, and get in touch.",
     url: `${siteConfig.url}/contact`,
+    type: "website",
+    images: [
+      {
+        url: "https://szymongrzesiak.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Szymon Grzesiak Portfolio",
+      },
+    ],
   },
 };
 

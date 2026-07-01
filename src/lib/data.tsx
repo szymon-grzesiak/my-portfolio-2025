@@ -767,7 +767,7 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     metadata: {
       title: "Cytrynuch TikToker Case Study",
       description:
-        "A colourful hub for a Polish TikTok creator with space for campaigns, socials, and collaborations.",
+        "Case study of Cytrynuch: a colorful, engaging hub for a Polish TikTok creator with spaces for brand campaigns, socials, and business collaborations.",
       keywords: ["creator website", "TikTok", "portfolio"],
     },
     overview: [

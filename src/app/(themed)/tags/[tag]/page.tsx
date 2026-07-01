@@ -25,8 +25,7 @@ export async function generateMetadata({
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
-  // REWRITTEN: A longer, more engaging description for better CTR.
-  const newDescription = `Explore a curated collection of in-depth articles, tutorials, and insights on ${formattedTag}. Dive deep into practical examples and stay ahead with the latest trends.`;
+  const newDescription = `Explore articles, tutorials, and insights on ${formattedTag}. Learn from practical examples and stay updated with the latest trends.`;
 
   return {
     title: `Posts about ${formattedTag}`,
@@ -54,6 +53,10 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `https://szymongrzesiak.dev/tags/${tag}`,
+    },
+    robots: {
+      index: false,
+      follow: true,
     },
   };
 }

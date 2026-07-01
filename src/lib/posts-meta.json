@@ -1,0 +1,30 @@
+[
+  {
+    "slugAsParams": "en/my-2025-tech-stack",
+    "locale": "en"
+  },
+  {
+    "slugAsParams": "pl/ile-kosztuje-strona-2026",
+    "locale": "pl"
+  },
+  {
+    "slugAsParams": "pl/jak-przygotowac-oferte-na-strone-i-nie-tracic-marzy",
+    "locale": "pl"
+  },
+  {
+    "slugAsParams": "pl/my-2025-tech-stack",
+    "locale": "pl"
+  },
+  {
+    "slugAsParams": "pl/payload-vs-strapi",
+    "locale": "pl"
+  },
+  {
+    "slugAsParams": "pl/solo-dev-vs-software-house-ile-to-kosztuje",
+    "locale": "pl"
+  },
+  {
+    "slugAsParams": "pl/wordpress-vs-nextjs-cennik-2026",
+    "locale": "pl"
+  }
+]

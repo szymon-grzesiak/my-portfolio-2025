@@ -6,6 +6,7 @@ export interface Post {
   slug: string;
   slugAsParams: string;
   title: string;
+  metaTitle?: string;
   description?: string;
   date: string;
   published: boolean;
@@ -63,6 +64,7 @@ export function getAllPosts(): Post[] {
       slug,
       slugAsParams,
       title: data.title || "",
+      metaTitle: data.metaTitle || "",
       description: data.description || "",
       date: data.date instanceof Date ? data.date.toISOString() : data.date || "",
       published: data.published !== false,
@@ -77,3 +79,19 @@ export function getAllPosts(): Post[] {
 }
 
 export const posts = getAllPosts();
+
+if (typeof window === "undefined") {
+  try {
+    const meta = posts.map((p) => ({
+      slugAsParams: p.slugAsParams,
+      locale: p.locale,
+    }));
+    fs.writeFileSync(
+      path.join(process.cwd(), "src/lib/posts-meta.json"),
+      JSON.stringify(meta, null, 2)
+    );
+  } catch (e) {
+    console.error("Failed to write posts-meta.json", e);
+  }
+}
+

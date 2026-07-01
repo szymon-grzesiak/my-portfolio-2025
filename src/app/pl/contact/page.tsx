@@ -18,6 +18,15 @@ export const metadata: Metadata = {
     title: "Usługi, Proces i Kontakt | Szymon Grzesiak",
     description: "Dowiedz się, jak buduję szybkie sklepy e-commerce, strony www i narzędzia AI. Sprawdź proces współpracy, cennik bazowy, FAQ i skontaktuj się ze mną.",
     url: `${siteConfig.url}/pl/contact`,
+    type: "website",
+    images: [
+      {
+        url: "https://szymongrzesiak.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Szymon Grzesiak Portfolio",
+      },
+    ],
   },
 };
 

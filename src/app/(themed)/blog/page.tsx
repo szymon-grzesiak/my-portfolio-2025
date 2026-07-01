@@ -28,6 +28,15 @@ export const metadata: Metadata = {
     description:
       "Read my thoughts on software development, design, and more. I share insights, tutorials, and experiences in web development.",
     url: `${siteConfig.url}/blog`,
+    type: "website",
+    images: [
+      {
+        url: "https://szymongrzesiak.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Szymon Grzesiak Portfolio",
+      },
+    ],
   },
 };
 export default async function BlogPage() {

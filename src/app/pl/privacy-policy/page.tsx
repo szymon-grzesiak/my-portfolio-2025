@@ -15,6 +15,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteConfig.url}/pl/privacy-policy`,
   },
+  openGraph: {
+    title: "Polityka Prywatności | Szymon Grzesiak",
+    description: "Polityka prywatności i informacje o RODO dotyczące formularza kontaktowego w portfolio Szymona Grzesiaka.",
+    url: `${siteConfig.url}/pl/privacy-policy`,
+    type: "website",
+    images: [
+      {
+        url: "https://szymongrzesiak.dev/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Szymon Grzesiak Portfolio",
+      },
+    ],
+  },
 };
 
 export default function PrivacyPolicyPage() {

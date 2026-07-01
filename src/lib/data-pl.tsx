@@ -165,7 +165,7 @@ export const projectCaseStudiesTranslationsPl: Record<
   "hustlers-gang": {
     heroTagline: "Społeczność skoncentrowana na członkach",
     metadata: {
-      title: "Studium przypadku Hustlers Gang | Szymon Grzesiak",
+      title: "Studium przypadku Hustlers Gang",
       description: "Projekt i wdrożenie wyrazistego serwisu internetowego dla społeczności przedsiębiorców Hustlers Gang.",
       keywords: ["Hustlers Gang", "społeczność", "Next.js", "landing page"]
     },
@@ -208,8 +208,8 @@ export const projectCaseStudiesTranslationsPl: Record<
   "bnp-global": {
     heroTagline: "Łączenie innowatorów ponad granicami",
     metadata: {
-      title: "Studium przypadku bnp.global | Szymon Grzesiak",
-      description: "Budowa nowoczesnego portalu sieci biznesowej BNP Global łączącego założycieli i inwestorów.",
+      title: "Studium przypadku bnp.global",
+      description: "Budowa nowoczesnego portalu sieci biznesowej BNP Global łączącego założycieli i inwestorów. Zobacz jak zoptymalizowałem portal pod kątem UX i wydajności.",
       keywords: ["bnp.global", "sieć biznesowa", "Next.js", "portal"]
     },
     overview: [
@@ -247,8 +247,8 @@ export const projectCaseStudiesTranslationsPl: Record<
   "wnetrze-raju": {
     heroTagline: "Relaks wzniesiony na wyższy poziom dzięki designowi",
     metadata: {
-      title: "Studium przypadku Wnętrze Raju | Szymon Grzesiak",
-      description: "Projekt i wdrożenie relaksującej witryny internetowej dla salonu masażu Wnętrze Raju w Sieradzu.",
+      title: "Studium przypadku Wnętrze Raju",
+      description: "Projekt i wdrożenie relaksującej witryny internetowej dla salonu masażu Wnętrze Raju w Sieradzu. Zobacz proces projektowania i wdrożenia nowoczesnego SPA.",
       keywords: ["spa", "salon masażu", "Sieradz", "Next.js", "Wnętrze Raju"]
     },
     overview: [
@@ -286,8 +286,8 @@ export const projectCaseStudiesTranslationsPl: Record<
   "cytrynuch-tiktoker": {
     heroTagline: "Tworzenie interaktywnego centrum twórcy",
     metadata: {
-      title: "Studium przypadku Cytrynuch TikToker | Szymon Grzesiak",
-      description: "Kolorowy i dynamiczny portal internetowy dla polskiego twórcy na TikToku - Cytrynucha.",
+      title: "Studium przypadku Cytrynuch TikToker",
+      description: "Kolorowy i dynamiczny portal internetowy dla polskiego twórcy na TikToku - Cytrynucha. Zobacz studium przypadku wdrożenia nowoczesnego media-kitu.",
       keywords: ["tiktoker", "portfolio twórcy", "TikTok", "Next.js"]
     },
     overview: [
@@ -325,7 +325,7 @@ export const projectCaseStudiesTranslationsPl: Record<
   "vocablaze": {
     heroTagline: "Grywalizacja w nauce języków obcych",
     metadata: {
-      title: "Studium przypadku Vocablaze | Szymon Grzesiak",
+      title: "Studium przypadku Vocablaze",
       description: "Interaktywna platforma do nauki słówek z mechanizmami grywalizacji, subskrypcjami Stripe i autoryzacją NextAuth.",
       keywords: ["Vocablaze", "nauka języków", "Next.js", "Stripe", "Prisma", "PostgreSQL"]
     },
@@ -380,7 +380,7 @@ export const projectCaseStudiesTranslationsPl: Record<
   "resoursea": {
     heroTagline: "Ułatwianie wymiany wiedzy online",
     metadata: {
-      title: "Studium przypadku Resoursea | Szymon Grzesiak",
+      title: "Studium przypadku Resoursea",
       description: "Budowa portalu wymiany wiedzy programistycznej Resoursea z logowaniem Clerk.js, bazą MongoDB i funkcjami sztucznej inteligencji OpenAI.",
       keywords: ["Resoursea", "baza wiedzy", "Next.js", "OpenAI", "MongoDB", "Clerk"]
     },

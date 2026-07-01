@@ -30,7 +30,7 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Szymon Grzesiak | Full Stack Developer Portfolio",
   description:
-    "I build fast, conversion-focused web apps in Next.js, React, and TypeScript. Explore recent case studies, practical engineering notes, and the process behind my work.",
+    "I build fast, conversion-focused web apps in Next.js, React, and TypeScript. Explore recent case studies, practical engineering notes, and my process.",
   alternates: {
     canonical: siteConfig.url,
   },
