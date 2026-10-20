@@ -1,0 +1,525 @@
+---
+title: "Building a Bulletproof Phone Input in React with Ant Design"
+metaTitle: "Bulletproof Phone Input in React & Ant Design"
+description: "A complete guide to building an international phone input in React, combining Ant Design, react-phone-number-input, SVG flags, and strict validation."
+date: 2025-05-10
+tags: [React, TypeScript, Ant Design, TailwindCSS, Frontend, UI Components, Form Validation]
+published: true
+---
+
+## Why Phone Inputs Are Deceptively Hard
+
+At first glance, a phone number input sounds straightforward: *"It's just an input field with a country dropdown, right?"*
+
+Anyone who has shipped a global registration or checkout flow knows the painful truth. Phone number inputs are one of the most frustrating UI elements to get right in modern web applications. 
+
+Here is what you quickly run into in the wild:
+
+1. **Inconsistent OS emoji flags**: On macOS and iOS, emoji flags look fine. But on Windows, country code emojis don't render as flags at all — they show up as awkward two-letter text boxes (like `PL` or `US`).
+2. **Accidental dial code deletion**: When users highlight the field to edit their number, they often accidentally erase the `+` or country calling code, resulting in invalid submissions.
+3. **Naive regex validation**: Checking against `^\+?[0-9]{7,15}$` is notoriously weak. It passes invalid numbers like `+1 000 000 000` while occasionally failing legitimate numbers with regional quirks.
+4. **UI mismatch with design systems**: Off-the-shelf phone input packages come with their own opinionated HTML inputs and dropdowns that clash with design systems like Ant Design.
+5. **Painful form integration**: You need a component that participates seamlessly in your form lifecycle, supporting `value`/`onChange`, reset states, and async validation rules.
+
+In this guide, we'll build a **production-ready `<PhoneField />` component** from scratch. It pairs the power of `react-phone-number-input` (powered by Google's `libphonenumber-js`) with **Ant Design's `<Select>` and `<Input>`**, crisp vector **SVG flags**, smart caret positioning, and a custom **ITU-T E.164 validator**.
+
+---
+
+## The Tech Stack & Architecture
+
+Here is what powers our component:
+
+- **`react-phone-number-input`**: The battle-tested library built on top of `libphonenumber-js`. It manages the input mask, number parsing, and cursor jumping.
+- **Ant Design (`antd`)**: We will swap out default HTML inputs for Ant Design's `<Select>` and `<Input>`, ensuring complete visual parity with the rest of your app.
+- **Vector SVG Flags**: Bundled via `react-phone-number-input/flags` so our flags look crisp and consistent on every single operating system.
+- **`Intl.DisplayNames`**: Built directly into the browser API to produce localized, alphabetically sorted country names without ballooning your JavaScript bundle.
+
+---
+
+## 1. Installation
+
+Install the core library along with its dependencies:
+
+```bash
+npm install react-phone-number-input antd
+```
+
+If you're using TypeScript, make sure you have the required React typings in place:
+
+```bash
+npm install --save-dev @types/react @types/react-dom
+```
+
+---
+
+## 2. Crafting the Component
+
+Let's break the implementation down into modular pieces before putting it all together.
+
+### Vector SVG Flags
+
+Instead of relying on system emojis, we import SVG flag components directly from `react-phone-number-input/flags`. This guarantees pixel-perfect rendering across iOS, Android, macOS, Windows, and Linux.
+
+```tsx
+import flags from 'react-phone-number-input/flags';
+import type { Country } from 'react-phone-number-input';
+
+const FlagIcon = ({ country }: { country: Country }) => {
+  const Flag = flags[country];
+  if (!Flag) return null;
+
+  return (
+    <span className="inline-flex shrink-0 overflow-hidden rounded-xs">
+      <Flag className="h-4 w-5 object-cover" />
+    </span>
+  );
+};
+```
+
+### Searchable Country Select with Ant Design
+
+Users should be able to quickly search for their country either by its **name** (e.g., *"Germany"*) or by its **dialing code** (e.g., `+49`).
+
+Using Ant Design's `labelRender` prop, we can show a compact view when selected (just the flag and calling code) while displaying the full country name and dial code inside the dropdown menu:
+
+```tsx
+import { Select } from 'antd';
+import { getCountryCallingCode, type Country } from 'react-phone-number-input';
+
+type CountryOption = {
+  value: Country;
+  label: string;
+};
+
+type CountrySelectProps = {
+  value?: Country;
+  onChange?: (value?: Country) => void;
+  options?: CountryOption[];
+  disabled?: boolean;
+};
+
+const CountrySelect = ({
+  value,
+  onChange,
+  options = [],
+  disabled,
+}: CountrySelectProps) => {
+  const selectOptions = options.map((option) => ({
+    value: option.value,
+    searchText: `${option.label} +${getCountryCallingCode(option.value)}`.toLowerCase(),
+    label: (
+      <span className="flex min-w-0 items-center gap-2">
+        <FlagIcon country={option.value} />
+        <span className="truncate">{option.label}</span>
+        <span className="ml-auto text-gray-400">
+          +{getCountryCallingCode(option.value)}
+        </span>
+      </span>
+    ),
+  }));
+
+  return (
+    <Select
+      value={value}
+      onChange={onChange}
+      disabled={disabled}
+      showSearch
+      optionFilterProp="searchText"
+      popupMatchSelectWidth={false}
+      className="w-44"
+      suffixIcon={null}
+      options={selectOptions}
+      labelRender={(props) => {
+        const country = props.value as Country;
+        if (!country) return null;
+
+        return (
+          <span className="flex items-center gap-2">
+            <FlagIcon country={country} />
+            <span>+{getCountryCallingCode(country)}</span>
+          </span>
+        );
+      }}
+    />
+  );
+};
+```
+
+### Wrapping Ant Design's Input
+
+`react-phone-number-input` expects a custom input component that forwards its DOM `ref`. This allows the library to compute the exact caret position while formatting numbers in real time:
+
+```tsx
+import React, { forwardRef } from 'react';
+import { Input, type InputRef } from 'antd';
+
+const NumberInput = forwardRef<InputRef, React.ComponentProps<typeof Input>>(
+  (props, ref) => <Input {...props} ref={ref} />
+);
+NumberInput.displayName = 'NumberInput';
+```
+
+---
+
+## 3. The Full `PhoneField.tsx` Implementation
+
+Here is the complete, production-ready component code ready to drop into your project:
+
+```tsx
+import React, { useMemo, forwardRef } from 'react';
+import { Select, Input, type InputRef } from 'antd';
+import PhoneInput, {
+  type Country,
+  type Value,
+  isValidPhoneNumber,
+  parsePhoneNumber,
+  getCountryCallingCode,
+  getCountries,
+} from 'react-phone-number-input';
+import flags from 'react-phone-number-input/flags';
+
+// ---------------------------------------------
+// SVG FLAGS
+// ---------------------------------------------
+const FlagIcon = ({ country }: { country: Country }) => {
+  const Flag = flags[country];
+  if (!Flag) return null;
+
+  return (
+    <span className="inline-flex shrink-0 overflow-hidden rounded-xs">
+      <Flag className="h-4 w-5 object-cover" />
+    </span>
+  );
+};
+
+// ---------------------------------------------
+// COUNTRY SELECT (ANT DESIGN)
+// ---------------------------------------------
+type CountryOption = {
+  value: Country;
+  label: string;
+};
+
+type CountrySelectProps = {
+  value?: Country;
+  onChange?: (value?: Country) => void;
+  options?: CountryOption[];
+  disabled?: boolean;
+};
+
+const CountrySelect = ({
+  value,
+  onChange,
+  options = [],
+  disabled,
+}: CountrySelectProps) => {
+  const selectOptions = options.map((option) => ({
+    value: option.value,
+    searchText: `${option.label} +${getCountryCallingCode(option.value)}`.toLowerCase(),
+    label: (
+      <span className="flex min-w-0 items-center gap-2">
+        <FlagIcon country={option.value} />
+        <span className="truncate">{option.label}</span>
+        <span className="ml-auto text-gray-400">
+          +{getCountryCallingCode(option.value)}
+        </span>
+      </span>
+    ),
+  }));
+
+  return (
+    <Select
+      value={value}
+      onChange={onChange}
+      disabled={disabled}
+      showSearch
+      optionFilterProp="searchText"
+      popupMatchSelectWidth={false}
+      className="w-44"
+      suffixIcon={null}
+      options={selectOptions}
+      labelRender={(props) => {
+        const country = props.value as Country;
+        if (!country) return null;
+
+        return (
+          <span className="flex items-center gap-2">
+            <FlagIcon country={country} />
+            <span>+{getCountryCallingCode(country)}</span>
+          </span>
+        );
+      }}
+    />
+  );
+};
+
+// ---------------------------------------------
+// INPUT REF FORWARDING
+// ---------------------------------------------
+const NumberInput = forwardRef<InputRef, React.ComponentProps<typeof Input>>(
+  (props, ref) => <Input {...props} ref={ref} />
+);
+NumberInput.displayName = 'NumberInput';
+
+// ---------------------------------------------
+// PROPS INTERFACE
+// ---------------------------------------------
+export type PhoneFieldProps = {
+  value?: Value;
+  onChange?: (value?: Value) => void;
+  defaultCountry?: Country;
+  placeholder?: string;
+  disabled?: boolean;
+  /** Restrict the selectable countries (e.g. ['US', 'GB', 'DE', 'PL']) */
+  allowedCountries?: Country[];
+  /** Locale for country names (defaults to 'en') */
+  locale?: string;
+  className?: string;
+};
+
+// ---------------------------------------------
+// MAIN PHONEFIELD COMPONENT
+// ---------------------------------------------
+export function PhoneField({
+  value,
+  onChange,
+  defaultCountry = 'US',
+  placeholder = 'Enter phone number',
+  disabled,
+  allowedCountries,
+  locale = 'en',
+  className,
+}: PhoneFieldProps) {
+  const countryOptions = useMemo<CountryOption[]>(() => {
+    const countries = allowedCountries ?? getCountries();
+    const names = new Intl.DisplayNames([locale], { type: 'region' });
+
+    return countries
+      .map((country) => ({
+        value: country,
+        label: names.of(country) ?? country,
+      }))
+      .sort((a, b) => a.label.localeCompare(b.label, locale));
+  }, [allowedCountries, locale]);
+
+  return (
+    <div className={`flex w-full items-stretch [&_.PhoneInputInput]:flex-1 ${className ?? ''}`.trim()}>
+      <PhoneInput
+        international
+        countryCallingCodeEditable={false}
+        defaultCountry={defaultCountry}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        disabled={disabled}
+        inputComponent={NumberInput}
+        countrySelectComponent={CountrySelect}
+        countryOptions={countryOptions}
+        smartCaret
+        addInternationalOption={false}
+        className="flex w-full items-center gap-2"
+      />
+    </div>
+  );
+}
+```
+
+<Callout type="default">
+**Key Configuration Details:**
+- `countryCallingCodeEditable={false}` locks the international dialing prefix in place so users cannot accidentally erase it while editing digits.
+- `smartCaret` ensures that typing in the middle of a formatted number does not jump the cursor to the very end of the string.
+- `Intl.DisplayNames` allows you to render the dropdown in English (`en`), Polish (`pl`), Spanish (`es`), or any other language without installing third-party dictionaries.
+</Callout>
+
+---
+
+## 4. Writing a Bulletproof Form Validator
+
+Form validation is where most phone input setups fall apart. An empty input should be handled by Ant Design's standard `{ required: true }` rule, while our custom validator focuses purely on format, integrity, and international boundaries.
+
+The **ITU-T E.164** standard dictates that telephone numbers cannot exceed 15 digits (excluding the prefix) and are rarely shorter than 6 digits. Additionally, local markets often have strict rules (for example, Poland requires exactly 9 national digits).
+
+Here is the validator rule designed for Ant Design's `Form.Item`:
+
+```tsx
+export const phoneValidator = {
+  async validator(_: unknown, value?: string) {
+    if (!value) {
+      // Let the required: true rule handle empty values
+      return Promise.resolve();
+    }
+
+    if (!isValidPhoneNumber(value)) {
+      return Promise.reject(new Error('Please enter a valid phone number'));
+    }
+
+    const phoneNumber = parsePhoneNumber(value);
+    if (!phoneNumber) {
+      return Promise.reject(new Error('Please enter a valid phone number'));
+    }
+
+    const nationalNumber = phoneNumber.nationalNumber ?? '';
+    const country = phoneNumber.country;
+
+    // Special validation for Poland (exactly 9 national digits)
+    if (country === 'PL') {
+      if (nationalNumber.length !== 9) {
+        return Promise.reject(
+          new Error('Polish phone numbers must contain exactly 9 digits')
+        );
+      }
+      if (!/^[0-9]+$/.test(nationalNumber)) {
+        return Promise.reject(new Error('Phone number must contain digits only'));
+      }
+    }
+
+    // Minimum national length constraint (6 digits)
+    if (nationalNumber.length < 6) {
+      return Promise.reject(
+        new Error('Phone number is too short (min. 6 digits)')
+      );
+    }
+
+    // Maximum length constraint according to ITU-T E.164 (15 digits)
+    if (nationalNumber.length > 15) {
+      return Promise.reject(
+        new Error('Phone number is too long (max. 15 digits)')
+      );
+    }
+
+    if (!phoneNumber.isValid()) {
+      return Promise.reject(new Error('Invalid phone number for the selected country'));
+    }
+
+    return Promise.resolve();
+  },
+};
+```
+
+---
+
+## 5. Real-World Ant Design Form Example
+
+Now we can integrate `<PhoneField />` directly into an Ant Design `<Form>`:
+
+```tsx
+import { Form, Button, Card, Typography } from 'antd';
+import { PhoneField, phoneValidator } from './PhoneField';
+
+interface ContactFormData {
+  phone: string;
+}
+
+export default function ContactForm() {
+  const [form] = Form.useForm<ContactFormData>();
+
+  const handleSubmit = (values: ContactFormData) => {
+    console.log('Normalized phone number for API:', values.phone);
+    // Example: "+48600100200" or "+12025550143"
+  };
+
+  return (
+    <Card className="max-w-xl mx-auto shadow-sm">
+      <Typography.Title level={4}>Contact Information</Typography.Title>
+
+      <Form
+        form={form}
+        layout="vertical"
+        initialValues={{
+          phone: '+48600100200',
+        }}
+        onFinish={handleSubmit}
+      >
+        <Form.Item
+          label="Phone Number"
+          name="phone"
+          validateTrigger={['onBlur', 'onChange']}
+          rules={[
+            {
+              required: true,
+              message: 'Phone number is required',
+            },
+            phoneValidator,
+          ]}
+        >
+          <PhoneField
+            defaultCountry="PL"
+            placeholder="e.g. 600 100 200"
+            allowedCountries={['PL', 'DE', 'GB', 'US', 'FR', 'UA']}
+          />
+        </Form.Item>
+
+        <Form.Item className="mb-0">
+          <Button type="primary" htmlType="submit" size="large" block>
+            Submit
+          </Button>
+        </Form.Item>
+      </Form>
+    </Card>
+  );
+}
+```
+
+---
+
+## 6. Formatting & Parsing for API Payloads
+
+One of the greatest advantages of this setup is that the component always stores and yields the value in **standard E.164 format** (`+48600100200`). This is the universal standard accepted by SMS gateways like Twilio, Resend, AWS SNS, and Vonage.
+
+If you need to break down the number or format it differently for confirmation screens, `parsePhoneNumber` does the heavy lifting:
+
+```tsx
+import { parsePhoneNumber } from 'react-phone-number-input';
+
+const parsed = parsePhoneNumber('+48600100200');
+
+if (parsed) {
+  console.log(parsed.country);              // "PL"
+  console.log(parsed.countryCallingCode);   // "48"
+  console.log(parsed.nationalNumber);       // "600100200"
+  console.log(parsed.formatInternational());// "+48 600 100 200"
+  console.log(parsed.formatNational());     // "600 100 200"
+}
+```
+
+---
+
+## 7. Polishing the Design with Tailwind CSS
+
+To achieve a seamless "input group" look where the `<Select>` country picker and the `<Input>` field appear connected as a single visual unit, you can add subtle Tailwind classes:
+
+```tsx
+<PhoneField
+  className="[&_.ant-select-selector]:rounded-r-none [&_.ant-input]:rounded-l-none [&_.ant-input]:-ml-[1px]"
+/>
+```
+
+Or configure custom CSS in your `globals.css`:
+
+```css
+/* Smooth styling for joined phone input components */
+.PhoneInputInput.ant-input {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.PhoneInputCountry .ant-select-selector {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+```
+
+---
+
+## Key Takeaways
+
+With this setup, you now have:
+
+- **Cross-platform SVG flags** that never degrade into missing glyphs or ugly text emojis on Windows.
+- **Searchable country selection** that filters by both national name and dialing code (`+1`, `+48`).
+- **Ant Design design harmony** with full support for themes, focus outlines, and sizes.
+- **Lock-in calling codes** that eliminate accidental user deletions.
+- **Deep validation** compliant with ITU-T E.164 standards, paired with custom rules for specific target markets.
+- **Native Ant Design Form integration** via standard `value`, `onChange`, and async rule validators.
+
+By investing a little time up front to bridge design systems with robust libraries like `react-phone-number-input`, you protect your app from bad user data and deliver a frictionless user experience.
